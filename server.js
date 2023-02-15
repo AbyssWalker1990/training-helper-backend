@@ -3,15 +3,12 @@ const app = express()
 const path = require('path')
 const cors = require('cors')
 const corsOptions = require('./config/corsOptions')
-const logEvents = require('./middleware/logEvents')
+const { logger } = require('./middleware/logEvents')
+const errorHandler = require('./middleware/errorHandler')
 const PORT = process.env.PORT || 3500
 
 // Simple custom logger
-app.use((req, res, next) => {
-  logEvents(`${req.method}  ${req.headers.origin}  ${req.url}`, 'requestLog.txt')
-  console.log(`${req.method}\t${req.path}`)
-  next()
-})
+app.use(logger)
 
 // CORS
 app.use(cors(corsOptions))
@@ -26,9 +23,18 @@ app.get('^/$|/index(.html)?', (req, res) => {
   res.send('Hi')
 })
 
-app.get('/*', (req, res) => {
-  res.status(404).send('Not Found')
+app.all('*', (req, res) => {
+  res.status(404)
+  if (req.accepts('html')) {
+    res.send('404') // Switch to simple html page later
+  } else if (req.accepts('html')) {
+    res.json({ error: "404 Not Found"})
+  } else {
+    res.type('txt').send("404 Not Found")
+  }
 })
+
+app.use(errorHandler)
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
 
