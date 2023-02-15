@@ -1,3 +1,9 @@
 15-02-2023  17:35:27  3f52b047-4a96-4418-a2f8-08d7fc0354c9  GET  undefined  /index.html
 15-02-2023  17:35:31  ff25daa2-77f7-4ced-bbaf-d45441ae25d1  GET  undefined  /index
 15-02-2023  17:35:35  13ee46ba-96b1-4b53-85a2-fff0892e4642  GET  undefined  /hj
+15-02-2023  21:11:03  adf8d453-363e-4efe-9eb7-a9e3112cc522  OPTIONS  https://www.google.com  /
+15-02-2023  21:11:03  f6266ea2-0d14-4ea0-af72-3fe21f596516  GET  https://www.google.com  /
+15-02-2023  21:17:08  6f61f739-1ecf-44de-a6f8-123bef3b051f  OPTIONS  https://www.google.com  /
+15-02-2023  21:17:08  7001778d-7eae-41bd-8d06-1f0f6e824612  GET  https://www.google.com  /
+15-02-2023  21:17:57  94303a81-9966-4945-98e9-cbca4cdfa637  OPTIONS  https://www.google.com  /
+15-02-2023  21:17:57  5351ea11-1d6f-4ec5-bacd-d03d2511bb17  GET  https://www.google.com  /
