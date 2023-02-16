@@ -28,10 +28,9 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(express.static(path.join(__dirname, '/public')))
 
-
-app.get('^/$|/index(.html)?', (req, res) => {
-  res.send('Hi')
-})
+//routes
+app.use('/', require('./routes/root'))
+app.use('/register', require('./routes/register'))
 
 app.all('*', (req, res) => {
   res.status(404)
