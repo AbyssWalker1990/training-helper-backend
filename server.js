@@ -5,10 +5,14 @@ const cors = require('cors')
 const corsOptions = require('./config/corsOptions')
 const { logger } = require('./middleware/logEvents')
 const errorHandler = require('./middleware/errorHandler')
+const credentials = require('./middleware/credentials')
 const PORT = process.env.PORT || 3500
 
 // Simple custom logger
 app.use(logger)
+
+// Extra check before CORS
+app.use(credentials)
 
 // CORS
 app.use(cors(corsOptions))

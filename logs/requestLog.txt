@@ -27,3 +27,5 @@
 15-02-2023  21:45:56  cf52d438-9b3b-45d2-a47c-2964b40ddb62  GET  undefined  /
 15-02-2023  21:45:56  2b3ca084-ccf0-4d3c-8586-2fe3bb6ecc16  GET  undefined  /
 15-02-2023  21:46:21  643c293f-4b68-4860-8b59-9d41f0cf0412  GET  undefined  /
+16-02-2023  17:17:11  54f8c5d7-fa77-4ffc-9d59-4f64a4146b9d  OPTIONS  https://www.google.com  /
+16-02-2023  17:17:11  46465c63-93cf-4576-95c0-158dd6c1ef0a  GET  https://www.google.com  /
