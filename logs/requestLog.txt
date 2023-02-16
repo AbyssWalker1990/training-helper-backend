@@ -33,3 +33,8 @@
 16-02-2023  21:42:57  c086718c-e828-4707-874d-6ff0d4f08c0e  GET  undefined  /
 16-02-2023  21:42:57  0d9dc114-a578-4d53-acfe-1efb55aeda8e  GET  undefined  /favicon.ico
 16-02-2023  22:30:09  fc786c21-6cad-4181-a215-cee6872d6ed7  POST  undefined  /auth
+16-02-2023  22:57:13  bdedf310-7660-471a-ba93-a45386aedefc  GET  undefined  /
+16-02-2023  22:57:57  58670311-3bae-4188-a20e-ef122ab199b6  GET  undefined  /
+16-02-2023  22:58:05  1bbe1878-8d8f-47c9-82fb-740f6baddc80  POST  undefined  /auth
+16-02-2023  22:58:19  44dd3c7e-b4d9-4376-a71e-98c92180d596  GET  undefined  /
+16-02-2023  22:58:58  be0795c2-42ff-4ee3-a580-c012df9337b3  GET  undefined  /
