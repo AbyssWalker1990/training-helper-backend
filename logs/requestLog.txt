@@ -30,3 +30,6 @@
 16-02-2023  17:17:11  54f8c5d7-fa77-4ffc-9d59-4f64a4146b9d  OPTIONS  https://www.google.com  /
 16-02-2023  17:17:11  46465c63-93cf-4576-95c0-158dd6c1ef0a  GET  https://www.google.com  /
 16-02-2023  18:26:18  47e933cb-b0b2-4412-b96b-c6aa88f7e145  POST  undefined  /register
+16-02-2023  21:42:57  c086718c-e828-4707-874d-6ff0d4f08c0e  GET  undefined  /
+16-02-2023  21:42:57  0d9dc114-a578-4d53-acfe-1efb55aeda8e  GET  undefined  /favicon.ico
+16-02-2023  22:30:09  fc786c21-6cad-4181-a215-cee6872d6ed7  POST  undefined  /auth

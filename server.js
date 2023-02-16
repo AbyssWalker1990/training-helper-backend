@@ -4,6 +4,7 @@ const app = express()
 const path = require('path')
 const cors = require('cors')
 const corsOptions = require('./config/corsOptions')
+const cookieParser = require('cookie-parser')
 const { logger } = require('./middleware/logEvents')
 const errorHandler = require('./middleware/errorHandler')
 const credentials = require('./middleware/credentials')
@@ -28,9 +29,13 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(express.static(path.join(__dirname, '/public')))
 
+// For refreshToken
+app.use(cookieParser())
+
 //routes
 app.use('/', require('./routes/root'))
 app.use('/register', require('./routes/register'))
+app.use('/auth', require('./routes/auth'))
 
 app.all('*', (req, res) => {
   res.status(404)
