@@ -36,6 +36,7 @@ app.use(cookieParser())
 app.use('/', require('./routes/root'))
 app.use('/register', require('./routes/register'))
 app.use('/auth', require('./routes/auth'))
+app.use('/refresh', require('./routes/refresh'))
 
 app.all('*', (req, res) => {
   res.status(404)
