@@ -185,3 +185,4 @@
 07-03-2023  14:58:09  cf8c09cf-c2c9-4dc5-a016-9d6d5c64d272  GET  undefined  /users
 07-03-2023  15:02:15  2bf478c8-c8da-4714-802d-e7910d09c687  POST  undefined  /register/
 07-03-2023  15:03:57  eff54e85-1f14-499a-8e40-7b024df3b793  POST  undefined  /auth
+07-03-2023  15:28:09  78fe101f-0129-4fbf-911e-f5efec813967  POST  undefined  /register/

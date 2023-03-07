@@ -34,17 +34,17 @@ app.use(cookieParser())
 
 //routes
 app.use('/', require('./routes/root'))
-app.use('/register', require('./routes/register'))
-app.use('/auth', require('./routes/auth'))
-app.use('/refresh', require('./routes/refresh'))
-app.use('/logout', require('./routes/logout'))
+app.use('/register', require('./routes/auth/register'))
+app.use('/auth', require('./routes/auth/auth'))
+app.use('/refresh', require('./routes/auth/refresh'))
+app.use('/logout', require('./routes/auth/logout'))
 
 app.all('*', (req, res) => {
   res.status(404)
   if (req.accepts('html')) {
     res.send('404') // Switch to simple html page later
   } else if (req.accepts('html')) {
-    res.json({ error: "404 Not Found"})
+    res.json({ error: "404 Not Found" })
   } else {
     res.type('txt').send("404 Not Found")
   }

@@ -1,10 +1,10 @@
-const User = require('../model/User')
+const User = require('../../models/User')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 const handleLogin = async (req, res) => {
   const { user, password } = req.body
-  if (!user || !password) return res.status(400).json({ "message": "Username and password are reauired"})
+  if (!user || !password) return res.status(400).json({ "message": "Username and password are reauired" })
   const currentUser = await User.findOne({ username: user }).exec()
   if (!currentUser) return res.sendStatus(401)
   // Compare password
@@ -13,12 +13,12 @@ const handleLogin = async (req, res) => {
     const accessToken = jwt.sign(
       { "username": currentUser.username },
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: '20m'}
+      { expiresIn: '20m' }
     )
     const refreshToken = jwt.sign(
       { "username": currentUser.username },
       process.env.REFRESH_TOKEN_SECRET,
-      { expiresIn: '1d'}
+      { expiresIn: '1d' }
     )
     // Saving refreshToken to current user
     currentUser.refreshToken = refreshToken
