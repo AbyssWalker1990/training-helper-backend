@@ -182,3 +182,6 @@
 17-02-2023  12:46:34  c021161f-6786-42db-b5c4-084e823ab71b  GET  undefined  /css/main.css
 17-02-2023  12:46:52  2d144f92-8f24-4e56-9333-843bc86968b9  GET  undefined  /
 17-02-2023  12:46:52  2cbdcfaf-6579-49c5-9002-0b4994ea4b76  GET  undefined  /css/main.css
+07-03-2023  14:58:09  cf8c09cf-c2c9-4dc5-a016-9d6d5c64d272  GET  undefined  /users
+07-03-2023  15:02:15  2bf478c8-c8da-4714-802d-e7910d09c687  POST  undefined  /register/
+07-03-2023  15:03:57  eff54e85-1f14-499a-8e40-7b024df3b793  POST  undefined  /auth
