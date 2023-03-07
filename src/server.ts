@@ -1,16 +1,16 @@
-import dotenv from 'dotenv'
+import * as dotenv from 'dotenv'
 dotenv.config()
 import express, { Request, Response } from 'express'
 const app = express()
 import path from 'path'
 import cors from 'cors'
 import corsOptions from './config/corsOptions'
-const cookieParser = require('cookie-parser')
-const { logger } = require('./middleware/logEvents')
-const errorHandler = require('./middleware/errorHandler')
-const credentials = require('./middleware/credentials')
-const mongoose = require('mongoose')
-const connectDatabase = require('./config/connectDatabase')
+import cookieParser from 'cookie-parser'
+import { logger } from './middleware/logEvents'
+import errorHandler from './middleware/errorHandler'
+import credentials from './middleware/credentials'
+import mongoose from 'mongoose'
+import connectDatabase from './config/connectDatabase'
 const PORT = process.env.PORT || 3500
 
 // Connect to database
