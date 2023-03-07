@@ -1,6 +1,6 @@
-const allowedHosts = [
+const allowedHosts: string[] = [
     'http://localhost:3500',
     'https://www.google.com'
 ]
 
-module.exports = allowedHosts
+export default allowedHosts

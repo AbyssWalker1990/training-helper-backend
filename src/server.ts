@@ -1,9 +1,10 @@
-require('dotenv').config()
-const express = require('express')
+import dotenv from 'dotenv'
+dotenv.config()
+import express, { Request, Response } from 'express'
 const app = express()
-const path = require('path')
-const cors = require('cors')
-const corsOptions = require('./config/corsOptions')
+import path from 'path'
+import cors from 'cors'
+import corsOptions from './config/corsOptions'
 const cookieParser = require('cookie-parser')
 const { logger } = require('./middleware/logEvents')
 const errorHandler = require('./middleware/errorHandler')
@@ -39,7 +40,7 @@ app.use('/auth', require('./routes/auth/auth'))
 app.use('/refresh', require('./routes/auth/refresh'))
 app.use('/logout', require('./routes/auth/logout'))
 
-app.all('*', (req, res) => {
+app.all('*', (req: Request, res: Response) => {
   res.status(404)
   if (req.accepts('html')) {
     res.send('404') // Switch to simple html page later
