@@ -6,7 +6,7 @@ import path from 'path'
 import cors from 'cors'
 const corsOptions = require('./config/corsOptions')
 const cookieParser = require('cookie-parser')
-const { logger } = require('./middleware/logEvents')
+import { logger } from'./middleware/logEvents'
 const errorHandler = require('./middleware/errorHandler')
 const credentials = require('./middleware/credentials')
 import mongoose from 'mongoose'

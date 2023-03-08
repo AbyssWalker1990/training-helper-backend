@@ -34,7 +34,7 @@ const path_1 = __importDefault(require("path"));
 const cors_1 = __importDefault(require("cors"));
 const corsOptions = require('./config/corsOptions');
 const cookieParser = require('cookie-parser');
-const { logger } = require('./middleware/logEvents');
+const logEvents_1 = require("./middleware/logEvents");
 const errorHandler = require('./middleware/errorHandler');
 const credentials = require('./middleware/credentials');
 const mongoose_1 = __importDefault(require("mongoose"));
@@ -45,7 +45,7 @@ const registerController = __importStar(require("./controllers/authControllers/r
 // Connect to database
 (0, connectDatabase_1.default)();
 // Simple custom logger
-app.use(logger);
+app.use(logEvents_1.logger);
 // Extra check before CORS
 app.use(credentials);
 // CORS

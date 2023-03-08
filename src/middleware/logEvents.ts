@@ -1,12 +1,13 @@
-const { format } = require('date-fns')
-const { v4: uuid } = require('uuid')
-const fs = require('fs')
-const fsPromises = require('fs').promises
-const path = require('path')
+import { RequestHandler } from 'express';
+import { format } from 'date-fns'
+import {v4 as uuidv4} from 'uuid'
+import fs from 'fs'
+import { promises as fsPromises } from 'fs';
+import path from 'path'
 
-const logEvents = async (message, logName) => {
+export const logEvents = async (message: string, logName: string) => {
   const dateTime = `${format(new Date(), 'dd-MM-yyyy  kk:mm:ss')}`
-  const logItem = `${dateTime}  ${uuid()}  ${message}\n`
+  const logItem = `${dateTime}  ${uuidv4()}  ${message}\n`
 
   try {
     if (!fs.existsSync(path.join(__dirname, '..', '..', 'logs'))) {
@@ -19,10 +20,8 @@ const logEvents = async (message, logName) => {
   }
 }
 
-const logger = (req, res, next) => {
+export const logger: RequestHandler = (req, res, next) => {
   logEvents(`${req.method}  ${req.headers.origin}  ${req.url}`, 'requestLog.txt')
   console.log(`${req.method}\t${req.path}`)
   next()
 }
-
-module.exports = { logEvents, logger }
