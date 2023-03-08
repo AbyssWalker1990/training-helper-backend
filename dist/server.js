@@ -42,6 +42,7 @@ const connectDatabase_1 = __importDefault(require("./config/connectDatabase"));
 const PORT = process.env.PORT || 3500;
 const root_1 = __importDefault(require("./routes/root"));
 const registerController = __importStar(require("./controllers/authControllers/registerController"));
+const authController = __importStar(require("./controllers/authControllers/authController"));
 // Connect to database
 (0, connectDatabase_1.default)();
 // Simple custom logger
@@ -59,7 +60,7 @@ app.use((0, cookie_parser_1.default)());
 //routes
 app.use('/', root_1.default);
 app.use('/register', registerController.registerUser);
-app.use('/auth', require('./routes/auth/auth'));
+app.use('/auth', authController.handleLogin);
 app.use('/refresh', require('./routes/auth/refresh'));
 app.use('/logout', require('./routes/auth/logout'));
 app.all('*', (req, res) => {

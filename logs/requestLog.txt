@@ -311,3 +311,12 @@
 08-03-2023  21:50:48  9539b8ef-e1fb-4889-8f4a-8c862dd86f04  GET  undefined  /
 08-03-2023  21:50:48  84c56283-633f-4971-accc-5a336f46f44f  GET  undefined  /css/main.css
 08-03-2023  21:51:09  3fd2b0e8-5e5f-48d3-810e-c62562090874  POST  undefined  /register
+08-03-2023  22:01:06  2cf3b98f-c776-4766-8749-635eeb4cbb31  GET  undefined  /
+08-03-2023  22:01:06  07a88acd-668e-42b5-9f44-ff01e1a28513  GET  undefined  /css/main.css
+08-03-2023  22:01:18  151f6287-49da-4a26-ad31-989e27f15309  POST  undefined  /auth
+08-03-2023  22:01:25  21ecf32b-f9b5-4800-94ad-bd87e490114b  POST  undefined  /auth
+08-03-2023  22:01:26  721b34a8-ebef-42c5-8760-7725ed71e0df  POST  undefined  /auth
+08-03-2023  22:01:27  85d28814-f7de-4d5c-ba33-e572742fd61c  POST  undefined  /auth
+08-03-2023  22:01:38  d1e1c9c3-708d-41a8-8a6b-60e0478e77dc  POST  undefined  /register
+08-03-2023  22:02:02  b1089a7c-159c-4b33-bc20-95a1114ff5c2  GET  undefined  /
+08-03-2023  22:02:02  cc2dfd24-0813-4d24-886b-123b53c7ceff  GET  undefined  /css/main.css

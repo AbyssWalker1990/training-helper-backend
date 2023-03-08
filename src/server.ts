@@ -14,6 +14,7 @@ import connectDatabase from './config/connectDatabase'
 const PORT = process.env.PORT || 3500
 import rootRouter from './routes/root'
 import * as registerController from './controllers/authControllers/registerController'
+import * as authController from './controllers/authControllers/authController'
 
 // Connect to database
 connectDatabase()
@@ -38,7 +39,7 @@ app.use(cookieParser())
 //routes
 app.use('/', rootRouter)
 app.use('/register', registerController.registerUser)
-app.use('/auth', require('./routes/auth/auth'))
+app.use('/auth', authController.handleLogin)
 app.use('/refresh', require('./routes/auth/refresh'))
 app.use('/logout', require('./routes/auth/logout'))
 
