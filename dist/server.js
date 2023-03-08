@@ -33,9 +33,9 @@ const app = (0, express_1.default)();
 const path_1 = __importDefault(require("path"));
 const cors_1 = __importDefault(require("cors"));
 const corsOptions = require('./config/corsOptions');
-const cookieParser = require('cookie-parser');
+const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const logEvents_1 = require("./middleware/logEvents");
-const errorHandler = require('./middleware/errorHandler');
+const errorHandler_1 = __importDefault(require("./middleware/errorHandler"));
 const credentials = require('./middleware/credentials');
 const mongoose_1 = __importDefault(require("mongoose"));
 const connectDatabase_1 = __importDefault(require("./config/connectDatabase"));
@@ -55,7 +55,7 @@ app.use(express_1.default.urlencoded({ extended: false }));
 app.use(express_1.default.json());
 app.use(express_1.default.static(path_1.default.join(__dirname, '..', '/public')));
 // For refreshToken
-app.use(cookieParser());
+app.use((0, cookie_parser_1.default)());
 //routes
 app.use('/', root_1.default);
 app.use('/register', registerController.registerUser);
@@ -74,7 +74,7 @@ app.all('*', (req, res) => {
         res.type('txt').send("404 Not Found");
     }
 });
-app.use(errorHandler);
+app.use(errorHandler_1.default);
 mongoose_1.default.connection.once('open', () => {
     console.log('Successfully connected to database!');
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

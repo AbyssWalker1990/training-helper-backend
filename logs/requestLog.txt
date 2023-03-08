@@ -301,3 +301,13 @@
 08-03-2023  21:41:13  0733137c-5844-49d8-ba21-800fd65d3146  GET  undefined  /css/main.css
 08-03-2023  21:44:33  226d8a96-a872-4b51-ad3d-3f509c479344  GET  undefined  /
 08-03-2023  21:44:33  71016ff9-d8bc-4001-9119-a0a64c4ea0de  GET  undefined  /css/main.css
+08-03-2023  21:46:06  faf095da-5f9a-4c72-81fc-24c56969142d  GET  undefined  /
+08-03-2023  21:46:06  8a9d2404-07b7-466d-9e7a-2b17d13a1ccf  GET  undefined  /css/main.css
+08-03-2023  21:49:37  60d7a520-050c-4c07-b100-a50518a73879  GET  undefined  /
+08-03-2023  21:49:37  df3edef7-436b-4f8a-a42b-299c74580d13  GET  undefined  /css/main.css
+08-03-2023  21:49:38  e3d3c7d1-a9db-421d-bdc7-41cffe1a4d5a  GET  undefined  /
+08-03-2023  21:49:38  c13e8ab8-2e8a-43c7-8437-8caf89433b7c  GET  undefined  /css/main.css
+08-03-2023  21:49:42  6b8518ff-f5cf-4a77-8231-9453d3b6d9ea  POST  undefined  /register
+08-03-2023  21:50:48  9539b8ef-e1fb-4889-8f4a-8c862dd86f04  GET  undefined  /
+08-03-2023  21:50:48  84c56283-633f-4971-accc-5a336f46f44f  GET  undefined  /css/main.css
+08-03-2023  21:51:09  3fd2b0e8-5e5f-48d3-810e-c62562090874  POST  undefined  /register

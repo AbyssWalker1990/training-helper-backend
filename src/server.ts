@@ -5,9 +5,9 @@ const app = express()
 import path from 'path'
 import cors from 'cors'
 const corsOptions = require('./config/corsOptions')
-const cookieParser = require('cookie-parser')
+import cookieParser from 'cookie-parser'
 import { logger } from'./middleware/logEvents'
-const errorHandler = require('./middleware/errorHandler')
+import errorHandler from './middleware/errorHandler'
 const credentials = require('./middleware/credentials')
 import mongoose from 'mongoose'
 import connectDatabase from './config/connectDatabase'
