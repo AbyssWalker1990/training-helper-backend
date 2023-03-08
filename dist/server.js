@@ -11,12 +11,12 @@ const path_1 = __importDefault(require("path"));
 const cookieParser = require('cookie-parser');
 const { logger } = require('./middleware/logEvents');
 const errorHandler = require('./middleware/errorHandler');
-const mongoose = require('mongoose');
-const connectDatabase = require('./config/connectDatabase');
+const mongoose_1 = __importDefault(require("mongoose"));
+const connectDatabase_1 = __importDefault(require("./config/connectDatabase"));
 const PORT = process.env.PORT || 3500;
 const root_1 = __importDefault(require("./routes/root"));
 // Connect to database
-connectDatabase();
+(0, connectDatabase_1.default)();
 // Simple custom logger
 app.use(logger);
 // Extra check before CORS
@@ -48,7 +48,7 @@ app.all('*', (req, res) => {
     }
 });
 app.use(errorHandler);
-mongoose.connection.once('open', () => {
+mongoose_1.default.connection.once('open', () => {
     console.log('Successfully connected to database!');
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 });

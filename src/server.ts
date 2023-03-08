@@ -9,8 +9,8 @@ const cookieParser = require('cookie-parser')
 const { logger } = require('./middleware/logEvents')
 const errorHandler = require('./middleware/errorHandler')
 import credentials from './middleware/credentials'
-const mongoose = require('mongoose')
-const connectDatabase = require('./config/connectDatabase')
+import mongoose from 'mongoose'
+import connectDatabase from './config/connectDatabase'
 const PORT = process.env.PORT || 3500
 import rootRouter from './routes/root'
 
