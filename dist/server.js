@@ -34,18 +34,17 @@ const path_1 = __importDefault(require("path"));
 const cors_1 = __importDefault(require("cors"));
 const corsOptions_1 = __importDefault(require("./config/corsOptions"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
-const logEvents_1 = require("./middleware/logEvents");
 const errorHandler_1 = __importDefault(require("./middleware/errorHandler"));
-const credentials_1 = __importDefault(require("./middleware/credentials"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const connectDatabase_1 = __importDefault(require("./config/connectDatabase"));
+const root_1 = __importDefault(require("./routes/root"));
 const PORT = process.env.PORT || 3500;
 // Connect to database
 (0, connectDatabase_1.default)();
 // Simple custom logger
-app.use(logEvents_1.logger);
+// app.use(logger)
 // Extra check before CORS
-app.use(credentials_1.default);
+// app.use(credentials)
 // CORS
 app.use((0, cors_1.default)(corsOptions_1.default));
 // Built-in middleware
@@ -55,11 +54,11 @@ app.use(express_1.default.static(path_1.default.join(__dirname, '/public')));
 // For refreshToken
 app.use((0, cookie_parser_1.default)());
 //routes
-app.use('/', require('./routes/root'));
-app.use('/register', require('./routes/auth/register'));
-app.use('/auth', require('./routes/auth/auth'));
-app.use('/refresh', require('./routes/auth/refresh'));
-app.use('/logout', require('./routes/auth/logout'));
+app.use('/', root_1.default);
+// app.use('/register', registerRouter)
+// app.use('/auth', authRouter)
+// app.use('/refresh', refreshRouter)
+// app.use('/logout', logoutRouter)
 app.all('*', (req, res) => {
     res.status(404);
     if (req.accepts('html')) {

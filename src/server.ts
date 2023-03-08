@@ -11,16 +11,21 @@ import errorHandler from './middleware/errorHandler'
 import credentials from './middleware/credentials'
 import mongoose from 'mongoose'
 import connectDatabase from './config/connectDatabase'
+import rootRouter from './routes/root'
+import registerRouter from './routes/auth/register'
+import refreshRouter from './routes/auth/refresh'
+import authRouter from './routes/auth/auth'
+import logoutRouter from './routes/auth/logout'
 const PORT = process.env.PORT || 3500
 
 // Connect to database
 connectDatabase()
 
 // Simple custom logger
-app.use(logger)
+// app.use(logger)
 
 // Extra check before CORS
-app.use(credentials)
+// app.use(credentials)
 
 // CORS
 app.use(cors(corsOptions))
@@ -34,11 +39,11 @@ app.use(express.static(path.join(__dirname, '/public')))
 app.use(cookieParser())
 
 //routes
-app.use('/', require('./routes/root'))
-app.use('/register', require('./routes/auth/register'))
-app.use('/auth', require('./routes/auth/auth'))
-app.use('/refresh', require('./routes/auth/refresh'))
-app.use('/logout', require('./routes/auth/logout'))
+app.use('/', rootRouter)
+// app.use('/register', registerRouter)
+// app.use('/auth', authRouter)
+// app.use('/refresh', refreshRouter)
+// app.use('/logout', logoutRouter)
 
 app.all('*', (req: Request, res: Response) => {
   res.status(404)
