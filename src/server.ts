@@ -4,11 +4,11 @@ import express, { Request, Response } from 'express'
 const app = express()
 import path from 'path'
 import cors from 'cors'
-import corsOptions from './config/corsOptions'
+const corsOptions = require('./config/corsOptions')
 const cookieParser = require('cookie-parser')
 const { logger } = require('./middleware/logEvents')
 const errorHandler = require('./middleware/errorHandler')
-import credentials from './middleware/credentials'
+const credentials = require('./middleware/credentials')
 import mongoose from 'mongoose'
 import connectDatabase from './config/connectDatabase'
 const PORT = process.env.PORT || 3500
@@ -22,10 +22,10 @@ connectDatabase()
 app.use(logger)
 
 // Extra check before CORS
-// app.use(credentials)
+app.use(credentials)
 
 // CORS
-// app.use(cors(corsOptions))
+app.use(cors(corsOptions))
 
 // Built-in middleware
 app.use(express.urlencoded({ extended: false }))

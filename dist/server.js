@@ -31,9 +31,12 @@ dotenv_1.default.config();
 const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 const path_1 = __importDefault(require("path"));
+const cors_1 = __importDefault(require("cors"));
+const corsOptions = require('./config/corsOptions');
 const cookieParser = require('cookie-parser');
 const { logger } = require('./middleware/logEvents');
 const errorHandler = require('./middleware/errorHandler');
+const credentials = require('./middleware/credentials');
 const mongoose_1 = __importDefault(require("mongoose"));
 const connectDatabase_1 = __importDefault(require("./config/connectDatabase"));
 const PORT = process.env.PORT || 3500;
@@ -44,9 +47,9 @@ const registerController = __importStar(require("./controllers/authControllers/r
 // Simple custom logger
 app.use(logger);
 // Extra check before CORS
-// app.use(credentials)
+app.use(credentials);
 // CORS
-// app.use(cors(corsOptions))
+app.use((0, cors_1.default)(corsOptions));
 // Built-in middleware
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use(express_1.default.json());
