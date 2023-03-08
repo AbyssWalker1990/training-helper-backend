@@ -1,16 +1,17 @@
-const express = require('express')
-const router = express.Router()
-const path = require('path')
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const rootRouter = express_1.default.Router();
+const path_1 = __importDefault(require("path"));
 // const verifyToken = require('../middleware/verifyToken')
-
-router.get('^/$|/index(.html)?', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'views', 'index.html'))
-})
+rootRouter.get('^/$|/index(.html)?', (req, res) => {
+    res.sendFile(path_1.default.join(__dirname, '..', '..', 'views', 'index.html'));
+});
 // router.route('^/$|/index(.html)?')
 //   .get(verifyToken, (req, res) => {
 //          res.send('Hi')
 //       })
-  
-
-module.exports = router
-
+exports.default = rootRouter;

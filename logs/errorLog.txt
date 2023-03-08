@@ -1,3 +1,9 @@
 15-02-2023  21:45:56  2b6cd7ea-4fe4-4d04-bf65-715261917f02  Error: Not allowed by CORS
 15-02-2023  21:45:56  4a910ef1-b448-4beb-aca2-585595bc5ed6  Error: Not allowed by CORS
 15-02-2023  21:46:21  20b08a8a-eee5-4f21-9966-a4ddb884a7cb  Error: Not allowed by CORS
+08-03-2023  16:27:06  911bffd8-9b23-4c9d-a69e-9e640647766b  TypeError: allowedHosts.includes is not a function
+08-03-2023  16:27:53  5095e8d3-ab34-4d46-8236-5b66dd44f1e5  TypeError: allowedHosts.includes is not a function
+08-03-2023  16:27:54  bac02fad-0615-496d-938e-31d88296cb80  TypeError: allowedHosts.includes is not a function
+08-03-2023  16:38:44  be0d6b64-d5ee-49ff-95e5-79ec0af54f7b  Error: ENOENT: no such file or directory, stat 'E:\projectsjs\training-helper\dist\views\index.html'
+08-03-2023  16:39:26  e2de1c6a-2ffc-4f5b-ae59-98ed93181460  Error: ENOENT: no such file or directory, stat 'E:\projectsjs\training-helper\dist\views\index.html'
+08-03-2023  16:41:11  2fd08ca4-21c5-47c3-95e9-4392a896c17d  Error: ENOENT: no such file or directory, stat 'E:\projectsjs\training-helper\dist\views\index.html'
