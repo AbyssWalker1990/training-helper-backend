@@ -1,7 +1,8 @@
-const User = require('../../models/User')
-const bcrypt = require('bcrypt')
+import { User } from '../../models/User'
+import bcrypt from 'bcrypt'
+import { Request, Response } from "express"
 
-const registerUser = async (req, res) => {
+export const registerUser = async (req: Request, res: Response) => {
   const { user, password } = req.body
   if (!user || !password) return res.status(400).json({ message: "Username and password are required" })
   // Check if user alreasy exists
@@ -17,8 +18,6 @@ const registerUser = async (req, res) => {
     console.log(result)
     res.status(201).json({ success: `New User ${user} created!!!` })
   } catch (error) {
-    res.status(500).json({ message: error.message })
+    res.status(500).json({ message: (error as Error).message })
   }
 }
-
-module.exports = { registerUser }
