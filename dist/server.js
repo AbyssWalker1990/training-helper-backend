@@ -44,6 +44,7 @@ const root_1 = __importDefault(require("./routes/root"));
 const registerController = __importStar(require("./controllers/authControllers/registerController"));
 const authController = __importStar(require("./controllers/authControllers/authController"));
 const logoutController = __importStar(require("./controllers/authControllers/logoutController"));
+const refreshTokenController = __importStar(require("./controllers/authControllers/refreshTokenController"));
 // Connect to database
 (0, connectDatabase_1.default)();
 // Simple custom logger
@@ -62,7 +63,7 @@ app.use((0, cookie_parser_1.default)());
 app.use('/', root_1.default);
 app.use('/register', registerController.registerUser);
 app.use('/auth', authController.handleLogin);
-app.use('/refresh', require('./routes/auth/refresh'));
+app.use('/refresh', refreshTokenController.handleRefreshToken);
 app.use('/logout', logoutController.handleLogout);
 app.all('*', (req, res) => {
     res.status(404);

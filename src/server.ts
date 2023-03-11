@@ -16,6 +16,7 @@ import rootRouter from './routes/root'
 import * as registerController from './controllers/authControllers/registerController'
 import * as authController from './controllers/authControllers/authController'
 import * as logoutController from './controllers/authControllers/logoutController'
+import * as refreshTokenController from './controllers/authControllers/refreshTokenController'
 
 // Connect to database
 connectDatabase()
@@ -41,7 +42,7 @@ app.use(cookieParser())
 app.use('/', rootRouter)
 app.use('/register', registerController.registerUser)
 app.use('/auth', authController.handleLogin)
-app.use('/refresh', require('./routes/auth/refresh'))
+app.use('/refresh', refreshTokenController.handleRefreshToken)
 app.use('/logout', logoutController.handleLogout)
 
 app.all('*', (req: Request, res: Response) => {

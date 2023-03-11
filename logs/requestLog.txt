@@ -329,3 +329,9 @@
 11-03-2023  20:57:16  33241f71-70ce-4c5f-a3ca-0ad871d634db  GET  undefined  /logout
 11-03-2023  20:57:36  f44539c0-6613-4baa-8854-0ef37fa5d410  POST  undefined  /auth
 11-03-2023  20:57:53  56f01f9b-b964-46c1-97ae-83dd2c9869d8  GET  undefined  /logout
+11-03-2023  21:02:25  6e1011db-117f-400b-8a23-b31690b63056  GET  undefined  /
+11-03-2023  21:02:25  6e91bbcf-d68a-4f35-a5d0-6766d2d9f040  GET  undefined  /css/main.css
+11-03-2023  21:02:32  2d3532a0-e028-43f5-bd9c-cb130fc322d9  POST  undefined  /auth
+11-03-2023  21:02:40  655c02d8-4d61-4327-a472-0188e88e61f1  GET  undefined  /refresh
+11-03-2023  21:02:43  58aea160-109d-4bd6-8520-f530868fb358  GET  undefined  /refresh
+11-03-2023  21:02:44  b2843676-7517-42ac-a29d-2d94cdf47652  GET  undefined  /refresh
