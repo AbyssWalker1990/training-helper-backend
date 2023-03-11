@@ -320,3 +320,12 @@
 08-03-2023  22:01:38  d1e1c9c3-708d-41a8-8a6b-60e0478e77dc  POST  undefined  /register
 08-03-2023  22:02:02  b1089a7c-159c-4b33-bc20-95a1114ff5c2  GET  undefined  /
 08-03-2023  22:02:02  cc2dfd24-0813-4d24-886b-123b53c7ceff  GET  undefined  /css/main.css
+11-03-2023  20:49:43  834d42c5-0798-4d2d-8874-e46c8ea2e490  GET  undefined  /
+11-03-2023  20:49:43  32f38c87-7230-46c9-8345-5513c5c4cdaf  GET  undefined  /css/main.css
+11-03-2023  20:49:43  891af9c2-c0ee-4a08-81d5-fc87a0934571  GET  undefined  /favicon.ico
+11-03-2023  20:56:35  9defb4e6-0325-4e0a-b4b0-b44eab78c8a6  GET  undefined  /
+11-03-2023  20:56:35  98cd5b82-33eb-4c07-b9df-80da508b7452  GET  undefined  /css/main.css
+11-03-2023  20:57:06  52def4d0-e327-4755-8264-3d0205dde82f  POST  undefined  /auth
+11-03-2023  20:57:16  33241f71-70ce-4c5f-a3ca-0ad871d634db  GET  undefined  /logout
+11-03-2023  20:57:36  f44539c0-6613-4baa-8854-0ef37fa5d410  POST  undefined  /auth
+11-03-2023  20:57:53  56f01f9b-b964-46c1-97ae-83dd2c9869d8  GET  undefined  /logout
