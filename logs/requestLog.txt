@@ -375,3 +375,8 @@
 12-03-2023  13:56:11  c0b89585-e677-408f-bb21-faf744588988  GET  undefined  /favicon.ico
 12-03-2023  13:57:12  1fd07e95-1f33-45be-92fa-61c2143ccf33  POST  undefined  /auth
 12-03-2023  13:57:16  cf11210d-daf2-4408-81bc-48388b9f349d  GET  undefined  /refresh
+12-03-2023  14:06:03  ed7459e2-22eb-40a0-af6b-b7dad76482b5  GET  undefined  /
+12-03-2023  14:06:03  af1f2b5b-65ab-42c7-8d5e-0aa80a04c44c  GET  undefined  /css/main.css
+12-03-2023  14:06:09  5dfb51d4-76e2-4b95-93a7-77e53a54690e  GET  undefined  /logout
+12-03-2023  14:06:13  3e0523f0-46cb-4b14-bfa5-b513e66351bc  POST  undefined  /auth
+12-03-2023  14:06:22  886b9477-8b92-4353-a751-0bbfa1c5b0f9  POST  undefined  /auth

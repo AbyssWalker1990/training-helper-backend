@@ -11,17 +11,17 @@ const handleLogin = async (req, res) => {
     const accessSecret = process.env.ACCESS_TOKEN_SECRET;
     const refreshSecret = process.env.REFRESH_TOKEN_SECRET;
     const { user, password } = req.body;
-    if (!user || !password)
-        return res.status(400).json({ "message": "Username and password are reauired" });
+    if (user === '' || password === '')
+        return res.status(400).json({ message: 'Username and password are required' });
     const currentUser = await User_1.User.findOne({ username: user }).exec();
-    if (!currentUser)
+    if (currentUser == null)
         return res.sendStatus(401);
     // Compare password
     const match = await bcrypt_1.default.compare(password, currentUser.password);
     const payload = {
-        "username": currentUser.username
+        username: currentUser.username
     };
-    if (match) {
+    if (match !== null) {
         const accessToken = jsonwebtoken_1.default.sign(payload, accessSecret, { expiresIn: '20m' });
         const refreshToken = jsonwebtoken_1.default.sign(payload, refreshSecret, { expiresIn: '1d' });
         // Saving refreshToken to current user

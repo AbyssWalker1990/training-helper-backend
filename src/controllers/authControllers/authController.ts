@@ -1,22 +1,21 @@
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express'
 import { User } from '../../models/User'
 import bcrypt from 'bcrypt'
-import jwt from 'jsonwebtoken'
-import { JwtPayload } from 'jsonwebtoken';
+import jwt, { type JwtPayload } from 'jsonwebtoken'
 
-export const handleLogin = async (req: Request, res: Response) => {
+export const handleLogin = async (req: Request, res: Response): Promise<any> => {
   const accessSecret = process.env.ACCESS_TOKEN_SECRET as string
   const refreshSecret = process.env.REFRESH_TOKEN_SECRET as string
-  const { user, password } = req.body
-  if (!user || !password) return res.status(400).json({ "message": "Username and password are reauired" })
+  const { user, password }: { user: string, password: string } = req.body
+  if (user === '' || password === '') return res.status(400).json({ message: 'Username and password are required' })
   const currentUser = await User.findOne({ username: user }).exec()
-  if (!currentUser) return res.sendStatus(401)
+  if (currentUser == null) return res.sendStatus(401)
   // Compare password
   const match = await bcrypt.compare(password, currentUser.password)
   const payload: JwtPayload = {
-    "username": currentUser.username
+    username: currentUser.username
   }
-  if (match) {
+  if (match !== null) {
     const accessToken = jwt.sign(
       payload,
       accessSecret,

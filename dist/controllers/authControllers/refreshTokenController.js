@@ -10,7 +10,7 @@ const handleRefreshToken = async (req, res) => {
     const refreshSecret = process.env.REFRESH_TOKEN_SECRET;
     const accessSecret = process.env.ACCESS_TOKEN_SECRET;
     const cookies = req.cookies;
-    if (!cookies?.jwt)
+    if (cookies?.jwt === null)
         return res.sendStatus(401); // Unauthorized
     const refreshToken = cookies.jwt;
     console.log(`Refresh token cookie: ${refreshToken}`);
@@ -19,13 +19,13 @@ const handleRefreshToken = async (req, res) => {
         console.log(`User refresh token: ${currentUser.refreshToken}`);
         console.log(`Name: ${currentUser.username}`);
     }
-    if (!currentUser)
+    if (currentUser == null)
         return res.sendStatus(403); // Forbidden
     try {
         const decoded = jsonwebtoken_1.default.verify(refreshToken, refreshSecret);
         if (currentUser.username !== decoded.username)
             return res.sendStatus(403);
-        const accessToken = jsonwebtoken_1.default.sign({ "username": currentUser.username }, accessSecret, { expiresIn: '20m' });
+        const accessToken = jsonwebtoken_1.default.sign({ username: currentUser.username }, accessSecret, { expiresIn: '20m' });
         res.json({ accessToken });
     }
     catch (error) {
