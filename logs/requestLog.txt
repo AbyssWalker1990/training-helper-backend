@@ -425,3 +425,5 @@
 12-03-2023  15:37:06  48757b72-b061-43ff-8f4c-418176ac4664  GET  undefined  /refresh
 12-03-2023  15:37:07  9d08e549-e743-4b08-af76-d2a59cbf5a2c  GET  undefined  /refresh
 12-03-2023  15:38:39  c8bff31a-cbf7-48c9-9d95-e6c558ae1de9  POST  undefined  /register
+12-03-2023  15:39:54  a171e93d-e39e-42c4-8165-ec42f33d42db  GET  undefined  /
+12-03-2023  15:39:54  ce0d10d6-516a-4012-9d2c-0a179f85b84d  GET  undefined  /css/main.css
