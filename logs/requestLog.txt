@@ -358,3 +358,15 @@
 12-03-2023  10:51:19  4b582a14-bb0a-4e78-a1d6-56de1f67c622  GET  undefined  /refresh
 12-03-2023  10:51:20  41ec0fb3-9bea-4791-a402-9829b7a5c8f1  GET  undefined  /refresh
 12-03-2023  10:51:23  3412520d-7322-43b1-a941-f3e1612e8603  GET  undefined  /logout
+12-03-2023  10:53:30  44c9030e-7ecc-4d93-9e95-656b7dccc2c8  GET  undefined  /
+12-03-2023  10:53:30  d174a8d4-6fd8-48a4-b6a7-51ac42ddc740  GET  undefined  /css/main.css
+12-03-2023  10:53:37  222d4636-5fbe-4c6e-a738-8eab4ad349aa  POST  undefined  /register
+12-03-2023  11:36:16  168d5e88-65ff-42c0-8aa7-78c809e6fffc  POST  undefined  /auth
+12-03-2023  11:36:20  eff66520-44eb-43d8-8501-fdfe4742ade4  GET  undefined  /logout
+12-03-2023  11:36:25  7f3dbc84-3716-4cf5-9667-e47f69e2cd0d  GET  undefined  /refresh
+12-03-2023  11:36:27  61c40c7c-241c-4de4-a8ae-7f5bd7e4bb55  GET  undefined  /refresh
+12-03-2023  11:36:49  56790485-538a-424c-8ee4-eccde4548ad8  POST  undefined  /auth
+12-03-2023  11:36:52  729104e0-79b8-4b01-a32f-bd539b7b0f61  GET  undefined  /refresh
+12-03-2023  11:36:53  978144ec-f70a-4a04-923d-454dae3c5c10  GET  undefined  /refresh
+12-03-2023  11:36:55  ebf34eb1-e1b3-40eb-b274-ad7e3766ffb3  GET  undefined  /logout
+12-03-2023  11:36:57  3f968d62-338c-4b90-ad79-fb137d54527a  GET  undefined  /refresh
