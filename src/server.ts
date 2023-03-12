@@ -4,11 +4,11 @@ import express, { Request, Response } from 'express'
 const app = express()
 import path from 'path'
 import cors from 'cors'
-const corsOptions = require('./config/corsOptions')
+import corsOptions from './config/corsOptions'
 import cookieParser from 'cookie-parser'
 import { logger } from'./middleware/logEvents'
 import errorHandler from './middleware/errorHandler'
-const credentials = require('./middleware/credentials')
+import credentials from './middleware/credentials'
 import mongoose from 'mongoose'
 import connectDatabase from './config/connectDatabase'
 const PORT = process.env.PORT || 3500

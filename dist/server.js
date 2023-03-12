@@ -32,11 +32,11 @@ const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 const path_1 = __importDefault(require("path"));
 const cors_1 = __importDefault(require("cors"));
-const corsOptions = require('./config/corsOptions');
+const corsOptions_1 = __importDefault(require("./config/corsOptions"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const logEvents_1 = require("./middleware/logEvents");
 const errorHandler_1 = __importDefault(require("./middleware/errorHandler"));
-const credentials = require('./middleware/credentials');
+const credentials_1 = __importDefault(require("./middleware/credentials"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const connectDatabase_1 = __importDefault(require("./config/connectDatabase"));
 const PORT = process.env.PORT || 3500;
@@ -50,9 +50,9 @@ const refreshTokenController = __importStar(require("./controllers/authControlle
 // Simple custom logger
 app.use(logEvents_1.logger);
 // Extra check before CORS
-app.use(credentials);
+app.use(credentials_1.default);
 // CORS
-app.use((0, cors_1.default)(corsOptions));
+app.use((0, cors_1.default)(corsOptions_1.default));
 // Built-in middleware
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use(express_1.default.json());
