@@ -407,3 +407,10 @@
 12-03-2023  14:23:54  95486825-f02f-4282-a6cd-016ec6f14109  POST  undefined  /register
 12-03-2023  14:26:27  31cce9a3-3049-448e-a71c-b91c74a86715  OPTIONS  https://www.google.com  /
 12-03-2023  14:26:28  ea317041-3cd2-48c8-a0ab-fffef638ab8d  GET  https://www.google.com  /
+12-03-2023  14:54:51  6fb7b793-4f73-469d-a397-4a7ad492ea8a  OPTIONS  https://www.google.com  /
+12-03-2023  14:54:51  1b5a8060-7a4d-4dcf-8921-8233ce8c6d26  GET  https://www.google.com  /
+12-03-2023  14:54:53  bfce1d7b-31d5-4c45-8c7e-fbe790e38f51  GET  https://www.google.com  /
+12-03-2023  15:00:20  5a00a1f4-7099-4216-9e0f-132a481b3832  OPTIONS  https://www.google.com  /
+12-03-2023  15:00:20  bae94a8c-2037-418f-a867-ea776468b0f1  GET  https://www.google.com  /
+12-03-2023  15:02:28  b5319853-6241-4f77-9615-903d5a440b92  OPTIONS  https://www.google.com  /
+12-03-2023  15:02:28  30b061d1-d672-47ee-8492-38d472a5c4b9  GET  https://www.google.com  /
