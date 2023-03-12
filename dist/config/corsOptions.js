@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const allowedHosts_1 = __importDefault(require("./allowedHosts"));
 const corsOptions = {
     origin: (origin, callback) => {
-        if (allowedHosts_1.default.indexOf(origin) !== -1 || !origin) { // Remove !origin on prod
+        if (allowedHosts_1.default.includes(origin) || origin === undefined) { // Remove !origin on prod
             callback(null, true);
         }
         else {

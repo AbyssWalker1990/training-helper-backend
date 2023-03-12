@@ -12,3 +12,4 @@
 12-03-2023  10:01:58  8e78240c-4db1-47cf-89df-b7968407577d  TypeError: allowedHosts.includes is not a function
 12-03-2023  10:01:58  1771bfb1-5927-438e-84bb-1484dab3e331  TypeError: allowedHosts.includes is not a function
 12-03-2023  10:44:28  cb645607-e410-4c8c-9b45-61dd12097ea3  Error: Not allowed by CORS
+12-03-2023  14:23:23  c0a9d704-6cb6-4503-ac93-2388b85cffab  Error: Not allowed by CORS

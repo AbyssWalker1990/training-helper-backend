@@ -11,7 +11,7 @@ const handleLogin = async (req, res) => {
     const accessSecret = process.env.ACCESS_TOKEN_SECRET;
     const refreshSecret = process.env.REFRESH_TOKEN_SECRET;
     const { user, password } = req.body;
-    if (user === '' || password === '' || user === null || password === null) {
+    if (user === '' || password === '' || user === undefined || password === undefined) {
         return res.status(400).json({ message: 'Username and password are required' });
     }
     const currentUser = await User_1.User.findOne({ username: user }).exec();
