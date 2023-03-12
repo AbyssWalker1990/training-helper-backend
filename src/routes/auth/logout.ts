@@ -1,7 +1,15 @@
 import express from 'express'
-const logoutRouter = express.Router()
 import { handleLogout } from '../../controllers/authControllers/logoutController'
+const logoutRouter = express.Router()
 
-logoutRouter.get('/', handleLogout)
+logoutRouter.get('/', (req, res) => {
+  handleLogout(req, res)
+    .then(() => {
+      console.log('success')
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+})
 
 export default logoutRouter

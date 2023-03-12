@@ -4,7 +4,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const logoutRouter = express_1.default.Router();
 const logoutController_1 = require("../../controllers/authControllers/logoutController");
-logoutRouter.get('/', logoutController_1.handleLogout);
+const logoutRouter = express_1.default.Router();
+logoutRouter.get('/', (req, res) => {
+    (0, logoutController_1.handleLogout)(req, res)
+        .then(() => {
+        console.log('success');
+    })
+        .catch((err) => {
+        console.log(err);
+    });
+});
 exports.default = logoutRouter;
