@@ -8,17 +8,19 @@ const User_1 = require("../../models/User");
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const registerUser = async (req, res) => {
     const { user, password } = req.body;
-    if (!user || !password)
-        return res.status(400).json({ message: "Username and password are required" });
+    if (user === '' || password === '' || user === undefined || password === undefined) {
+        return res.status(400).json({ message: 'Username and password are required' });
+    }
+    console.log(`User: ${user}\tPassword: ${password}`);
     // Check if user alreasy exists
     const duplicate = await User_1.User.findOne({ username: user }).exec();
-    if (duplicate)
+    if (duplicate != null)
         return res.sendStatus(409);
     try {
         const HashedPassword = await bcrypt_1.default.hash(password, 10);
         const result = User_1.User.create({
-            'username': user,
-            'password': HashedPassword
+            username: user,
+            password: HashedPassword
         });
         console.log(result);
         res.status(201).json({ success: `New User ${user} created!!!` });

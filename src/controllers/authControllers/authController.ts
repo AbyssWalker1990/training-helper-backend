@@ -7,7 +7,9 @@ export const handleLogin = async (req: Request, res: Response): Promise<any> => 
   const accessSecret = process.env.ACCESS_TOKEN_SECRET as string
   const refreshSecret = process.env.REFRESH_TOKEN_SECRET as string
   const { user, password }: { user: string, password: string } = req.body
-  if (user === '' || password === '') return res.status(400).json({ message: 'Username and password are required' })
+  if (user === '' || password === '' || user === undefined || password === undefined) {
+    return res.status(400).json({ message: 'Username and password are required' })
+  }
   const currentUser = await User.findOne({ username: user }).exec()
   if (currentUser == null) return res.sendStatus(401)
   // Compare password

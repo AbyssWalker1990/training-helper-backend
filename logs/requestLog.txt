@@ -387,3 +387,15 @@
 12-03-2023  14:10:33  80f46338-5346-4828-87da-03a83d0b6496  POST  undefined  /auth
 12-03-2023  14:10:41  e74707c9-f690-4301-80f8-344d626e9ef6  GET  undefined  /logout
 12-03-2023  14:10:47  13212de4-d72c-4a62-bf4d-ce33b5c06133  GET  undefined  /logout
+12-03-2023  14:12:31  5a692383-b690-4df5-8b9d-a8e38291c4b1  POST  undefined  /auth
+12-03-2023  14:12:37  f3f6903f-191a-4cdc-bdaa-771062c9666f  POST  undefined  /auth
+12-03-2023  14:15:28  d2016684-2aff-48ec-b99a-2e98b71ec0ee  GET  undefined  /
+12-03-2023  14:15:28  b0702aff-c3d3-4f5b-a19f-376ec104fb56  GET  undefined  /css/main.css
+12-03-2023  14:15:43  1b7fc195-c962-4aee-a71c-20246816a8d3  POST  undefined  /register
+12-03-2023  14:15:49  0d17dedc-537a-431c-aaf3-c4e26080a435  POST  undefined  /register
+12-03-2023  14:15:59  2abdc2d4-791f-4668-8732-e21c01a58bf8  POST  undefined  /register
+12-03-2023  14:17:06  1a1f165e-23cd-45bc-9ba3-4bb49c8e17cb  POST  undefined  /register
+12-03-2023  14:18:09  a8ba34f7-c099-45a1-8517-7e2854fc4f3e  POST  undefined  /register
+12-03-2023  14:18:26  601ce95e-aae4-4266-a13b-e99ec8d357a7  POST  undefined  /register
+12-03-2023  14:18:45  d66fa35f-185f-45d2-91ec-b1087085f339  POST  undefined  /register
+12-03-2023  14:19:02  62500738-f107-4dd5-b177-3b5c75207fa9  POST  undefined  /register
