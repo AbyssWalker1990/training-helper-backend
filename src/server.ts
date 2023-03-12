@@ -4,6 +4,7 @@ import path from 'path'
 import cors from 'cors'
 import corsOptions from './config/corsOptions'
 import cookieParser from 'cookie-parser'
+import asyncMiddleware from './middleware/asyncMiddleware'
 import { logger } from './middleware/logEvents'
 import errorHandler from './middleware/errorHandler'
 import credentials from './middleware/credentials'
@@ -22,7 +23,7 @@ const PORT = process.env.PORT ?? 3500
 connectDatabase()
 
 // Simple custom logger
-app.use(logger)
+app.use(asyncMiddleware(logger))
 
 // Extra check before CORS
 app.use(credentials)
@@ -47,9 +48,9 @@ app.use('/logout', logoutRouter)
 
 app.all('*', (req: Request, res: Response) => {
   res.status(404)
-  if (req.accepts('html')) {
+  if (req.accepts('html') as boolean) {
     res.send('404') // Switch to simple html page later
-  } else if (req.accepts('html')) {
+  } else if (req.accepts('html') as boolean) {
     res.json({ error: '404 Not Found' })
   } else {
     res.type('txt').send('404 Not Found')

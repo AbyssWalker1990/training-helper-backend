@@ -7,11 +7,10 @@ const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 // Needed for future routes only for authorized users
 const verifyToken = (req, res, next) => {
     const accessSecret = process.env.ACCESS_TOKEN_SECRET;
-    const authHeader = req.headers.authorization || req.headers.Authorization;
+    const authHeader = req.headers.authorization ?? req.headers.Authorization;
     if (!authHeader?.startsWith('Bearer '))
-        return res.sendStatus(401);
+        res.sendStatus(401);
     const token = authHeader.split(' ')[1];
-    const currentUser = req.name;
     const decoded = jsonwebtoken_1.default.verify(token, accessSecret);
     if (decoded === req.name) { // Need to add logic for comparing with database user
         next();

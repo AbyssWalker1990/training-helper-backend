@@ -9,6 +9,7 @@ const path_1 = __importDefault(require("path"));
 const cors_1 = __importDefault(require("cors"));
 const corsOptions_1 = __importDefault(require("./config/corsOptions"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
+const asyncMiddleware_1 = __importDefault(require("./middleware/asyncMiddleware"));
 const logEvents_1 = require("./middleware/logEvents");
 const errorHandler_1 = __importDefault(require("./middleware/errorHandler"));
 const credentials_1 = __importDefault(require("./middleware/credentials"));
@@ -25,7 +26,7 @@ const PORT = process.env.PORT ?? 3500;
 // Connect to database
 (0, connectDatabase_1.default)();
 // Simple custom logger
-app.use(logEvents_1.logger);
+app.use((0, asyncMiddleware_1.default)(logEvents_1.logger));
 // Extra check before CORS
 app.use(credentials_1.default);
 // CORS
