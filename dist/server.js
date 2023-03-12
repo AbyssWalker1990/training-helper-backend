@@ -27,9 +27,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
 const express_1 = __importDefault(require("express"));
-const app = (0, express_1.default)();
 const path_1 = __importDefault(require("path"));
 const cors_1 = __importDefault(require("cors"));
 const corsOptions_1 = __importDefault(require("./config/corsOptions"));
@@ -39,12 +37,15 @@ const errorHandler_1 = __importDefault(require("./middleware/errorHandler"));
 const credentials_1 = __importDefault(require("./middleware/credentials"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const connectDatabase_1 = __importDefault(require("./config/connectDatabase"));
-const PORT = process.env.PORT || 3500;
 const root_1 = __importDefault(require("./routes/root"));
 const registerController = __importStar(require("./controllers/authControllers/registerController"));
 const authController = __importStar(require("./controllers/authControllers/authController"));
 const logoutController = __importStar(require("./controllers/authControllers/logoutController"));
 const refreshTokenController = __importStar(require("./controllers/authControllers/refreshTokenController"));
+dotenv_1.default.config();
+const app = (0, express_1.default)();
+const PORT = process.env.PORT || 3500;
+console.log(process.env.DATABASE_URI);
 // Connect to database
 (0, connectDatabase_1.default)();
 // Simple custom logger
@@ -59,7 +60,7 @@ app.use(express_1.default.json());
 app.use(express_1.default.static(path_1.default.join(__dirname, '..', '/public')));
 // For refreshToken
 app.use((0, cookie_parser_1.default)());
-//routes
+// routes
 app.use('/', root_1.default);
 app.use('/register', registerController.registerUser);
 app.use('/auth', authController.handleLogin);
@@ -71,14 +72,14 @@ app.all('*', (req, res) => {
         res.send('404'); // Switch to simple html page later
     }
     else if (req.accepts('html')) {
-        res.json({ error: "404 Not Found" });
+        res.json({ error: '404 Not Found' });
     }
     else {
-        res.type('txt').send("404 Not Found");
+        res.type('txt').send('404 Not Found');
     }
 });
 app.use(errorHandler_1.default);
 mongoose_1.default.connection.once('open', () => {
     console.log('Successfully connected to database!');
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+    app.listen(PORT, () => { console.log(`Server running on port ${PORT}`); });
 });

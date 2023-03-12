@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 export interface UserModel {
   username: string
-  password: string,
+  password: string
   refreshToken: string
 }
 
@@ -20,4 +20,3 @@ const userSchema = new Schema<UserModel>({
 })
 
 export const User = mongoose.model<UserModel>('User', userSchema)
-

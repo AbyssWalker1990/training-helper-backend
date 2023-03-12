@@ -18,6 +18,8 @@ dotenv.config()
 const app = express()
 const PORT = process.env.PORT || 3500
 
+console.log(process.env.DATABASE_URI)
+
 // Connect to database
 connectDatabase()
 

@@ -1,11 +1,10 @@
 import mongoose from 'mongoose'
 mongoose.set('strictQuery', false)
 
-const uri = process.env.DATABASE_URI as string
-
-const connectDatabase = async (): Promise<void> => {
+const connectDatabase = async (): Promise<any> => {
   try {
-    await mongoose.connect(uri)
+    const uri = process.env.DATABASE_URI
+    await mongoose.connect(uri as string)
   } catch (error) {
     console.log(error)
   }

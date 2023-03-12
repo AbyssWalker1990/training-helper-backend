@@ -18,9 +18,7 @@ export const handleRefreshToken = async (req: CustomRequest, res: Response): Pro
   const refreshSecret = process.env.REFRESH_TOKEN_SECRET as string
   const accessSecret = process.env.ACCESS_TOKEN_SECRET as string
   const cookies = req.cookies
-
   if (cookies?.jwt === null) return res.sendStatus(401) // Unauthorized
-
   const refreshToken = cookies.jwt
   console.log(`Refresh token cookie: ${refreshToken}`)
   const currentUser = await User.findOne({ refreshToken }).exec()
