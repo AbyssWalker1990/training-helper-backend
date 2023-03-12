@@ -4,9 +4,7 @@ const logoutRouter = express.Router()
 
 logoutRouter.get('/', (req, res) => {
   handleLogout(req, res)
-    .then(() => {
-      console.log('success')
-    })
+    .then(() => {})
     .catch((err) => {
       console.log(err)
     })

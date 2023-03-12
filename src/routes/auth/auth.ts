@@ -1,15 +1,13 @@
 import express from 'express'
 import { handleLogin } from '../../controllers/authControllers/authController'
-const router = express.Router()
+const authRouter = express.Router()
 
-router.post('/', (req, res) => {
+authRouter.post('/', (req, res) => {
   handleLogin(req, res)
-    .then(() => {
-      console.log('success')
-    })
+    .then(() => {})
     .catch((err) => {
       console.log(err)
     })
 })
 
-export default router
+export default authRouter

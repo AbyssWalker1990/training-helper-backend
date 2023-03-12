@@ -4,9 +4,7 @@ const refreshRouter = express.Router()
 
 refreshRouter.get('/', (req, res) => {
   handleRefreshToken(req, res)
-    .then(() => {
-      console.log('success')
-    })
+    .then(() => {})
     .catch((err) => {
       console.log(err)
     })

@@ -8,9 +8,7 @@ const refreshTokenController_1 = require("../../controllers/authControllers/refr
 const refreshRouter = express_1.default.Router();
 refreshRouter.get('/', (req, res) => {
     (0, refreshTokenController_1.handleRefreshToken)(req, res)
-        .then(() => {
-        console.log('success');
-    })
+        .then(() => { })
         .catch((err) => {
         console.log(err);
     });

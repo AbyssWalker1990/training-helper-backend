@@ -10,13 +10,13 @@ import credentials from './middleware/credentials'
 import mongoose from 'mongoose'
 import connectDatabase from './config/connectDatabase'
 import rootRouter from './routes/root'
-import * as registerController from './controllers/authControllers/registerController'
-import * as authController from './controllers/authControllers/authController'
-import * as logoutController from './controllers/authControllers/logoutController'
-import * as refreshTokenController from './controllers/authControllers/refreshTokenController'
+import registerRouter from './routes/auth/register'
+import authRouter from './routes/auth/auth'
+import refreshRouter from './routes/auth/refresh'
+import logoutRouter from './routes/auth/logout'
 dotenv.config()
 const app = express()
-const PORT = process.env.PORT || 3500
+const PORT = process.env.PORT ?? 3500
 
 // Connect to database
 connectDatabase()
@@ -40,10 +40,10 @@ app.use(cookieParser())
 
 // routes
 app.use('/', rootRouter)
-app.use('/register', registerController.registerUser)
-app.use('/auth', authController.handleLogin)
-app.use('/refresh', refreshTokenController.handleRefreshToken)
-app.use('/logout', logoutController.handleLogout)
+app.use('/register', registerRouter)
+app.use('/auth', authRouter)
+app.use('/refresh', refreshRouter)
+app.use('/logout', logoutRouter)
 
 app.all('*', (req: Request, res: Response) => {
   res.status(404)

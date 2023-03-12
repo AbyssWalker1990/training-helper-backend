@@ -8,9 +8,7 @@ const logoutController_1 = require("../../controllers/authControllers/logoutCont
 const logoutRouter = express_1.default.Router();
 logoutRouter.get('/', (req, res) => {
     (0, logoutController_1.handleLogout)(req, res)
-        .then(() => {
-        console.log('success');
-    })
+        .then(() => { })
         .catch((err) => {
         console.log(err);
     });
