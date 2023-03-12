@@ -405,3 +405,5 @@
 12-03-2023  14:23:23  b7c38f98-553b-4ffa-a2c5-7dc46cfe8491  POST  undefined  /auth
 12-03-2023  14:23:47  03e5009c-fe5f-4609-8aba-c9de45a33de1  POST  undefined  /auth
 12-03-2023  14:23:54  95486825-f02f-4282-a6cd-016ec6f14109  POST  undefined  /register
+12-03-2023  14:26:27  31cce9a3-3049-448e-a71c-b91c74a86715  OPTIONS  https://www.google.com  /
+12-03-2023  14:26:28  ea317041-3cd2-48c8-a0ab-fffef638ab8d  GET  https://www.google.com  /
