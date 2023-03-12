@@ -45,7 +45,6 @@ const refreshTokenController = __importStar(require("./controllers/authControlle
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 3500;
-console.log(process.env.DATABASE_URI);
 // Connect to database
 (0, connectDatabase_1.default)();
 // Simple custom logger

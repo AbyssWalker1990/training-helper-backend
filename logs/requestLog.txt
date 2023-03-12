@@ -415,3 +415,5 @@
 12-03-2023  15:02:28  b5319853-6241-4f77-9615-903d5a440b92  OPTIONS  https://www.google.com  /
 12-03-2023  15:02:28  30b061d1-d672-47ee-8492-38d472a5c4b9  GET  https://www.google.com  /
 12-03-2023  15:28:29  ccda6582-02c7-432e-a5f7-8b3062a019ff  POST  undefined  /auth
+12-03-2023  15:32:31  d3f22f80-2521-402a-a664-4800cf3f167c  GET  undefined  /
+12-03-2023  15:32:31  79271a3e-1b4e-4de6-abd3-202f79168493  GET  undefined  /css/main.css
