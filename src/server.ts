@@ -15,8 +15,31 @@ import registerRouter from './routes/auth/register'
 import authRouter from './routes/auth/auth'
 import refreshRouter from './routes/auth/refresh'
 import logoutRouter from './routes/auth/logout'
+import swaggerUI from 'swagger-ui-express'
+import swaggerJsDoc from 'swagger-jsdoc'
 dotenv.config()
+
+const options = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'Training Helper API',
+      version: '1.0.0',
+      description: 'Simple app for training notes'
+    },
+    servers: [
+      {
+        url: 'http://localhost:3500'
+      }
+    ]
+  },
+  apis: ['./routes/auth/*.js']
+}
+
+const specs = swaggerJsDoc(options)
+
 const app = express()
+
 const PORT = process.env.PORT ?? 3500
 
 // Connect to database
@@ -41,6 +64,7 @@ app.use(cookieParser())
 
 // routes
 app.use('/', rootRouter)
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs))
 app.use('/register', registerRouter)
 app.use('/auth', authRouter)
 app.use('/refresh', refreshRouter)
