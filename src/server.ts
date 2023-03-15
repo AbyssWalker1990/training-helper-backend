@@ -1,6 +1,7 @@
 import dotenv from 'dotenv'
 import express, { type Request, type Response } from 'express'
 import path from 'path'
+import fs from 'fs'
 import cors from 'cors'
 import corsOptions from './config/corsOptions'
 import cookieParser from 'cookie-parser'
@@ -17,6 +18,7 @@ import refreshRouter from './routes/auth/refresh'
 import logoutRouter from './routes/auth/logout'
 import swaggerUI from 'swagger-ui-express'
 import swaggerJsDoc from 'swagger-jsdoc'
+import morgan from 'morgan'
 dotenv.config()
 
 const options = {
@@ -38,19 +40,24 @@ const options = {
   ]
 }
 
-console.log('API: ', options.apis)
-
 const specs = swaggerJsDoc(options)
 
 const app = express()
-
 const PORT = process.env.PORT ?? 3500
+
+const accessLogStream = fs.createWriteStream(path.join('logs', 'access.log'), { flags: 'a' })
+
+const logToConsoleAndFile = (message: string): void => {
+  console.log(message)
+  accessLogStream.write(`${message}\n`)
+}
 
 // Connect to database
 connectDatabase()
 
 // Simple custom logger
-app.use(asyncMiddleware(logger))
+// app.use(asyncMiddleware(logger))
+app.use(morgan('combined', { stream: { write: logToConsoleAndFile } }))
 
 // Extra check before CORS
 app.use(credentials)
