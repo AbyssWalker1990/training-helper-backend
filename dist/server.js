@@ -37,8 +37,11 @@ const options = {
             }
         ]
     },
-    apis: ['./routes/auth/*.js']
+    apis: [
+        path_1.default.join(__dirname, 'routes/auth/*.js')
+    ]
 };
+console.log('API: ', options.apis);
 const specs = (0, swagger_jsdoc_1.default)(options);
 const app = (0, express_1.default)();
 const PORT = process.env.PORT ?? 3500;

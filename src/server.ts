@@ -33,8 +33,12 @@ const options = {
       }
     ]
   },
-  apis: ['./routes/auth/*.js']
+  apis: [
+    path.join(__dirname, 'routes/auth/*.js')
+  ]
 }
+
+console.log('API: ', options.apis)
 
 const specs = swaggerJsDoc(options)
 
