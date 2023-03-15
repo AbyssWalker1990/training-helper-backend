@@ -26,7 +26,7 @@ const handleRefreshToken = async (req, res) => {
         if (currentUser.username !== decoded.username)
             return res.sendStatus(403);
         const accessToken = jsonwebtoken_1.default.sign({ username: currentUser.username }, accessSecret, { expiresIn: '20m' });
-        res.json({ accessToken });
+        res.status(200).json({ accessToken });
     }
     catch (error) {
         return res.sendStatus(403);

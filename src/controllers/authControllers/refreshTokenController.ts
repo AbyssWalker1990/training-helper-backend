@@ -36,7 +36,7 @@ export const handleRefreshToken = async (req: CustomRequest, res: Response): Pro
       accessSecret,
       { expiresIn: '20m' }
     )
-    res.json({ accessToken })
+    res.status(200).json({ accessToken })
   } catch (error) {
     return res.sendStatus(403)
   }
