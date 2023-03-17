@@ -2,7 +2,7 @@ import { logEvents } from './logEvents'
 import { type ErrorRequestHandler } from 'express'
 
 const errorHandler: ErrorRequestHandler = (err, req, res, next): void => {
-  logEvents(`${err.name as string}: ${err.message as string}`, 'errorLog.txt')
+  logEvents(`${err.name as string}: ${err.message as string}`, 'errorLog.log')
     .then(() => {
       console.log(err.stack)
       res.status(500).send(err.message)

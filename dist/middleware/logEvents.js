@@ -32,8 +32,10 @@ const uuid_1 = require("uuid");
 const fs_1 = __importStar(require("fs"));
 const path_1 = __importDefault(require("path"));
 const logEvents = async (message, logName) => {
+    console.log(message);
     const dateTime = `${(0, date_fns_1.format)(new Date(), 'dd-MM-yyyy  kk:mm:ss')}`;
     const logItem = `${dateTime}  ${(0, uuid_1.v4)()}  ${message}\n`;
+    console.log(logItem);
     try {
         if (!fs_1.default.existsSync(path_1.default.join(__dirname, '..', '..', 'logs'))) {
             await fs_1.promises.mkdir(path_1.default.join(__dirname, '..', '..', 'logs'));

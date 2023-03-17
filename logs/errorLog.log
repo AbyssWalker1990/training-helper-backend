@@ -13,3 +13,13 @@
 12-03-2023  10:01:58  1771bfb1-5927-438e-84bb-1484dab3e331  TypeError: allowedHosts.includes is not a function
 12-03-2023  10:44:28  cb645607-e410-4c8c-9b45-61dd12097ea3  Error: Not allowed by CORS
 12-03-2023  14:23:23  c0a9d704-6cb6-4503-ac93-2388b85cffab  Error: Not allowed by CORS
+17-03-2023  20:42:27  26a0f478-1c69-47f6-a2dc-1b3d00c0d3e4  Error: Not allowed by CORS
+17-03-2023  20:42:27  889a702d-d6cb-4313-b18b-a98e0d96528a  Error: Not allowed by CORS
+17-03-2023  20:44:34  25e2cf4d-47ef-447e-ac8e-53e078edba0c  Error: Not allowed by CORS
+17-03-2023  20:44:34  757d9fd0-42b8-46cd-93a3-7f06d7851719  Error: Not allowed by CORS
+17-03-2023  20:45:09  8f57879a-521e-443c-94f8-e9dc2947641d  Error: Not allowed by CORS
+17-03-2023  20:45:09  5828c506-6a5b-497f-b1b2-63877c9748be  Error: Not allowed by CORS
+17-03-2023  20:46:55  cac7d978-bd04-4cb8-9984-2ed6508ab617  Error: Not allowed by CORS
+17-03-2023  20:46:56  c0328b60-04dc-4acc-97b2-cdb59cdbf25b  Error: Not allowed by CORS
+17-03-2023  20:50:16  107005ca-a882-4296-81a5-0b176ec99929  Error: Not allowed by CORS
+17-03-2023  20:50:16  3925d33e-19ae-4f67-8a4d-9e2511e2b305  Error: Not allowed by CORS
