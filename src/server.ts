@@ -1,7 +1,6 @@
 import dotenv from 'dotenv'
 import express, { type Request, type Response } from 'express'
 import path from 'path'
-import fs from 'fs'
 import cors from 'cors'
 import corsOptions from './config/corsOptions'
 import cookieParser from 'cookie-parser'
@@ -15,20 +14,15 @@ import authRouter from './routes/auth/auth'
 import refreshRouter from './routes/auth/refresh'
 import logoutRouter from './routes/auth/logout'
 import swaggerUI from 'swagger-ui-express'
-import swaggerJsDoc from 'swagger-jsdoc'
 import specsSwagger from './config/swaggerOptions'
+import logToConsoleAndFile from './config/morganOptions'
 import morgan from 'morgan'
+import moment from 'moment-timezone'
 dotenv.config()
 
 const app = express()
 const PORT = process.env.PORT ?? 3500
-
-const accessLogStream = fs.createWriteStream(path.join('logs', 'access.log'), { flags: 'a' })
-
-const logToConsoleAndFile = (message: string): void => {
-  console.log(message)
-  accessLogStream.write(`${message}\n`)
-}
+moment.tz.setDefault('Europe/Kiev')
 
 // Connect to database
 connectDatabase()

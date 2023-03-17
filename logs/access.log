@@ -18,3 +18,25 @@
 
 ::1 - - [15/Mar/2023:14:17:39 +0000] "GET /api-docs/swagger-ui-standalone-preset.js.map HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
 
+::1 - - [17/Mar/2023:06:58:26 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:06:58:26 +0000] "GET /css/main.css HTTP/1.1" 304 - "http://localhost:3500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:06:58:27 +0000] "GET /favicon.ico HTTP/1.1" 404 3 "http://localhost:3500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:06:58:32 +0000] "GET /api-docs/ HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:06:58:32 +0000] "GET /api-docs/swagger-ui-init.js HTTP/1.1" 304 - "http://localhost:3500/api-docs/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:06:58:32 +0000] "GET /api-docs/swagger-ui.css HTTP/1.1" 304 - "http://localhost:3500/api-docs/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:06:58:32 +0000] "GET /api-docs/swagger-ui-bundle.js HTTP/1.1" 304 - "http://localhost:3500/api-docs/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:06:58:32 +0000] "GET /api-docs/swagger-ui-standalone-preset.js HTTP/1.1" 304 - "http://localhost:3500/api-docs/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:07:03:42 +0000] "POST /auth HTTP/1.1" 200 170 "http://localhost:3500/api-docs/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:07:06:52 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:07:06:52 +0000] "GET /css/main.css HTTP/1.1" 304 - "http://localhost:3500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
