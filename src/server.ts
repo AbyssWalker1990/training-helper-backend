@@ -5,8 +5,6 @@ import fs from 'fs'
 import cors from 'cors'
 import corsOptions from './config/corsOptions'
 import cookieParser from 'cookie-parser'
-import asyncMiddleware from './middleware/asyncMiddleware'
-import { logger } from './middleware/logEvents'
 import errorHandler from './middleware/errorHandler'
 import credentials from './middleware/credentials'
 import mongoose from 'mongoose'
@@ -18,29 +16,9 @@ import refreshRouter from './routes/auth/refresh'
 import logoutRouter from './routes/auth/logout'
 import swaggerUI from 'swagger-ui-express'
 import swaggerJsDoc from 'swagger-jsdoc'
+import specsSwagger from './config/swaggerOptions'
 import morgan from 'morgan'
 dotenv.config()
-
-const options = {
-  definition: {
-    openapi: '3.0.0',
-    info: {
-      title: 'Training Helper API',
-      version: '1.0.0',
-      description: 'Simple app for training notes'
-    },
-    servers: [
-      {
-        url: 'http://localhost:3500'
-      }
-    ]
-  },
-  apis: [
-    path.join(__dirname, 'routes/auth/*.js')
-  ]
-}
-
-const specs = swaggerJsDoc(options)
 
 const app = express()
 const PORT = process.env.PORT ?? 3500
@@ -75,7 +53,7 @@ app.use(cookieParser())
 
 // routes
 app.use('/', rootRouter)
-app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs))
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specsSwagger))
 app.use('/register', registerRouter)
 app.use('/auth', authRouter)
 app.use('/refresh', refreshRouter)

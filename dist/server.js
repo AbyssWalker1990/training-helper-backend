@@ -20,28 +20,9 @@ const auth_1 = __importDefault(require("./routes/auth/auth"));
 const refresh_1 = __importDefault(require("./routes/auth/refresh"));
 const logout_1 = __importDefault(require("./routes/auth/logout"));
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
-const swagger_jsdoc_1 = __importDefault(require("swagger-jsdoc"));
+const swaggerOptions_1 = __importDefault(require("./config/swaggerOptions"));
 const morgan_1 = __importDefault(require("morgan"));
 dotenv_1.default.config();
-const options = {
-    definition: {
-        openapi: '3.0.0',
-        info: {
-            title: 'Training Helper API',
-            version: '1.0.0',
-            description: 'Simple app for training notes'
-        },
-        servers: [
-            {
-                url: 'http://localhost:3500'
-            }
-        ]
-    },
-    apis: [
-        path_1.default.join(__dirname, 'routes/auth/*.js')
-    ]
-};
-const specs = (0, swagger_jsdoc_1.default)(options);
 const app = (0, express_1.default)();
 const PORT = process.env.PORT ?? 3500;
 const accessLogStream = fs_1.default.createWriteStream(path_1.default.join('logs', 'access.log'), { flags: 'a' });
@@ -66,7 +47,7 @@ app.use(express_1.default.static(path_1.default.join(__dirname, '..', '/public')
 app.use((0, cookie_parser_1.default)());
 // routes
 app.use('/', root_1.default);
-app.use('/api-docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(specs));
+app.use('/api-docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerOptions_1.default));
 app.use('/register', register_1.default);
 app.use('/auth', auth_1.default);
 app.use('/refresh', refresh_1.default);
