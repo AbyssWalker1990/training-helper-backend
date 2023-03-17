@@ -40,3 +40,38 @@
 
 ::1 - - [17/Mar/2023:07:06:52 +0000] "GET /css/main.css HTTP/1.1" 304 - "http://localhost:3500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
 
+::1 - - [17/Mar/2023:07:09:42 +0000] "GET /api-docs/ HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:07:09:42 +0000] "GET /api-docs/swagger-ui.css HTTP/1.1" 304 - "http://localhost:3500/api-docs/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:07:09:42 +0000] "GET /api-docs/swagger-ui-bundle.js HTTP/1.1" 304 - "http://localhost:3500/api-docs/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:07:09:42 +0000] "GET /api-docs/swagger-ui-standalone-preset.js HTTP/1.1" 304 - "http://localhost:3500/api-docs/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:07:09:42 +0000] "GET /api-docs/swagger-ui-init.js HTTP/1.1" 304 - "http://localhost:3500/api-docs/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:07:17:16 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:07:17:16 +0000] "GET /css/main.css HTTP/1.1" 304 - "http://localhost:3500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:07:17:16 +0000] "GET /favicon.ico HTTP/1.1" 404 3 "http://localhost:3500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:07:17:55 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+::1 - - [17/Mar/2023:07:17:55 +0000] "GET /css/main.css HTTP/1.1" 304 - "http://localhost:3500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+
+2023-03-17T09:27:59+02:00 GET /api-docs/ 304 8.307 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 
+
+
+2023-03-17T09:27:59+02:00 GET /api-docs/swagger-ui.css 304 7.332 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 
+
+
+2023-03-17T09:27:59+02:00 GET /api-docs/swagger-ui-init.js 304 5.876 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 
+
+
+2023-03-17T09:27:59+02:00 GET /api-docs/swagger-ui-bundle.js 304 11.419 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 
+
+
+2023-03-17T09:27:59+02:00 GET /api-docs/swagger-ui-standalone-preset.js 304 11.824 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 
+
+

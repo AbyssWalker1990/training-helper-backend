@@ -20,7 +20,7 @@ const refresh_1 = __importDefault(require("./routes/auth/refresh"));
 const logout_1 = __importDefault(require("./routes/auth/logout"));
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
 const swaggerOptions_1 = __importDefault(require("./config/swaggerOptions"));
-const morganOptions_1 = __importDefault(require("./config/morganOptions"));
+const morganOptions_1 = require("./config/morganOptions");
 const morgan_1 = __importDefault(require("morgan"));
 const moment_timezone_1 = __importDefault(require("moment-timezone"));
 dotenv_1.default.config();
@@ -31,7 +31,7 @@ moment_timezone_1.default.tz.setDefault('Europe/Kiev');
 (0, connectDatabase_1.default)();
 // Simple custom logger
 // app.use(asyncMiddleware(logger))
-app.use((0, morgan_1.default)('combined', { stream: { write: morganOptions_1.default } }));
+app.use((0, morgan_1.default)(morganOptions_1.logFormat, { stream: { write: morganOptions_1.logToConsoleAndFile } }));
 // Extra check before CORS
 app.use(credentials_1.default);
 // CORS

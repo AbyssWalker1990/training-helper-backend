@@ -15,7 +15,7 @@ import refreshRouter from './routes/auth/refresh'
 import logoutRouter from './routes/auth/logout'
 import swaggerUI from 'swagger-ui-express'
 import specsSwagger from './config/swaggerOptions'
-import logToConsoleAndFile from './config/morganOptions'
+import { logToConsoleAndFile, logFormat } from './config/morganOptions'
 import morgan from 'morgan'
 import moment from 'moment-timezone'
 dotenv.config()
@@ -29,7 +29,7 @@ connectDatabase()
 
 // Simple custom logger
 // app.use(asyncMiddleware(logger))
-app.use(morgan('combined', { stream: { write: logToConsoleAndFile } }))
+app.use(morgan(logFormat, { stream: { write: logToConsoleAndFile } }))
 
 // Extra check before CORS
 app.use(credentials)
