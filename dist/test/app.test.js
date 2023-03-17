@@ -32,14 +32,34 @@ describe('POST /auth', () => {
         expect(typeof response.body.accessToken).toBe('string');
     });
 });
+describe('GET /refresh', () => {
+    it('Refreshing Access token', async () => {
+        const auth = await (0, supertest_1.default)(server_1.default)
+            .post('/auth')
+            .send({
+            user: 'testuser',
+            password: 'testpassword'
+        });
+        const cookie = auth.headers['set-cookie'][0];
+        const token = cookie.split(';')[0].split('=')[1];
+        const response = await (0, supertest_1.default)(server_1.default)
+            .get('/refresh')
+            .set('Cookie', `jwt=${token}`)
+            .expect(200)
+            .expect('Content-Type', /json/);
+        expect(typeof response.body.accessToken).toBe('string');
+    });
+});
+describe('GET /logout', () => {
+    it('Logout user', async () => {
+        await (0, supertest_1.default)(server_1.default)
+            .get('/logout')
+            .expect(204);
+    });
+});
 afterAll(async () => {
     // remove test user
     const testUser = await User_1.User.findOne({ username: 'testuser' });
     await testUser?.remove();
     console.log('Test user REMOVED');
-    // closeDatabase()
-    //   .then(() => {})
-    //   .catch((err) => {
-    //     console.log(err)
-    //   })
 });

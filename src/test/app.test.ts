@@ -32,6 +32,35 @@ describe('POST /auth', () => {
   })
 })
 
+describe('GET /refresh', () => {
+  it('Refreshing Access token', async () => {
+    const auth = await request(app)
+      .post('/auth')
+      .send({
+        user: 'testuser',
+        password: 'testpassword'
+      })
+    const cookie = auth.headers['set-cookie'][0]
+    const token = cookie.split(';')[0].split('=')[1] as string
+
+    const response = await request(app)
+      .get('/refresh')
+      .set('Cookie', `jwt=${token}`)
+      .expect(200)
+      .expect('Content-Type', /json/)
+
+    expect(typeof response.body.accessToken).toBe('string')
+  })
+})
+
+describe('GET /logout', () => {
+  it('Logout user', async () => {
+    await request(app)
+      .get('/logout')
+      .expect(204)
+  })
+})
+
 afterAll(async () => {
   // remove test user
   const testUser = await User.findOne({ username: 'testuser' })
