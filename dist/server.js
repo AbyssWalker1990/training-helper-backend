@@ -12,7 +12,7 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const errorHandler_1 = __importDefault(require("./middleware/errorHandler"));
 const credentials_1 = __importDefault(require("./middleware/credentials"));
 const mongoose_1 = __importDefault(require("mongoose"));
-const connectDatabase_1 = __importDefault(require("./config/connectDatabase"));
+const connectDatabase_1 = require("./config/connectDatabase");
 const root_1 = __importDefault(require("./routes/root"));
 const register_1 = __importDefault(require("./routes/auth/register"));
 const auth_1 = __importDefault(require("./routes/auth/auth"));
@@ -28,7 +28,7 @@ const app = (0, express_1.default)();
 const PORT = process.env.PORT ?? 3500;
 moment_timezone_1.default.tz.setDefault('Europe/Kiev');
 // Connect to database
-(0, connectDatabase_1.default)();
+(0, connectDatabase_1.connectDatabase)();
 // Simple custom logger
 // app.use(asyncMiddleware(logger))
 app.use((0, morgan_1.default)(morganOptions_1.logFormat, { stream: { write: morganOptions_1.logToConsoleAndFile } }));
@@ -66,3 +66,4 @@ mongoose_1.default.connection.once('open', () => {
     console.log('Successfully connected to database!');
     app.listen(PORT, () => { console.log(`Server running on port ${PORT}`); });
 });
+exports.default = app;

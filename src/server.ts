@@ -7,7 +7,7 @@ import cookieParser from 'cookie-parser'
 import errorHandler from './middleware/errorHandler'
 import credentials from './middleware/credentials'
 import mongoose from 'mongoose'
-import connectDatabase from './config/connectDatabase'
+import { connectDatabase } from './config/connectDatabase'
 import rootRouter from './routes/root'
 import registerRouter from './routes/auth/register'
 import authRouter from './routes/auth/auth'
@@ -70,3 +70,5 @@ mongoose.connection.once('open', () => {
   console.log('Successfully connected to database!')
   app.listen(PORT, () => { console.log(`Server running on port ${PORT}`) })
 })
+
+export default app

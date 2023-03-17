@@ -75,3 +75,93 @@
 2023-03-17T09:27:59+02:00 GET /api-docs/swagger-ui-standalone-preset.js 304 11.824 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 
 
 
+2023-03-17T11:00:33+02:00 POST /register 400 35.564 ms  
+
+
+2023-03-17T11:02:24+02:00 POST /register 201 990.195 ms  
+
+
+2023-03-17T11:03:27+02:00 POST /register 409 899.135 ms  
+
+
+2023-03-17T11:06:04+02:00 POST /register 409 921.125 ms  
+
+
+2023-03-17T11:11:50+02:00 GET /api-docs/ 304 8.382 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 
+
+
+2023-03-17T11:11:50+02:00 GET /api-docs/swagger-ui.css 304 5.441 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 
+
+
+2023-03-17T11:11:50+02:00 GET /api-docs/swagger-ui-init.js 304 5.474 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 
+
+
+2023-03-17T11:11:50+02:00 GET /api-docs/swagger-ui-bundle.js 304 7.874 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 
+
+
+2023-03-17T11:11:50+02:00 GET /api-docs/swagger-ui-standalone-preset.js 304 3.983 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 
+
+
+2023-03-17T11:11:51+02:00 GET /api-docs/favicon-32x32.png 304 0.912 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 
+
+
+2023-03-17T11:12:02+02:00 POST /auth 200 214.064 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 
+
+
+2023-03-17T11:12:56+02:00 POST /auth 200 161.764 ms PostmanRuntime/7.29.2 
+
+
+2023-03-17T11:13:25+02:00 POST /auth 200 248.473 ms PostmanRuntime/7.29.2 
+
+
+2023-03-17T11:15:34+02:00 POST /auth 200 1130.870 ms  
+
+
+2023-03-17T11:34:52+02:00 POST /register 201 989.358 ms  
+
+
+2023-03-17T11:34:52+02:00 POST /auth 200 174.199 ms  
+
+
+2023-03-17T11:36:14+02:00 POST /auth 401 39.391 ms PostmanRuntime/7.29.2 
+
+
+2023-03-17T11:36:25+02:00 POST /register 201 183.462 ms PostmanRuntime/7.29.2 
+
+
+2023-03-17T11:39:04+02:00 POST /register 201 989.335 ms  
+
+
+2023-03-17T11:39:05+02:00 POST /auth 200 171.392 ms  
+
+
+2023-03-17T11:39:56+02:00 POST /register 201 971.599 ms  
+
+
+2023-03-17T11:39:57+02:00 POST /auth 200 170.019 ms  
+
+
+2023-03-17T11:44:32+02:00 POST /register 201 1080.298 ms  
+
+
+2023-03-17T11:44:32+02:00 POST /auth 200 172.811 ms  
+
+
+2023-03-17T11:45:24+02:00 POST /register 201 975.618 ms  
+
+
+2023-03-17T11:45:24+02:00 POST /auth 200 189.816 ms  
+
+
+2023-03-17T12:12:53+02:00 POST /register 201 980.302 ms  
+
+
+2023-03-17T12:12:53+02:00 POST /auth 200 175.240 ms  
+
+
+2023-03-17T12:14:00+02:00 POST /register 201 1357.150 ms  
+
+
+2023-03-17T12:14:00+02:00 POST /auth 200 199.826 ms  
+
+
