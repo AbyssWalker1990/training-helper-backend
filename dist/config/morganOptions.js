@@ -10,7 +10,7 @@ const moment_timezone_1 = __importDefault(require("moment-timezone"));
 const accessLogStream = fs_1.default.createWriteStream(path_1.default.join('logs', 'access.log'), { flags: 'a' });
 const logToConsoleAndFile = (message) => {
     console.log(message);
-    accessLogStream.write(`${message}\n`);
+    accessLogStream.write(`${message}`);
 };
 exports.logToConsoleAndFile = logToConsoleAndFile;
 const logFormat = (tokens, req, res) => {
@@ -22,8 +22,7 @@ const logFormat = (tokens, req, res) => {
         tokens.url(req, res),
         tokens.status(req, res),
         tokens['response-time'](req, res), 'ms',
-        tokens['user-agent'](req, res),
-        '\n'
+        tokens['user-agent'](req, res)
     ].join(' ');
 };
 exports.logFormat = logFormat;
