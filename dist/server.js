@@ -27,7 +27,6 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 const PORT = process.env.PORT ?? 3500;
 moment_timezone_1.default.tz.setDefault('Europe/Kiev');
-console.log(__dirname);
 // Connect to database
 (0, connectDatabase_1.connectDatabase)();
 // Simple custom logger

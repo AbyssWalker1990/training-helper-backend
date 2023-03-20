@@ -9,7 +9,6 @@ mongoose_1.default.set('strictQuery', false);
 const LOCAL_DB_URI = 'mongodb://admin:password@mongodb';
 const connectDatabase = () => {
     let uri;
-    console.log('connect DIR: ', __dirname);
     if (__dirname.startsWith('/home/app')) {
         uri = LOCAL_DB_URI;
         console.log('LOCAL DATABASE / DOCKER CONTAINER');

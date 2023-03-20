@@ -701,3 +701,17 @@
 2023-03-20T16:23:54+02:00 POST /auth 200 167.679 ms 
 2023-03-20T16:23:54+02:00 GET /refresh 200 63.961 ms 
 2023-03-20T16:23:54+02:00 GET /logout 204 46.470 ms 
+2023-03-20T21:07:52+02:00 GET /api-docs/ 304 8.383 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-20T21:07:52+02:00 GET /api-docs/swagger-ui-init.js 200 4.478 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-20T21:07:52+02:00 GET /api-docs/swagger-ui.css 304 18.475 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-20T21:07:52+02:00 GET /api-docs/swagger-ui-bundle.js 304 18.376 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-20T21:07:52+02:00 GET /api-docs/swagger-ui-standalone-preset.js 304 20.041 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-20T21:07:53+02:00 GET /api-docs/favicon-32x32.png 304 1.202 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-20T21:12:59+02:00 OPTIONS /auth 500 21.490 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-20T21:14:54+02:00 GET /api-docs/ 304 7.948 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-20T21:14:54+02:00 GET /api-docs/swagger-ui.css 304 2.984 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-20T21:14:54+02:00 GET /api-docs/swagger-ui-bundle.js 304 4.738 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-20T21:14:54+02:00 GET /api-docs/swagger-ui-init.js 200 3.881 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-20T21:14:54+02:00 GET /api-docs/swagger-ui-standalone-preset.js 304 8.474 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-20T21:14:55+02:00 GET /api-docs/favicon-32x32.png 304 0.875 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-20T21:15:15+02:00 POST /auth 200 397.900 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36

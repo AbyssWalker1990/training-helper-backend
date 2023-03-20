@@ -5,7 +5,6 @@ const LOCAL_DB_URI = 'mongodb://admin:password@mongodb'
 
 export const connectDatabase = (): void => {
   let uri
-  console.log('connect DIR: ', __dirname)
   if (__dirname.startsWith('/home/app')) {
     uri = LOCAL_DB_URI
     console.log('LOCAL DATABASE / DOCKER CONTAINER')
