@@ -1,0 +1,7 @@
+node_modules
+.env.example
+.eslintrc.json
+.gitignore
+tsconfig.json
+plan.txt
+src/
