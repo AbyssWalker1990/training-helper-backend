@@ -19,7 +19,7 @@ services:
       - mongodb
   training-helper:
     image: training-helper:1.0
-    command: npm test
+    command: npm test --detectOpenHandles
     ports:
       - 3500:3500
     depends_on:
