@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const server_1 = __importDefault(require("../server"));
 const supertest_1 = __importDefault(require("supertest"));
 const User_1 = require("../models/User");
+const connectDatabase_1 = require("../config/connectDatabase");
 describe('POST /register', () => {
     it('registers a new user and returns an accessToken', async () => {
         const response = await (0, supertest_1.default)(server_1.default)
@@ -62,4 +63,8 @@ afterAll(async () => {
     const testUser = await User_1.User.findOne({ username: 'testuser' });
     await testUser?.remove();
     console.log('Test user REMOVED');
+    (0, connectDatabase_1.closeDatabase)()
+        .catch((err) => {
+        console.log(err);
+    });
 });

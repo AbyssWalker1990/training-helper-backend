@@ -1,6 +1,7 @@
 import app from '../server'
 import request from 'supertest'
 import { User } from '../models/User'
+import { closeDatabase } from '../config/connectDatabase'
 
 describe('POST /register', () => {
   it('registers a new user and returns an accessToken', async () => {
@@ -66,4 +67,8 @@ afterAll(async () => {
   const testUser = await User.findOne({ username: 'testuser' })
   await testUser?.remove()
   console.log('Test user REMOVED')
+  closeDatabase()
+    .catch((err) => {
+      console.log(err)
+    })
 })
