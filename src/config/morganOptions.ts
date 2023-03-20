@@ -8,7 +8,7 @@ const accessLogStream = fs.createWriteStream(path.join(__dirname, '..', 'logs', 
 
 export const logToConsoleAndFile = (message: string): void => {
   console.log(message)
-  accessLogStream.write(`${message}\n`)
+  accessLogStream.write(`${message}`)
 }
 
 export const logFormat = (tokens: TokenIndexer, req: IncomingMessage, res: ServerResponse): string => {
@@ -20,7 +20,6 @@ export const logFormat = (tokens: TokenIndexer, req: IncomingMessage, res: Serve
     tokens.url(req, res),
     tokens.status(req, res),
     tokens['response-time'](req, res), 'ms',
-    tokens['user-agent'](req, res),
-    '\n'
+    tokens['user-agent'](req, res)
   ].join(' ')
 }
