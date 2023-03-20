@@ -4,7 +4,7 @@ import moment from 'moment-timezone'
 import type { TokenIndexer } from 'morgan'
 import type { IncomingMessage, ServerResponse } from 'http'
 
-const accessLogStream = fs.createWriteStream(path.join('logs', 'access.log'), { flags: 'a' })
+const accessLogStream = fs.createWriteStream(path.join(__dirname, '..', 'logs', 'access.log'), { flags: 'a' })
 
 export const logToConsoleAndFile = (message: string): void => {
   console.log(message)

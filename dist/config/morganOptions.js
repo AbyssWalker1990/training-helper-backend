@@ -7,7 +7,7 @@ exports.logFormat = exports.logToConsoleAndFile = void 0;
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const moment_timezone_1 = __importDefault(require("moment-timezone"));
-const accessLogStream = fs_1.default.createWriteStream(path_1.default.join('logs', 'access.log'), { flags: 'a' });
+const accessLogStream = fs_1.default.createWriteStream(path_1.default.join(__dirname, '..', 'logs', 'access.log'), { flags: 'a' });
 const logToConsoleAndFile = (message) => {
     console.log(message);
     accessLogStream.write(`${message}\n`);

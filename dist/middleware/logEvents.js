@@ -37,10 +37,10 @@ const logEvents = async (message, logName) => {
     const logItem = `${dateTime}  ${(0, uuid_1.v4)()}  ${message}\n`;
     console.log(logItem);
     try {
-        if (!fs_1.default.existsSync(path_1.default.join(__dirname, '..', '..', 'logs'))) {
-            await fs_1.promises.mkdir(path_1.default.join(__dirname, '..', '..', 'logs'));
+        if (!fs_1.default.existsSync(path_1.default.join(__dirname, '..', 'logs'))) {
+            await fs_1.promises.mkdir(path_1.default.join(__dirname, '..', 'logs'));
         }
-        await fs_1.promises.appendFile(path_1.default.join(__dirname, '..', '..', 'logs', logName), logItem);
+        await fs_1.promises.appendFile(path_1.default.join(__dirname, '..', 'logs', logName), logItem);
     }
     catch (err) {
         console.log(err);
