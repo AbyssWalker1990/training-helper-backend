@@ -12,3 +12,7 @@ WORKDIR /home/app
 RUN npm install
 
 CMD ["node", "dist/server.js"]
+
+
+
+

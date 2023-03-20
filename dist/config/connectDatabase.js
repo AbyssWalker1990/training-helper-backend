@@ -6,8 +6,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.closeDatabase = exports.connectDatabase = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 mongoose_1.default.set('strictQuery', false);
+const LOCAL_DB_URI = 'mongodb://admin:password@mongodb';
 const connectDatabase = () => {
-    const uri = process.env.DATABASE_URI;
+    let uri;
+    console.log('connect DIR: ', __dirname);
+    if (__dirname.startsWith('/home/app')) {
+        uri = LOCAL_DB_URI;
+        console.log('LOCAL DATABASE / DOCKER CONTAINER');
+    }
+    else {
+        uri = process.env.DATABASE_URI;
+    }
     mongoose_1.default.connect(uri)
         .then(() => { })
         .catch((err) => {

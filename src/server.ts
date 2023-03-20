@@ -23,6 +23,7 @@ dotenv.config()
 const app = express()
 const PORT = process.env.PORT ?? 3500
 moment.tz.setDefault('Europe/Kiev')
+console.log(__dirname)
 
 // Connect to database
 connectDatabase()
