@@ -39,7 +39,8 @@ app.use((0, cors_1.default)(corsOptions_1.default));
 // Built-in middleware
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use(express_1.default.json());
-app.use(express_1.default.static(path_1.default.join(__dirname, '..', '/public')));
+app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
+console.log(path_1.default.join(__dirname, 'public'));
 // For refreshToken
 app.use((0, cookie_parser_1.default)());
 // routes

@@ -4,7 +4,7 @@ const rootRouter = express.Router()
 // const verifyToken = require('../middleware/verifyToken')
 
 rootRouter.get('^/$|/index(.html)?', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', '..', 'views', 'index.html'))
+  res.sendFile(path.join(__dirname, '..', 'views', 'index.html'))
 })
 // router.route('^/$|/index(.html)?')
 //   .get(verifyToken, (req, res) => {

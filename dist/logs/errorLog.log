@@ -23,3 +23,5 @@
 17-03-2023  20:46:56  c0328b60-04dc-4acc-97b2-cdb59cdbf25b  Error: Not allowed by CORS
 17-03-2023  20:50:16  107005ca-a882-4296-81a5-0b176ec99929  Error: Not allowed by CORS
 17-03-2023  20:50:16  3925d33e-19ae-4f67-8a4d-9e2511e2b305  Error: Not allowed by CORS
+20-03-2023  10:33:52  9f0cbf16-4e93-435a-b4dc-e732e8293841  Error: ENOENT: no such file or directory, stat 'E:\projectsjs\training-helper\dist\views\index.html'
+20-03-2023  10:35:06  0c64e20f-142b-483b-b3d3-a6c0648b0ff3  Error: ENOENT: no such file or directory, stat 'E:\projectsjs\training-helper\dist\public\views\index.html'

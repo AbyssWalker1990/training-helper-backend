@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="wtidth=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <title>Training Helper</title>
+</head>
+<body>
+  <div class="navbar">
+    <h1>API usage examples</h1>
+  </div>
+  <div class="main-content">
+    <h3>Register new user: </h3>
+    <p>POST</p>
+    <p>https://large-periodic-guan.glitch.me/register</p>
+    <p>{ "user": "your_username", "password": "your_password" }</p>
+    <hr>
+
+    <h3>Authenticate user and get Access Token: </h3>
+    <p>POST</p>
+    <p>https://large-periodic-guan.glitch.me/auth</p>
+    <p>{ "user": "your_username", "password": "your_password" }</p>
+    <hr>
+
+    <h3>Get new Access Token using Refresh Token stored in cookie: </h3>
+    <p>GET</p>
+    <p>https://large-periodic-guan.glitch.me/refresh</p>
+    <hr>
+
+    <h3>Logout and delete Refresh Token from cookie and database (still need to delete Access Token): </h3>
+    <p>GET</p>
+    <p>https://large-periodic-guan.glitch.me/logout</p>
+    <hr>
+
+
+  </div>
+  <div class="footer">
+    <h3>Volodymyr Bordiian</h3>
+  </div>
+</body>
+</html>

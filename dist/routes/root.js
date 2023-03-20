@@ -8,7 +8,7 @@ const path_1 = __importDefault(require("path"));
 const rootRouter = express_1.default.Router();
 // const verifyToken = require('../middleware/verifyToken')
 rootRouter.get('^/$|/index(.html)?', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, '..', '..', 'views', 'index.html'));
+    res.sendFile(path_1.default.join(__dirname, '..', 'views', 'index.html'));
 });
 // router.route('^/$|/index(.html)?')
 //   .get(verifyToken, (req, res) => {

@@ -40,8 +40,8 @@ app.use(cors(corsOptions))
 // Built-in middleware
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
-app.use(express.static(path.join(__dirname, '..', '/public')))
-
+app.use(express.static(path.join(__dirname, 'public')))
+console.log(path.join(__dirname, 'public'))
 // For refreshToken
 app.use(cookieParser())
 
