@@ -67,8 +67,5 @@ afterAll(async () => {
   const testUser = await User.findOne({ username: 'testuser' })
   await testUser?.remove()
   console.log('Test user REMOVED')
-  closeDatabase()
-    .catch((err) => {
-      console.log(err)
-    })
+  await closeDatabase()
 })

@@ -715,3 +715,18 @@
 2023-03-20T21:14:54+02:00 GET /api-docs/swagger-ui-standalone-preset.js 304 8.474 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
 2023-03-20T21:14:55+02:00 GET /api-docs/favicon-32x32.png 304 0.875 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
 2023-03-20T21:15:15+02:00 POST /auth 200 397.900 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-20T23:11:27+02:00 POST /register 201 1483.539 ms 
+2023-03-20T23:11:28+02:00 POST /auth 200 217.281 ms 
+2023-03-20T23:11:28+02:00 POST /auth 200 201.756 ms 
+2023-03-20T23:11:28+02:00 GET /refresh 200 68.748 ms 
+2023-03-20T23:11:28+02:00 GET /logout 204 104.666 ms 
+2023-03-20T23:12:08+02:00 POST /register 201 1075.243 ms 
+2023-03-20T23:12:08+02:00 POST /auth 200 193.864 ms 
+2023-03-20T23:12:08+02:00 POST /auth 200 172.122 ms 
+2023-03-20T23:12:08+02:00 GET /refresh 200 65.292 ms 
+2023-03-20T23:12:08+02:00 GET /logout 204 47.759 ms 
+2023-03-20T23:17:02+02:00 POST /register 201 1099.892 ms 
+2023-03-20T23:17:02+02:00 POST /auth 200 197.865 ms 
+2023-03-20T23:17:03+02:00 POST /auth 200 178.133 ms 
+2023-03-20T23:17:03+02:00 GET /refresh 200 71.441 ms 
+2023-03-20T23:17:03+02:00 GET /logout 204 49.560 ms 
