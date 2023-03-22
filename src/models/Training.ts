@@ -5,7 +5,7 @@ export interface TrainingModel {
   username: string
   title: string
   date: Date
-  exercises: {
+  exercises: [{
     position: number
     name: string
     set: {
@@ -13,7 +13,7 @@ export interface TrainingModel {
       reps: number
       weight: number
     }
-  }
+  }]
 }
 
 const trainingSchema = new Schema<TrainingModel>({
@@ -25,15 +25,27 @@ const trainingSchema = new Schema<TrainingModel>({
     type: String,
     required: true
   },
+  date: {
+    type: Date,
+    default: Date.now
+  },
   exercises: [
     {
+      position: {
+        type: String,
+        required: true
+      },
+      name: {
+        type: String,
+        required: true
+      },
       set: {
         setPos: {
           type: Number,
           required: true
         },
-        name: {
-          type: String,
+        reps: {
+          type: Number,
           required: true
         },
         weight: {

@@ -13,6 +13,7 @@ import registerRouter from './routes/auth/register'
 import authRouter from './routes/auth/auth'
 import refreshRouter from './routes/auth/refresh'
 import logoutRouter from './routes/auth/logout'
+import trainingRouter from './routes/trainings/training'
 import swaggerUI from 'swagger-ui-express'
 import specsSwagger from './config/swaggerOptions'
 import { logToConsoleAndFile, logFormat } from './config/morganOptions'
@@ -52,6 +53,7 @@ app.use('/register', registerRouter)
 app.use('/auth', authRouter)
 app.use('/refresh', refreshRouter)
 app.use('/logout', logoutRouter)
+app.use('/training', trainingRouter)
 
 app.all('*', (req: Request, res: Response) => {
   res.status(404)

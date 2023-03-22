@@ -18,6 +18,7 @@ const register_1 = __importDefault(require("./routes/auth/register"));
 const auth_1 = __importDefault(require("./routes/auth/auth"));
 const refresh_1 = __importDefault(require("./routes/auth/refresh"));
 const logout_1 = __importDefault(require("./routes/auth/logout"));
+const training_1 = __importDefault(require("./routes/trainings/training"));
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
 const swaggerOptions_1 = __importDefault(require("./config/swaggerOptions"));
 const morganOptions_1 = require("./config/morganOptions");
@@ -50,6 +51,7 @@ app.use('/register', register_1.default);
 app.use('/auth', auth_1.default);
 app.use('/refresh', refresh_1.default);
 app.use('/logout', logout_1.default);
+app.use('/training', training_1.default);
 app.all('*', (req, res) => {
     res.status(404);
     if (req.accepts('html')) {
