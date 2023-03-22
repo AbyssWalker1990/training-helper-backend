@@ -12,9 +12,11 @@ const verifyToken = (req, res, next) => {
         res.sendStatus(401);
     const token = authHeader.split(' ')[1];
     const decoded = jsonwebtoken_1.default.verify(token, accessSecret);
-    if (decoded === req.name) { // Need to add logic for comparing with database user
-        next();
-    }
+    console.log('Decoded: ' + decoded);
+    // if (decoded === req.name) { // Need to add logic for comparing with database user
+    //   next()
+    // }
+    next();
 };
 exports.default = verifyToken;
 // OLD VESION

@@ -8,16 +8,18 @@ interface MyRequest extends Request {
 }
 
 // Needed for future routes only for authorized users
-const verifyToken = (req: MyRequest, res: Response, next: NextFunction): void => {
+const verifyToken = (req: Request, res: Response, next: NextFunction): void => {
   const accessSecret = process.env.ACCESS_TOKEN_SECRET as string
 
   const authHeader = req.headers.authorization ?? req.headers.Authorization as string
   if (!authHeader?.startsWith('Bearer ')) res.sendStatus(401)
   const token = authHeader.split(' ')[1]
   const decoded = jwt.verify(token, accessSecret) as string
-  if (decoded === req.name) { // Need to add logic for comparing with database user
-    next()
-  }
+  console.log('Decoded: ' + decoded)
+  // if (decoded === req.name) { // Need to add logic for comparing with database user
+  //   next()
+  // }
+  next()
 }
 
 export default verifyToken

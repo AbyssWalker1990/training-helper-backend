@@ -1,5 +1,5 @@
 import { type Request, type Response } from 'express'
-import { User } from '../../models/User'
+import { User, type UserModel } from '../../models/User'
 import jwt from 'jsonwebtoken'
 
 interface DecodedToken {
@@ -21,7 +21,7 @@ export const handleRefreshToken = async (req: CustomRequest, res: Response): Pro
   if (cookies?.jwt === null) return res.sendStatus(401) // Unauthorized
   const refreshToken = cookies.jwt
   console.log(`Refresh token cookie: ${refreshToken}`)
-  const currentUser = await User.findOne({ refreshToken }).exec()
+  const currentUser = await User.findOne({ refreshToken }).exec() as UserModel
   if (currentUser != null) {
     console.log(`User refresh token: ${currentUser.refreshToken}`)
     console.log(`Name: ${currentUser.username}`)

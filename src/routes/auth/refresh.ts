@@ -1,5 +1,6 @@
 import express from 'express'
 import { handleRefreshToken } from '../../controllers/authControllers/refreshTokenController'
+import verifyToken from '../../middleware/verifyToken'
 
 /**
  * @swagger
