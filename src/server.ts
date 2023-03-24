@@ -10,12 +10,14 @@ import moment from 'moment-timezone'
 import App from './app'
 import RegisterController from './controllers/authorizationControllers/RegisterController'
 import AuthController from './controllers/authorizationControllers/AuthController'
+import RefreshTokenController from './controllers/authorizationControllers/RefreshTokenController'
 dotenv.config()
 
 const PORT = Number(process.env.PORT) ?? 3500
 const app = new App([
   new RegisterController(),
-  new AuthController()
+  new AuthController(),
+  new RefreshTokenController()
 ], PORT)
 
 moment.tz.setDefault('Europe/Kiev')

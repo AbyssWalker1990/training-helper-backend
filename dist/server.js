@@ -10,11 +10,13 @@ const moment_timezone_1 = __importDefault(require("moment-timezone"));
 const app_1 = __importDefault(require("./app"));
 const RegisterController_1 = __importDefault(require("./controllers/authorizationControllers/RegisterController"));
 const AuthController_1 = __importDefault(require("./controllers/authorizationControllers/AuthController"));
+const RefreshTokenController_1 = __importDefault(require("./controllers/authorizationControllers/RefreshTokenController"));
 dotenv_1.default.config();
 const PORT = Number(process.env.PORT) ?? 3500;
 const app = new app_1.default([
     new RegisterController_1.default(),
-    new AuthController_1.default()
+    new AuthController_1.default(),
+    new RefreshTokenController_1.default()
 ], PORT);
 moment_timezone_1.default.tz.setDefault('Europe/Kiev');
 // Connect to database
