@@ -1,5 +1,5 @@
-import express from 'express'
-import { handleLogin } from '../../controllers/authControllers/authController'
+// import express from 'express'
+// import { handleLogin } from '../../controllers/authControllers/AuthController'
 
 /**
  * @swagger
@@ -40,14 +40,14 @@ import { handleLogin } from '../../controllers/authControllers/authController'
  *         description: Unauthorized
  */
 
-const authRouter = express.Router()
+// const authRouter = express.Router()
 
-authRouter.post('/', (req, res) => {
-  handleLogin(req, res)
-    .then(() => {})
-    .catch((err) => {
-      console.log(err)
-    })
-})
+// authRouter.post('/', (req, res) => {
+//   handleLogin(req, res)
+//     .then(() => {})
+//     .catch((err) => {
+//       console.log(err)
+//     })
+// })
 
-export default authRouter
+// export default authRouter

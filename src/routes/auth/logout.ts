@@ -1,5 +1,5 @@
-import express from 'express'
-import { handleLogout } from '../../controllers/authControllers/logoutController'
+// import express from 'express'
+// import { handleLogout } from '../../controllers/authorizationControllers/logoutController'
 
 /**
  * @swagger
@@ -12,14 +12,14 @@ import { handleLogout } from '../../controllers/authControllers/logoutController
  *         description: Logged out
  */
 
-const logoutRouter = express.Router()
+// const logoutRouter = express.Router()
 
-logoutRouter.get('/', (req, res) => {
-  handleLogout(req, res)
-    .then(() => {})
-    .catch((err) => {
-      console.log(err)
-    })
-})
+// logoutRouter.get('/', (req, res) => {
+//   handleLogout(req, res)
+//     .then(() => {})
+//     .catch((err) => {
+//       console.log(err)
+//     })
+// })
 
-export default logoutRouter
+// export default logoutRouter

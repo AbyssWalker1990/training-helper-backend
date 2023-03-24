@@ -789,3 +789,5 @@
 2023-03-24T12:42:43+02:00 POST /register 404 19.428 ms PostmanRuntime/7.29.2
 2023-03-24T12:45:00+02:00 POST /register 404 18.750 ms PostmanRuntime/7.29.2
 2023-03-24T12:46:15+02:00 POST /register 404 18.586 ms PostmanRuntime/7.29.2
+2023-03-24T12:48:08+02:00 POST /register 201 220.735 ms PostmanRuntime/7.29.2
+2023-03-24T13:15:22+02:00 POST /auth 200 220.538 ms PostmanRuntime/7.29.2

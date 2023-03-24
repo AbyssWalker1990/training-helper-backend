@@ -1,6 +1,6 @@
-import express from 'express'
-import { handleRefreshToken } from '../../controllers/authControllers/refreshTokenController'
-import verifyToken from '../../middleware/verifyToken'
+// import express from 'express'
+// import { handleRefreshToken } from '../../controllers/authorizationControllers/refreshTokenController'
+// import verifyToken from '../../middleware/verifyToken'
 
 /**
  * @swagger
@@ -26,14 +26,14 @@ import verifyToken from '../../middleware/verifyToken'
  *         description: Forbidden
  */
 
-const refreshRouter = express.Router()
+// const refreshRouter = express.Router()
 
-refreshRouter.get('/', (req, res) => {
-  handleRefreshToken(req, res)
-    .then(() => {})
-    .catch((err) => {
-      console.log(err)
-    })
-})
+// refreshRouter.get('/', (req, res) => {
+//   handleRefreshToken(req, res)
+//     .then(() => {})
+//     .catch((err) => {
+//       console.log(err)
+//     })
+// })
 
-export default refreshRouter
+// export default refreshRouter

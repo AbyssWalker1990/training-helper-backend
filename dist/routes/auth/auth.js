@@ -1,10 +1,6 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const authController_1 = require("../../controllers/authControllers/authController");
+// import express from 'express'
+// import { handleLogin } from '../../controllers/authControllers/AuthController'
 /**
  * @swagger
  * /auth:
@@ -43,12 +39,12 @@ const authController_1 = require("../../controllers/authControllers/authControll
  *       "401":
  *         description: Unauthorized
  */
-const authRouter = express_1.default.Router();
-authRouter.post('/', (req, res) => {
-    (0, authController_1.handleLogin)(req, res)
-        .then(() => { })
-        .catch((err) => {
-        console.log(err);
-    });
-});
-exports.default = authRouter;
+// const authRouter = express.Router()
+// authRouter.post('/', (req, res) => {
+//   handleLogin(req, res)
+//     .then(() => {})
+//     .catch((err) => {
+//       console.log(err)
+//     })
+// })
+// export default authRouter

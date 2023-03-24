@@ -1,10 +1,7 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const refreshTokenController_1 = require("../../controllers/authControllers/refreshTokenController");
+// import express from 'express'
+// import { handleRefreshToken } from '../../controllers/authorizationControllers/refreshTokenController'
+// import verifyToken from '../../middleware/verifyToken'
 /**
  * @swagger
  * /refresh:
@@ -28,12 +25,12 @@ const refreshTokenController_1 = require("../../controllers/authControllers/refr
  *       "403":
  *         description: Forbidden
  */
-const refreshRouter = express_1.default.Router();
-refreshRouter.get('/', (req, res) => {
-    (0, refreshTokenController_1.handleRefreshToken)(req, res)
-        .then(() => { })
-        .catch((err) => {
-        console.log(err);
-    });
-});
-exports.default = refreshRouter;
+// const refreshRouter = express.Router()
+// refreshRouter.get('/', (req, res) => {
+//   handleRefreshToken(req, res)
+//     .then(() => {})
+//     .catch((err) => {
+//       console.log(err)
+//     })
+// })
+// export default refreshRouter

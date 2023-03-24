@@ -1,10 +1,6 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const logoutController_1 = require("../../controllers/authControllers/logoutController");
+// import express from 'express'
+// import { handleLogout } from '../../controllers/authorizationControllers/logoutController'
 /**
  * @swagger
  * /logout:
@@ -15,12 +11,12 @@ const logoutController_1 = require("../../controllers/authControllers/logoutCont
  *       "204":
  *         description: Logged out
  */
-const logoutRouter = express_1.default.Router();
-logoutRouter.get('/', (req, res) => {
-    (0, logoutController_1.handleLogout)(req, res)
-        .then(() => { })
-        .catch((err) => {
-        console.log(err);
-    });
-});
-exports.default = logoutRouter;
+// const logoutRouter = express.Router()
+// logoutRouter.get('/', (req, res) => {
+//   handleLogout(req, res)
+//     .then(() => {})
+//     .catch((err) => {
+//       console.log(err)
+//     })
+// })
+// export default logoutRouter
