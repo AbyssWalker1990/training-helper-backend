@@ -1,5 +1,5 @@
-import express from 'express'
-import { registerUser } from '../../controllers/authControllers/registerController'
+// import express from 'express'
+// import { registerUser } from '../../controllers/authControllers/RegisterController'
 
 /**
  * @swagger
@@ -70,15 +70,15 @@ import { registerUser } from '../../controllers/authControllers/registerControll
  *         description: Server Error
  */
 
-const registerRouter = express.Router()
+// const registerRouter = express.Router()
 
-registerRouter.post('/', (req, res) => {
-  registerUser(req, res)
-    .then(() => {
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-})
+// registerRouter.post('/', (req, res) => {
+//   registerUser(req, res)
+//     .then(() => {
+//     })
+//     .catch((err) => {
+//       console.log(err)
+//     })
+// })
 
-export default registerRouter
+// export default registerRouter
