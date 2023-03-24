@@ -795,3 +795,11 @@
 2023-03-24T13:29:36+02:00 POST /auth 200 242.222 ms PostmanRuntime/7.29.2
 2023-03-24T13:29:39+02:00 GET /refresh 404 4.539 ms PostmanRuntime/7.29.2
 2023-03-24T13:30:16+02:00 POST /auth 200 246.868 ms PostmanRuntime/7.29.2
+2023-03-24T13:31:11+02:00 POST /auth 200 227.320 ms PostmanRuntime/7.29.2
+2023-03-24T13:31:14+02:00 GET /refresh 200 57.050 ms PostmanRuntime/7.29.2
+2023-03-24T13:45:27+02:00 POST /auth 200 232.107 ms PostmanRuntime/7.29.2
+2023-03-24T13:45:36+02:00 GET /logout 404 4.299 ms PostmanRuntime/7.29.2
+2023-03-24T13:46:17+02:00 POST /auth 200 227.907 ms PostmanRuntime/7.29.2
+2023-03-24T13:46:20+02:00 GET /logout 404 4.152 ms PostmanRuntime/7.29.2
+2023-03-24T13:46:59+02:00 POST /auth 200 217.113 ms PostmanRuntime/7.29.2
+2023-03-24T13:47:03+02:00 GET /logout 204 99.906 ms PostmanRuntime/7.29.2

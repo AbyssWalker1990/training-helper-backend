@@ -1,23 +1,25 @@
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import { connectDatabase } from './config/connectDatabase'
-import rootRouter from './routes/root'
 import trainingRouter from './routes/trainings/training'
 import swaggerUI from 'swagger-ui-express'
 import specsSwagger from './config/swaggerOptions'
 
 import moment from 'moment-timezone'
 import App from './app'
+// Refactor all auth routes to single controller later!
 import RegisterController from './controllers/authorizationControllers/RegisterController'
 import AuthController from './controllers/authorizationControllers/AuthController'
 import RefreshTokenController from './controllers/authorizationControllers/RefreshTokenController'
+import LogoutController from './controllers/authorizationControllers/LogoutController'
 dotenv.config()
 
 const PORT = Number(process.env.PORT) ?? 3500
 const app = new App([
   new RegisterController(),
   new AuthController(),
-  new RefreshTokenController()
+  new RefreshTokenController(),
+  new LogoutController()
 ], PORT)
 
 moment.tz.setDefault('Europe/Kiev')
