@@ -2,24 +2,17 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import { connectDatabase } from './config/connectDatabase'
 import trainingRouter from './routes/trainings/training'
-import swaggerUI from 'swagger-ui-express'
-import specsSwagger from './config/swaggerOptions'
 
 import moment from 'moment-timezone'
 import App from './app'
-// Refactor all auth routes to single controller later!
-import RegisterController from './controllers/authorizationControllers/RegisterController'
-import AuthController from './controllers/authorizationControllers/AuthController'
-import RefreshTokenController from './controllers/authorizationControllers/RefreshTokenController'
-import LogoutController from './controllers/authorizationControllers/LogoutController'
+import AuthController from './controllers/AuthController'
+import SwaggerController from './controllers/SwaggerController'
 dotenv.config()
 
 const PORT = Number(process.env.PORT) ?? 3500
 const app = new App([
-  new RegisterController(),
   new AuthController(),
-  new RefreshTokenController(),
-  new LogoutController()
+  new SwaggerController()
 ], PORT)
 
 moment.tz.setDefault('Europe/Kiev')
@@ -31,15 +24,6 @@ mongoose.connection.once('open', () => {
   console.log('Successfully connected to database!')
   app.listen()
 })
-
-// routes
-// app.use('/', rootRouter)
-// app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specsSwagger))
-// app.use('/register', registerRouter)
-// app.use('/auth', authRouter)
-// app.use('/refresh', refreshRouter)
-// app.use('/logout', logoutRouter)
-// app.use('/training', trainingRouter)
 
 // app.all('*', (req: Request, res: Response) => {
 //   res.status(404)

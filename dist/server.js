@@ -8,18 +8,13 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const connectDatabase_1 = require("./config/connectDatabase");
 const moment_timezone_1 = __importDefault(require("moment-timezone"));
 const app_1 = __importDefault(require("./app"));
-// Refactor all auth routes to single controller later!
-const RegisterController_1 = __importDefault(require("./controllers/authorizationControllers/RegisterController"));
-const AuthController_1 = __importDefault(require("./controllers/authorizationControllers/AuthController"));
-const RefreshTokenController_1 = __importDefault(require("./controllers/authorizationControllers/RefreshTokenController"));
-const LogoutController_1 = __importDefault(require("./controllers/authorizationControllers/LogoutController"));
+const AuthController_1 = __importDefault(require("./controllers/AuthController"));
+const SwaggerController_1 = __importDefault(require("./controllers/SwaggerController"));
 dotenv_1.default.config();
 const PORT = Number(process.env.PORT) ?? 3500;
 const app = new app_1.default([
-    new RegisterController_1.default(),
     new AuthController_1.default(),
-    new RefreshTokenController_1.default(),
-    new LogoutController_1.default()
+    new SwaggerController_1.default()
 ], PORT);
 moment_timezone_1.default.tz.setDefault('Europe/Kiev');
 // Connect to database
@@ -28,14 +23,6 @@ mongoose_1.default.connection.once('open', () => {
     console.log('Successfully connected to database!');
     app.listen();
 });
-// routes
-// app.use('/', rootRouter)
-// app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specsSwagger))
-// app.use('/register', registerRouter)
-// app.use('/auth', authRouter)
-// app.use('/refresh', refreshRouter)
-// app.use('/logout', logoutRouter)
-// app.use('/training', trainingRouter)
 // app.all('*', (req: Request, res: Response) => {
 //   res.status(404)
 //   if (req.accepts('html') as boolean) {

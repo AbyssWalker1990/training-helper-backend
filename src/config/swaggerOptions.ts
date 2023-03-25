@@ -19,7 +19,7 @@ const options = {
     ]
   },
   apis: [
-    path.join(__dirname, '..', 'routes/auth/*.js')
+    path.join(__dirname, 'swagger_api/*.yaml')
   ]
 }
 

@@ -23,7 +23,7 @@ const options = {
         ]
     },
     apis: [
-        path_1.default.join(__dirname, '..', 'routes/auth/*.js')
+        path_1.default.join(__dirname, 'swagger_api/*.yaml')
     ]
 };
 const specsSwagger = (0, swagger_jsdoc_1.default)(options);
