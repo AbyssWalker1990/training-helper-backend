@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const User_1 = require("../models/User");
 const HttpException_1 = __importDefault(require("../exceptions/HttpException"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 class AuthService {
     async register(userData) {
         const { user, password } = userData;
@@ -28,6 +29,37 @@ class AuthService {
         }
         catch (error) {
             throw new HttpException_1.default(500, error.message);
+        }
+    }
+    async login(userData) {
+        const accessSecret = process.env.ACCESS_TOKEN_SECRET;
+        const refreshSecret = process.env.REFRESH_TOKEN_SECRET;
+        const { user, password } = userData;
+        if (user === '' || password === '' || user === undefined || password === undefined) {
+            // return res.status(400).json({ message: 'Username and password are required' })
+            throw new HttpException_1.default(400, 'Username and password are required');
+        }
+        const currentUser = await User_1.User.findOne({ username: user }).exec();
+        if (currentUser == null) {
+            throw new HttpException_1.default(401, 'Unauthorized');
+        }
+        // Compare password
+        const match = await bcrypt_1.default.compare(password, currentUser.password);
+        console.log('Match: ', match);
+        const payload = {
+            username: currentUser.username
+        };
+        if (match !== null && match) {
+            const accessToken = jsonwebtoken_1.default.sign(payload, accessSecret, { expiresIn: '20m' });
+            const refreshToken = jsonwebtoken_1.default.sign(payload, refreshSecret, { expiresIn: '1d' });
+            // Saving refreshToken to current user
+            currentUser.refreshToken = refreshToken;
+            const result = await currentUser.save();
+            console.log(result);
+            return [accessToken, refreshToken];
+        }
+        else {
+            throw new HttpException_1.default(401, 'Unauthorized');
         }
     }
 }

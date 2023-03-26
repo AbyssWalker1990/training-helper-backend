@@ -38,48 +38,13 @@ class AuthController implements Controller {
   }
 
   private readonly handleLogin = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
-    const accessSecret = process.env.ACCESS_TOKEN_SECRET as string
-    const refreshSecret = process.env.REFRESH_TOKEN_SECRET as string
-    const { user, password }: { user: string, password: string } = req.body
-    if (user === '' || password === '' || user === undefined || password === undefined) {
-      // return res.status(400).json({ message: 'Username and password are required' })
-      next(new HttpException(400, 'Username and password are required'))
-      return
-    }
-    const currentUser = await User.findOne({ username: user }).exec()
-    if (currentUser == null) {
-      next(new HttpException(401, 'Unauthorized'))
-      return
-    }
-    // Compare password
-    const match = await bcrypt.compare(password, currentUser.password)
-    console.log('Match: ', match)
-    const payload: JwtPayload = {
-      username: currentUser.username
-    }
-    if (match !== null && match) {
-      const accessToken = jwt.sign(
-        payload,
-        accessSecret,
-        { expiresIn: '20m' }
-      )
-      const refreshToken = jwt.sign(
-        payload,
-        refreshSecret,
-        { expiresIn: '1d' }
-      )
-      // Saving refreshToken to current user
-      currentUser.refreshToken = refreshToken
-      const result = await currentUser.save()
-      console.log(result)
-      res.cookie('jwt', refreshToken, {
-        httpOnly: true,
-        maxAge: 24 * 60 * 60 * 1000
-      })
-      res.status(200).json({ accessToken })
-    } else {
-      next(new HttpException(401, 'Unauthorized'))
-    }
+    const userData = req.body
+    const [accessToken, refreshToken] = await this.authService.login(userData)
+    res.cookie('jwt', refreshToken, {
+      httpOnly: true,
+      maxAge: 24 * 60 * 60 * 1000
+    })
+    res.status(200).json({ accessToken })
   }
 
   private readonly registerUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {

@@ -4,7 +4,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const User_1 = require("../models/User");
-const bcrypt_1 = __importDefault(require("bcrypt"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const express_1 = __importDefault(require("express"));
 const HttpException_1 = __importDefault(require("../exceptions/HttpException"));
@@ -25,41 +24,13 @@ class AuthController {
         this.router.get(`${this.path}/logout`, this.handleLogout);
     }
     handleLogin = async (req, res, next) => {
-        const accessSecret = process.env.ACCESS_TOKEN_SECRET;
-        const refreshSecret = process.env.REFRESH_TOKEN_SECRET;
-        const { user, password } = req.body;
-        if (user === '' || password === '' || user === undefined || password === undefined) {
-            // return res.status(400).json({ message: 'Username and password are required' })
-            next(new HttpException_1.default(400, 'Username and password are required'));
-            return;
-        }
-        const currentUser = await User_1.User.findOne({ username: user }).exec();
-        if (currentUser == null) {
-            next(new HttpException_1.default(401, 'Unauthorized'));
-            return;
-        }
-        // Compare password
-        const match = await bcrypt_1.default.compare(password, currentUser.password);
-        console.log('Match: ', match);
-        const payload = {
-            username: currentUser.username
-        };
-        if (match !== null && match) {
-            const accessToken = jsonwebtoken_1.default.sign(payload, accessSecret, { expiresIn: '20m' });
-            const refreshToken = jsonwebtoken_1.default.sign(payload, refreshSecret, { expiresIn: '1d' });
-            // Saving refreshToken to current user
-            currentUser.refreshToken = refreshToken;
-            const result = await currentUser.save();
-            console.log(result);
-            res.cookie('jwt', refreshToken, {
-                httpOnly: true,
-                maxAge: 24 * 60 * 60 * 1000
-            });
-            res.status(200).json({ accessToken });
-        }
-        else {
-            next(new HttpException_1.default(401, 'Unauthorized'));
-        }
+        const userData = req.body;
+        const [accessToken, refreshToken] = await this.authService.login(userData);
+        res.cookie('jwt', refreshToken, {
+            httpOnly: true,
+            maxAge: 24 * 60 * 60 * 1000
+        });
+        res.status(200).json({ accessToken });
     };
     registerUser = async (req, res, next) => {
         const userData = req.body;

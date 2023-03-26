@@ -1031,3 +1031,4 @@
 2023-03-26T20:40:13+03:00 GET /api-docs/swagger-ui-bundle.js 304 8.993 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
 2023-03-26T20:40:13+03:00 GET /api-docs/swagger-ui-standalone-preset.js 304 8.239 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
 2023-03-26T20:41:54+03:00 POST /auth/register 400 37.095 ms PostmanRuntime/7.29.2
+2023-03-26T20:42:06+03:00 POST /auth/register 201 198.790 ms PostmanRuntime/7.29.2
