@@ -10,9 +10,11 @@ const express_1 = __importDefault(require("express"));
 const HttpException_1 = __importDefault(require("../exceptions/HttpException"));
 const validationMiddleware_1 = __importDefault(require("../middleware/validationMiddleware"));
 const user_dto_1 = __importDefault(require("./user.dto"));
+const auth_service_1 = __importDefault(require("../services/auth.service"));
 class AuthController {
     path = '/auth';
     router = express_1.default.Router();
+    authService = new auth_service_1.default();
     constructor() {
         this.initRoutes();
     }
@@ -60,28 +62,13 @@ class AuthController {
         }
     };
     registerUser = async (req, res, next) => {
-        const { user, password } = req.body;
-        if (user === '' || password === '' || user === undefined || password === undefined) {
-            next(new HttpException_1.default(400, 'Username and password are required'));
-            return;
-        }
-        // Check if user alreasy exists
-        const duplicate = await User_1.User.findOne({ username: user }).exec();
-        if (duplicate != null) {
-            next(new HttpException_1.default(409, 'User already exists!'));
-            return;
-        }
+        const userData = req.body;
         try {
-            const HashedPassword = await bcrypt_1.default.hash(password, 10);
-            const result = await User_1.User.create({
-                username: user,
-                password: HashedPassword
-            });
-            console.log(result);
-            res.status(201).json({ success: `New User ${user} created!!!` });
+            const user = await this.authService.register(userData);
+            res.status(201).json({ success: `New user ${user} created!` });
         }
         catch (error) {
-            next(new HttpException_1.default(500, error.message));
+            console.log(error);
         }
     };
     handleRefreshToken = async (req, res, next) => {

@@ -7,6 +7,7 @@ import type Controller from '../interfaces/controller.interface'
 import HttpException from '../exceptions/HttpException'
 import validationMiddleware from '../middleware/validationMiddleware'
 import CreateUserDto from './user.dto'
+import AuthService from '../services/auth.service'
 
 interface DecodedToken {
   username: string
@@ -23,6 +24,7 @@ interface CustomRequest extends Request {
 class AuthController implements Controller {
   public path = '/auth'
   public router = express.Router()
+  public authService = new AuthService()
 
   constructor () {
     this.initRoutes()
@@ -81,28 +83,12 @@ class AuthController implements Controller {
   }
 
   private readonly registerUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-    const { user, password }: { user: string, password: string } = req.body
-    if (user === '' || password === '' || user === undefined || password === undefined) {
-      next(new HttpException(400, 'Username and password are required'))
-      return
-    }
-    // Check if user alreasy exists
-    const duplicate = await User.findOne({ username: user }).exec()
-    if (duplicate != null) {
-      next(new HttpException(409, 'User already exists!'))
-      return
-    }
-
+    const userData = req.body as CreateUserDto
     try {
-      const HashedPassword = await bcrypt.hash(password, 10)
-      const result = await User.create({
-        username: user,
-        password: HashedPassword
-      })
-      console.log(result)
-      res.status(201).json({ success: `New User ${user} created!!!` })
+      const user = await this.authService.register(userData)
+      res.status(201).json({ success: `New user ${user} created!` })
     } catch (error) {
-      next(new HttpException(500, (error as Error).message))
+      console.log(error)
     }
   }
 
