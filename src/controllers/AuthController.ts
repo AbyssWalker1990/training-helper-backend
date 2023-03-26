@@ -5,7 +5,6 @@ import jwt, { type JwtPayload } from 'jsonwebtoken'
 import express from 'express'
 import type Controller from '../interfaces/controller.interface'
 import HttpException from '../exceptions/HttpException'
-import { nextDay } from 'date-fns'
 
 interface DecodedToken {
   username: string
@@ -89,6 +88,7 @@ class AuthController implements Controller {
     const duplicate = await User.findOne({ username: user }).exec()
     if (duplicate != null) {
       next(new HttpException(409, 'User already exists!'))
+      return
     }
 
     try {
@@ -149,13 +149,9 @@ class AuthController implements Controller {
   }
 
   // Can't delete access token from there, DONT FORGET WHEN STARTING build frontend
-  private readonly handleLogout = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
+  private readonly handleLogout = async (req: Request, res: Response): Promise<any> => {
     const cookies: MyCookie = req.cookies
-    console.log('COOKIES JWT: ', cookies.jwt)
-    if (cookies.jwt === null) {
-      next(new HttpException(204, 'No content'))
-      return
-    }
+    if (cookies.jwt === null) return res.sendStatus(204) // No content
     const refreshToken = cookies.jwt
 
     // Check database for refresh token

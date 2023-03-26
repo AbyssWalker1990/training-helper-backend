@@ -67,6 +67,7 @@ class AuthController {
         const duplicate = await User_1.User.findOne({ username: user }).exec();
         if (duplicate != null) {
             next(new HttpException_1.default(409, 'User already exists!'));
+            return;
         }
         try {
             const HashedPassword = await bcrypt_1.default.hash(password, 10);
@@ -122,7 +123,6 @@ class AuthController {
     // Can't delete access token from there, DONT FORGET WHEN STARTING build frontend
     handleLogout = async (req, res) => {
         const cookies = req.cookies;
-        console.log('COOKIES JWT: ', cookies.jwt);
         if (cookies.jwt === null)
             return res.sendStatus(204); // No content
         const refreshToken = cookies.jwt;

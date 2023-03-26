@@ -53,12 +53,29 @@ paths:
               schema:
                 type: object
                 properties:
+                  status:
+                    type: number
+                    description: status code
+                    example: 400
                   message:
                     type: string
                     description: a message
                     example: Username and password are required
         "409":
-          description: User already exists
+          decription: Conflict
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: number
+                    description: status code
+                    example: 409
+                  message:
+                    type: string
+                    description: a message
+                    example: User already exists
         "500":
           description: Server Error
   /auth/login:
