@@ -8,6 +8,8 @@ const bcrypt_1 = __importDefault(require("bcrypt"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const express_1 = __importDefault(require("express"));
 const HttpException_1 = __importDefault(require("../exceptions/HttpException"));
+const validationMiddleware_1 = __importDefault(require("../middleware/validationMiddleware"));
+const user_dto_1 = __importDefault(require("./user.dto"));
 class AuthController {
     path = '/auth';
     router = express_1.default.Router();
@@ -16,7 +18,7 @@ class AuthController {
     }
     initRoutes() {
         this.router.post(`${this.path}/login`, this.handleLogin);
-        this.router.post(`${this.path}/register`, this.registerUser);
+        this.router.post(`${this.path}/register`, (0, validationMiddleware_1.default)(user_dto_1.default), this.registerUser);
         this.router.get(`${this.path}/refresh`, this.handleRefreshToken);
         this.router.get(`${this.path}/logout`, this.handleLogout);
     }

@@ -5,6 +5,8 @@ import jwt, { type JwtPayload } from 'jsonwebtoken'
 import express from 'express'
 import type Controller from '../interfaces/controller.interface'
 import HttpException from '../exceptions/HttpException'
+import validationMiddleware from '../middleware/validationMiddleware'
+import CreateUserDto from './user.dto'
 
 interface DecodedToken {
   username: string
@@ -28,7 +30,7 @@ class AuthController implements Controller {
 
   public initRoutes (): void {
     this.router.post(`${this.path}/login`, this.handleLogin)
-    this.router.post(`${this.path}/register`, this.registerUser)
+    this.router.post(`${this.path}/register`, validationMiddleware(CreateUserDto), this.registerUser)
     this.router.get(`${this.path}/refresh`, this.handleRefreshToken)
     this.router.get(`${this.path}/logout`, this.handleLogout)
   }
