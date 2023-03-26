@@ -4,7 +4,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const User_1 = require("../models/User");
-const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const express_1 = __importDefault(require("express"));
 const HttpException_1 = __importDefault(require("../exceptions/HttpException"));
 const validationMiddleware_1 = __importDefault(require("../middleware/validationMiddleware"));
@@ -25,12 +24,17 @@ class AuthController {
     }
     handleLogin = async (req, res, next) => {
         const userData = req.body;
-        const [accessToken, refreshToken] = await this.authService.login(userData);
-        res.cookie('jwt', refreshToken, {
-            httpOnly: true,
-            maxAge: 24 * 60 * 60 * 1000
-        });
-        res.status(200).json({ accessToken });
+        try {
+            const [accessToken, refreshToken] = await this.authService.login(userData);
+            res.cookie('jwt', refreshToken, {
+                httpOnly: true,
+                maxAge: 24 * 60 * 60 * 1000
+            });
+            res.status(200).json({ accessToken });
+        }
+        catch (error) {
+            next(new HttpException_1.default(500, 'Login Failed'));
+        }
     };
     registerUser = async (req, res, next) => {
         const userData = req.body;
@@ -43,41 +47,13 @@ class AuthController {
         }
     };
     handleRefreshToken = async (req, res, next) => {
-        const refreshSecret = process.env.REFRESH_TOKEN_SECRET;
-        const accessSecret = process.env.ACCESS_TOKEN_SECRET;
         const cookies = req.cookies;
-        if (cookies.jwt === null || cookies.jwt === undefined) {
-            console.log('NO COOKIES');
-            next(new HttpException_1.default(401, 'Unauthorized'));
-            return;
-        }
-        const refreshToken = cookies.jwt;
-        console.log(`Refresh token cookie: ${refreshToken}`);
-        if (refreshToken === undefined) {
-            console.log('REFRESH TOKEN UNDEFINED');
-            next(new HttpException_1.default(401, 'Unauthorized'));
-            return;
-        }
-        const currentUser = await User_1.User.findOne({ refreshToken }).exec();
-        if (currentUser != null) {
-            console.log(`User refresh token: ${currentUser.refreshToken}`);
-            console.log(`Name: ${currentUser.username}`);
-        }
-        if (currentUser == null) {
-            next(new HttpException_1.default(403, 'Forbidden'));
-            return;
-        }
         try {
-            const decoded = jsonwebtoken_1.default.verify(refreshToken, refreshSecret);
-            if (currentUser.username !== decoded.username) {
-                next(new HttpException_1.default(403, 'Forbidden'));
-                return;
-            }
-            const accessToken = jsonwebtoken_1.default.sign({ username: currentUser.username }, accessSecret, { expiresIn: '20m' });
+            const accessToken = await this.authService.refresh(cookies);
             res.status(200).json({ accessToken });
         }
         catch (error) {
-            next(new HttpException_1.default(403, 'Forbidden'));
+            next(new HttpException_1.default(500, 'Refresh token Error'));
         }
     };
     // Can't delete access token from there, DONT FORGET WHEN STARTING build frontend

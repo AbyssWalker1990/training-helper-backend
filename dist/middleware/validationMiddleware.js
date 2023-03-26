@@ -11,7 +11,6 @@ function validationMiddleware(type) {
         (0, class_validator_1.validate)((0, class_transformer_1.plainToInstance)(type, req.body))
             .then((errors) => {
             if (errors.length > 0) {
-                console.log(errors);
                 const message = errors.map((error) => {
                     if (error.constraints != null) {
                         return Object.values(error.constraints);
@@ -20,7 +19,6 @@ function validationMiddleware(type) {
                         return '';
                     }
                 }).join(', ');
-                console.log('Meddage: ', message);
                 next(new HttpException_1.default(400, message));
             }
             else {

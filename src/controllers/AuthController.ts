@@ -39,12 +39,16 @@ class AuthController implements Controller {
 
   private readonly handleLogin = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
     const userData = req.body
-    const [accessToken, refreshToken] = await this.authService.login(userData)
-    res.cookie('jwt', refreshToken, {
-      httpOnly: true,
-      maxAge: 24 * 60 * 60 * 1000
-    })
-    res.status(200).json({ accessToken })
+    try {
+      const [accessToken, refreshToken] = await this.authService.login(userData)
+      res.cookie('jwt', refreshToken, {
+        httpOnly: true,
+        maxAge: 24 * 60 * 60 * 1000
+      })
+      res.status(200).json({ accessToken })
+    } catch (error) {
+      next(new HttpException(500, 'Login Failed'))
+    }
   }
 
   private readonly registerUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
@@ -58,46 +62,12 @@ class AuthController implements Controller {
   }
 
   private readonly handleRefreshToken = async (req: CustomRequest, res: Response, next: NextFunction): Promise<any> => {
-    const refreshSecret = process.env.REFRESH_TOKEN_SECRET as string
-    const accessSecret = process.env.ACCESS_TOKEN_SECRET as string
     const cookies = req.cookies
-    if (cookies.jwt === null || cookies.jwt === undefined) {
-      console.log('NO COOKIES')
-      next(new HttpException(401, 'Unauthorized'))
-      return
-    }
-
-    const refreshToken = cookies.jwt
-    console.log(`Refresh token cookie: ${refreshToken}`)
-    if (refreshToken === undefined) {
-      console.log('REFRESH TOKEN UNDEFINED')
-      next(new HttpException(401, 'Unauthorized'))
-      return
-    }
-    const currentUser = await User.findOne({ refreshToken }).exec() as UserModel
-    if (currentUser != null) {
-      console.log(`User refresh token: ${currentUser.refreshToken}`)
-      console.log(`Name: ${currentUser.username}`)
-    }
-
-    if (currentUser == null) {
-      next(new HttpException(403, 'Forbidden'))
-      return
-    }
     try {
-      const decoded = jwt.verify(refreshToken, refreshSecret) as DecodedToken
-      if (currentUser.username !== decoded.username) {
-        next(new HttpException(403, 'Forbidden'))
-        return
-      }
-      const accessToken = jwt.sign(
-        { username: currentUser.username },
-        accessSecret,
-        { expiresIn: '20m' }
-      )
+      const accessToken = await this.authService.refresh(cookies)
       res.status(200).json({ accessToken })
     } catch (error) {
-      next(new HttpException(403, 'Forbidden'))
+      next(new HttpException(500, 'Refresh token Error'))
     }
   }
 

@@ -1,8 +1,16 @@
-import { User } from '../models/User'
+import { User, type UserModel } from '../models/User'
 import type CreateUserDto from '../controllers/user.dto'
 import HttpException from '../exceptions/HttpException'
 import bcrypt from 'bcrypt'
 import jwt, { type JwtPayload } from 'jsonwebtoken'
+
+interface DecodedToken {
+  username: string
+}
+
+interface MyCookie {
+  jwt: string
+}
 
 class AuthService {
   public async register (userData: CreateUserDto): Promise<string> {
@@ -64,6 +72,46 @@ class AuthService {
       return [accessToken, refreshToken]
     } else {
       throw new HttpException(401, 'Unauthorized')
+    }
+  }
+
+  public async refresh (cookies: MyCookie): Promise<string> {
+    const refreshSecret = process.env.REFRESH_TOKEN_SECRET as string
+    const accessSecret = process.env.ACCESS_TOKEN_SECRET as string
+    const jwtCookie = cookies
+    if (jwtCookie.jwt === null || jwtCookie.jwt === undefined) {
+      console.log('NO COOKIES')
+      throw new HttpException(401, 'Unauthorized')
+    }
+
+    const refreshToken = jwtCookie.jwt
+    console.log(`Refresh token cookie: ${refreshToken}`)
+    if (refreshToken === undefined) {
+      console.log('REFRESH TOKEN UNDEFINED')
+      throw new HttpException(401, 'Unauthorized')
+    }
+    const currentUser = await User.findOne({ refreshToken }).exec() as UserModel
+    if (currentUser != null) {
+      console.log(`User refresh token: ${currentUser.refreshToken}`)
+      console.log(`Name: ${currentUser.username}`)
+    }
+
+    if (currentUser == null) {
+      throw new HttpException(403, 'Forbidden')
+    }
+    try {
+      const decoded = jwt.verify(refreshToken, refreshSecret) as DecodedToken
+      if (currentUser.username !== decoded.username) {
+        throw new HttpException(403, 'Forbidden')
+      }
+      const accessToken = jwt.sign(
+        { username: currentUser.username },
+        accessSecret,
+        { expiresIn: '20m' }
+      )
+      return accessToken
+    } catch (error) {
+      throw new HttpException(403, 'Forbidden')
     }
   }
 }

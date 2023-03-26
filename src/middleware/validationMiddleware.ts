@@ -8,7 +8,6 @@ function validationMiddleware (type: any): RequestHandler {
     validate(plainToInstance(type, req.body))
       .then((errors: ValidationError[]) => {
         if (errors.length > 0) {
-          console.log(errors)
           const message = errors.map((error) => {
             if (error.constraints != null) {
               return Object.values(error.constraints)
@@ -16,8 +15,6 @@ function validationMiddleware (type: any): RequestHandler {
               return ''
             }
           }).join(', ')
-
-          console.log('Meddage: ', message)
           next(new HttpException(400, message))
         } else {
           next()

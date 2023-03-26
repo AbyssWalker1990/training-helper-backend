@@ -36,7 +36,6 @@ class AuthService {
         const refreshSecret = process.env.REFRESH_TOKEN_SECRET;
         const { user, password } = userData;
         if (user === '' || password === '' || user === undefined || password === undefined) {
-            // return res.status(400).json({ message: 'Username and password are required' })
             throw new HttpException_1.default(400, 'Username and password are required');
         }
         const currentUser = await User_1.User.findOne({ username: user }).exec();
@@ -60,6 +59,40 @@ class AuthService {
         }
         else {
             throw new HttpException_1.default(401, 'Unauthorized');
+        }
+    }
+    async refresh(cookies) {
+        const refreshSecret = process.env.REFRESH_TOKEN_SECRET;
+        const accessSecret = process.env.ACCESS_TOKEN_SECRET;
+        const jwtCookie = cookies;
+        if (jwtCookie.jwt === null || jwtCookie.jwt === undefined) {
+            console.log('NO COOKIES');
+            throw new HttpException_1.default(401, 'Unauthorized');
+        }
+        const refreshToken = jwtCookie.jwt;
+        console.log(`Refresh token cookie: ${refreshToken}`);
+        if (refreshToken === undefined) {
+            console.log('REFRESH TOKEN UNDEFINED');
+            throw new HttpException_1.default(401, 'Unauthorized');
+        }
+        const currentUser = await User_1.User.findOne({ refreshToken }).exec();
+        if (currentUser != null) {
+            console.log(`User refresh token: ${currentUser.refreshToken}`);
+            console.log(`Name: ${currentUser.username}`);
+        }
+        if (currentUser == null) {
+            throw new HttpException_1.default(403, 'Forbidden');
+        }
+        try {
+            const decoded = jsonwebtoken_1.default.verify(refreshToken, refreshSecret);
+            if (currentUser.username !== decoded.username) {
+                throw new HttpException_1.default(403, 'Forbidden');
+            }
+            const accessToken = jsonwebtoken_1.default.sign({ username: currentUser.username }, accessSecret, { expiresIn: '20m' });
+            return accessToken;
+        }
+        catch (error) {
+            throw new HttpException_1.default(403, 'Forbidden');
         }
     }
 }
