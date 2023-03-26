@@ -1,9 +1,10 @@
-import type { Request, Response } from 'express'
+import type { Request, Response, NextFunction } from 'express'
 import { User, type UserModel } from '../models/User'
 import bcrypt from 'bcrypt'
 import jwt, { type JwtPayload } from 'jsonwebtoken'
 import express from 'express'
 import type Controller from '../interfaces/controller.interface'
+import HttpException from '../exceptions/HttpException'
 
 interface DecodedToken {
   username: string
@@ -32,21 +33,27 @@ class AuthController implements Controller {
     this.router.get(`${this.path}/logout`, this.handleLogout)
   }
 
-  private readonly handleLogin = async (req: Request, res: Response): Promise<any> => {
+  private readonly handleLogin = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
     const accessSecret = process.env.ACCESS_TOKEN_SECRET as string
     const refreshSecret = process.env.REFRESH_TOKEN_SECRET as string
     const { user, password }: { user: string, password: string } = req.body
     if (user === '' || password === '' || user === undefined || password === undefined) {
-      return res.status(400).json({ message: 'Username and password are required' })
+      // return res.status(400).json({ message: 'Username and password are required' })
+      next(new HttpException(400, 'Username and password are required'))
+      return
     }
     const currentUser = await User.findOne({ username: user }).exec()
-    if (currentUser == null) return res.sendStatus(401)
+    if (currentUser == null) {
+      next(new HttpException(401, 'Unauthorized'))
+      return
+    }
     // Compare password
     const match = await bcrypt.compare(password, currentUser.password)
+    console.log('Match: ', match)
     const payload: JwtPayload = {
       username: currentUser.username
     }
-    if (match !== null) {
+    if (match !== null && match) {
       const accessToken = jwt.sign(
         payload,
         accessSecret,

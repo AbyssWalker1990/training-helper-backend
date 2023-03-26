@@ -946,3 +946,12 @@
 2023-03-25T18:24:10+02:00 POST /auth/login 200 184.524 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
 2023-03-25T18:24:26+02:00 GET /auth/refresh 200 53.052 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
 2023-03-25T18:24:37+02:00 GET /auth/logout 204 104.547 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-26T09:51:20+03:00 POST /auth/login 200 492.519 ms PostmanRuntime/7.29.2
+2023-03-26T09:51:27+03:00 POST /auth/login 401 47.533 ms PostmanRuntime/7.29.2
+2023-03-26T09:51:45+03:00 POST /auth/login 500 3.444 ms PostmanRuntime/7.29.2
+2023-03-26T15:45:35+03:00 POST /auth/login 400 267.189 ms PostmanRuntime/7.29.2
+2023-03-26T15:48:42+03:00 POST /auth/login 400 24.329 ms PostmanRuntime/7.29.2
+2023-03-26T15:49:43+03:00 POST /auth/login 200 198.059 ms PostmanRuntime/7.29.2
+2023-03-26T15:50:06+03:00 POST /auth/login 200 174.721 ms PostmanRuntime/7.29.2
+2023-03-26T15:50:17+03:00 POST /auth/login 200 173.518 ms PostmanRuntime/7.29.2
+2023-03-26T15:52:25+03:00 POST /auth/login 200 233.830 ms PostmanRuntime/7.29.2

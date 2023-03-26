@@ -7,6 +7,7 @@ import credentials from './middleware/credentials'
 import morgan from 'morgan'
 import { logFormat, logToConsoleAndFile } from './config/morganOptions'
 import type Controller from './interfaces/controller.interface'
+import errorMiddleware from './middleware/errorMiddleware'
 
 class App {
   public app: express.Application
@@ -18,6 +19,7 @@ class App {
 
     this.initMiddlewares()
     this.initControllers(controllers)
+    this.initErrorMiddleware()
   }
 
   private initMiddlewares (): void {
@@ -40,6 +42,10 @@ class App {
     controllers.forEach((controller) => {
       this.app.use('/', controller.router)
     })
+  }
+
+  private initErrorMiddleware (): void {
+    this.app.use(errorMiddleware)
   }
 
   public listen (): void {

@@ -7,10 +7,11 @@ const server_1 = __importDefault(require("../server"));
 const supertest_1 = __importDefault(require("supertest"));
 const User_1 = require("../models/User");
 const connectDatabase_1 = require("../config/connectDatabase");
-describe('POST /register', () => {
+describe('POST /auth/register', () => {
+    server_1.default.listen();
     it('registers a new user and returns an accessToken', async () => {
         const response = await (0, supertest_1.default)(server_1.default)
-            .post('/register')
+            .post('/auth/register')
             .send({
             user: 'testuser',
             password: 'testpassword'
@@ -20,10 +21,10 @@ describe('POST /register', () => {
         expect(typeof response.body.success).toBe('string');
     });
 });
-describe('POST /auth', () => {
+describe('POST /auth/login', () => {
     it('Returns access token if username and password are correct', async () => {
         const response = await (0, supertest_1.default)(server_1.default)
-            .post('/auth')
+            .post('/auth/login')
             .send({
             user: 'testuser',
             password: 'testpassword'
@@ -33,10 +34,10 @@ describe('POST /auth', () => {
         expect(typeof response.body.accessToken).toBe('string');
     });
 });
-describe('GET /refresh', () => {
+describe('GET /auth/refresh', () => {
     it('Refreshing Access token', async () => {
         const auth = await (0, supertest_1.default)(server_1.default)
-            .post('/auth')
+            .post('/auth/login')
             .send({
             user: 'testuser',
             password: 'testpassword'
@@ -44,17 +45,17 @@ describe('GET /refresh', () => {
         const cookie = auth.headers['set-cookie'][0];
         const token = cookie.split(';')[0].split('=')[1];
         const response = await (0, supertest_1.default)(server_1.default)
-            .get('/refresh')
+            .get('/auth/refresh')
             .set('Cookie', `jwt=${token}`)
             .expect(200)
             .expect('Content-Type', /json/);
         expect(typeof response.body.accessToken).toBe('string');
     });
 });
-describe('GET /logout', () => {
+describe('GET /auth/logout', () => {
     it('Logout user', async () => {
         await (0, supertest_1.default)(server_1.default)
-            .get('/logout')
+            .get('/auth/logout')
             .expect(204);
     });
 });

@@ -27,3 +27,5 @@
 20-03-2023  10:35:06  0c64e20f-142b-483b-b3d3-a6c0648b0ff3  Error: ENOENT: no such file or directory, stat 'E:\projectsjs\training-helper\dist\public\views\index.html'
 20-03-2023  21:12:59  4e57c3a0-a679-4b4a-9f67-ffb16b6a1eb2  Error: Not allowed by CORS
 22-03-2023  13:59:12  6fbcbaa7-50a6-4f2e-8a71-56c8a117fb39  TypeError: Cannot read properties of undefined (reading 'split')
+26-03-2023  15:45:35  2ca5dc06-c0df-4c1e-8f74-c727703a34e6  Username and password are required
+26-03-2023  15:48:42  e7522ac4-9cf9-4dc5-9ee0-bb925760a9e1  Username and password are required

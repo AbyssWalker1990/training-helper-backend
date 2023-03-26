@@ -7,6 +7,7 @@ const User_1 = require("../models/User");
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const express_1 = __importDefault(require("express"));
+const HttpException_1 = __importDefault(require("../exceptions/HttpException"));
 class AuthController {
     path = '/auth';
     router = express_1.default.Router();
@@ -19,22 +20,27 @@ class AuthController {
         this.router.get(`${this.path}/refresh`, this.handleRefreshToken);
         this.router.get(`${this.path}/logout`, this.handleLogout);
     }
-    handleLogin = async (req, res) => {
+    handleLogin = async (req, res, next) => {
         const accessSecret = process.env.ACCESS_TOKEN_SECRET;
         const refreshSecret = process.env.REFRESH_TOKEN_SECRET;
         const { user, password } = req.body;
         if (user === '' || password === '' || user === undefined || password === undefined) {
-            return res.status(400).json({ message: 'Username and password are required' });
+            // return res.status(400).json({ message: 'Username and password are required' })
+            next(new HttpException_1.default(400, 'Username and password are required'));
+            return;
         }
         const currentUser = await User_1.User.findOne({ username: user }).exec();
-        if (currentUser == null)
-            return res.sendStatus(401);
+        if (currentUser == null) {
+            next(new HttpException_1.default(401, 'Unauthorized'));
+            return;
+        }
         // Compare password
         const match = await bcrypt_1.default.compare(password, currentUser.password);
+        console.log('Match: ', match);
         const payload = {
             username: currentUser.username
         };
-        if (match !== null) {
+        if (match !== null && match) {
             const accessToken = jsonwebtoken_1.default.sign(payload, accessSecret, { expiresIn: '20m' });
             const refreshToken = jsonwebtoken_1.default.sign(payload, refreshSecret, { expiresIn: '1d' });
             // Saving refreshToken to current user

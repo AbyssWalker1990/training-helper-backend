@@ -11,6 +11,7 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const credentials_1 = __importDefault(require("./middleware/credentials"));
 const morgan_1 = __importDefault(require("morgan"));
 const morganOptions_1 = require("./config/morganOptions");
+const errorMiddleware_1 = __importDefault(require("./middleware/errorMiddleware"));
 class App {
     app;
     port;
@@ -19,6 +20,7 @@ class App {
         this.port = port;
         this.initMiddlewares();
         this.initControllers(controllers);
+        this.initErrorMiddleware();
     }
     initMiddlewares() {
         // app.use(asyncMiddleware(logger))
@@ -39,6 +41,9 @@ class App {
         controllers.forEach((controller) => {
             this.app.use('/', controller.router);
         });
+    }
+    initErrorMiddleware() {
+        this.app.use(errorMiddleware_1.default);
     }
     listen() {
         this.app.listen(this.port, () => {
