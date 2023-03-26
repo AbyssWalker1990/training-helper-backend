@@ -6,6 +6,6 @@ function errorMiddleware(err, req, res, next) {
     const message = err.message;
     (0, logEvents_1.logEvents)(message, 'errorLog.log')
         .catch((err) => { console.log(err); });
-    res.status(status).json({ status, message });
+    return res.status(status).json({ status, message });
 }
 exports.default = errorMiddleware;

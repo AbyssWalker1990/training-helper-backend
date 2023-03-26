@@ -54,20 +54,20 @@ class AuthController {
             res.status(200).json({ accessToken });
         }
         else {
-            res.sendStatus(401);
+            next(new HttpException_1.default(401, 'Unauthorized'));
         }
     };
-    registerUser = async (req, res) => {
-        console.log('Try to register');
+    registerUser = async (req, res, next) => {
         const { user, password } = req.body;
         if (user === '' || password === '' || user === undefined || password === undefined) {
-            res.status(400).json({ message: 'Username and password are required' });
+            next(new HttpException_1.default(400, 'Username and password are required'));
+            return;
         }
-        console.log(`User: ${user}\tPassword: ${password}`);
         // Check if user alreasy exists
         const duplicate = await User_1.User.findOne({ username: user }).exec();
-        if (duplicate != null)
-            res.sendStatus(409);
+        if (duplicate != null) {
+            next(new HttpException_1.default(409, 'User already exists!'));
+        }
         try {
             const HashedPassword = await bcrypt_1.default.hash(password, 10);
             const result = await User_1.User.create({
@@ -78,39 +78,52 @@ class AuthController {
             res.status(201).json({ success: `New User ${user} created!!!` });
         }
         catch (error) {
-            res.status(500).json({ message: error.message });
+            next(new HttpException_1.default(500, error.message));
         }
     };
-    handleRefreshToken = async (req, res) => {
+    handleRefreshToken = async (req, res, next) => {
         const refreshSecret = process.env.REFRESH_TOKEN_SECRET;
         const accessSecret = process.env.ACCESS_TOKEN_SECRET;
         const cookies = req.cookies;
-        if (cookies?.jwt === null)
-            return res.sendStatus(401); // Unauthorized
+        if (cookies.jwt === null || cookies.jwt === undefined) {
+            console.log('NO COOKIES');
+            next(new HttpException_1.default(401, 'Unauthorized'));
+            return;
+        }
         const refreshToken = cookies.jwt;
         console.log(`Refresh token cookie: ${refreshToken}`);
+        if (refreshToken === undefined) {
+            console.log('REFRESH TOKEN UNDEFINED');
+            next(new HttpException_1.default(401, 'Unauthorized'));
+            return;
+        }
         const currentUser = await User_1.User.findOne({ refreshToken }).exec();
         if (currentUser != null) {
             console.log(`User refresh token: ${currentUser.refreshToken}`);
             console.log(`Name: ${currentUser.username}`);
         }
-        if (currentUser == null)
-            return res.sendStatus(403); // Forbidden
+        if (currentUser == null) {
+            next(new HttpException_1.default(403, 'Forbidden'));
+            return;
+        }
         try {
             const decoded = jsonwebtoken_1.default.verify(refreshToken, refreshSecret);
-            if (currentUser.username !== decoded.username)
-                return res.sendStatus(403);
+            if (currentUser.username !== decoded.username) {
+                next(new HttpException_1.default(403, 'Forbidden'));
+                return;
+            }
             const accessToken = jsonwebtoken_1.default.sign({ username: currentUser.username }, accessSecret, { expiresIn: '20m' });
             res.status(200).json({ accessToken });
         }
         catch (error) {
-            return res.sendStatus(403);
+            next(new HttpException_1.default(403, 'Forbidden'));
         }
     };
     // Can't delete access token from there, DONT FORGET WHEN STARTING build frontend
     handleLogout = async (req, res) => {
         const cookies = req.cookies;
-        if (cookies?.jwt === null)
+        console.log('COOKIES JWT: ', cookies.jwt);
+        if (cookies.jwt === null)
             return res.sendStatus(204); // No content
         const refreshToken = cookies.jwt;
         // Check database for refresh token

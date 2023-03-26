@@ -29,3 +29,23 @@
 22-03-2023  13:59:12  6fbcbaa7-50a6-4f2e-8a71-56c8a117fb39  TypeError: Cannot read properties of undefined (reading 'split')
 26-03-2023  15:45:35  2ca5dc06-c0df-4c1e-8f74-c727703a34e6  Username and password are required
 26-03-2023  15:48:42  e7522ac4-9cf9-4dc5-9ee0-bb925760a9e1  Username and password are required
+26-03-2023  15:58:00  f574fbce-7611-483f-8505-e6da898691f8  Username and password are required
+26-03-2023  15:58:38  1d439300-b929-42aa-99e0-611d98b72fb0  Username and password are required
+26-03-2023  16:00:06  53cc05d4-8dfc-4bac-861f-c4bcdad47a73  User already exists!
+26-03-2023  16:06:07  a041bd38-3b73-4605-842c-0b5bad8e74fe  Forbidden
+26-03-2023  16:07:25  40320873-5a9d-4021-b43e-54f4d2b5ec7b  Forbidden
+26-03-2023  16:08:34  e9889c40-c824-4c3c-a0b7-0d6e690ec1cb  Forbidden
+26-03-2023  16:13:06  b50aa41c-b99a-41eb-a9fc-1b14d8985fda  Forbidden
+26-03-2023  16:15:57  4f9ef97e-2ecd-4f57-b1b5-5118858fb733  Forbidden
+26-03-2023  16:17:14  4752efea-e47f-4d53-a612-31838afd7ebd  Forbidden
+26-03-2023  16:17:56  5fefedfe-7e5e-48c9-bf9c-794e361d3fac  Unauthorized
+26-03-2023  16:19:06  5ac1c50b-0ded-43c1-9c6e-8295e78ce65c  Unauthorized
+26-03-2023  16:19:31  b59a5900-2a46-4f6a-98af-b69aa9d40a3a  Unauthorized
+26-03-2023  16:20:07  8cd479f2-fc66-47a9-935c-1675d931758b  Unauthorized
+26-03-2023  16:22:56  f5af7dc8-cfd1-459d-a995-580e49116106  Unauthorized
+26-03-2023  16:24:30  bf5c45d5-e698-47cc-8909-e1b1570ad7ab  Unauthorized
+26-03-2023  16:25:16  d693f4ff-ccd4-4add-8d18-dd7d4d9d796b  Unauthorized
+26-03-2023  16:25:52  f04eed0d-1eed-4209-824c-635741fc941e  Unauthorized
+26-03-2023  16:27:19  c5c18802-7e60-4728-b44f-9bb897a64465  Unauthorized
+26-03-2023  16:33:15  36a81ef7-2ca9-4c5c-b3c7-d583e5a193d2  Username and password are required
+26-03-2023  16:33:23  7afd0251-8f71-41ad-a58f-f78c657fe902  Unauthorized

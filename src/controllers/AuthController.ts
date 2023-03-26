@@ -5,6 +5,7 @@ import jwt, { type JwtPayload } from 'jsonwebtoken'
 import express from 'express'
 import type Controller from '../interfaces/controller.interface'
 import HttpException from '../exceptions/HttpException'
+import { nextDay } from 'date-fns'
 
 interface DecodedToken {
   username: string
@@ -74,21 +75,21 @@ class AuthController implements Controller {
       })
       res.status(200).json({ accessToken })
     } else {
-      res.sendStatus(401)
+      next(new HttpException(401, 'Unauthorized'))
     }
   }
 
-  private readonly registerUser = async (req: Request, res: Response): Promise<void> => {
-    console.log('Try to register')
-
+  private readonly registerUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     const { user, password }: { user: string, password: string } = req.body
     if (user === '' || password === '' || user === undefined || password === undefined) {
-      res.status(400).json({ message: 'Username and password are required' })
+      next(new HttpException(400, 'Username and password are required'))
+      return
     }
-    console.log(`User: ${user}\tPassword: ${password}`)
     // Check if user alreasy exists
     const duplicate = await User.findOne({ username: user }).exec()
-    if (duplicate != null) res.sendStatus(409)
+    if (duplicate != null) {
+      next(new HttpException(409, 'User already exists!'))
+    }
 
     try {
       const HashedPassword = await bcrypt.hash(password, 10)
@@ -99,27 +100,43 @@ class AuthController implements Controller {
       console.log(result)
       res.status(201).json({ success: `New User ${user} created!!!` })
     } catch (error) {
-      res.status(500).json({ message: (error as Error).message })
+      next(new HttpException(500, (error as Error).message))
     }
   }
 
-  private readonly handleRefreshToken = async (req: CustomRequest, res: Response): Promise<any> => {
+  private readonly handleRefreshToken = async (req: CustomRequest, res: Response, next: NextFunction): Promise<any> => {
     const refreshSecret = process.env.REFRESH_TOKEN_SECRET as string
     const accessSecret = process.env.ACCESS_TOKEN_SECRET as string
     const cookies = req.cookies
-    if (cookies?.jwt === null) return res.sendStatus(401) // Unauthorized
+    if (cookies.jwt === null || cookies.jwt === undefined) {
+      console.log('NO COOKIES')
+      next(new HttpException(401, 'Unauthorized'))
+      return
+    }
+
     const refreshToken = cookies.jwt
     console.log(`Refresh token cookie: ${refreshToken}`)
+    if (refreshToken === undefined) {
+      console.log('REFRESH TOKEN UNDEFINED')
+      next(new HttpException(401, 'Unauthorized'))
+      return
+    }
     const currentUser = await User.findOne({ refreshToken }).exec() as UserModel
     if (currentUser != null) {
       console.log(`User refresh token: ${currentUser.refreshToken}`)
       console.log(`Name: ${currentUser.username}`)
     }
 
-    if (currentUser == null) return res.sendStatus(403) // Forbidden
+    if (currentUser == null) {
+      next(new HttpException(403, 'Forbidden'))
+      return
+    }
     try {
       const decoded = jwt.verify(refreshToken, refreshSecret) as DecodedToken
-      if (currentUser.username !== decoded.username) return res.sendStatus(403)
+      if (currentUser.username !== decoded.username) {
+        next(new HttpException(403, 'Forbidden'))
+        return
+      }
       const accessToken = jwt.sign(
         { username: currentUser.username },
         accessSecret,
@@ -127,14 +144,18 @@ class AuthController implements Controller {
       )
       res.status(200).json({ accessToken })
     } catch (error) {
-      return res.sendStatus(403)
+      next(new HttpException(403, 'Forbidden'))
     }
   }
 
   // Can't delete access token from there, DONT FORGET WHEN STARTING build frontend
-  private readonly handleLogout = async (req: Request, res: Response): Promise<any> => {
+  private readonly handleLogout = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
     const cookies: MyCookie = req.cookies
-    if (cookies?.jwt === null) return res.sendStatus(204) // No content
+    console.log('COOKIES JWT: ', cookies.jwt)
+    if (cookies.jwt === null) {
+      next(new HttpException(204, 'No content'))
+      return
+    }
     const refreshToken = cookies.jwt
 
     // Check database for refresh token
