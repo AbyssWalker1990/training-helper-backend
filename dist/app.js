@@ -51,5 +51,8 @@ class App {
             console.log(`App listening on the port ${this.port}`);
         });
     }
+    getServer() {
+        return this.app;
+    }
 }
 exports.default = App;

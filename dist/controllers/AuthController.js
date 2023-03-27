@@ -33,7 +33,7 @@ class AuthController {
             res.status(200).json({ accessToken });
         }
         catch (error) {
-            next(new HttpException_1.default(500, 'Login Failed'));
+            next(error);
         }
     };
     registerUser = async (req, res, next) => {

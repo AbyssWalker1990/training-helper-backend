@@ -1046,3 +1046,22 @@
 2023-03-26T21:18:44+03:00 GET /auth/refresh 500 5.885 ms PostmanRuntime/7.29.2
 2023-03-26T21:20:25+03:00 POST /auth/register 400 37.285 ms PostmanRuntime/7.29.2
 2023-03-26T21:23:40+03:00 POST /auth/register 400 29.143 ms PostmanRuntime/7.29.2
+2023-03-26T21:27:40+03:00 POST /auth/login 200 221.542 ms PostmanRuntime/7.29.2
+2023-03-26T21:27:42+03:00 GET /auth/refresh 200 59.058 ms PostmanRuntime/7.29.2
+2023-03-26T21:27:43+03:00 GET /auth/refresh 200 54.204 ms PostmanRuntime/7.29.2
+2023-03-27T11:27:12+03:00 POST /auth/login/ 500 10336.250 ms 
+2023-03-27T11:28:40+03:00 POST /auth/login/ 500 170.247 ms 
+2023-03-27T11:30:04+03:00 POST /auth/login/ 500 98.438 ms 
+2023-03-27T11:33:24+03:00 POST /auth/login/ 500 50.489 ms 
+2023-03-27T11:35:27+03:00 POST /auth/login/ 500 52.575 ms 
+2023-03-27T11:36:44+03:00 POST /auth/login 200 229.427 ms PostmanRuntime/7.29.2
+2023-03-27T11:36:51+03:00 POST /auth/login 500 6.719 ms PostmanRuntime/7.29.2
+2023-03-27T11:39:50+03:00 POST /auth/login 400 25.908 ms PostmanRuntime/7.29.2
+2023-03-27T11:39:58+03:00 POST /auth/login 200 218.975 ms PostmanRuntime/7.29.2
+2023-03-27T11:40:04+03:00 POST /auth/login 401 121.805 ms PostmanRuntime/7.29.2
+2023-03-27T11:40:57+03:00 POST /auth/login/ 400 56.513 ms 
+2023-03-27T11:47:42+03:00 POST /auth/login/ 400 49.536 ms 
+2023-03-27T11:55:51+03:00 POST /auth/login/ 400 57.081 ms 
+2023-03-27T12:23:28+03:00 POST /auth/login 401 155.094 ms PostmanRuntime/7.29.2
+2023-03-27T12:24:54+03:00 POST /auth/login/ 400 76.184 ms 
+2023-03-27T12:24:54+03:00 POST /auth/login/ 401 22.763 ms 

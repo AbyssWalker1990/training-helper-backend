@@ -47,7 +47,7 @@ class AuthController implements Controller {
       })
       res.status(200).json({ accessToken })
     } catch (error) {
-      next(new HttpException(500, 'Login Failed'))
+      next(error)
     }
   }
 
@@ -57,7 +57,7 @@ class AuthController implements Controller {
       const user = await this.authService.register(userData)
       res.status(201).json({ success: `New user ${user} created!` })
     } catch (error) {
-      console.log(error)
+      next(error)
     }
   }
 
@@ -67,7 +67,7 @@ class AuthController implements Controller {
       const accessToken = await this.authService.refresh(cookies)
       res.status(200).json({ accessToken })
     } catch (error) {
-      next(new HttpException(500, 'Refresh token Error'))
+      next(error)
     }
   }
 
