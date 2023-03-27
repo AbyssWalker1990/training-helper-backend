@@ -1,15 +1,17 @@
+import dotenv from 'dotenv'
 import supertest from 'supertest'
 import mongoose from 'mongoose'
 import { MongoMemoryServer } from 'mongodb-memory-server'
 import App from '../app'
 import AuthController from '../controllers/AuthController'
 import SwaggerController from '../controllers/SwaggerController'
+dotenv.config()
 
 const PORT = Number(process.env.PORT) ?? 3500
 const app = new App([
   new AuthController(),
   new SwaggerController()
-], 3500)
+], PORT)
 
 app.listen()
 

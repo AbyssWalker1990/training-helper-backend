@@ -3,17 +3,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const dotenv_1 = __importDefault(require("dotenv"));
 const supertest_1 = __importDefault(require("supertest"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const mongodb_memory_server_1 = require("mongodb-memory-server");
 const app_1 = __importDefault(require("../app"));
 const AuthController_1 = __importDefault(require("../controllers/AuthController"));
 const SwaggerController_1 = __importDefault(require("../controllers/SwaggerController"));
+dotenv_1.default.config();
 const PORT = Number(process.env.PORT) ?? 3500;
 const app = new app_1.default([
     new AuthController_1.default(),
     new SwaggerController_1.default()
-], 3500);
+], PORT);
 app.listen();
 describe('auth', () => {
     beforeAll(async () => {
@@ -23,6 +25,7 @@ describe('auth', () => {
     afterAll(async () => {
         await mongoose_1.default.disconnect();
         await mongoose_1.default.connection.close();
+        return app;
     });
     describe('login route', () => {
         describe('given not full credentials', () => {

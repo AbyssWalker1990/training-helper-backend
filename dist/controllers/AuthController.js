@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const User_1 = require("../models/User");
 const express_1 = __importDefault(require("express"));
-const HttpException_1 = __importDefault(require("../exceptions/HttpException"));
 const validationMiddleware_1 = __importDefault(require("../middleware/validationMiddleware"));
 const user_dto_1 = __importDefault(require("./user.dto"));
 const auth_service_1 = __importDefault(require("../services/auth.service"));
@@ -43,7 +42,7 @@ class AuthController {
             res.status(201).json({ success: `New user ${user} created!` });
         }
         catch (error) {
-            console.log(error);
+            next(error);
         }
     };
     handleRefreshToken = async (req, res, next) => {
@@ -53,7 +52,7 @@ class AuthController {
             res.status(200).json({ accessToken });
         }
         catch (error) {
-            next(new HttpException_1.default(500, 'Refresh token Error'));
+            next(error);
         }
     };
     // Can't delete access token from there, DONT FORGET WHEN STARTING build frontend
