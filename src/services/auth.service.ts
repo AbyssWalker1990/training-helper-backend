@@ -30,7 +30,6 @@ class AuthService {
         username: user,
         password: HashedPassword
       })
-      console.log(result)
       return result.username
     } catch (error) {
       throw new HttpException(500, (error as Error).message)

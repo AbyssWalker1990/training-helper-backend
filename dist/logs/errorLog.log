@@ -86,3 +86,48 @@
 27-03-2023  12:24:54  189eb55d-4c4a-44bb-acd9-eef56706100d  Unauthorized
 27-03-2023  12:37:13  cab37665-4cbf-43c2-a419-9a91d57914aa  Username and password are required
 27-03-2023  12:37:13  a90ac7e5-6011-46ed-97ab-5e882cf13e05  Unauthorized
+29-03-2023  14:47:59  dfa3c5f6-28c5-41a2-b21a-99667560e0e0  Username and password are required
+29-03-2023  14:47:59  4896843b-2a11-4bf0-9181-f017af756678  Unauthorized
+29-03-2023  14:51:24  82a11e82-cae4-4018-a025-f3c276278d27  Username and password are required
+29-03-2023  14:51:24  b5033551-04bd-4200-8905-ec1c52a39052  Unauthorized
+29-03-2023  14:52:19  97b4b4c4-b3b4-43b0-8cbe-676d582fb987  Username and password are required
+29-03-2023  14:52:56  2368a414-584a-4e98-adee-03bd506004a5  Username and password are required
+29-03-2023  14:52:56  33b91117-06f4-44eb-bc4a-426bd3e3f553  Unauthorized
+29-03-2023  14:53:35  8b6cdc74-bdf9-4d20-9570-a3862cc556e5  Username and password are required
+29-03-2023  14:53:35  02aeb526-f2dd-44f3-9975-b62d239ec89a  Unauthorized
+29-03-2023  14:55:20  9605b0ec-df28-40c7-a01d-900b3ca426a6  Username and password are required
+29-03-2023  14:55:20  7158d881-87cf-44ac-8ead-b78849dea1f4  Unauthorized
+29-03-2023  14:56:09  5651034b-3741-4a7e-ac10-64b053939b63  Username and password are required
+29-03-2023  14:56:09  4bac05fe-86f1-4065-b4f5-82724950b9ed  Unauthorized
+29-03-2023  15:22:30  1a8da1e7-b208-47f4-9bf5-eff442548907  Client must be connected before running operations
+29-03-2023  15:29:30  82773499-c89b-4cb8-b975-10ae1be9b7c2  Username and password are required
+29-03-2023  15:29:30  99f907f1-7e4e-4296-a9f9-0d1a655a12d9  Unauthorized
+29-03-2023  15:31:25  f98f034e-3471-4537-b0ce-92963b72500f  Username and password are required
+29-03-2023  15:31:25  43e99dc8-8ad6-4dd2-9f5e-e13c5f124d80  Unauthorized
+29-03-2023  15:32:43  1d04a0fc-435f-45df-b9a8-16ebaf3cbe22  Unauthorized
+29-03-2023  15:34:31  a90cfa3a-f3a9-43e5-8050-efa267a8cfce  Username and password are required
+29-03-2023  15:34:31  98daa550-a361-4a0d-aed1-4a22f6a3613e  Unauthorized
+29-03-2023  15:40:00  c3d20836-742e-451a-a275-09d03b277945  Username and password are required
+29-03-2023  15:40:00  7c57c597-a3cf-42c2-b205-32e53e482822  Unauthorized
+29-03-2023  15:40:01  28d5403e-2ebc-4e9c-83f7-13b5ee6acc7d  password must be a string,password must be longer than or equal to 4 characters
+29-03-2023  15:40:49  582b6e66-0be7-4f9f-a7b7-709a91986d3d  Username and password are required
+29-03-2023  15:40:49  5832952a-fb47-4cc9-bcd8-aa3df29b526c  Unauthorized
+29-03-2023  15:40:49  74e59e4d-fca3-43d3-b1b2-f845dfa3cfcb  password must be a string,password must be longer than or equal to 4 characters
+29-03-2023  15:42:06  130b9823-8343-4506-ab60-040f15e20575  Client must be connected before running operations
+29-03-2023  15:42:21  fc3a59ec-f007-4858-9b4e-6208bd091041  User already exists!
+29-03-2023  15:47:32  430d9444-a7ee-42a2-8d9a-768a268f2b9c  Username and password are required
+29-03-2023  15:47:32  cb093c06-31e8-439f-a2c4-44983a1a72ac  Unauthorized
+29-03-2023  15:47:32  bfa5499c-8ab3-4958-a2ec-ea599b0a77de  password must be a string,password must be longer than or equal to 4 characters
+29-03-2023  15:47:32  203b7b00-05ca-4db7-b3fa-53bdd086a828  password must be a string,password must be longer than or equal to 4 characters
+29-03-2023  15:49:33  454b00cf-12a8-42e2-95d1-b5b5c8936a2c  Username and password are required
+29-03-2023  15:49:33  b8e082dd-aff3-47e7-9ae4-ed4865f074c5  Unauthorized
+29-03-2023  15:49:33  275d0201-b519-45a5-b1ab-36b057e669bf  password must be a string,password must be longer than or equal to 4 characters
+29-03-2023  15:49:33  3bb4d4f8-22ab-4c86-a73e-f4f956ea2af9  User already exists!
+29-03-2023  15:50:13  3de0aba3-5e39-4574-b037-e1392e3fc53b  Username and password are required
+29-03-2023  15:50:14  be860b06-8bd2-4f9e-9bc0-7392f6a4da0c  Unauthorized
+29-03-2023  15:50:14  407b0745-0cb5-4d65-b382-0b5fdf2e0c63  password must be a string,password must be longer than or equal to 4 characters
+29-03-2023  15:50:14  e154a307-8a35-4b11-a3b7-d974fe5eef00  User already exists!
+29-03-2023  16:03:15  854b514e-8524-44cf-bf9b-11da390b5d8f  Username and password are required
+29-03-2023  16:03:15  ba241e6a-8305-4ffe-b2de-dcaf80dea532  Unauthorized
+29-03-2023  16:03:15  4df780c7-c818-4f50-aded-8e3a867268e6  password must be a string,password must be longer than or equal to 4 characters
+29-03-2023  16:03:15  b70c1f47-21ec-4546-98c2-875080b316a2  User already exists!
