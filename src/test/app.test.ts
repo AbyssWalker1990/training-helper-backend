@@ -6,6 +6,7 @@ import App from '../app'
 import AuthController from '../controllers/AuthController'
 import SwaggerController from '../controllers/SwaggerController'
 import AuthService from '../services/auth.service'
+import { connectDatabase } from '../config/connectDatabase'
 dotenv.config()
 
 const PORT = Number(process.env.PORT) ?? 3500
@@ -23,9 +24,10 @@ const testUserData = {
 
 describe('auth', () => {
   beforeAll(async () => {
-    const mongoServer = await MongoMemoryServer.create()
+    connectDatabase()
+    // const mongoServer = await MongoMemoryServer.create()
     const authService = new AuthService()
-    await mongoose.connect(mongoServer.getUri())
+    // await mongoose.connect(mongoServer.getUri())
     await authService.register(testUserData)
   })
   afterAll(async () => {

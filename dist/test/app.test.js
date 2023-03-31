@@ -6,11 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv_1 = __importDefault(require("dotenv"));
 const supertest_1 = __importDefault(require("supertest"));
 const mongoose_1 = __importDefault(require("mongoose"));
-const mongodb_memory_server_1 = require("mongodb-memory-server");
 const app_1 = __importDefault(require("../app"));
 const AuthController_1 = __importDefault(require("../controllers/AuthController"));
 const SwaggerController_1 = __importDefault(require("../controllers/SwaggerController"));
 const auth_service_1 = __importDefault(require("../services/auth.service"));
+const connectDatabase_1 = require("../config/connectDatabase");
 dotenv_1.default.config();
 const PORT = Number(process.env.PORT) ?? 3500;
 const app = new app_1.default([
@@ -24,9 +24,10 @@ const testUserData = {
 };
 describe('auth', () => {
     beforeAll(async () => {
-        const mongoServer = await mongodb_memory_server_1.MongoMemoryServer.create();
+        (0, connectDatabase_1.connectDatabase)();
+        // const mongoServer = await MongoMemoryServer.create()
         const authService = new auth_service_1.default();
-        await mongoose_1.default.connect(mongoServer.getUri());
+        // await mongoose.connect(mongoServer.getUri())
         await authService.register(testUserData);
     });
     afterAll(async () => {
