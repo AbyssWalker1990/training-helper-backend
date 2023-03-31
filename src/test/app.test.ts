@@ -7,6 +7,7 @@ import AuthController from '../controllers/AuthController'
 import SwaggerController from '../controllers/SwaggerController'
 import AuthService from '../services/auth.service'
 import { connectDatabase } from '../config/connectDatabase'
+import { User } from '../models/User'
 dotenv.config()
 
 const PORT = Number(process.env.PORT) ?? 3500
@@ -31,6 +32,8 @@ describe('auth', () => {
     await authService.register(testUserData)
   })
   afterAll(async () => {
+    await User.deleteOne({ username: 'testuser'})
+    await User.deleteOne({ username: 'testuservalid'})
     await mongoose.disconnect()
     await mongoose.connection.close()
   })

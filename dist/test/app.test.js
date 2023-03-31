@@ -11,6 +11,7 @@ const AuthController_1 = __importDefault(require("../controllers/AuthController"
 const SwaggerController_1 = __importDefault(require("../controllers/SwaggerController"));
 const auth_service_1 = __importDefault(require("../services/auth.service"));
 const connectDatabase_1 = require("../config/connectDatabase");
+const User_1 = require("../models/User");
 dotenv_1.default.config();
 const PORT = Number(process.env.PORT) ?? 3500;
 const app = new app_1.default([
@@ -31,6 +32,8 @@ describe('auth', () => {
         await authService.register(testUserData);
     });
     afterAll(async () => {
+        await User_1.User.deleteOne({ username: 'testuser' });
+        await User_1.User.deleteOne({ username: 'testuservalid' });
         await mongoose_1.default.disconnect();
         await mongoose_1.default.connection.close();
     });
