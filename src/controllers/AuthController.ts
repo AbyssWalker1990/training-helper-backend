@@ -1,17 +1,10 @@
 import type { Request, Response, NextFunction } from 'express'
-import { User, type UserModel } from '../models/User'
-import bcrypt from 'bcrypt'
-import jwt, { type JwtPayload } from 'jsonwebtoken'
+import { User } from '../models/User'
 import express from 'express'
 import type Controller from '../interfaces/controller.interface'
-import HttpException from '../exceptions/HttpException'
 import validationMiddleware from '../middleware/validationMiddleware'
 import CreateUserDto from './user.dto'
 import AuthService from '../services/auth.service'
-
-interface DecodedToken {
-  username: string
-}
 
 interface MyCookie {
   jwt: string

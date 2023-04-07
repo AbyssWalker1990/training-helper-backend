@@ -1,7 +1,6 @@
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import { connectDatabase } from './config/connectDatabase'
-import trainingRouter from './routes/trainings/training'
 
 import moment from 'moment-timezone'
 import App from './app'
