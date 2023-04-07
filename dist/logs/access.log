@@ -1141,3 +1141,28 @@
 2023-03-31T11:29:39+03:00 POST /auth/register/ 400 14.387 ms 
 2023-03-31T11:29:39+03:00 POST /auth/register/ 409 53.906 ms 
 2023-03-31T11:29:39+03:00 POST /auth/register/ 201 170.776 ms 
+2023-04-07T06:39:51+03:00 GET / 404 10.355 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-07T06:39:58+03:00 GET /api-docs 301 4.536 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-07T06:39:58+03:00 GET /api-docs/ 304 3.603 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-07T06:39:58+03:00 GET /api-docs/swagger-ui.css 304 4.201 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-07T06:39:58+03:00 GET /api-docs/swagger-ui-bundle.js 304 3.594 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-07T06:39:58+03:00 GET /api-docs/swagger-ui-init.js 304 5.094 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-07T06:39:58+03:00 GET /api-docs/swagger-ui-standalone-preset.js 304 9.113 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-07T06:39:59+03:00 GET /api-docs/favicon-32x32.png 200 21.622 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-07T06:40:18+03:00 POST /auth/login 200 654.378 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-07T08:00:02+03:00 POST /auth/login 401 279.094 ms PostmanRuntime/7.29.2
+2023-04-07T08:01:25+03:00 POST /auth/login 200 200.331 ms PostmanRuntime/7.29.2
+2023-04-07T08:01:33+03:00 POST /trainings 404 4.010 ms PostmanRuntime/7.29.2
+2023-04-07T08:02:22+03:00 POST /trainings/ 404 1.694 ms PostmanRuntime/7.29.2
+2023-04-07T08:03:58+03:00 POST /auth/login 200 227.187 ms PostmanRuntime/7.29.2
+2023-04-07T08:04:08+03:00 POST /trainings/ 404 4.146 ms PostmanRuntime/7.29.2
+2023-04-07T08:05:53+03:00 POST /auth/login 200 228.523 ms PostmanRuntime/7.29.2
+2023-04-07T08:05:56+03:00 POST /trainings/ 201 77.064 ms PostmanRuntime/7.29.2
+2023-04-07T08:06:30+03:00 GET /training/642fa4b43269b98cf4c283a3 404 4.387 ms PostmanRuntime/7.29.2
+2023-04-07T08:06:43+03:00 GET /training/642fa4b43269b98cf4c283a3 404 1.317 ms PostmanRuntime/7.29.2
+2023-04-07T08:08:03+03:00 GET /trainings/642fa4b43269b98cf4c283a3 200 46.916 ms PostmanRuntime/7.29.2
+2023-04-07T08:08:22+03:00 GET /training/Vova 404 2.039 ms PostmanRuntime/7.29.2
+2023-04-07T08:09:13+03:00 GET /trainings/Vova   ms PostmanRuntime/7.29.2
+2023-04-07T08:09:14+03:00 GET /trainings/user 200 92.425 ms PostmanRuntime/7.29.2
+2023-04-07T08:09:36+03:00 DELETE /training/642fa4b43269b98cf4c283a3 404 0.598 ms PostmanRuntime/7.29.2
+2023-04-07T08:09:40+03:00 DELETE /trainings/642fa4b43269b98cf4c283a3 200 169.535 ms PostmanRuntime/7.29.2

@@ -6,11 +6,13 @@ import moment from 'moment-timezone'
 import App from './app'
 import AuthController from './controllers/AuthController'
 import SwaggerController from './controllers/SwaggerController'
+import TrainingController from './controllers/TrainingController'
 dotenv.config()
 
 const PORT = Number(process.env.PORT) ?? 3500
 const app = new App([
   new AuthController(),
+  new TrainingController(),
   new SwaggerController()
 ], PORT)
 

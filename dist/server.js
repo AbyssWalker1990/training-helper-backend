@@ -10,10 +10,12 @@ const moment_timezone_1 = __importDefault(require("moment-timezone"));
 const app_1 = __importDefault(require("./app"));
 const AuthController_1 = __importDefault(require("./controllers/AuthController"));
 const SwaggerController_1 = __importDefault(require("./controllers/SwaggerController"));
+const TrainingController_1 = __importDefault(require("./controllers/TrainingController"));
 dotenv_1.default.config();
 const PORT = Number(process.env.PORT) ?? 3500;
 const app = new app_1.default([
     new AuthController_1.default(),
+    new TrainingController_1.default(),
     new SwaggerController_1.default()
 ], PORT);
 moment_timezone_1.default.tz.setDefault('Europe/Kiev');

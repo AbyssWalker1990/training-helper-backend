@@ -1,0 +1,103 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const Training_1 = require("../models/Training");
+const User_1 = require("../models/User");
+class TrainingController {
+    path = '/trainings';
+    router = express_1.default.Router();
+    constructor() {
+        this.initRoutes();
+    }
+    initRoutes() {
+        this.router.post(`${this.path}/`, this.createTraining);
+        this.router.get(`${this.path}/user`, this.getTrainingsByUser);
+        this.router.get(`${this.path}/:trainingId`, this.getTrainingById);
+        this.router.delete(`${this.path}/:trainingId`, this.deleteTraining);
+    }
+    createTraining = async (req, res) => {
+        try {
+            const { username, title, exercises } = req.body;
+            if (username === '' || username === null || username === undefined) {
+                res.status(400).json({ message: 'Username required' });
+            }
+            if (title === '' || title === null || title === undefined) {
+                res.status(400).json({ message: 'Title required' });
+            }
+            const newTraining = await Training_1.Training.create({
+                username,
+                title,
+                exercises
+            });
+            console.log(newTraining);
+            res.status(201).json({ success: `New Training ${newTraining.title} created!!!` });
+        }
+        catch (error) {
+            console.log(error);
+            res.status(500).json({ message: error.message });
+        }
+    };
+    deleteTraining = async (req, res) => {
+        const cookies = req.cookies;
+        if (cookies?.jwt === null)
+            return res.sendStatus(401); // Unauthorized
+        const accessToken = cookies.jwt;
+        console.log('ACCESS TOKEN: ' + accessToken);
+        // Need to be replaced later with access token
+        const currentUser = await User_1.User.findOne({ refreshToken: accessToken }).exec();
+        if (currentUser == null)
+            return res.sendStatus(403); // Forbidden
+        const currentUserName = currentUser.username;
+        try {
+            const trainingId = req.params.trainingId;
+            const training = await Training_1.Training.findById(trainingId);
+            if (training.username !== currentUserName)
+                return res.sendStatus(403);
+            await Training_1.Training.findByIdAndDelete(trainingId);
+            console.log(`Training ${training.title} DELETED!`);
+            res.status(200).json({ message: `Training ${training.title} DELETED!` });
+        }
+        catch (error) {
+            console.log(error);
+        }
+    };
+    getTrainingsByUser = async (req, res) => {
+        const cookies = req.cookies;
+        if (cookies?.jwt === null)
+            return res.sendStatus(401); // Unauthorized
+        const accessToken = cookies.jwt;
+        console.log('ACCESS TOKEN: ' + accessToken);
+        // Need to be replaced later with access token
+        const currentUser = await User_1.User.findOne({ refreshToken: accessToken }).exec();
+        if (currentUser == null)
+            return res.sendStatus(403); // Forbidden
+        const currentUserName = currentUser.username;
+        try {
+            const trainingList = await Training_1.Training.find({ username: currentUserName });
+            res.status(200).json(trainingList);
+        }
+        catch (error) {
+            console.log(error);
+        }
+    };
+    getTrainingById = async (req, res) => {
+        const trainingId = req.params.trainingId;
+        if (trainingId == null || trainingId === undefined || trainingId === '') {
+            return res.status(400).json({ message: 'Invalid ID' });
+        }
+        try {
+            const training = await Training_1.Training.findById(trainingId);
+            if (training !== null && training !== undefined) {
+                res.status(200).json(training);
+            }
+            console.log(training);
+        }
+        catch (error) {
+            console.log(error);
+        }
+    };
+}
+exports.default = TrainingController;
