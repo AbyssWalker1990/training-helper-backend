@@ -6,9 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const Training_1 = require("../models/Training");
 const User_1 = require("../models/User");
+const trainings_service_1 = __importDefault(require("../services/trainings.service"));
 class TrainingController {
     path = '/trainings';
     router = express_1.default.Router();
+    trainingService = new trainings_service_1.default();
     constructor() {
         this.initRoutes();
     }
@@ -18,26 +20,15 @@ class TrainingController {
         this.router.get(`${this.path}/:trainingId`, this.getTrainingById);
         this.router.delete(`${this.path}/:trainingId`, this.deleteTraining);
     }
-    createTraining = async (req, res) => {
+    createTraining = async (req, res, next) => {
         try {
             const { username, title, exercises } = req.body;
-            if (username === '' || username === null || username === undefined) {
-                res.status(400).json({ message: 'Username required' });
-            }
-            if (title === '' || title === null || title === undefined) {
-                res.status(400).json({ message: 'Title required' });
-            }
-            const newTraining = await Training_1.Training.create({
-                username,
-                title,
-                exercises
-            });
-            console.log(newTraining);
+            const newTraining = await this.trainingService.createSingleTraining(req, res, username, title, exercises);
             res.status(201).json({ success: `New Training ${newTraining.title} created!!!` });
         }
         catch (error) {
             console.log(error);
-            res.status(500).json({ message: error.message });
+            next(error);
         }
     };
     deleteTraining = async (req, res) => {

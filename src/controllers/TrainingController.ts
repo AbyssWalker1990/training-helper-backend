@@ -1,8 +1,9 @@
 import type Controller from '../interfaces/controller.interface'
-import express from 'express'
-import type { Request, Response } from 'express'
+import express, { type NextFunction, type Request, type Response } from 'express'
+
 import { Training, type TrainingModel } from '../models/Training'
 import { User, type UserModel } from '../models/User'
+import TrainingService from '../services/trainings.service'
 
 interface MyCookie {
   jwt: string
@@ -15,6 +16,7 @@ interface CustomRequest extends Request {
 class TrainingController implements Controller {
   public path = '/trainings'
   public router = express.Router()
+  public trainingService = new TrainingService()
 
   constructor () {
     this.initRoutes()
@@ -27,26 +29,14 @@ class TrainingController implements Controller {
     this.router.delete(`${this.path}/:trainingId`, this.deleteTraining)
   }
 
-  private readonly createTraining = async (req: Request, res: Response): Promise<void> => {
+  private readonly createTraining = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const { username, title, exercises } = req.body as TrainingModel
-      if (username === '' || username === null || username === undefined) {
-        res.status(400).json({ message: 'Username required' })
-      }
-      if (title === '' || title === null || title === undefined) {
-        res.status(400).json({ message: 'Title required' })
-      }
-
-      const newTraining = await Training.create({
-        username,
-        title,
-        exercises
-      })
-      console.log(newTraining)
+      const newTraining = await this.trainingService.createSingleTraining(req, res, username, title, exercises)
       res.status(201).json({ success: `New Training ${newTraining.title} created!!!` })
     } catch (error) {
       console.log(error)
-      res.status(500).json({ message: (error as Error).message })
+      next(error)
     }
   }
 

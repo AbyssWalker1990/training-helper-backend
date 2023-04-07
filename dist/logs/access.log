@@ -1166,3 +1166,10 @@
 2023-04-07T08:09:14+03:00 GET /trainings/user 200 92.425 ms PostmanRuntime/7.29.2
 2023-04-07T08:09:36+03:00 DELETE /training/642fa4b43269b98cf4c283a3 404 0.598 ms PostmanRuntime/7.29.2
 2023-04-07T08:09:40+03:00 DELETE /trainings/642fa4b43269b98cf4c283a3 200 169.535 ms PostmanRuntime/7.29.2
+2023-04-07T09:31:42+03:00 POST /auth/login 200 231.966 ms PostmanRuntime/7.29.2
+2023-04-07T09:31:47+03:00 POST /trainings/ 201 72.469 ms PostmanRuntime/7.29.2
+2023-04-07T09:31:56+03:00 GET /trainings/user 200 95.527 ms PostmanRuntime/7.29.2
+2023-04-07T09:32:09+03:00 DELETE /trainings/642fb8d37bfa5b08c9d48945 200 145.781 ms PostmanRuntime/7.29.2
+2023-04-07T09:32:19+03:00 GET /trainings/user 200 93.057 ms PostmanRuntime/7.29.2
+2023-04-07T09:33:13+03:00 POST /trainings/ 400 14.279 ms PostmanRuntime/7.29.2
+2023-04-07T09:33:24+03:00 POST /trainings/ 400 7.511 ms PostmanRuntime/7.29.2
