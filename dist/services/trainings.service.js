@@ -6,20 +6,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Training_1 = require("../models/Training");
 const MissingDataException_1 = __importDefault(require("../exceptions/trainingsExceptions/MissingDataException"));
 class TrainingService {
-    async createSingleTraining(req, res, username, title, exercises) {
+    async createSingleTraining(username, title, exercises) {
+        this.isValidTraining(username, title);
+        const newTraining = await Training_1.Training.create({
+            username,
+            title,
+            exercises
+        });
+        return newTraining;
+    }
+    isValidTraining(username, title) {
         if (username === '' || username === null || username === undefined) {
             throw new MissingDataException_1.default('Username required to create new training instance');
         }
         if (title === '' || title === null || title === undefined) {
             throw new MissingDataException_1.default('Title required to create new training instance');
         }
-        const newTraining = await Training_1.Training.create({
-            username,
-            title,
-            exercises
-        });
-        console.log(newTraining);
-        return newTraining;
     }
 }
 exports.default = TrainingService;

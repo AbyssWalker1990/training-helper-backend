@@ -32,7 +32,7 @@ class TrainingController implements Controller {
   private readonly createTraining = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const { username, title, exercises } = req.body as TrainingModel
-      const newTraining = await this.trainingService.createSingleTraining(req, res, username, title, exercises)
+      const newTraining = await this.trainingService.createSingleTraining(username, title, exercises)
       res.status(201).json({ success: `New Training ${newTraining.title} created!!!` })
     } catch (error) {
       console.log(error)
