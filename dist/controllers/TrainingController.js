@@ -31,28 +31,14 @@ class TrainingController {
             next(error);
         }
     };
-    deleteTraining = async (req, res) => {
-        const cookies = req.cookies;
-        if (cookies?.jwt === null)
-            return res.sendStatus(401); // Unauthorized
-        const accessToken = cookies.jwt;
-        console.log('ACCESS TOKEN: ' + accessToken);
-        // Need to be replaced later with access token
-        const currentUser = await User_1.User.findOne({ refreshToken: accessToken }).exec();
-        if (currentUser == null)
-            return res.sendStatus(403); // Forbidden
-        const currentUserName = currentUser.username;
+    deleteTraining = async (req, res, next) => {
         try {
+            const cookies = req.cookies;
             const trainingId = req.params.trainingId;
-            const training = await Training_1.Training.findById(trainingId);
-            if (training.username !== currentUserName)
-                return res.sendStatus(403);
-            await Training_1.Training.findByIdAndDelete(trainingId);
-            console.log(`Training ${training.title} DELETED!`);
-            res.status(200).json({ message: `Training ${training.title} DELETED!` });
+            await this.trainingService.deleteSingleTraining(cookies, trainingId);
         }
         catch (error) {
-            console.log(error);
+            next(error);
         }
     };
     getTrainingsByUser = async (req, res) => {

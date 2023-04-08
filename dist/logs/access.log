@@ -1189,3 +1189,6 @@
 2023-04-08T19:43:10+03:00 GET /trainings/user 200 98.392 ms PostmanRuntime/7.29.2
 2023-04-08T19:43:17+03:00 POST /trainings/ 400 13.505 ms PostmanRuntime/7.29.2
 2023-04-08T19:43:36+03:00 POST /trainings/ 400 5.502 ms PostmanRuntime/7.29.2
+2023-04-08T19:43:41+03:00 POST /trainings/ 201 62.241 ms PostmanRuntime/7.29.2
+2023-04-08T20:21:57+03:00 GET /trainings/user 200 117.962 ms PostmanRuntime/7.29.2
+2023-04-08T20:23:30+03:00 DELETE /trainings/643199bdfb988ffa6bd40c0b 403 114.828 ms PostmanRuntime/7.29.2
