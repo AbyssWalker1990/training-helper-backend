@@ -11,12 +11,12 @@ interface MyCookie {
 class TrainingService {
   public async createSingleTraining (username: string, title: string, exercises: Exercise[]): Promise<TrainingModel> {
     this.isValidTraining(username, title)
-    const newTraining = await Training.create({
+    const createdTraining = await Training.create({
       username,
       title,
       exercises
     })
-    return newTraining
+    return createdTraining
   }
 
   public async deleteSingleTraining (cookies: MyCookie, trainingId: string): Promise<void> {
@@ -28,6 +28,15 @@ class TrainingService {
     const training = await Training.findById(trainingId) as TrainingModel
     this.isOwnerOfTraining(training, currentUserName)
     await Training.findByIdAndDelete(trainingId)
+  }
+
+  public async getAllTrainingsByUser (cookies: MyCookie): Promise<TrainingModel[]> {
+    this.isAccessToken(cookies)
+    const accessToken = cookies.jwt
+    const currentUser = await this.isExistingUser(accessToken)
+    const currentUserName = currentUser.username
+    const trainingList = await Training.find({ username: currentUserName })
+    return trainingList
   }
 
   private isAccessToken (cookies: MyCookie): void {

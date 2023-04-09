@@ -51,21 +51,13 @@ class TrainingController implements Controller {
     }
   }
 
-  private readonly getTrainingsByUser = async (req: CustomRequest, res: Response): Promise<any> => {
+  private readonly getTrainingsByUser = async (req: CustomRequest, res: Response, next: NextFunction): Promise<any> => {
     const cookies = req.cookies
-    if (cookies?.jwt === null) return res.sendStatus(401) // Unauthorized
-    const accessToken = cookies.jwt
-    console.log('ACCESS TOKEN: ' + accessToken)
-    // Need to be replaced later with access token
-    const currentUser = await User.findOne({ refreshToken: accessToken }).exec() as UserModel
-    if (currentUser == null) return res.sendStatus(403) // Forbidden
-    const currentUserName = currentUser.username
-
     try {
-      const trainingList = await Training.find({ username: currentUserName })
-      res.status(200).json(trainingList as TrainingModel[])
+      const trainingList = await this.trainingService.getAllTrainingsByUser(cookies)
+      res.status(200).json(trainingList)
     } catch (error) {
-      console.log(error)
+      next(error)
     }
   }
 
