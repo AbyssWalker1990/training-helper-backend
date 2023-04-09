@@ -1,20 +1,6 @@
-import mongoose, { type Date } from 'mongoose'
+import mongoose from 'mongoose'
+import type { TrainingModel } from '../interfaces/training.interface'
 const Schema = mongoose.Schema
-
-export interface TrainingModel {
-  username: string
-  title: string
-  date: Date
-  exercises: [{
-    position: number
-    name: string
-    set: {
-      setPos: number
-      reps: number
-      weight: number
-    }
-  }]
-}
 
 const trainingSchema = new Schema<TrainingModel>({
   username: {

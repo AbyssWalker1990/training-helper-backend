@@ -1,12 +1,10 @@
-import { Training, type TrainingModel } from '../models/Training'
+import { Training } from '../models/Training'
 import MissingDataException from '../exceptions/trainingsExceptions/MissingDataException'
 import type Exercise from '../interfaces/trainings/exercise.interface'
 import HttpException from '../exceptions/HttpException'
-import { User, type UserModel } from '../models/User'
-
-interface MyCookie {
-  jwt: string
-}
+import { User } from '../models/User'
+import type { TrainingModel } from '../interfaces/training.interface'
+import type { UserModel, MyCookie } from '../interfaces/auth.interface'
 
 class TrainingService {
   public async createSingleTraining (username: string, title: string, exercises: Exercise[]): Promise<TrainingModel> {

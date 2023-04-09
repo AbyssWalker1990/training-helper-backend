@@ -1,11 +1,6 @@
 import mongoose from 'mongoose'
+import { type UserModel } from '../interfaces/auth.interface'
 const Schema = mongoose.Schema
-
-export interface UserModel {
-  username: string
-  password: string
-  refreshToken: string
-}
 
 const userSchema = new Schema<UserModel>({
   username: {

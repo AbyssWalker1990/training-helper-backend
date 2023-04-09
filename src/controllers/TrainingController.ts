@@ -1,6 +1,6 @@
 import type Controller from '../interfaces/controller.interface'
 import express, { type NextFunction, type Request, type Response } from 'express'
-import { type TrainingModel } from '../models/Training'
+import { type TrainingModel } from '../interfaces/training.interface'
 import TrainingService from '../services/trainings.service'
 
 interface MyCookie {

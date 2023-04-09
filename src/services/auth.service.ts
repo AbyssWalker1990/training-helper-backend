@@ -1,16 +1,9 @@
-import { User, type UserModel } from '../models/User'
+import { User } from '../models/User'
+import type { UserModel, DecodedToken, MyCookie } from '../interfaces/auth.interface'
 import type CreateUserDto from '../controllers/user.dto'
 import HttpException from '../exceptions/HttpException'
 import bcrypt from 'bcrypt'
 import jwt, { type JwtPayload } from 'jsonwebtoken'
-
-interface DecodedToken {
-  username: string
-}
-
-interface MyCookie {
-  jwt: string
-}
 
 class AuthService {
   public async register (userData: CreateUserDto): Promise<string> {
