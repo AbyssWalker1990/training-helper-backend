@@ -4,8 +4,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const Training_1 = require("../models/Training");
-const User_1 = require("../models/User");
 const trainings_service_1 = __importDefault(require("../services/trainings.service"));
 class TrainingController {
     path = '/trainings';
@@ -36,44 +34,30 @@ class TrainingController {
             const cookies = req.cookies;
             const trainingId = req.params.trainingId;
             await this.trainingService.deleteSingleTraining(cookies, trainingId);
+            res.status(204).json({ success: `Training ${trainingId} deleted!!!` });
         }
         catch (error) {
             next(error);
         }
     };
-    getTrainingsByUser = async (req, res) => {
+    getTrainingsByUser = async (req, res, next) => {
         const cookies = req.cookies;
-        if (cookies?.jwt === null)
-            return res.sendStatus(401); // Unauthorized
-        const accessToken = cookies.jwt;
-        console.log('ACCESS TOKEN: ' + accessToken);
-        // Need to be replaced later with access token
-        const currentUser = await User_1.User.findOne({ refreshToken: accessToken }).exec();
-        if (currentUser == null)
-            return res.sendStatus(403); // Forbidden
-        const currentUserName = currentUser.username;
         try {
-            const trainingList = await Training_1.Training.find({ username: currentUserName });
+            const trainingList = await this.trainingService.getAllTrainingsByUser(cookies);
             res.status(200).json(trainingList);
         }
         catch (error) {
-            console.log(error);
+            next(error);
         }
     };
-    getTrainingById = async (req, res) => {
+    getTrainingById = async (req, res, next) => {
         const trainingId = req.params.trainingId;
-        if (trainingId == null || trainingId === undefined || trainingId === '') {
-            return res.status(400).json({ message: 'Invalid ID' });
-        }
         try {
-            const training = await Training_1.Training.findById(trainingId);
-            if (training !== null && training !== undefined) {
-                res.status(200).json(training);
-            }
-            console.log(training);
+            const training = await this.trainingService.getSingleTrainingById(trainingId);
+            res.status(200).json(training);
         }
         catch (error) {
-            console.log(error);
+            next(error);
         }
     };
 }

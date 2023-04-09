@@ -10,12 +10,12 @@ const User_1 = require("../models/User");
 class TrainingService {
     async createSingleTraining(username, title, exercises) {
         this.isValidTraining(username, title);
-        const newTraining = await Training_1.Training.create({
+        const createdTraining = await Training_1.Training.create({
             username,
             title,
             exercises
         });
-        return newTraining;
+        return createdTraining;
     }
     async deleteSingleTraining(cookies, trainingId) {
         this.isAccessToken(cookies);
@@ -25,6 +25,21 @@ class TrainingService {
         const training = await Training_1.Training.findById(trainingId);
         this.isOwnerOfTraining(training, currentUserName);
         await Training_1.Training.findByIdAndDelete(trainingId);
+    }
+    async getAllTrainingsByUser(cookies) {
+        this.isAccessToken(cookies);
+        const accessToken = cookies.jwt;
+        const currentUser = await this.isExistingUser(accessToken);
+        const currentUserName = currentUser.username;
+        const trainingList = await Training_1.Training.find({ username: currentUserName });
+        return trainingList;
+    }
+    async getSingleTrainingById(trainingId) {
+        this.isValidTrainingId(trainingId);
+        const training = await Training_1.Training.findById(trainingId);
+        const { username, title } = training;
+        this.isValidTraining(username, title);
+        return training;
     }
     isAccessToken(cookies) {
         if (cookies?.jwt === null)
@@ -39,6 +54,11 @@ class TrainingService {
         if (currentUser == null)
             throw new HttpException_1.default(403, 'Forbidden');
         return currentUser;
+    }
+    isValidTrainingId(trainingId) {
+        if (trainingId == null || trainingId === undefined || trainingId === '') {
+            throw new MissingDataException_1.default('Invalid training ID');
+        }
     }
     isValidTraining(username, title) {
         if (username === '' || username === null || username === undefined) {

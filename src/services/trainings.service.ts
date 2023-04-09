@@ -39,6 +39,14 @@ class TrainingService {
     return trainingList
   }
 
+  public async getSingleTrainingById (trainingId: string): Promise<TrainingModel> {
+    this.isValidTrainingId(trainingId)
+    const training = await Training.findById(trainingId) as TrainingModel
+    const { username, title } = training
+    this.isValidTraining(username, title)
+    return training
+  }
+
   private isAccessToken (cookies: MyCookie): void {
     if (cookies?.jwt === null) throw new HttpException(401, 'Unauthorized')
   }
@@ -51,6 +59,12 @@ class TrainingService {
     const currentUser = await User.findOne({ refreshToken: token }).exec() as UserModel
     if (currentUser == null) throw new HttpException(403, 'Forbidden')
     return currentUser
+  }
+
+  private isValidTrainingId (trainingId: string): void {
+    if (trainingId == null || trainingId === undefined || trainingId === '') {
+      throw new MissingDataException('Invalid training ID')
+    }
   }
 
   private isValidTraining (username: string, title: string): void {

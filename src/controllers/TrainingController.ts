@@ -1,10 +1,7 @@
 import type Controller from '../interfaces/controller.interface'
 import express, { type NextFunction, type Request, type Response } from 'express'
-
-import { Training, type TrainingModel } from '../models/Training'
-import { User, type UserModel } from '../models/User'
+import { type TrainingModel } from '../models/Training'
 import TrainingService from '../services/trainings.service'
-import { nextDay } from 'date-fns'
 
 interface MyCookie {
   jwt: string
@@ -46,6 +43,7 @@ class TrainingController implements Controller {
       const cookies = req.cookies
       const trainingId = req.params.trainingId
       await this.trainingService.deleteSingleTraining(cookies, trainingId)
+      res.status(204).json({ success: `Training ${trainingId} deleted!!!` })
     } catch (error) {
       next(error)
     }
@@ -61,19 +59,13 @@ class TrainingController implements Controller {
     }
   }
 
-  private readonly getTrainingById = async (req: CustomRequest, res: Response): Promise<any> => {
+  private readonly getTrainingById = async (req: CustomRequest, res: Response, next: NextFunction): Promise<any> => {
     const trainingId = req.params.trainingId
-    if (trainingId == null || trainingId === undefined || trainingId === '') {
-      return res.status(400).json({ message: 'Invalid ID' })
-    }
     try {
-      const training = await Training.findById(trainingId) as TrainingModel
-      if (training !== null && training !== undefined) {
-        res.status(200).json(training)
-      }
-      console.log(training)
+      const training = await this.trainingService.getSingleTrainingById(trainingId)
+      res.status(200).json(training)
     } catch (error) {
-      console.log(error)
+      next(error)
     }
   }
 }

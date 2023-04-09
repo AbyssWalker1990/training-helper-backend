@@ -149,3 +149,5 @@
 08-04-2023  19:43:17  3f73cc53-beaf-4bb1-975a-fbad40dea863  Title required to create new training instance
 08-04-2023  19:43:36  4997c30a-f0ea-46ff-88a9-c89cf01da5c7  Username required to create new training instance
 08-04-2023  20:23:30  3931a5dd-93db-4187-aea3-7541d91602de  Forbidden
+09-04-2023  10:15:32  5d67b50e-5ab4-42b8-a820-d608c8af7a08  Cannot destructure property 'username' of 'training' as it is null.
+09-04-2023  10:21:49  a9258161-c3c2-4434-bac5-ca17ef4f612e  Cannot destructure property 'username' of 'training' as it is null.
