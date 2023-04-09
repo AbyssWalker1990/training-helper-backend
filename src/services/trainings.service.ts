@@ -1,9 +1,9 @@
 import { Training } from '../models/Training'
 import MissingDataException from '../exceptions/trainingsExceptions/MissingDataException'
-import type Exercise from '../interfaces/trainings/exercise.interface'
+import type { Exercise, TrainingModel } from '../interfaces/training.interface'
 import HttpException from '../exceptions/HttpException'
 import { User } from '../models/User'
-import type { TrainingModel } from '../interfaces/training.interface'
+
 import type { UserModel, MyCookie } from '../interfaces/auth.interface'
 
 class TrainingService {
@@ -22,8 +22,10 @@ class TrainingService {
     const accessToken = cookies.jwt
     const currentUser = await this.isExistingUser(accessToken)
     const currentUserName = currentUser.username
-
     const training = await Training.findById(trainingId) as TrainingModel
+    if (training === null) {
+      throw new MissingDataException(`There is no training with ${trainingId} ID`)
+    }
     this.isOwnerOfTraining(training, currentUserName)
     await Training.findByIdAndDelete(trainingId)
   }
@@ -40,6 +42,9 @@ class TrainingService {
   public async getSingleTrainingById (trainingId: string): Promise<TrainingModel> {
     this.isValidTrainingId(trainingId)
     const training = await Training.findById(trainingId) as TrainingModel
+    if (training === null) {
+      throw new MissingDataException(`There is no training with ${trainingId} ID`)
+    }
     const { username, title } = training
     this.isValidTraining(username, title)
     return training

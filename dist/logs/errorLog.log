@@ -151,3 +151,18 @@
 08-04-2023  20:23:30  3931a5dd-93db-4187-aea3-7541d91602de  Forbidden
 09-04-2023  10:15:32  5d67b50e-5ab4-42b8-a820-d608c8af7a08  Cannot destructure property 'username' of 'training' as it is null.
 09-04-2023  10:21:49  a9258161-c3c2-4434-bac5-ca17ef4f612e  Cannot destructure property 'username' of 'training' as it is null.
+09-04-2023  22:53:45  6dc5535d-08d3-42d4-82f7-b99c096d96ec  Cannot destructure property 'username' of 'training' as it is null.
+09-04-2023  22:55:48  6fe16a6c-b857-4b07-9cc4-18c059b62824  Cannot destructure property 'username' of 'training' as it is null.
+09-04-2023  22:56:24  eb28cb72-f114-4e37-9bec-8df1158f030c  Cannot destructure property 'username' of 'training' as it is null.
+09-04-2023  22:58:03  d02badbc-0654-4726-b858-e94d16f4fe99  Cannot destructure property 'username' of 'training' as it is null.
+09-04-2023  22:58:28  6ceefb58-a32b-4f0f-8155-325d796513be  Cannot read properties of null (reading 'username')
+09-04-2023  22:58:34  978189c8-cef6-47f9-bfb9-b3d43ec27cab  Cannot read properties of null (reading 'username')
+09-04-2023  22:58:47  bb9e4cf1-0901-4be3-8aa9-636fce4753a9  Cannot read properties of null (reading 'username')
+09-04-2023  23:00:13  74a7a7fc-a225-4696-a254-6a06a34d061c  Cannot read properties of null (reading 'username')
+09-04-2023  23:03:40  a8d134d5-9ecd-4426-b8c5-c993e59a6a5b  Cannot read properties of null (reading 'username')
+09-04-2023  23:07:07  cb49ba7c-3052-496b-94c9-89ed7e6fd6e7  Cannot read properties of null (reading 'username')
+09-04-2023  23:07:54  36fb2205-0ad3-45bb-8dfe-0bcdc3637e04  Cannot read properties of null (reading 'username')
+09-04-2023  23:08:30  ea41282a-1b59-4b0d-a864-17676fe29a4e  Cannot read properties of null (reading 'username')
+09-04-2023  23:10:50  b5f3d2ae-7db6-4459-b99a-7e90dfa339aa  There is no training with 64331ad79238166e6843cace ID
+09-04-2023  23:16:29  48b0fd4d-3e12-45ec-b1e2-1c7994e6e984  There is no training with 64331bbde68c29d22a9824f5 ID
+09-04-2023  23:16:35  40a32a11-f707-4e34-bf42-9a230e3cdd4d  There is no training with 64331bbde68c29d22a9824f5 ID

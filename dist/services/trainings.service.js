@@ -23,6 +23,9 @@ class TrainingService {
         const currentUser = await this.isExistingUser(accessToken);
         const currentUserName = currentUser.username;
         const training = await Training_1.Training.findById(trainingId);
+        if (training === null) {
+            throw new MissingDataException_1.default(`There is no training with ${trainingId} ID`);
+        }
         this.isOwnerOfTraining(training, currentUserName);
         await Training_1.Training.findByIdAndDelete(trainingId);
     }
@@ -37,6 +40,9 @@ class TrainingService {
     async getSingleTrainingById(trainingId) {
         this.isValidTrainingId(trainingId);
         const training = await Training_1.Training.findById(trainingId);
+        if (training === null) {
+            throw new MissingDataException_1.default(`There is no training with ${trainingId} ID`);
+        }
         const { username, title } = training;
         this.isValidTraining(username, title);
         return training;
