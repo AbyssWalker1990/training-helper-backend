@@ -143,6 +143,7 @@
 31-03-2023  11:29:39  4693413c-096c-4852-9482-898777980257  Unauthorized
 31-03-2023  11:29:39  5ace60a6-92bb-46f2-9862-b84b5b6263c7  password must be a string,password must be longer than or equal to 4 characters
 31-03-2023  11:29:39  dde66947-8e33-460f-a68b-378b1e8bd245  User already exists!
+<<<<<<< HEAD
 07-04-2023  08:00:02  82a2c62a-0836-4e0b-906e-dab26e0758e3  Unauthorized
 07-04-2023  09:33:13  a696d0ee-3b67-45b4-9b72-d458d6f98ee7  Username required to create new training instance
 07-04-2023  09:33:24  d21815aa-e1bb-4ceb-8791-258be01d0d33  Title required to create new training instance
@@ -166,3 +167,21 @@
 09-04-2023  23:10:50  b5f3d2ae-7db6-4459-b99a-7e90dfa339aa  There is no training with 64331ad79238166e6843cace ID
 09-04-2023  23:16:29  48b0fd4d-3e12-45ec-b1e2-1c7994e6e984  There is no training with 64331bbde68c29d22a9824f5 ID
 09-04-2023  23:16:35  40a32a11-f707-4e34-bf42-9a230e3cdd4d  There is no training with 64331bbde68c29d22a9824f5 ID
+=======
+31-03-2023  11:37:40  b1f5b580-a761-4964-85e5-6d7213a69cf7  Username and password are required
+31-03-2023  11:37:40  2c1f9d9b-ccff-4e65-9365-589e48a8893d  Unauthorized
+31-03-2023  11:37:40  ad210ad0-217a-4592-ad5a-3180ee0ea394  password must be a string,password must be longer than or equal to 4 characters
+31-03-2023  11:37:40  29a411c4-5297-4db0-a36c-ccd764d416da  User already exists!
+31-03-2023  11:42:14  fe98683d-5697-47a1-9d4a-0850bbc298a0  Username and password are required
+31-03-2023  11:42:14  77c793c6-9bbe-4011-970b-f2ffa49afa72  Unauthorized
+31-03-2023  11:42:14  cbc1a425-2ec1-4d44-92fa-a2f15fc94271  password must be a string,password must be longer than or equal to 4 characters
+31-03-2023  11:42:15  f22b5806-eb9f-4e2b-8474-fc1870a1b147  User already exists!
+31-03-2023  11:45:21  ae1e4b72-2d3b-4d5c-8e1b-fe261fd3be52  Username and password are required
+31-03-2023  11:45:21  5346cf02-2157-46d2-9cee-7fc329318acf  Unauthorized
+31-03-2023  11:45:22  3c5a9192-1eae-4554-b32f-be55ebc5a1f0  password must be a string,password must be longer than or equal to 4 characters
+31-03-2023  11:45:22  815b94c4-95cf-4d4f-99d4-c2985e12acc9  User already exists!
+31-03-2023  11:45:31  c17b2f11-eb4f-4751-ad75-90359e10877f  Username and password are required
+31-03-2023  11:45:31  7d2ffb88-159b-4f13-8479-9100a249363a  Unauthorized
+31-03-2023  11:45:31  bbe01a77-a30d-4cdf-b28a-da076f83c9d8  password must be a string,password must be longer than or equal to 4 characters
+31-03-2023  11:45:31  0362cc8c-27d0-4c03-8f99-592a098fb378  User already exists!
+>>>>>>> 5f970bc4d0946a312feadd20f0eaca89c5e21b1d

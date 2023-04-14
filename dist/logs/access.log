@@ -1141,6 +1141,7 @@
 2023-03-31T11:29:39+03:00 POST /auth/register/ 400 14.387 ms 
 2023-03-31T11:29:39+03:00 POST /auth/register/ 409 53.906 ms 
 2023-03-31T11:29:39+03:00 POST /auth/register/ 201 170.776 ms 
+<<<<<<< HEAD
 2023-04-07T06:39:51+03:00 GET / 404 10.355 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
 2023-04-07T06:39:58+03:00 GET /api-docs 301 4.536 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
 2023-04-07T06:39:58+03:00 GET /api-docs/ 304 3.603 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
@@ -1250,3 +1251,28 @@
 2023-04-09T23:16:25+03:00 DELETE /trainings/64331bbde68c29d22a9824f5 204 145.389 ms PostmanRuntime/7.29.2
 2023-04-09T23:16:29+03:00 DELETE /trainings/64331bbde68c29d22a9824f5 400 96.876 ms PostmanRuntime/7.29.2
 2023-04-09T23:16:35+03:00 GET /trainings/64331bbde68c29d22a9824f5 400 46.156 ms PostmanRuntime/7.29.2
+2023-03-31T11:37:40+03:00 POST /auth/login/ 400 117.532 ms 
+2023-03-31T11:37:40+03:00 POST /auth/login/ 401 48.311 ms 
+2023-03-31T11:37:40+03:00 POST /auth/login/ 200 227.392 ms 
+2023-03-31T11:37:40+03:00 POST /auth/register/ 400 28.868 ms 
+2023-03-31T11:37:40+03:00 POST /auth/register/ 409 49.218 ms 
+2023-03-31T11:37:40+03:00 POST /auth/register/ 201 197.747 ms 
+2023-03-31T11:42:14+03:00 POST /auth/login/ 400 49.844 ms 
+2023-03-31T11:42:14+03:00 POST /auth/login/ 401 47.680 ms 
+2023-03-31T11:42:14+03:00 POST /auth/login/ 200 174.123 ms 
+2023-03-31T11:42:14+03:00 POST /auth/register/ 400 10.679 ms 
+2023-03-31T11:42:15+03:00 POST /auth/register/ 409 51.239 ms 
+2023-03-31T11:42:15+03:00 POST /auth/register/ 201 199.966 ms 
+2023-03-31T11:45:21+03:00 POST /auth/login/ 400 53.077 ms 
+2023-03-31T11:45:21+03:00 POST /auth/login/ 401 51.385 ms 
+2023-03-31T11:45:21+03:00 POST /auth/login/ 200 222.862 ms 
+2023-03-31T11:45:22+03:00 POST /auth/register/ 400 18.333 ms 
+2023-03-31T11:45:22+03:00 POST /auth/register/ 409 49.852 ms 
+2023-03-31T11:45:22+03:00 POST /auth/register/ 201 159.968 ms 
+2023-03-31T11:45:31+03:00 POST /auth/login/ 400 27.161 ms 
+2023-03-31T11:45:31+03:00 POST /auth/login/ 401 49.701 ms 
+2023-03-31T11:45:31+03:00 POST /auth/login/ 200 221.467 ms 
+2023-03-31T11:45:31+03:00 POST /auth/register/ 400 8.527 ms 
+2023-03-31T11:45:31+03:00 POST /auth/register/ 409 52.667 ms 
+2023-03-31T11:45:31+03:00 POST /auth/register/ 201 197.052 ms 
+
