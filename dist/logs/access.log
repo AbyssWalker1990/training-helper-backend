@@ -1276,3 +1276,9 @@
 2023-03-31T11:45:31+03:00 POST /auth/register/ 409 52.667 ms 
 2023-03-31T11:45:31+03:00 POST /auth/register/ 201 197.052 ms 
 
+2023-04-14T12:13:59+03:00 GET /api-docs/ 304 6.101 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-04-14T12:13:59+03:00 GET /api-docs/swagger-ui-bundle.js 304 2.419 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-04-14T12:13:59+03:00 GET /api-docs/swagger-ui-standalone-preset.js 304 0.820 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-04-14T12:13:59+03:00 GET /api-docs/swagger-ui.css 304 0.665 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-04-14T12:13:59+03:00 GET /api-docs/swagger-ui-init.js 304 0.961 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-04-14T12:14:28+03:00 POST /auth/register 201 260.067 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
