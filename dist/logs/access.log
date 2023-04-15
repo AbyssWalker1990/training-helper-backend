@@ -1282,3 +1282,9 @@
 2023-04-14T12:13:59+03:00 GET /api-docs/swagger-ui.css 304 0.665 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
 2023-04-14T12:13:59+03:00 GET /api-docs/swagger-ui-init.js 304 0.961 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
 2023-04-14T12:14:28+03:00 POST /auth/register 201 260.067 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-04-15T17:39:28+03:00 POST /trainings/ 201 129.340 ms PostmanRuntime/7.32.2
+2023-04-15T17:40:12+03:00 GET /trainings/Vova 500 18.795 ms PostmanRuntime/7.32.2
+2023-04-15T17:42:19+03:00 POST /auth/login 400 2.990 ms PostmanRuntime/7.32.2
+2023-04-15T17:42:55+03:00 POST /auth/login 200 148.426 ms PostmanRuntime/7.32.2
+2023-04-15T17:43:28+03:00 GET /trainings/ 404 1.510 ms PostmanRuntime/7.32.2
+2023-04-15T17:44:37+03:00 GET /trainings/user 200 8.258 ms PostmanRuntime/7.32.2

@@ -185,3 +185,5 @@
 31-03-2023  11:45:31  bbe01a77-a30d-4cdf-b28a-da076f83c9d8  password must be a string,password must be longer than or equal to 4 characters
 31-03-2023  11:45:31  0362cc8c-27d0-4c03-8f99-592a098fb378  User already exists!
 >>>>>>> 5f970bc4d0946a312feadd20f0eaca89c5e21b1d
+15-04-2023  17:40:12  437dba08-4d55-49bd-94cc-4f1e09c9ad0b  Cast to ObjectId failed for value "Vova" (type string) at path "_id" for model "Training"
+15-04-2023  17:42:19  b4fe55a2-8f81-462b-8e85-0e2596fc5db3  Username and password are required

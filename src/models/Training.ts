@@ -25,7 +25,7 @@ const trainingSchema = new Schema<TrainingModel>({
         type: String,
         required: true
       },
-      set: {
+      set: [{
         setPos: {
           type: Number,
           required: true
@@ -37,7 +37,7 @@ const trainingSchema = new Schema<TrainingModel>({
         weight: {
           type: Number
         }
-      }
+      }]
     }
   ]
 })

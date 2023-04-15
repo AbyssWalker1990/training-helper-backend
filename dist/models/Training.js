@@ -29,19 +29,19 @@ const trainingSchema = new Schema({
                 type: String,
                 required: true
             },
-            set: {
-                setPos: {
-                    type: Number,
-                    required: true
-                },
-                reps: {
-                    type: Number,
-                    required: true
-                },
-                weight: {
-                    type: Number
-                }
-            }
+            set: [{
+                    setPos: {
+                        type: Number,
+                        required: true
+                    },
+                    reps: {
+                        type: Number,
+                        required: true
+                    },
+                    weight: {
+                        type: Number
+                    }
+                }]
         }
     ]
 });
