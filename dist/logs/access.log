@@ -1288,3 +1288,23 @@
 2023-04-15T17:42:55+03:00 POST /auth/login 200 148.426 ms PostmanRuntime/7.32.2
 2023-04-15T17:43:28+03:00 GET /trainings/ 404 1.510 ms PostmanRuntime/7.32.2
 2023-04-15T17:44:37+03:00 GET /trainings/user 200 8.258 ms PostmanRuntime/7.32.2
+2023-04-15T20:22:01+03:00 GET / 404 13.265 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-04-15T20:22:10+03:00 GET /api-docs/ 304 7.340 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-04-15T20:22:10+03:00 GET /api-docs/swagger-ui-bundle.js 200 2.714 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-04-15T20:22:10+03:00 GET /api-docs/swagger-ui.css 304 1.056 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-04-15T20:22:10+03:00 GET /api-docs/swagger-ui-init.js 304 1.795 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-04-15T20:22:10+03:00 GET /api-docs/swagger-ui-standalone-preset.js 304 4.619 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-04-15T20:22:10+03:00 GET /api-docs/favicon-32x32.png 304 0.678 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-04-15T20:23:35+03:00 POST /auth/login 200 267.125 ms PostmanRuntime/7.32.2
+2023-04-15T20:23:56+03:00 POST /trainings/ 201 69.131 ms PostmanRuntime/7.32.2
+2023-04-16T10:30:18+03:00 POST /auth/login 200 277.953 ms PostmanRuntime/7.32.2
+2023-04-16T10:30:23+03:00 GET /trainings/user 200 48.183 ms PostmanRuntime/7.32.2
+2023-04-16T10:35:21+03:00 GET /test/create 404 6.338 ms PostmanRuntime/7.32.2
+2023-04-16T10:36:45+03:00 GET /test/create 404 13.272 ms PostmanRuntime/7.32.2
+2023-04-16T10:36:56+03:00 GET /trainings/user 200 41.976 ms PostmanRuntime/7.32.2
+2023-04-16T10:39:31+03:00 GET /test/create   ms PostmanRuntime/7.32.2
+2023-04-16T10:40:09+03:00 GET /test/create   ms PostmanRuntime/7.32.2
+2023-04-16T10:41:36+03:00 GET /test/create   ms PostmanRuntime/7.32.2
+2023-04-16T11:00:18+03:00 GET /test/create   ms PostmanRuntime/7.32.2
+2023-04-16T11:04:44+03:00 GET /test/create   ms PostmanRuntime/7.32.2
+2023-04-16T11:04:48+03:00 GET /trainings/user 200 27.462 ms PostmanRuntime/7.32.2

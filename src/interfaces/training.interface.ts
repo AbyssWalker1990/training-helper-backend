@@ -16,9 +16,11 @@ export interface TrainingModel {
 export interface Exercise {
   position: number
   name: string
-  set: {
-    setPos: number
-    reps: number
-    weight: number
-  }
+  set: singleSet[]
+}
+
+export interface singleSet {
+  setPos: number;
+  reps: number;
+  weight: number;
 }

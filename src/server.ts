@@ -7,13 +7,15 @@ import App from './app'
 import AuthController from './controllers/AuthController'
 import SwaggerController from './controllers/SwaggerController'
 import TrainingController from './controllers/TrainingController'
+import TestController from './controllers/TestController'
 dotenv.config()
 
 const PORT = Number(process.env.PORT) ?? 3500
 const app = new App([
   new AuthController(),
   new TrainingController(),
-  new SwaggerController()
+  new SwaggerController(),
+  new TestController()
 ], PORT)
 
 moment.tz.setDefault('Europe/Kiev')
