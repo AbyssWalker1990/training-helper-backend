@@ -1,6 +1,5 @@
 import type Controller from '../interfaces/controller.interface'
 import express, { type NextFunction, type Request, type Response } from 'express'
-import { type TrainingModel } from '../interfaces/training.interface'
 import TrainingService from '../services/trainings.service'
 
 interface MyCookie {
@@ -29,7 +28,7 @@ class TrainingController implements Controller {
 
   private readonly createTraining = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-      const { username, title, exercises } = req.body 
+      const { username, title, exercises } = req.body
       const newTraining = await this.trainingService.createSingleTraining(username, title, exercises)
       res.status(201).json({ success: `New Training ${newTraining.title} created!!!` })
     } catch (error) {

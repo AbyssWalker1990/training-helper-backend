@@ -2,15 +2,10 @@ import { Training } from '../models/Training'
 import type { Exercise, TrainingModel, singleSet } from '../interfaces/training.interface'
 import exercisesList from '../config/exercisesList'
 
-
 class TestService {
   public async createRandomTraining (username: string): Promise<TrainingModel> {
     const title = 'Test training'
-    
     const exercises = this.createExercisesList()
-
-    
-
     const createdTraining = await Training.create({
       username,
       title,
@@ -34,13 +29,13 @@ class TestService {
     return exercises
   }
 
-  private readonly createSetListForSingleExercise = () => {
+  private readonly createSetListForSingleExercise = (): singleSet[] => {
     const sets: singleSet[] = []
     for (let i = 1; i < this.getRandomNumber(4, 10); i++) {
-      const singleSet: singleSet = {       
-          setPos: i,
-          reps: this.getRandomNumber(4, 25),
-          weight: this.getRandomNumber(10, 250)    
+      const singleSet: singleSet = {
+        setPos: i,
+        reps: this.getRandomNumber(4, 25),
+        weight: this.getRandomNumber(10, 250)
       }
       sets.push(singleSet)
     }
@@ -48,7 +43,7 @@ class TestService {
   }
 
   private readonly getRandomNumber = (min: number, max: number): number => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min
   }
 }
 

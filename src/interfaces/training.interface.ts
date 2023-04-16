@@ -20,7 +20,7 @@ export interface Exercise {
 }
 
 export interface singleSet {
-  setPos: number;
-  reps: number;
-  weight: number;
+  setPos: number
+  reps: number
+  weight: number
 }
