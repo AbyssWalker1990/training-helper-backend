@@ -13,14 +13,27 @@ class TestController implements Controller {
 
   public initRoutes (): void {
     this.router.get(`${this.path}/create`, this.createRandomTraining)
+    this.router.get(`${this.path}/delete-all`, this.deleteTestTrainings)
   }
 
-  private readonly createRandomTraining = async (req: Request, res: Response, next: NextFunction): Promise<void> => {   
+  private readonly createRandomTraining = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-      const createdTraining = await this.testService.createRandomTraining('Vova')
-      res.status(201).json({ success: `New Training ${createdTraining.title} created!!!` })
+      for (let i = 0; i < 30; i++) {
+        await this.testService.createRandomTraining('Vova')
+      }
+      res.status(201).json({ success: 'Test Trainings has been created!!!' })
     } catch (error) {
       console.log(error)
+      next(error)
+    }
+  }
+
+  private readonly deleteTestTrainings = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+      await this.testService.deleteAllTestTrainings()
+      console.log('test Trainings deleted')
+      res.status(204).json({ success: 'Test Trainings successfully deleted!' })
+    } catch (error) {
       next(error)
     }
   }

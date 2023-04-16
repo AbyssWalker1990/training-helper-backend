@@ -16,13 +16,16 @@ class TestService {
         });
         return createdTraining;
     }
+    deleteAllTestTrainings = async () => {
+        await Training_1.Training.deleteMany({ title: 'Test training' });
+    };
     createExercisesList = () => {
         const exercises = [];
         for (let i = 1; i < this.getRandomNumber(4, 10); i++) {
             const sets = this.createSetListForSingleExercise();
             const exercise = {
                 position: i,
-                name: exercisesList_1.default[this.getRandomNumber(0, exercisesList_1.default.length)],
+                name: exercisesList_1.default[this.getRandomNumber(0, exercisesList_1.default.length - 1)],
                 set: sets
             };
             exercises.push(exercise);
@@ -44,6 +47,10 @@ class TestService {
     };
     getRandomNumber = (min, max) => {
         return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
+    findAllTestTrainings = async () => {
+        const testTrainingsList = await Training_1.Training.find({ title: 'Test training' });
+        return testTrainingsList;
     };
 }
 exports.default = TestService;

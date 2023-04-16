@@ -14,13 +14,17 @@ class TestService {
     return createdTraining
   }
 
+  public deleteAllTestTrainings = async (): Promise<void> => {
+    await Training.deleteMany({ title: 'Test training' })
+  }
+
   private readonly createExercisesList = (): Exercise[] => {
     const exercises: Exercise[] = []
     for (let i = 1; i < this.getRandomNumber(4, 10); i++) {
       const sets = this.createSetListForSingleExercise()
       const exercise: Exercise = {
         position: i,
-        name: exercisesList[this.getRandomNumber(0, exercisesList.length)],
+        name: exercisesList[this.getRandomNumber(0, exercisesList.length - 1)],
         set: sets
       }
       exercises.push(exercise)
@@ -44,6 +48,11 @@ class TestService {
 
   private readonly getRandomNumber = (min: number, max: number): number => {
     return Math.floor(Math.random() * (max - min + 1)) + min
+  }
+
+  private readonly findAllTestTrainings = async (): Promise<TrainingModel[]> => {
+    const testTrainingsList = await Training.find({ title: 'Test training' })
+    return testTrainingsList
   }
 }
 

@@ -1308,3 +1308,17 @@
 2023-04-16T11:00:18+03:00 GET /test/create   ms PostmanRuntime/7.32.2
 2023-04-16T11:04:44+03:00 GET /test/create   ms PostmanRuntime/7.32.2
 2023-04-16T11:04:48+03:00 GET /trainings/user 200 27.462 ms PostmanRuntime/7.32.2
+2023-04-16T18:08:21+03:00 GET /trainings/user 200 35.487 ms PostmanRuntime/7.32.2
+2023-04-16T18:13:40+03:00 GET /test/delete-all   ms PostmanRuntime/7.32.2
+2023-04-16T18:14:17+03:00 GET /trainings/user 200 12.127 ms PostmanRuntime/7.32.2
+2023-04-16T18:16:50+03:00 GET /test/create 500 102.279 ms PostmanRuntime/7.32.2
+2023-04-16T18:18:10+03:00 GET /trainings/user 200 33.006 ms PostmanRuntime/7.32.2
+2023-04-16T18:20:37+03:00 GET /test/delete-all   ms PostmanRuntime/7.32.2
+2023-04-16T18:20:40+03:00 GET /trainings/user 200 21.758 ms PostmanRuntime/7.32.2
+2023-04-16T18:21:45+03:00 GET /test/create 201 374.506 ms PostmanRuntime/7.32.2
+2023-04-16T18:21:48+03:00 GET /trainings/user 200 101.084 ms PostmanRuntime/7.32.2
+2023-04-16T18:24:24+03:00 GET /trainings/user 200 56.394 ms PostmanRuntime/7.32.2
+2023-04-16T18:24:29+03:00 GET /test/create 201 335.565 ms PostmanRuntime/7.32.2
+2023-04-16T18:24:59+03:00 GET /trainings/user 200 104.917 ms PostmanRuntime/7.32.2
+2023-04-16T18:25:10+03:00 GET /test/delete-all 204 9.468 ms PostmanRuntime/7.32.2
+2023-04-16T18:25:14+03:00 GET /trainings/user 200 16.925 ms PostmanRuntime/7.32.2

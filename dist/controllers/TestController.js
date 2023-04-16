@@ -14,9 +14,29 @@ class TestController {
     }
     initRoutes() {
         this.router.get(`${this.path}/create`, this.createRandomTraining);
+        this.router.get(`${this.path}/delete-all`, this.deleteTestTrainings);
     }
-    createRandomTraining = async () => {
-        const createdTraining = await this.testService.createRandomTraining('Vova');
+    createRandomTraining = async (req, res, next) => {
+        try {
+            for (let i = 0; i < 30; i++) {
+                await this.testService.createRandomTraining('Vova');
+            }
+            res.status(201).json({ success: 'Test Trainings has been created!!!' });
+        }
+        catch (error) {
+            console.log(error);
+            next(error);
+        }
+    };
+    deleteTestTrainings = async (req, res, next) => {
+        try {
+            await this.testService.deleteAllTestTrainings();
+            console.log('test Trainings deleted');
+            res.status(204).json({ success: 'Test Trainings successfully deleted!' });
+        }
+        catch (error) {
+            next(error);
+        }
     };
 }
 exports.default = TestController;
