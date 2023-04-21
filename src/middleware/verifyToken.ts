@@ -3,10 +3,6 @@ import jwt from 'jsonwebtoken'
 
 // Need to test and maybe rewrite in future when this func will be needed
 
-interface MyRequest extends Request {
-  name: string
-}
-
 // Needed for future routes only for authorized users
 const verifyToken = (req: Request, res: Response, next: NextFunction): void => {
   const accessSecret = process.env.ACCESS_TOKEN_SECRET as string
@@ -23,14 +19,3 @@ const verifyToken = (req: Request, res: Response, next: NextFunction): void => {
 }
 
 export default verifyToken
-
-// OLD VESION
-// jwt.verify(
-//   token,
-//   accessSecret,
-//   (err, decoded) => {
-//     if (err) return res.sendStatus(403)
-//     req.user = decoded.username
-//     next()
-//   }
-// )
