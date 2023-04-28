@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+// Need to test and maybe rewrite in future when this func will be needed
 // Needed for future routes only for authorized users
 const verifyToken = (req, res, next) => {
     const accessSecret = process.env.ACCESS_TOKEN_SECRET;
@@ -19,13 +20,3 @@ const verifyToken = (req, res, next) => {
     next();
 };
 exports.default = verifyToken;
-// OLD VESION
-// jwt.verify(
-//   token,
-//   accessSecret,
-//   (err, decoded) => {
-//     if (err) return res.sendStatus(403)
-//     req.user = decoded.username
-//     next()
-//   }
-// )

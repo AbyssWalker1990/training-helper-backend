@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const allowedHosts = [
     'http://localhost:3500',
+    'http://localhost:3000',
     'https://www.google.com',
     'https://large-periodic-guan.glitch.me'
 ];

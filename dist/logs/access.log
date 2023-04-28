@@ -1322,3 +1322,12 @@
 2023-04-16T18:24:59+03:00 GET /trainings/user 200 104.917 ms PostmanRuntime/7.32.2
 2023-04-16T18:25:10+03:00 GET /test/delete-all 204 9.468 ms PostmanRuntime/7.32.2
 2023-04-16T18:25:14+03:00 GET /trainings/user 200 16.925 ms PostmanRuntime/7.32.2
+2023-04-28T12:00:06+03:00 POST /auth/login 200 287.156 ms PostmanRuntime/7.32.2
+2023-04-28T12:00:14+03:00 GET /trainings/user 200 64.571 ms PostmanRuntime/7.32.2
+2023-04-28T12:01:43+03:00 GET /test/create 201 381.038 ms PostmanRuntime/7.32.2
+2023-04-28T12:01:49+03:00 GET /trainings/user 200 84.511 ms PostmanRuntime/7.32.2
+2023-04-28T15:03:08+03:00 OPTIONS /auth/login 500 8.093 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-28T15:04:56+03:00 OPTIONS /auth/login 200 4.617 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-28T15:04:56+03:00 POST /auth/login 401 247.876 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-28T15:06:28+03:00 OPTIONS /auth/login 200 0.555 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-28T15:06:28+03:00 POST /auth/login 200 132.758 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36

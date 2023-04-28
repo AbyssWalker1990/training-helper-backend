@@ -188,3 +188,5 @@
 15-04-2023  17:40:12  437dba08-4d55-49bd-94cc-4f1e09c9ad0b  Cast to ObjectId failed for value "Vova" (type string) at path "_id" for model "Training"
 15-04-2023  17:42:19  b4fe55a2-8f81-462b-8e85-0e2596fc5db3  Username and password are required
 16-04-2023  18:16:50  674a6ce4-42ca-4cf6-92ad-702258f98e7b  Training validation failed: exercises.0.name: Path `name` is required.
+28-04-2023  15:03:08  fbf4e005-55ec-4744-be7b-9e8cd58103d0  Not allowed by CORS
+28-04-2023  15:04:56  347b0281-86aa-4dfb-9305-d056fbb1a26e  Unauthorized
