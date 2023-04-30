@@ -10,17 +10,17 @@ components:
     User:
       type: object
       required:
-        - user
+        - username
         - password
       properties:
-        user:
+        username:
           type: string
           description: Username of new or logging in user
         password:
           type: string
           description: Password for registering or logging in user
       example:
-        user: YourUsername
+        username: YourUsername
         password: 123456abcd
 paths:
   /auth/register:
@@ -100,6 +100,10 @@ paths:
           schema:
             type: "object"
             properties:
+              username:
+                type: "string"
+                description: "User name"
+                example: "Smith"
               accessToken:
                 type: "string"
                 description: "Access Token"

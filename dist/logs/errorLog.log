@@ -190,3 +190,4 @@
 16-04-2023  18:16:50  674a6ce4-42ca-4cf6-92ad-702258f98e7b  Training validation failed: exercises.0.name: Path `name` is required.
 28-04-2023  15:03:08  fbf4e005-55ec-4744-be7b-9e8cd58103d0  Not allowed by CORS
 28-04-2023  15:04:56  347b0281-86aa-4dfb-9305-d056fbb1a26e  Unauthorized
+30-04-2023  12:33:33  cbd33345-9c0d-42dc-8505-0c9874c504cc  Username and password are required
