@@ -7,6 +7,7 @@ const Training_1 = require("../models/Training");
 const MissingDataException_1 = __importDefault(require("../exceptions/trainingsExceptions/MissingDataException"));
 const HttpException_1 = __importDefault(require("../exceptions/HttpException"));
 const User_1 = require("../models/User");
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 class TrainingService {
     async createSingleTraining(username, title, exercises) {
         this.isValidTraining(username, title);
@@ -30,11 +31,13 @@ class TrainingService {
         await Training_1.Training.findByIdAndDelete(trainingId);
     }
     async getAllTrainingsByUser(cookies) {
+        const accessSecret = process.env.ACCESS_TOKEN_SECRET;
         this.isAccessToken(cookies);
         const accessToken = cookies.jwt;
-        const currentUser = await this.isExistingUser(accessToken);
-        const currentUserName = currentUser.username;
-        const trainingList = await Training_1.Training.find({ username: currentUserName });
+        console.log(`Access Token: ${accessToken}`);
+        const decoded = jsonwebtoken_1.default.verify(accessToken, accessSecret);
+        const currentUser = decoded.username;
+        const trainingList = await Training_1.Training.find({ username: currentUser });
         return trainingList;
     }
     async getSingleTrainingById(trainingId) {
@@ -53,12 +56,12 @@ class TrainingService {
     }
     isOwnerOfTraining(training, currentUser) {
         if (training.username !== currentUser)
-            throw new HttpException_1.default(403, 'Forbidden');
+            throw new HttpException_1.default(403, 'Forbidden, not owner');
     }
     async isExistingUser(token) {
         const currentUser = await User_1.User.findOne({ refreshToken: token }).exec();
         if (currentUser == null)
-            throw new HttpException_1.default(403, 'Forbidden');
+            throw new HttpException_1.default(403, 'Forbidden, user does not exist');
         return currentUser;
     }
     isValidTrainingId(trainingId) {

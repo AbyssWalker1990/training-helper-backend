@@ -3,8 +3,8 @@ import MissingDataException from '../exceptions/trainingsExceptions/MissingDataE
 import type { Exercise, TrainingModel } from '../interfaces/training.interface'
 import HttpException from '../exceptions/HttpException'
 import { User } from '../models/User'
-
-import type { UserModel, MyCookie } from '../interfaces/auth.interface'
+import jwt from 'jsonwebtoken'
+import type { UserModel, MyCookie, DecodedToken } from '../interfaces/auth.interface'
 
 class TrainingService {
   public async createSingleTraining (username: string, title: string, exercises: Exercise[]): Promise<TrainingModel> {
@@ -31,11 +31,13 @@ class TrainingService {
   }
 
   public async getAllTrainingsByUser (cookies: MyCookie): Promise<TrainingModel[]> {
+    const accessSecret = process.env.ACCESS_TOKEN_SECRET as string
     this.isAccessToken(cookies)
     const accessToken = cookies.jwt
-    const currentUser = await this.isExistingUser(accessToken)
-    const currentUserName = currentUser.username
-    const trainingList = await Training.find({ username: currentUserName })
+    console.log(`Access Token: ${accessToken}`)
+    const decoded = jwt.verify(accessToken, accessSecret) as DecodedToken
+    const currentUser = decoded.username
+    const trainingList = await Training.find({ username: currentUser })
     return trainingList
   }
 
@@ -55,12 +57,12 @@ class TrainingService {
   }
 
   private isOwnerOfTraining (training: TrainingModel, currentUser: string): void {
-    if (training.username !== currentUser) throw new HttpException(403, 'Forbidden')
+    if (training.username !== currentUser) throw new HttpException(403, 'Forbidden, not owner')
   }
 
   private async isExistingUser (token: string): Promise<UserModel> {
     const currentUser = await User.findOne({ refreshToken: token }).exec() as UserModel
-    if (currentUser == null) throw new HttpException(403, 'Forbidden')
+    if (currentUser == null) throw new HttpException(403, 'Forbidden, user does not exist')
     return currentUser
   }
 
