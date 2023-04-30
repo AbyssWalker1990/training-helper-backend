@@ -7,12 +7,12 @@ import jwt, { type JwtPayload } from 'jsonwebtoken'
 
 class AuthService {
   public async register (userData: CreateUserDto): Promise<string> {
-    const { user, password }: { user: string, password: string } = userData
-    if (user === '' || password === '' || user === undefined || password === undefined) {
+    const { username, password }: { username: string, password: string } = userData
+    if (username === '' || password === '' || username === undefined || password === undefined) {
       throw new HttpException(400, 'Username and password are required')
     }
     // Check if user alreasy exists
-    const duplicate = await User.findOne({ username: user }).exec()
+    const duplicate = await User.findOne({ username }).exec()
     if (duplicate != null) {
       throw new HttpException(409, 'User already exists!')
     }
@@ -20,7 +20,7 @@ class AuthService {
     try {
       const HashedPassword = await bcrypt.hash(password, 10)
       const result = await User.create({
-        username: user,
+        username,
         password: HashedPassword
       })
       return result.username
@@ -32,11 +32,11 @@ class AuthService {
   public async login (userData: CreateUserDto): Promise<string[]> {
     const accessSecret = process.env.ACCESS_TOKEN_SECRET as string
     const refreshSecret = process.env.REFRESH_TOKEN_SECRET as string
-    const { user, password }: { user: string, password: string } = userData
-    if (user === '' || password === '' || user === undefined || password === undefined) {
+    const { username, password }: { username: string, password: string } = userData
+    if (username === '' || password === '' || username === undefined || password === undefined) {
       throw new HttpException(400, 'Username and password are required')
     }
-    const currentUser = await User.findOne({ username: user }).exec()
+    const currentUser = await User.findOne({ username }).exec()
     if (currentUser == null) {
       throw new HttpException(401, 'Unauthorized')
     }

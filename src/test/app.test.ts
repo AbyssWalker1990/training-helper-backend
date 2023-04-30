@@ -1,7 +1,6 @@
 import dotenv from 'dotenv'
 import supertest from 'supertest'
 import mongoose from 'mongoose'
-import { MongoMemoryServer } from 'mongodb-memory-server'
 import App from '../app'
 import AuthController from '../controllers/AuthController'
 import SwaggerController from '../controllers/SwaggerController'
@@ -19,7 +18,7 @@ const app = new App([
 app.listen()
 
 const testUserData = {
-  user: 'testuser',
+  username: 'testuser',
   password: 'testpassword'
 }
 
@@ -32,8 +31,8 @@ describe('auth', () => {
     await authService.register(testUserData)
   })
   afterAll(async () => {
-    await User.deleteOne({ username: 'testuser'})
-    await User.deleteOne({ username: 'testuservalid'})
+    await User.deleteOne({ username: 'testuser' })
+    await User.deleteOne({ username: 'testuservalid' })
     await mongoose.disconnect()
     await mongoose.connection.close()
   })

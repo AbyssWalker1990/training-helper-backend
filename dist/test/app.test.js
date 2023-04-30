@@ -20,7 +20,7 @@ const app = new app_1.default([
 ], PORT);
 app.listen();
 const testUserData = {
-    user: 'testuser',
+    username: 'testuser',
     password: 'testpassword'
 };
 describe('auth', () => {

@@ -9,19 +9,19 @@ const bcrypt_1 = __importDefault(require("bcrypt"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 class AuthService {
     async register(userData) {
-        const { user, password } = userData;
-        if (user === '' || password === '' || user === undefined || password === undefined) {
+        const { username, password } = userData;
+        if (username === '' || password === '' || username === undefined || password === undefined) {
             throw new HttpException_1.default(400, 'Username and password are required');
         }
         // Check if user alreasy exists
-        const duplicate = await User_1.User.findOne({ username: user }).exec();
+        const duplicate = await User_1.User.findOne({ username }).exec();
         if (duplicate != null) {
             throw new HttpException_1.default(409, 'User already exists!');
         }
         try {
             const HashedPassword = await bcrypt_1.default.hash(password, 10);
             const result = await User_1.User.create({
-                username: user,
+                username,
                 password: HashedPassword
             });
             return result.username;
@@ -33,11 +33,11 @@ class AuthService {
     async login(userData) {
         const accessSecret = process.env.ACCESS_TOKEN_SECRET;
         const refreshSecret = process.env.REFRESH_TOKEN_SECRET;
-        const { user, password } = userData;
-        if (user === '' || password === '' || user === undefined || password === undefined) {
+        const { username, password } = userData;
+        if (username === '' || password === '' || username === undefined || password === undefined) {
             throw new HttpException_1.default(400, 'Username and password are required');
         }
-        const currentUser = await User_1.User.findOne({ username: user }).exec();
+        const currentUser = await User_1.User.findOne({ username }).exec();
         if (currentUser == null) {
             throw new HttpException_1.default(401, 'Unauthorized');
         }

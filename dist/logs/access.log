@@ -1331,3 +1331,12 @@
 2023-04-28T15:04:56+03:00 POST /auth/login 401 247.876 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
 2023-04-28T15:06:28+03:00 OPTIONS /auth/login 200 0.555 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
 2023-04-28T15:06:28+03:00 POST /auth/login 200 132.758 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-28T15:11:54+03:00 OPTIONS /auth/login 200 3.377 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-28T15:11:54+03:00 POST /auth/login 200 197.509 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-28T15:12:45+03:00 POST /auth/login 200 123.849 ms PostmanRuntime/7.32.2
+2023-04-28T15:13:28+03:00 OPTIONS /auth/login 200 0.548 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-28T15:13:28+03:00 POST /auth/login 200 132.908 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-28T15:13:52+03:00 POST /auth/login 200 83.214 ms PostmanRuntime/7.32.2
+2023-04-28T15:15:54+03:00 OPTIONS /auth/login 200 0.526 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-28T15:15:55+03:00 POST /auth/login 200 128.033 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T12:06:15+03:00 POST /auth/login 200 303.772 ms PostmanRuntime/7.32.2

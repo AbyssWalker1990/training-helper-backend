@@ -8,16 +8,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const class_validator_1 = require("class-validator");
 class CreateUserDto {
-    user;
+    username;
     password;
-    constructor(user, password) {
-        this.user = user;
+    constructor(username, password) {
+        this.username = username;
         this.password = password;
     }
 }
 __decorate([
     (0, class_validator_1.IsString)()
-], CreateUserDto.prototype, "user", void 0);
+], CreateUserDto.prototype, "username", void 0);
 __decorate([
     (0, class_validator_1.MinLength)(4),
     (0, class_validator_1.IsString)()

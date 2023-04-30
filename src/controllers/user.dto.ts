@@ -2,14 +2,14 @@ import { IsString, MinLength } from 'class-validator'
 
 class CreateUserDto {
   @IsString()
-  public user: string
+  public username: string
 
   @MinLength(4)
   @IsString()
   public password: string
 
-  constructor (user: string, password: string) {
-    this.user = user
+  constructor (username: string, password: string) {
+    this.username = username
     this.password = password
   }
 }
