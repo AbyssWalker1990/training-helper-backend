@@ -227,3 +227,16 @@
 30-04-2023  18:37:50  06664ffa-3945-490e-9e5f-f9653af013b3  Forbidden
 30-04-2023  18:40:02  9ed662aa-faca-4a96-82e2-1313922b79d2  Forbidden
 30-04-2023  18:44:27  474fe5a9-9be2-403f-b346-2f7e8a3a6711  Forbidden, user does not exist
+30-04-2023  20:41:29  cb38d94b-8eb8-4ef1-ad5c-9dcfdf3b6b8c  jwt must be provided
+01-05-2023  12:32:26  2b2b118a-5d53-467e-a3f3-e00bcacfd7b0  invalid signature
+01-05-2023  12:32:48  2d505f60-4b96-44c8-9e40-2b0c7a6d6f80  invalid signature
+01-05-2023  12:35:19  3e20c25c-ea85-49b7-b279-82f9db6eab7e  invalid signature
+01-05-2023  12:38:21  418c41ff-03d9-4cbd-b927-fa8b6d63288e  invalid signature
+01-05-2023  12:38:51  547a3365-dc5e-47e9-b433-cebebc9fa272  invalid signature
+01-05-2023  12:40:39  4fd7cbf1-c944-4549-9da8-9e76efb83f5f  invalid signature
+01-05-2023  12:45:22  f69298a1-e185-42be-a060-7c72a93a5fe4  invalid signature
+01-05-2023  12:59:28  6bf6139a-cc3a-4b6d-930d-bfaeae501a65  invalid signature
+01-05-2023  13:11:48  1abc7bac-3cbc-44fc-bcae-7d5b532d72e3  invalid signature
+01-05-2023  13:12:21  f824cd13-0269-408b-8dbb-bce7b1d45e19  invalid signature
+01-05-2023  13:13:25  0fea9ece-47a1-41e9-a5a4-1c4a48f42bd3  invalid signature
+01-05-2023  13:15:23  00553744-e511-4c72-ba34-274dc49c1dbc  invalid signature

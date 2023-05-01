@@ -31,12 +31,15 @@ class TrainingService {
   }
 
   public async getAllTrainingsByUser (cookies: MyCookie): Promise<TrainingModel[]> {
-    const accessSecret = process.env.ACCESS_TOKEN_SECRET as string
+    const refreshSecret = process.env.REFRESH_TOKEN_SECRET as string
+    console.log(`refreshSecret: ${refreshSecret}`)
     this.isAccessToken(cookies)
     const accessToken = cookies.jwt
     console.log(`Access Token: ${accessToken}`)
-    const decoded = jwt.verify(accessToken, accessSecret) as DecodedToken
+    console.log(`Access Token: ${typeof accessToken}`)
+    const decoded = jwt.verify(accessToken, refreshSecret) as DecodedToken
     const currentUser = decoded.username
+    console.log('currentUser: ', currentUser)
     const trainingList = await Training.find({ username: currentUser })
     return trainingList
   }

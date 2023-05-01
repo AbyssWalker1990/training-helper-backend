@@ -49,7 +49,8 @@ class TrainingController implements Controller {
   }
 
   private readonly getTrainingsByUser = async (req: CustomRequest, res: Response, next: NextFunction): Promise<any> => {
-    const cookies = req.cookies
+    const cookies: MyCookie = req.cookies
+    console.log(`Cookies: ${JSON.stringify(cookies)}`)
     try {
       const trainingList = await this.trainingService.getAllTrainingsByUser(cookies)
       res.status(200).json(trainingList)

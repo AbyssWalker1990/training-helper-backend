@@ -31,12 +31,15 @@ class TrainingService {
         await Training_1.Training.findByIdAndDelete(trainingId);
     }
     async getAllTrainingsByUser(cookies) {
-        const accessSecret = process.env.ACCESS_TOKEN_SECRET;
+        const refreshSecret = process.env.REFRESH_TOKEN_SECRET;
+        console.log(`refreshSecret: ${refreshSecret}`);
         this.isAccessToken(cookies);
         const accessToken = cookies.jwt;
         console.log(`Access Token: ${accessToken}`);
-        const decoded = jsonwebtoken_1.default.verify(accessToken, accessSecret);
+        console.log(`Access Token: ${typeof accessToken}`);
+        const decoded = jsonwebtoken_1.default.verify(accessToken, refreshSecret);
         const currentUser = decoded.username;
+        console.log('currentUser: ', currentUser);
         const trainingList = await Training_1.Training.find({ username: currentUser });
         return trainingList;
     }

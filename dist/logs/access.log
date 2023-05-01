@@ -1478,3 +1478,72 @@
 2023-04-30T18:54:06+03:00 POST /auth/login 200 185.938 ms undici
 2023-04-30T18:54:16+03:00 OPTIONS /trainings/user 200 0.575 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
 2023-04-30T18:54:16+03:00 GET /trainings/user 200 96.380 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:16:51+03:00 POST /auth/login 200 111.805 ms undici
+2023-04-30T20:17:01+03:00 OPTIONS /trainings/user 200 0.901 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:17:01+03:00 GET /trainings/user 304 106.935 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:30:12+03:00 POST /auth/login 200 75.498 ms undici
+2023-04-30T20:30:21+03:00 OPTIONS /trainings/user 200 0.178 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:30:21+03:00 GET /trainings/user 304 79.346 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:33:25+03:00 OPTIONS /trainings/user 200 0.236 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:33:25+03:00 GET /trainings/user 304 103.225 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:37:54+03:00 OPTIONS /trainings/user 200 0.248 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:37:54+03:00 GET /trainings/user 304 61.033 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:39:37+03:00 OPTIONS /trainings/user 200 0.153 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:39:37+03:00 GET /trainings/user 304 50.043 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:39:51+03:00 OPTIONS /trainings/user 200 0.192 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:39:51+03:00 GET /trainings/user 304 45.790 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:40:38+03:00 OPTIONS /trainings/user 200 0.311 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:40:38+03:00 GET /trainings/user 304 71.017 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:41:29+03:00 OPTIONS /trainings/user 200 0.229 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:41:29+03:00 GET /trainings/user 500 6.651 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:41:31+03:00 GET /trainings/user 200 42.553 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:41:52+03:00 OPTIONS /trainings/user 200 0.188 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:41:52+03:00 GET /trainings/user 304 46.265 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:43:30+03:00 OPTIONS /trainings/user 200 0.221 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:43:30+03:00 GET /trainings/user 304 42.325 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:44:01+03:00 OPTIONS /trainings/user 200 0.558 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:44:01+03:00 GET /trainings/user 304 48.470 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:46:05+03:00 OPTIONS /trainings/user 200 0.144 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:46:05+03:00 GET /trainings/user 304 41.545 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:46:36+03:00 OPTIONS /trainings/user 200 0.228 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-04-30T20:46:36+03:00 GET /trainings/user 304 47.924 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-05-01T12:17:48+03:00 GET / 404 9.386 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-05-01T12:18:07+03:00 GET /api-docs/ 304 27.338 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-05-01T12:18:07+03:00 GET /api-docs/swagger-ui-bundle.js 200 3.402 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-05-01T12:18:07+03:00 GET /api-docs/swagger-ui-standalone-preset.js 304 0.924 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-05-01T12:18:07+03:00 GET /api-docs/swagger-ui.css 304 0.668 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-05-01T12:18:07+03:00 GET /api-docs/swagger-ui-init.js 304 0.960 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-05-01T12:19:02+03:00 POST /auth/login 200 244.349 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-05-01T12:21:29+03:00 POST /auth/login 200 127.427 ms PostmanRuntime/7.32.2
+2023-05-01T12:26:24+03:00 POST /auth/login 200 78.382 ms undici
+2023-05-01T12:32:26+03:00 GET /trainings/user 500 6.133 ms PostmanRuntime/7.32.2
+2023-05-01T12:32:40+03:00 POST /auth/login 200 79.132 ms PostmanRuntime/7.32.2
+2023-05-01T12:32:48+03:00 GET /trainings/user 500 5.450 ms PostmanRuntime/7.32.2
+2023-05-01T12:35:19+03:00 OPTIONS /trainings/user 200 0.403 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-05-01T12:35:19+03:00 GET /trainings/user 500 4.688 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-05-01T12:38:21+03:00 GET /trainings/user 500 2.444 ms PostmanRuntime/7.32.2
+2023-05-01T12:38:51+03:00 GET /trainings/user 500 14.335 ms PostmanRuntime/7.32.2
+2023-05-01T12:40:35+03:00 POST /auth/login 200 202.332 ms PostmanRuntime/7.32.2
+2023-05-01T12:40:39+03:00 GET /trainings/user 500 10.900 ms PostmanRuntime/7.32.2
+2023-05-01T12:45:17+03:00 POST /auth/login 200 137.558 ms PostmanRuntime/7.32.2
+2023-05-01T12:45:22+03:00 GET /trainings/user 500 10.188 ms PostmanRuntime/7.32.2
+2023-05-01T12:54:18+03:00 GET /auth/refresh 200 9.520 ms PostmanRuntime/7.32.2
+2023-05-01T12:54:56+03:00 GET /auth/refresh 200 7.805 ms PostmanRuntime/7.32.2
+2023-05-01T12:54:57+03:00 GET /auth/refresh 200 7.128 ms PostmanRuntime/7.32.2
+2023-05-01T12:54:58+03:00 GET /auth/refresh 200 8.721 ms PostmanRuntime/7.32.2
+2023-05-01T12:59:28+03:00 GET /trainings/user 500 3.042 ms PostmanRuntime/7.32.2
+2023-05-01T13:03:29+03:00 GET /trainings/user 200 12.835 ms PostmanRuntime/7.32.2
+2023-05-01T13:06:25+03:00 POST /auth/login 200 108.478 ms PostmanRuntime/7.32.2
+2023-05-01T13:07:06+03:00 GET /trainings/user 200 121.193 ms PostmanRuntime/7.32.2
+2023-05-01T13:10:59+03:00 GET /trainings/user 200 89.131 ms PostmanRuntime/7.32.2
+2023-05-01T13:11:22+03:00 GET /trainings/user 200 111.680 ms PostmanRuntime/7.32.2
+2023-05-01T13:11:49+03:00 GET /trainings/user 500 15.686 ms PostmanRuntime/7.32.2
+2023-05-01T13:12:21+03:00 GET /trainings/user 500 14.727 ms PostmanRuntime/7.32.2
+2023-05-01T13:13:25+03:00 GET /trainings/user 500 13.986 ms PostmanRuntime/7.32.2
+2023-05-01T13:15:23+03:00 GET /trainings/user 500 14.086 ms PostmanRuntime/7.32.2
+2023-05-01T13:19:04+03:00 POST /auth/login 200 110.410 ms PostmanRuntime/7.32.2
+2023-05-01T13:20:54+03:00 POST /auth/login 200 136.517 ms PostmanRuntime/7.32.2
+2023-05-01T13:20:58+03:00 GET /trainings/user 200 101.970 ms PostmanRuntime/7.32.2
+2023-05-01T13:22:00+03:00 POST /auth/login 200 76.072 ms undici
+2023-05-01T13:22:08+03:00 OPTIONS /trainings/user 200 0.525 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+2023-05-01T13:22:08+03:00 GET /trainings/user 200 81.237 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
