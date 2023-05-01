@@ -9,6 +9,10 @@ const HttpException_1 = __importDefault(require("../exceptions/HttpException"));
 const User_1 = require("../models/User");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 class TrainingService {
+    accessSecret;
+    constructor() {
+        this.accessSecret = process.env.ACCESS_TOKEN_SECRET;
+    }
     async createSingleTraining(username, title, exercises) {
         this.isValidTraining(username, title);
         const createdTraining = await Training_1.Training.create({
@@ -31,16 +35,12 @@ class TrainingService {
         await Training_1.Training.findByIdAndDelete(trainingId);
     }
     async getAllTrainingsByUser(cookies) {
-        const refreshSecret = process.env.REFRESH_TOKEN_SECRET;
-        console.log(`refreshSecret: ${refreshSecret}`);
         this.isAccessToken(cookies);
         const accessToken = cookies.jwt;
-        console.log(`Access Token: ${accessToken}`);
-        console.log(`Access Token: ${typeof accessToken}`);
-        const decoded = jsonwebtoken_1.default.verify(accessToken, refreshSecret);
-        const currentUser = decoded.username;
-        console.log('currentUser: ', currentUser);
-        const trainingList = await Training_1.Training.find({ username: currentUser });
+        console.log('accessToken: ', accessToken);
+        const currentUser = await this.decodeUserName(accessToken, this.accessSecret);
+        const trainingList = await Training_1.Training.find({ username: currentUser.username });
+        console.log('trainingList: ', trainingList);
         return trainingList;
     }
     async getSingleTrainingById(trainingId) {
@@ -62,7 +62,7 @@ class TrainingService {
             throw new HttpException_1.default(403, 'Forbidden, not owner');
     }
     async isExistingUser(token) {
-        const currentUser = await User_1.User.findOne({ refreshToken: token }).exec();
+        const currentUser = await this.decodeUserName(token, this.accessSecret);
         if (currentUser == null)
             throw new HttpException_1.default(403, 'Forbidden, user does not exist');
         return currentUser;
@@ -79,6 +79,15 @@ class TrainingService {
         if (title === '' || title === null || title === undefined) {
             throw new MissingDataException_1.default('Title required to create new training instance');
         }
+    }
+    async decodeUserName(token, secret) {
+        console.log('DECODE START');
+        const decoded = jsonwebtoken_1.default.verify(token, secret);
+        console.log('DECODE FINISH');
+        const currentUser = await User_1.User.findOne({ username: decoded.username }).exec();
+        console.log('----------------------------');
+        console.log(`currentUser FROM DB: ${JSON.stringify(currentUser)}`);
+        return currentUser;
     }
 }
 exports.default = TrainingService;

@@ -240,3 +240,58 @@
 01-05-2023  13:12:21  f824cd13-0269-408b-8dbb-bce7b1d45e19  invalid signature
 01-05-2023  13:13:25  0fea9ece-47a1-41e9-a5a4-1c4a48f42bd3  invalid signature
 01-05-2023  13:15:23  00553744-e511-4c72-ba34-274dc49c1dbc  invalid signature
+01-05-2023  17:28:46  1512f0bd-b345-4fcc-b0f1-1c5acfa4d068  invalid signature
+01-05-2023  17:29:17  8272411c-cf60-488c-af7f-8cf12c26ab2e  invalid signature
+01-05-2023  19:47:12  0103ca42-43c2-480e-8312-8c6ad5485c0a  invalid signature
+01-05-2023  19:49:29  a0244624-5ae6-46bd-8540-dcfa97f6806c  invalid signature
+01-05-2023  19:50:14  e47e7e77-f857-4c0b-97ab-57c5480c5fc0  invalid signature
+01-05-2023  20:02:50  88b662a0-2a7c-485a-a2a7-32bc4cee0e3c  invalid signature
+01-05-2023  20:16:14  b8d9dbfe-2954-4533-8c30-935aab3724fe  invalid signature
+01-05-2023  21:28:42  33c38282-3766-4530-bf87-3b92ae5cc423  invalid signature
+01-05-2023  21:34:32  bb22e9b8-2109-4abb-bc2f-a19a6111701a  Forbidden, user does not exist
+01-05-2023  21:41:29  d3becef9-74c8-4195-ae60-36f500050bb8  There is no training with 645005b91bb4a13b96534a45 ID
+01-05-2023  21:50:34  b455ac16-4723-4351-8c46-dff507fd96e3  jwt expired
+01-05-2023  21:51:22  ed7f24f9-d1f2-4e4c-a184-355bdf8de8a7  There is no training with 645009a8b091a26619836a56 ID
+01-05-2023  22:09:05  9b748acd-80de-46c6-b83a-3c9b600aa553  Cast to string failed for value "{
+  _id: new ObjectId("6439137eaccbb6f9dd198ad9"),
+  username: 'Vova',
+  password: '$2b$10$6olQtr8w3kWBs1O4xJnsGu6yYK3oXnGF8d3IGEwXibckVHp0p/Gtu',
+  __v: 0,
+  refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlZvdmEiLCJpYXQiOjE2ODI5NjgxMzgsImV4cCI6MTY4MzA1NDUzOH0.Fe9CGdt9xmSx0Ja3MDRFlR5ULKXyiXBMXOxLZRsJWiA'
+}" (type Object) at path "username" for model "Training"
+01-05-2023  22:10:50  8756522c-f96f-4286-99e4-b294b67c87d3  Cast to string failed for value "{
+  _id: new ObjectId("6439137eaccbb6f9dd198ad9"),
+  username: 'Vova',
+  password: '$2b$10$6olQtr8w3kWBs1O4xJnsGu6yYK3oXnGF8d3IGEwXibckVHp0p/Gtu',
+  __v: 0,
+  refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlZvdmEiLCJpYXQiOjE2ODI5NjgxMzgsImV4cCI6MTY4MzA1NDUzOH0.Fe9CGdt9xmSx0Ja3MDRFlR5ULKXyiXBMXOxLZRsJWiA'
+}" (type Object) at path "username" for model "Training"
+01-05-2023  22:14:26  e1efc39f-82db-4196-8add-d44a40286f0e  Cast to string failed for value "{
+  _id: new ObjectId("6439137eaccbb6f9dd198ad9"),
+  username: 'Vova',
+  password: '$2b$10$6olQtr8w3kWBs1O4xJnsGu6yYK3oXnGF8d3IGEwXibckVHp0p/Gtu',
+  __v: 0,
+  refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlZvdmEiLCJpYXQiOjE2ODI5Njg0NjEsImV4cCI6MTY4MzA1NDg2MX0.2DEtzS9o0cCRLiSnGQfn1SwpOeiIMNcRTCJ59yjyx8c'
+}" (type Object) at path "username" for model "Training"
+01-05-2023  22:17:37  53377460-6d79-478e-9c23-bc6a00f39acb  Cast to string failed for value "{
+  _id: new ObjectId("6439137eaccbb6f9dd198ad9"),
+  username: 'Vova',
+  password: '$2b$10$6olQtr8w3kWBs1O4xJnsGu6yYK3oXnGF8d3IGEwXibckVHp0p/Gtu',
+  __v: 0,
+  refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlZvdmEiLCJpYXQiOjE2ODI5Njg2NTMsImV4cCI6MTY4MzA1NTA1M30.8_m1SuxKTsNM6wYxB5RxlsWNmj7Vtj8f4_HG77ltUlI'
+}" (type Object) at path "username" for model "Training"
+01-05-2023  22:19:35  b72a4c93-8bb0-488d-bfe7-1863b955cbad  Cast to string failed for value "{
+  _id: new ObjectId("6439137eaccbb6f9dd198ad9"),
+  username: 'Vova',
+  password: '$2b$10$6olQtr8w3kWBs1O4xJnsGu6yYK3oXnGF8d3IGEwXibckVHp0p/Gtu',
+  __v: 0,
+  refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlZvdmEiLCJpYXQiOjE2ODI5Njg3NzIsImV4cCI6MTY4MzA1NTE3Mn0.kWDaAjnugqnuJ0jbGkHR4T_YrHYyiDa9xf2PHs8YxyU'
+}" (type Object) at path "username" for model "Training"
+01-05-2023  22:21:41  fb037e1b-f820-4e0c-87bc-388640391a40  Cast to string failed for value "{
+  _id: new ObjectId("6439137eaccbb6f9dd198ad9"),
+  username: 'Vova',
+  password: '$2b$10$6olQtr8w3kWBs1O4xJnsGu6yYK3oXnGF8d3IGEwXibckVHp0p/Gtu',
+  __v: 0,
+  refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlZvdmEiLCJpYXQiOjE2ODI5Njg4OTcsImV4cCI6MTY4MzA1NTI5N30.ZTwuvqHTyR-N8vA3wwzRKArd4VikH5T0v630UjSNDM8'
+}" (type Object) at path "username" for model "Training"
+01-05-2023  22:24:21  9fbd942c-cfad-455e-955d-32d63e2eb350  There is no training with 645009a8b091a26619836a56 ID

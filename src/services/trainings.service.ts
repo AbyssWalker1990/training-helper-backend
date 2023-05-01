@@ -7,6 +7,11 @@ import jwt from 'jsonwebtoken'
 import type { UserModel, MyCookie, DecodedToken } from '../interfaces/auth.interface'
 
 class TrainingService {
+  private readonly accessSecret: string
+  constructor () {
+    this.accessSecret = process.env.ACCESS_TOKEN_SECRET as string
+  }
+
   public async createSingleTraining (username: string, title: string, exercises: Exercise[]): Promise<TrainingModel> {
     this.isValidTraining(username, title)
     const createdTraining = await Training.create({
@@ -31,16 +36,12 @@ class TrainingService {
   }
 
   public async getAllTrainingsByUser (cookies: MyCookie): Promise<TrainingModel[]> {
-    const refreshSecret = process.env.REFRESH_TOKEN_SECRET as string
-    console.log(`refreshSecret: ${refreshSecret}`)
     this.isAccessToken(cookies)
     const accessToken = cookies.jwt
-    console.log(`Access Token: ${accessToken}`)
-    console.log(`Access Token: ${typeof accessToken}`)
-    const decoded = jwt.verify(accessToken, refreshSecret) as DecodedToken
-    const currentUser = decoded.username
-    console.log('currentUser: ', currentUser)
-    const trainingList = await Training.find({ username: currentUser })
+    console.log('accessToken: ', accessToken)
+    const currentUser = await this.decodeUserName(accessToken, this.accessSecret)
+    const trainingList = await Training.find({ username: currentUser.username })
+    console.log('trainingList: ', trainingList)
     return trainingList
   }
 
@@ -64,7 +65,7 @@ class TrainingService {
   }
 
   private async isExistingUser (token: string): Promise<UserModel> {
-    const currentUser = await User.findOne({ refreshToken: token }).exec() as UserModel
+    const currentUser = await this.decodeUserName(token, this.accessSecret)
     if (currentUser == null) throw new HttpException(403, 'Forbidden, user does not exist')
     return currentUser
   }
@@ -82,6 +83,16 @@ class TrainingService {
     if (title === '' || title === null || title === undefined) {
       throw new MissingDataException('Title required to create new training instance')
     }
+  }
+
+  private async decodeUserName (token: string, secret: string): Promise<UserModel> {
+    console.log('DECODE START')
+    const decoded = jwt.verify(token, secret) as DecodedToken
+    console.log('DECODE FINISH')
+    const currentUser = await User.findOne({ username: decoded.username }).exec() as UserModel
+    console.log('----------------------------')
+    console.log(`currentUser FROM DB: ${JSON.stringify(currentUser)}`)
+    return currentUser
   }
 }
 

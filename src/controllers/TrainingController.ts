@@ -42,7 +42,7 @@ class TrainingController implements Controller {
       const cookies = req.cookies
       const trainingId = req.params.trainingId
       await this.trainingService.deleteSingleTraining(cookies, trainingId)
-      res.status(204).json({ success: `Training ${trainingId} deleted!!!` })
+      res.sendStatus(204)
     } catch (error) {
       next(error)
     }

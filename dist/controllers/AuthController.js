@@ -26,11 +26,11 @@ class AuthController {
         const username = userData.username;
         try {
             const [accessToken, refreshToken] = await this.authService.login(userData);
-            res.cookie('jwt', refreshToken, {
+            res.cookie('jwt', accessToken, {
                 httpOnly: true,
                 maxAge: 24 * 60 * 60 * 1000
             });
-            res.status(200).json({ username, accessToken });
+            res.status(200).json({ username, accessToken, refreshToken });
         }
         catch (error) {
             next(error);
