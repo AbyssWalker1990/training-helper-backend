@@ -34,13 +34,10 @@ class TrainingService {
         this.isOwnerOfTraining(training, currentUserName);
         await Training_1.Training.findByIdAndDelete(trainingId);
     }
-    async getAllTrainingsByUser(cookies) {
-        this.isAccessToken(cookies);
-        const accessToken = cookies.jwt;
-        console.log('accessToken: ', accessToken);
-        const currentUser = await this.decodeUserName(accessToken, this.accessSecret);
+    async getAllTrainingsByUser(token) {
+        // this.isAccessToken(cookies)
+        const currentUser = await this.decodeUserName(token, this.accessSecret);
         const trainingList = await Training_1.Training.find({ username: currentUser.username });
-        console.log('trainingList: ', trainingList);
         return trainingList;
     }
     async getSingleTrainingById(trainingId) {
@@ -81,12 +78,8 @@ class TrainingService {
         }
     }
     async decodeUserName(token, secret) {
-        console.log('DECODE START');
         const decoded = jsonwebtoken_1.default.verify(token, secret);
-        console.log('DECODE FINISH');
         const currentUser = await User_1.User.findOne({ username: decoded.username }).exec();
-        console.log('----------------------------');
-        console.log(`currentUser FROM DB: ${JSON.stringify(currentUser)}`);
         return currentUser;
     }
 }

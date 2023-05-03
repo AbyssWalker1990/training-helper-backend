@@ -14,7 +14,7 @@ class TrainingController {
     }
     initRoutes() {
         this.router.post(`${this.path}/`, this.createTraining);
-        this.router.get(`${this.path}/user`, this.getTrainingsByUser);
+        this.router.post(`${this.path}/user`, this.getTrainingsByUser);
         this.router.get(`${this.path}/:trainingId`, this.getTrainingById);
         this.router.delete(`${this.path}/:trainingId`, this.deleteTraining);
     }
@@ -41,10 +41,11 @@ class TrainingController {
         }
     };
     getTrainingsByUser = async (req, res, next) => {
-        const cookies = req.cookies;
-        console.log(`Cookies: ${JSON.stringify(cookies)}`);
+        const { token } = req.body;
+        console.log(req.body);
+        console.log(token);
         try {
-            const trainingList = await this.trainingService.getAllTrainingsByUser(cookies);
+            const trainingList = await this.trainingService.getAllTrainingsByUser(token);
             res.status(200).json(trainingList);
         }
         catch (error) {

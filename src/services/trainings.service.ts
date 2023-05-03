@@ -35,13 +35,10 @@ class TrainingService {
     await Training.findByIdAndDelete(trainingId)
   }
 
-  public async getAllTrainingsByUser (cookies: MyCookie): Promise<TrainingModel[]> {
-    this.isAccessToken(cookies)
-    const accessToken = cookies.jwt
-    console.log('accessToken: ', accessToken)
-    const currentUser = await this.decodeUserName(accessToken, this.accessSecret)
+  public async getAllTrainingsByUser (token: string): Promise<TrainingModel[]> {
+    // this.isAccessToken(cookies)
+    const currentUser = await this.decodeUserName(token, this.accessSecret)
     const trainingList = await Training.find({ username: currentUser.username })
-    console.log('trainingList: ', trainingList)
     return trainingList
   }
 
@@ -86,12 +83,8 @@ class TrainingService {
   }
 
   private async decodeUserName (token: string, secret: string): Promise<UserModel> {
-    console.log('DECODE START')
     const decoded = jwt.verify(token, secret) as DecodedToken
-    console.log('DECODE FINISH')
     const currentUser = await User.findOne({ username: decoded.username }).exec() as UserModel
-    console.log('----------------------------')
-    console.log(`currentUser FROM DB: ${JSON.stringify(currentUser)}`)
     return currentUser
   }
 }

@@ -295,3 +295,35 @@
   refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlZvdmEiLCJpYXQiOjE2ODI5Njg4OTcsImV4cCI6MTY4MzA1NTI5N30.ZTwuvqHTyR-N8vA3wwzRKArd4VikH5T0v630UjSNDM8'
 }" (type Object) at path "username" for model "Training"
 01-05-2023  22:24:21  9fbd942c-cfad-455e-955d-32d63e2eb350  There is no training with 645009a8b091a26619836a56 ID
+03-05-2023  11:04:57  2da623f3-d6f4-4386-8d33-1f29d222f9fe  jwt expired
+03-05-2023  11:22:47  d65aaccd-b490-4046-a9c4-65b389a957f7  Unauthorized
+03-05-2023  11:42:12  7f268f96-c6d6-4353-b3cb-4c9805132716  Unauthorized
+03-05-2023  12:52:27  7659d7ad-ae75-48b4-ae12-084d33ba6e91  username must be a string
+03-05-2023  13:06:53  eb27929f-cad5-40b9-8c35-b6bd7a58b6f8  Unauthorized
+03-05-2023  13:48:44  58dcd048-1a6b-45ed-b3aa-b81dfd421f9e  jwt must be provided
+03-05-2023  13:49:03  a25e5ea6-6618-4fb3-9e1e-65cf2c5b0975  jwt must be provided
+03-05-2023  13:50:11  31c2c2f6-d31d-402f-8848-b58f398c3184  jwt must be provided
+03-05-2023  13:52:09  2f52c532-0d25-4389-948d-ac15852fcb3b  jwt must be provided
+03-05-2023  14:00:10  04378811-b16a-45ef-ac50-2ae0765b2c87  jwt must be provided
+03-05-2023  14:01:59  745aada5-b295-4103-bf09-2fa51e12b015  Unauthorized
+03-05-2023  14:02:13  c684eb16-dd81-465d-aed0-d725a09db87a  jwt must be provided
+03-05-2023  14:04:45  d8b7e54c-bee4-4140-bc2f-ac32db5f5b97  Unauthorized
+03-05-2023  14:05:00  2b227ba3-5ce8-4e81-b008-70f2443b6a64  Unauthorized
+03-05-2023  14:05:34  826452b3-d21e-429e-b5d9-0435972409b6  Unauthorized
+03-05-2023  14:05:55  215a560d-929f-48b9-ab84-5a8ddf71f1a0  jwt must be provided
+03-05-2023  14:06:07  d92e4dac-d22b-4875-865e-024648def8a9  jwt must be provided
+03-05-2023  14:06:08  92a5f58f-27e7-4ecf-93a8-18f0b7856c1c  jwt must be provided
+03-05-2023  14:06:09  db982ac4-2992-4f42-b714-ccd041a20974  jwt must be provided
+03-05-2023  14:06:10  4b78acda-ac94-4b8f-877f-0f0613eb5802  jwt must be provided
+03-05-2023  14:07:27  27277301-6ce7-4dac-be59-1c25d88f4f15  Unauthorized
+03-05-2023  14:07:58  6eb17484-ee9a-48c0-8551-7d18994300f4  jwt must be provided
+03-05-2023  14:09:54  9e7a58cf-a41c-45fe-88a3-40c993ee615d  jwt must be provided
+03-05-2023  14:09:55  adb1763f-43ad-4616-b1a5-69389eeddcef  jwt must be provided
+03-05-2023  14:13:59  3a1d9ae0-ac9f-4cc5-8804-8aee3dcb1a3b  jwt must be provided
+03-05-2023  14:14:01  f7d9af2b-409e-4633-b7e8-884e9231698c  jwt must be provided
+03-05-2023  14:21:39  ef3eef15-dcaa-4845-8429-af019f458257  jwt must be provided
+03-05-2023  14:21:52  302288a8-e7ac-471e-a5ad-143afb6922bc  jwt must be provided
+03-05-2023  14:22:46  c24f4dda-f049-401c-88a0-37c834286a86  jwt must be provided
+03-05-2023  14:25:30  9154ac11-9cb7-4763-9af1-6f0c995f37c5  jwt must be provided
+03-05-2023  14:26:34  53f488fe-1b46-4e28-9131-d281b9b5412f  jwt must be provided
+03-05-2023  14:28:33  2be5c232-55d1-4ccf-bc64-e0c65b52b9ad  Unauthorized

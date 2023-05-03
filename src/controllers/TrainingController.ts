@@ -21,7 +21,7 @@ class TrainingController implements Controller {
 
   public initRoutes (): void {
     this.router.post(`${this.path}/`, this.createTraining)
-    this.router.get(`${this.path}/user`, this.getTrainingsByUser)
+    this.router.post(`${this.path}/user`, this.getTrainingsByUser)
     this.router.get(`${this.path}/:trainingId`, this.getTrainingById)
     this.router.delete(`${this.path}/:trainingId`, this.deleteTraining)
   }
@@ -48,11 +48,12 @@ class TrainingController implements Controller {
     }
   }
 
-  private readonly getTrainingsByUser = async (req: CustomRequest, res: Response, next: NextFunction): Promise<any> => {
-    const cookies: MyCookie = req.cookies
-    console.log(`Cookies: ${JSON.stringify(cookies)}`)
+  private readonly getTrainingsByUser = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
+    const { token } = req.body
+    console.log(req.body)
+    console.log(token)
     try {
-      const trainingList = await this.trainingService.getAllTrainingsByUser(cookies)
+      const trainingList = await this.trainingService.getAllTrainingsByUser(token)
       res.status(200).json(trainingList)
     } catch (error) {
       next(error)
