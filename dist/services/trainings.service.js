@@ -35,7 +35,7 @@ class TrainingService {
         await Training_1.Training.findByIdAndDelete(trainingId);
     }
     async getAllTrainingsByUser(token) {
-        // this.isAccessToken(cookies)
+        this.isAccessTokenString(token);
         const currentUser = await this.decodeUserName(token, this.accessSecret);
         const trainingList = await Training_1.Training.find({ username: currentUser.username });
         return trainingList;
@@ -52,6 +52,10 @@ class TrainingService {
     }
     isAccessToken(cookies) {
         if (cookies?.jwt === null)
+            throw new HttpException_1.default(401, 'Unauthorized');
+    }
+    isAccessTokenString(token) {
+        if (token === undefined)
             throw new HttpException_1.default(401, 'Unauthorized');
     }
     isOwnerOfTraining(training, currentUser) {

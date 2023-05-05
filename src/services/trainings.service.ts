@@ -36,7 +36,7 @@ class TrainingService {
   }
 
   public async getAllTrainingsByUser (token: string): Promise<TrainingModel[]> {
-    // this.isAccessToken(cookies)
+    this.isAccessTokenString(token)
     const currentUser = await this.decodeUserName(token, this.accessSecret)
     const trainingList = await Training.find({ username: currentUser.username })
     return trainingList
@@ -55,6 +55,10 @@ class TrainingService {
 
   private isAccessToken (cookies: MyCookie): void {
     if (cookies?.jwt === null) throw new HttpException(401, 'Unauthorized')
+  }
+
+  private isAccessTokenString (token: string): void {
+    if (token === undefined) throw new HttpException(401, 'Unauthorized')
   }
 
   private isOwnerOfTraining (training: TrainingModel, currentUser: string): void {

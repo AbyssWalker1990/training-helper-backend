@@ -327,3 +327,63 @@
 03-05-2023  14:25:30  9154ac11-9cb7-4763-9af1-6f0c995f37c5  jwt must be provided
 03-05-2023  14:26:34  53f488fe-1b46-4e28-9131-d281b9b5412f  jwt must be provided
 03-05-2023  14:28:33  2be5c232-55d1-4ccf-bc64-e0c65b52b9ad  Unauthorized
+05-05-2023  10:38:34  a846d1e4-bb38-4131-93cb-33fd62e63c1d  jwt must be provided
+05-05-2023  10:38:37  6b397567-0d33-4e7a-a445-2a4d225f0da9  jwt must be provided
+05-05-2023  10:38:58  952aeed4-a8f1-457a-bb43-84db54b0edb7  jwt must be provided
+05-05-2023  10:40:02  20bd4841-dd30-4497-9ce8-723891801886  jwt must be provided
+05-05-2023  10:40:15  7f8f9aab-8415-496c-9e5f-29ee87826e8a  jwt must be provided
+05-05-2023  10:40:18  34f5af7c-7140-4177-b967-7342cb2d95b6  jwt must be provided
+05-05-2023  10:49:28  f627f280-c9ec-4d0c-aa6d-299082910f14  jwt must be provided
+05-05-2023  10:49:28  65bee097-1f0c-4c33-8d4b-edcf3d106841  jwt must be provided
+05-05-2023  10:49:48  f59c18d4-ffbb-41ca-9b87-486896c3787d  jwt must be provided
+05-05-2023  10:52:09  cab05e10-735a-4721-a615-3468fcb71307  jwt must be provided
+05-05-2023  10:52:37  3c0f5b60-f395-4adc-bc56-f0fac46a267a  jwt must be provided
+05-05-2023  10:57:57  2cee6ee4-c77a-45f0-8004-ce979a43f00c  jwt must be provided
+05-05-2023  10:58:13  d7b5a67f-540e-4c5b-96d3-9c0ae73ddd87  jwt must be provided
+05-05-2023  10:58:13  16c109fe-beb6-4d48-82c7-4b479367fc35  jwt must be provided
+05-05-2023  10:58:56  c253b78f-fa75-42f1-805f-d9a37582bfd7  jwt must be provided
+05-05-2023  10:59:05  43d1a61a-b614-494d-b928-77a76443b49c  jwt must be provided
+05-05-2023  10:59:36  906cfed1-a459-47bc-92b5-34b49ca3f029  jwt must be provided
+05-05-2023  10:59:44  8e9eb5c4-ea40-4f57-b100-e68b504a11e1  jwt must be provided
+05-05-2023  11:01:42  7c4ddc95-6f6b-4ed9-ae66-9d9c497e0b67  jwt must be provided
+05-05-2023  11:02:27  55b90d9f-ae70-4077-85c1-add6ceaa6cd5  jwt must be provided
+05-05-2023  11:04:01  04d5408f-fd38-4f97-9924-570041cb80bd  jwt must be provided
+05-05-2023  11:07:10  021d16cc-8c5c-4500-93a6-48ddcf147fd7  "[object Object]" is not valid JSON
+05-05-2023  11:09:01  fb2fb49b-0555-4e16-90f3-5b054de49117  "[object Object]" is not valid JSON
+05-05-2023  11:09:04  e4af8fdb-c462-4438-8223-fe9fbaf6c850  "[object Object]" is not valid JSON
+05-05-2023  11:09:28  bebc6e43-d6b0-4c84-9f40-637e3c40d8e3  "[object Object]" is not valid JSON
+05-05-2023  11:10:47  73ece960-b11a-4b32-9237-be4d097e5e22  "[object Object]" is not valid JSON
+05-05-2023  11:11:44  7a5c9c89-f208-427a-9367-688cda60f07e  jwt must be provided
+05-05-2023  11:11:56  f5681777-f9e2-4543-9d3d-f9a8b381d260  jwt must be provided
+05-05-2023  11:11:56  721bffa1-d77b-46da-b217-cdfef119127d  jwt must be provided
+05-05-2023  11:12:52  41455f83-b764-4605-a29b-e9d6493bd75e  jwt must be provided
+05-05-2023  11:13:01  ebb1ec27-e075-42bc-9847-47211a53af1a  jwt must be provided
+05-05-2023  11:23:48  50c4f518-d99d-431c-961a-af624929152a  jwt must be a string
+05-05-2023  11:23:59  9b5b1615-c1ad-4f33-bb0b-19bdbcac3cbe  jwt must be a string
+05-05-2023  11:23:59  40be44d6-ce11-4f98-8898-221dac089e7c  jwt must be a string
+05-05-2023  11:24:16  a3c4305f-8ccd-4f61-b5a6-a1f31ab6590e  jwt must be a string
+05-05-2023  11:25:31  64697fd1-1996-4dc3-8756-60ba4dfd1be9  jwt must be a string
+05-05-2023  11:25:35  24360c40-9942-418d-b6cd-cfcfc44f19cc  jwt must be a string
+05-05-2023  11:26:20  67eaa62c-6e48-4922-a712-d92a8dc62f53  jwt must be a string
+05-05-2023  11:26:53  111fa975-9617-4c10-a282-398c2d9b31f0  jwt must be a string
+05-05-2023  11:26:54  67c5e076-b6b5-4afc-8fd5-d3429c856016  jwt must be a string
+05-05-2023  11:27:02  5e41eef3-933d-4aaf-924c-6f48506e9a24  jwt must be a string
+05-05-2023  11:27:02  1cc92aa5-18df-4b20-9d64-a994c2afd0fa  jwt must be a string
+05-05-2023  11:44:18  10148269-4dfb-4d82-9eab-59a6c447b06b  jwt must be provided
+05-05-2023  11:44:32  1ab6de28-62e0-4e25-b1cf-ba0dcaf837fa  jwt must be provided
+05-05-2023  11:44:33  1873a0af-3a55-4dc1-86fc-0aaff197ef89  jwt must be provided
+05-05-2023  11:44:37  49579881-9d10-40fc-b850-8d1d913162f9  jwt must be provided
+05-05-2023  11:44:37  5e578400-31a4-4ccd-ac8c-3d9b497b285f  jwt must be provided
+05-05-2023  11:44:41  4deeb81c-bac6-40b7-93ae-cc93844ea8d2  jwt must be provided
+05-05-2023  11:44:41  71fe85e7-9556-48a0-a065-dbb3d84afcc6  jwt must be provided
+05-05-2023  11:48:15  f017758d-1b25-41df-aa8a-699b34901e51  Unauthorized
+05-05-2023  11:51:46  d0eb3560-7f8a-4505-a89e-3c93f31f6fc3  jwt must be provided
+05-05-2023  11:51:47  f0d8bdf8-f16b-45f0-822b-465ab3d05ce5  jwt must be provided
+05-05-2023  12:21:51  ffa4dffd-6b4c-40fe-8b17-3ef31faf9262  jwt must be a string
+05-05-2023  12:22:19  eefe0688-d011-4c2e-8b62-417417c0bac3  jwt must be a string
+05-05-2023  12:23:30  52c70516-330e-4c57-aeac-dfffa7dcd189  jwt must be a string
+05-05-2023  12:23:55  3c863cb1-8bb4-462b-a6af-c1fcf7b7cb5e  jwt must be a string
+05-05-2023  12:30:25  b6970b65-def5-4bb2-8ea7-d7cf3ceb460a  jwt must be provided
+05-05-2023  12:44:07  5b8401d4-8927-4bac-887d-53ca59c53b54  jwt must be provided
+05-05-2023  12:47:17  10c4e9d3-ba21-4076-a606-dcbba88acb0b  jwt must be provided
+05-05-2023  12:52:36  734c04af-907b-472a-8ed6-79f5aee08e53  Unauthorized
