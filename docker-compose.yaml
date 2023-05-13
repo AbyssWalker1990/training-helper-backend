@@ -7,6 +7,10 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=password
+    networks:
+      - app-net
+    volumes:
+      - ./:/home/app
   mongo-express:
     image: mongo-express
     ports:
@@ -17,9 +21,24 @@ services:
       - ME_CONFIG_MONGODB_SERVER=mongodb
     depends_on:
       - mongodb
+    networks:
+      - app-net
   training-helper:
-    image: abysswalker1990/training-helper:1.0
+    build:
+      args:
+        user: 1000
+        uid: 1000
+      context: .
+    working_dir: /home/app
+    volumes:
+      - ./:/home/app
+    env_file:
+      - .env
     ports:
       - 3500:3500
     depends_on:
-      - mongo-express
+      - mongodb
+    networks:
+      - app-net
+networks:
+  app-net:

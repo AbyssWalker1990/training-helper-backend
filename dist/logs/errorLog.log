@@ -387,3 +387,25 @@
 05-05-2023  12:44:07  5b8401d4-8927-4bac-887d-53ca59c53b54  jwt must be provided
 05-05-2023  12:47:17  10c4e9d3-ba21-4076-a606-dcbba88acb0b  jwt must be provided
 05-05-2023  12:52:36  734c04af-907b-472a-8ed6-79f5aee08e53  Unauthorized
+05-05-2023  13:03:31  0ef3781f-87f7-4e04-a2ff-61491c798cd5  Unauthorized
+05-05-2023  13:11:31  f6e07147-22b5-4393-a46f-d2270fd0da82  Unauthorized
+05-05-2023  13:12:15  27c64ee8-9631-453b-b4f9-17524032b1c4  Unauthorized
+05-05-2023  13:13:23  5fc96f5c-065e-4c2a-84a4-0520cc81eec8  Unauthorized
+05-05-2023  13:13:32  8ea2de4a-98f2-4204-bd1f-3918c87523a4  Unauthorized
+05-05-2023  13:15:32  1ed00079-6225-47ff-bac7-acf8cef4370c  Unauthorized
+05-05-2023  13:15:39  587063a7-97ed-48ee-9f9b-c81dd89a733a  Unauthorized
+05-05-2023  13:17:46  61168585-1ed7-49e1-a746-644c09c2b83e  Unauthorized
+05-05-2023  13:17:56  39c8751a-49f2-4cec-a8a0-361df7fbb578  Unauthorized
+05-05-2023  13:19:27  a4a576d3-dc59-44ec-b637-311a9a7feaff  Unauthorized
+05-05-2023  13:19:32  34850919-e67b-47d4-9c2d-55883f1709d8  Unauthorized
+05-05-2023  13:19:41  e4c7261e-ed2e-43b0-9903-e9de5cff7498  Unauthorized
+05-05-2023  13:19:52  81b95ab5-a622-42e2-9f4a-545e90d1c5aa  Unauthorized
+05-05-2023  13:19:59  a583f892-de25-458e-929e-3fa1b72bcf0a  Unauthorized
+05-05-2023  13:20:04  dae2a745-cd51-4fb6-80d4-45fcb49cfbfe  Unauthorized
+05-05-2023  13:20:13  3314feab-9a82-497d-9a80-98195114b646  Unauthorized
+05-05-2023  13:20:17  657a6318-16e1-4922-b560-d8fd28f46f01  Unauthorized
+05-05-2023  13:20:24  25ef46b7-3f1d-4e5c-906d-7b596fbb9dae  Unauthorized
+05-05-2023  13:20:28  64c5f120-db5e-49f8-979d-2d9b55bbfc86  Unauthorized
+05-05-2023  13:43:00  b32ad96e-b488-4fb1-a8a7-87e5dc728d8f  Unauthorized
+13-05-2023  13:42:58  ee907289-a944-4b25-9b62-fa12069eeb29  Cast to ObjectId failed for value "user" (type string) at path "_id" for model "Training"
+13-05-2023  13:43:44  ef932308-cffd-4a71-8d39-a02549fa1e52  Cast to ObjectId failed for value "Vova" (type string) at path "_id" for model "Training"
