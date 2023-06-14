@@ -409,3 +409,10 @@
 05-05-2023  13:43:00  b32ad96e-b488-4fb1-a8a7-87e5dc728d8f  Unauthorized
 13-05-2023  13:42:58  ee907289-a944-4b25-9b62-fa12069eeb29  Cast to ObjectId failed for value "user" (type string) at path "_id" for model "Training"
 13-05-2023  13:43:44  ef932308-cffd-4a71-8d39-a02549fa1e52  Cast to ObjectId failed for value "Vova" (type string) at path "_id" for model "Training"
+13-05-2023  14:21:40  44cec1ed-bba7-49f7-8ed1-04c70586c471  jwt expired
+13-05-2023  15:52:33  0bef12e7-8761-4a1d-8db0-06d90355cdf9  jwt expired
+13-05-2023  15:52:35  f28ac670-288e-4954-a960-c16d9c4def00  jwt expired
+13-05-2023  16:13:02  dd53fe11-e7fa-490e-8ce4-488651f0261c  jwt expired
+13-05-2023  16:33:32  ef49ad77-4f12-42b7-863f-8b03703074fd  jwt expired
+13-05-2023  16:58:06  2bd819dc-e492-4028-8ccb-98f76c483513  jwt expired
+13-06-2023  14:48:38  e9090f16-ebe6-4923-a5da-2cd7b9626fe7  jwt expired

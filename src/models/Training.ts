@@ -25,7 +25,7 @@ const trainingSchema = new Schema<TrainingModel>({
         type: String,
         required: true
       },
-      set: [{
+      sets: [{
         setPos: {
           type: Number,
           required: true

@@ -7,7 +7,8 @@
     "build": "webpack --config webpack.config.js",
     "test": "jest test/app.test.js",
     "start": "node dist/server.js",
-    "dev": "nodemon dist/server.js"
+    "dev": "nodemon dist/server.js",
+    "docker": "docker-compose -f docker-compose.yaml up"
   },
   "author": "Volodymyr Bordiian",
   "license": "ISC",

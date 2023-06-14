@@ -5,7 +5,7 @@ export interface TrainingModel {
   exercises: [{
     position: number
     name: string
-    set: {
+    sets: {
       setPos: number
       reps: number
       weight: number
@@ -16,7 +16,7 @@ export interface TrainingModel {
 export interface Exercise {
   position: number
   name: string
-  set: singleSet[]
+  sets: singleSet[]
 }
 
 export interface singleSet {

@@ -25,7 +25,7 @@ class TestService {
       const exercise: Exercise = {
         position: i,
         name: exercisesList[this.getRandomNumber(0, exercisesList.length - 1)],
-        set: sets
+        sets: sets
       }
       exercises.push(exercise)
     }
