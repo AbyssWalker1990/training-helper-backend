@@ -29,7 +29,7 @@ const trainingSchema = new Schema({
                 type: String,
                 required: true
             },
-            set: [{
+            sets: [{
                     setPos: {
                         type: Number,
                         required: true
