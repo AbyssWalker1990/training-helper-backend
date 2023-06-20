@@ -11,22 +11,19 @@ class AuthService {
     if (username === '' || password === '' || username === undefined || password === undefined) {
       throw new HttpException(400, 'Username and password are required')
     }
-    // Check if user alreasy exists
-    const duplicate = await User.findOne({ username }).exec()
-    if (duplicate != null) {
-      throw new HttpException(409, 'User already exists!')
-    }
+    let createdUser
 
     try {
+      await this.isUserExists(username)
       const HashedPassword = await bcrypt.hash(password, 10)
-      const result = await User.create({
+      createdUser = await User.create({
         username,
         password: HashedPassword
       })
-      return result.username
     } catch (error) {
       throw new HttpException(500, (error as Error).message)
     }
+    return createdUser.username
   }
 
   public async login (userData: CreateUserDto): Promise<string[]> {
@@ -105,6 +102,14 @@ class AuthService {
     } catch (error) {
       throw new HttpException(403, 'Forbidden')
     }
+  }
+
+  private async isUserExists (username: string): Promise<boolean> {
+    const duplicate = await User.findOne({ username })
+    if (duplicate != null) {
+      throw new HttpException(409, 'User already exists!')
+    }
+    return false
   }
 }
 

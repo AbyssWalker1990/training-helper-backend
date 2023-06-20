@@ -13,22 +13,19 @@ class AuthService {
         if (username === '' || password === '' || username === undefined || password === undefined) {
             throw new HttpException_1.default(400, 'Username and password are required');
         }
-        // Check if user alreasy exists
-        const duplicate = await User_1.User.findOne({ username }).exec();
-        if (duplicate != null) {
-            throw new HttpException_1.default(409, 'User already exists!');
-        }
+        let createdUser;
         try {
+            await this.isUserExists(username);
             const HashedPassword = await bcrypt_1.default.hash(password, 10);
-            const result = await User_1.User.create({
+            createdUser = await User_1.User.create({
                 username,
                 password: HashedPassword
             });
-            return result.username;
         }
         catch (error) {
             throw new HttpException_1.default(500, error.message);
         }
+        return createdUser.username;
     }
     async login(userData) {
         const accessSecret = process.env.ACCESS_TOKEN_SECRET;
@@ -93,6 +90,13 @@ class AuthService {
         catch (error) {
             throw new HttpException_1.default(403, 'Forbidden');
         }
+    }
+    async isUserExists(username) {
+        const duplicate = await User_1.User.findOne({ username });
+        if (duplicate != null) {
+            throw new HttpException_1.default(409, 'User already exists!');
+        }
+        return false;
     }
 }
 exports.default = AuthService;

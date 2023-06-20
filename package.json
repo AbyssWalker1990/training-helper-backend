@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "test": "jest test/app.test.js",
+    "test": "jest",
     "start": "node dist/server.js",
     "dev": "nodemon dist/server.js",
     "docker": "docker-compose -f docker-compose.yaml up"
@@ -31,6 +31,7 @@
     "webpack": "^5.75.0"
   },
   "devDependencies": {
+    "@jest/globals": "^29.5.0",
     "@types/bcrypt": "^5.0.0",
     "@types/cookie-parser": "^1.4.3",
     "@types/cors": "^2.8.13",
@@ -54,7 +55,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "jest": "^29.5.0",
     "moment-timezone": "^0.5.41",
-    "mongodb-memory-server": "^8.12.1",
+    "mongodb-memory-server": "^8.13.0",
     "nodemon": "^2.0.20",
     "supertest": "^6.3.3",
     "ts-jest": "^29.0.5",
