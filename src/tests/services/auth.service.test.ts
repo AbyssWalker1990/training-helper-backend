@@ -1,9 +1,10 @@
 import { describe, expect, test } from '@jest/globals'
 import AuthService from '../../services/auth.service'
-import { Query } from 'mongoose'
+import { Model, Query, Document } from 'mongoose'
 import HttpException from '../../exceptions/HttpException'
 import type CreateUserDto from '../../controllers/user.dto'
 import { User } from '../../models/User'
+import bcrypt from 'bcrypt'
 
 describe('AuthService', () => {
   const authService = new AuthService()
@@ -16,7 +17,7 @@ describe('AuthService', () => {
     })
 
     test('Throw error if user already exists in database', async () => {
-      jest.spyOn(Query.prototype, 'exec').mockResolvedValue('anyValue')
+      jest.spyOn(Query.prototype, 'exec').mockResolvedValueOnce('anyValue')
       const authServiceProto = Object.getPrototypeOf(authService)
       await expect(authServiceProto.isUserExists('username')).rejects.toThrow(new HttpException(409, 'User already exists!'))
     })
@@ -52,12 +53,27 @@ describe('AuthService', () => {
   })
 
   describe('login', () => {
-    test('Returns an array with accessToken and refreshToken', () => {
-      const loginData = {
+    test('Returns an array with accessToken and refreshToken', async () => {
+      const loginData: CreateUserDto = {
         username: 'username',
         password: 'password'
       }
+      jest.spyOn(AuthService.prototype as any, 'findUserByUsername').mockReturnValue(loginData)
+      jest.spyOn(bcrypt, 'compare').mockReturnValue(true as any)
+      jest.spyOn((AuthService.prototype as any), 'generateTokens').mockResolvedValue(['token', 'token'])
+      jest.spyOn(AuthService.prototype as any, 'saveRefreshToken').mockResolvedValue(true)
+      const result = await authService.login(loginData)
+      expect(result).toEqual(['token', 'token'])
+    })
 
+    test('Returns an error if username or password doesnt match', async () => {
+      const loginData: CreateUserDto = {
+        username: 'username',
+        password: 'password'
+      }
+      jest.spyOn(AuthService.prototype as any, 'findUserByUsername').mockReturnValue(loginData)
+      jest.spyOn(bcrypt, 'compare').mockReturnValue(false as any)
+      await expect(authService.login(loginData)).rejects.toThrow(new HttpException(401, 'Unauthorized'))
     })
   })
 })

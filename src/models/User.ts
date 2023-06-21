@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import { type UserModel } from '../interfaces/auth.interface'
 const Schema = mongoose.Schema
 
-const userSchema = new Schema<UserModel>({
+export const userSchema = new Schema<UserModel>({
   username: {
     type: String,
     required: true

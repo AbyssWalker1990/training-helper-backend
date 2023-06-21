@@ -8,6 +8,7 @@ const auth_service_1 = __importDefault(require("../../services/auth.service"));
 const mongoose_1 = require("mongoose");
 const HttpException_1 = __importDefault(require("../../exceptions/HttpException"));
 const User_1 = require("../../models/User");
+const bcrypt_1 = __importDefault(require("bcrypt"));
 (0, globals_1.describe)('AuthService', () => {
     const authService = new auth_service_1.default();
     (0, globals_1.describe)('isUserExists', () => {
@@ -18,7 +19,7 @@ const User_1 = require("../../models/User");
             (0, globals_1.expect)(user).toBe(false);
         });
         (0, globals_1.test)('Throw error if user already exists in database', async () => {
-            jest.spyOn(mongoose_1.Query.prototype, 'exec').mockResolvedValue('anyValue');
+            jest.spyOn(mongoose_1.Query.prototype, 'exec').mockResolvedValueOnce('anyValue');
             const authServiceProto = Object.getPrototypeOf(authService);
             await (0, globals_1.expect)(authServiceProto.isUserExists('username')).rejects.toThrow(new HttpException_1.default(409, 'User already exists!'));
         });
@@ -50,11 +51,26 @@ const User_1 = require("../../models/User");
         });
     });
     (0, globals_1.describe)('login', () => {
-        (0, globals_1.test)('Returns an array with accessToken and refreshToken', () => {
+        (0, globals_1.test)('Returns an array with accessToken and refreshToken', async () => {
             const loginData = {
                 username: 'username',
                 password: 'password'
             };
+            jest.spyOn(auth_service_1.default.prototype, 'findUserByUsername').mockReturnValue(loginData);
+            jest.spyOn(bcrypt_1.default, 'compare').mockReturnValue(true);
+            jest.spyOn(auth_service_1.default.prototype, 'generateTokens').mockResolvedValue(['token', 'token']);
+            jest.spyOn(auth_service_1.default.prototype, 'saveRefreshToken').mockResolvedValue(true);
+            const result = await authService.login(loginData);
+            (0, globals_1.expect)(result).toEqual(['token', 'token']);
+        });
+        (0, globals_1.test)('Returns an error if username or password doesnt match', async () => {
+            const loginData = {
+                username: 'username',
+                password: 'password'
+            };
+            jest.spyOn(auth_service_1.default.prototype, 'findUserByUsername').mockReturnValue(loginData);
+            jest.spyOn(bcrypt_1.default, 'compare').mockReturnValue(false);
+            await (0, globals_1.expect)(authService.login(loginData)).rejects.toThrow(new HttpException_1.default(401, 'Unauthorized'));
         });
     });
 });
