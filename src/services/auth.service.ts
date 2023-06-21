@@ -16,6 +16,7 @@ class AuthService {
     try {
       await this.isUserExists(username)
       const HashedPassword = await bcrypt.hash(password, 10)
+      console.log('HashedPassword: ', HashedPassword)
       createdUser = await User.create({
         username,
         password: HashedPassword
@@ -33,10 +34,7 @@ class AuthService {
     if (username === '' || password === '' || username === undefined || password === undefined) {
       throw new HttpException(400, 'Username and password are required')
     }
-    const currentUser = await User.findOne({ username }).exec()
-    if (currentUser == null) {
-      throw new HttpException(401, 'Unauthorized')
-    }
+    const currentUser = await this.findUserByUsername(username)
     // Compare password
     const match = await bcrypt.compare(password, currentUser.password)
     console.log('Match: ', match)
@@ -110,6 +108,14 @@ class AuthService {
       throw new HttpException(409, 'User already exists!')
     }
     return false
+  }
+
+  private async findUserByUsername (username: string): Promise<UserModel> {
+    const user = await User.findOne({ username }).exec()
+    if (user == null) {
+      throw new HttpException(401, 'Unauthorized')
+    }
+    return user
   }
 }
 

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">18.75% </span>
+                <span class="strong">32.3% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/64</span>
+                <span class='fraction'>21/65</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.07% </span>
+                <span class="strong">38.46% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>9/39</span>
+                <span class='fraction'>15/39</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/5</span>
+                <span class='fraction'>3/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">18.75% </span>
+                <span class="strong">32.3% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/64</span>
+                <span class='fraction'>21/65</span>
             </div>
         
             
@@ -165,7 +165,8 @@
 <a name='L100'></a><a href='#L100'>100</a>
 <a name='L101'></a><a href='#L101'>101</a>
 <a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -176,15 +177,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -192,7 +194,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -277,16 +279,17 @@ const HttpException_1 = __importDefault(require("../exceptions/HttpException"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 class AuthService {
-<span class="fstat-no" title="function not covered" >    as</span>ync register(userData) {
-        const { username, password } = <span class="cstat-no" title="statement not covered" >userData;</span>
-<span class="cstat-no" title="statement not covered" >        if (username === '' || password === '' || username === undefined || password === undefined) {</span>
-<span class="cstat-no" title="statement not covered" >            throw new HttpException_1.default(400, 'Username and password are required');</span>
+    async register(userData) {
+        const { username, password } = userData;
+        if (username === '' || password === '' || username === undefined || password === undefined) {
+            throw new HttpException_1.default(400, 'Username and password are required');
         }
         let createdUser;
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >            await this.isUserExists(username);</span>
-            const HashedPassword = <span class="cstat-no" title="statement not covered" >await bcrypt_1.default.hash(password, 10);</span>
-<span class="cstat-no" title="statement not covered" >            createdUser = await User_1.User.create({</span>
+        try {
+            await this.isUserExists(username);
+            const HashedPassword = await bcrypt_1.default.hash(password, 10);
+            console.log('HashedPassword: ', HashedPassword);
+            createdUser = await User_1.User.create({
                 username,
                 password: HashedPassword
             });
@@ -294,7 +297,7 @@ class AuthService {
         catch (error) {
 <span class="cstat-no" title="statement not covered" >            throw new HttpException_1.default(500, error.message);</span>
         }
-<span class="cstat-no" title="statement not covered" >        return createdUser.username;</span>
+        return createdUser.username;
     }
 <span class="fstat-no" title="function not covered" >    as</span>ync login(userData) {
         const accessSecret = <span class="cstat-no" title="statement not covered" >process.env.ACCESS_TOKEN_SECRET;</span>
@@ -376,7 +379,7 @@ exports.default = AuthService;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-20T17:38:45.870Z
+                at 2023-06-21T08:51:01.770Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

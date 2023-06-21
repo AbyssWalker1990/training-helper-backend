@@ -7,6 +7,7 @@ export interface MyCookie {
 }
 
 export interface UserModel {
+  save: () => unknown
   username: string
   password: string
   refreshToken: string

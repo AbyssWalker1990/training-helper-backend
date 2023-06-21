@@ -2518,3 +2518,7 @@
 2023-06-20T19:52:31+03:00 POST /auth/register 201 78.058 ms PostmanRuntime/7.32.3
 2023-06-20T19:53:10+03:00 POST /auth/register 201 138.834 ms PostmanRuntime/7.32.3
 2023-06-20T19:54:17+03:00 POST /auth/register 201 207.938 ms PostmanRuntime/7.32.3
+2023-06-21T12:24:02+03:00 POST /auth/login 200 338.377 ms PostmanRuntime/7.32.3
+2023-06-21T12:26:28+03:00 POST /auth/login 200 130.792 ms undici
+2023-06-21T12:26:32+03:00 OPTIONS /trainings/user 200 0.894 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+2023-06-21T12:26:32+03:00 POST /trainings/user 200 58.394 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
