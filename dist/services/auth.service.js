@@ -40,13 +40,7 @@ class AuthService {
         this.isCookiesExists(cookies);
         const refreshToken = cookies.jwt;
         this.isRefreshTokenExists(refreshToken);
-        console.log(`Refresh token cookie: ${refreshToken}`);
         const currentUser = await this.findUserByProperty({ refreshToken });
-        console.log('currentUser: ', currentUser);
-        if (currentUser != null) {
-            console.log(`User refresh token: ${currentUser.refreshToken}`);
-            console.log(`Name: ${currentUser.username}`);
-        }
         if (currentUser == null)
             throw new HttpException_1.default(403, 'Forbidden');
         this.verifyToken(refreshToken, currentUser.username);
@@ -60,6 +54,23 @@ class AuthService {
         }
         return false;
     }
+    isDataFull(username, password) {
+        if (username === '' || password === '' || username === undefined || password === undefined) {
+            throw new HttpException_1.default(400, 'Username and password are required');
+        }
+    }
+    isCookiesExists(cookies) {
+        if (cookies.jwt === null || cookies.jwt === undefined) {
+            console.log('NO COOKIES');
+            throw new HttpException_1.default(401, 'Unauthorized');
+        }
+    }
+    isRefreshTokenExists(token) {
+        if (token === undefined) {
+            console.log('REFRESH TOKEN UNDEFINED');
+            throw new HttpException_1.default(401, 'Unauthorized');
+        }
+    }
     async findUserByProperty(property) {
         console.log('property: ', property);
         const user = await User_1.User.findOne(property).exec();
@@ -68,11 +79,6 @@ class AuthService {
             throw new HttpException_1.default(401, 'Unauthorized');
         }
         return user;
-    }
-    isDataFull(username, password) {
-        if (username === '' || password === '' || username === undefined || password === undefined) {
-            throw new HttpException_1.default(400, 'Username and password are required');
-        }
     }
     async generateTokens(username) {
         const payload = {
@@ -86,18 +92,6 @@ class AuthService {
         console.log('REFRESH TOKEN FROM saveRefreshToken: ', token);
         userData.refreshToken = token;
         await userData.save();
-    }
-    isCookiesExists(cookies) {
-        if (cookies.jwt === null || cookies.jwt === undefined) {
-            console.log('NO COOKIES');
-            throw new HttpException_1.default(401, 'Unauthorized');
-        }
-    }
-    isRefreshTokenExists(token) {
-        if (token === undefined) {
-            console.log('REFRESH TOKEN UNDEFINED');
-            throw new HttpException_1.default(401, 'Unauthorized');
-        }
     }
     verifyToken(token, username) {
         const decoded = jsonwebtoken_1.default.verify(token, this.refreshSecret);

@@ -5,6 +5,7 @@ import HttpException from '../../exceptions/HttpException'
 import type CreateUserDto from '../../controllers/user.dto'
 import { User } from '../../models/User'
 import bcrypt from 'bcrypt'
+import type { MyCookie } from '../../interfaces/auth.interface'
 
 describe('AuthService', () => {
   const authService = new AuthService()
@@ -60,7 +61,7 @@ describe('AuthService', () => {
       }
       jest.spyOn(AuthService.prototype as any, 'findUserByProperty').mockReturnValue(loginData)
       jest.spyOn(bcrypt, 'compare').mockReturnValue(true as any)
-      jest.spyOn((AuthService.prototype as any), 'generateTokens').mockResolvedValue(['token', 'token'])
+      jest.spyOn((AuthService.prototype as any), 'generateTokens').mockResolvedValueOnce(['token', 'token'])
       jest.spyOn(AuthService.prototype as any, 'saveRefreshToken').mockResolvedValue(true)
       const result = await authService.login(loginData)
       expect(result).toEqual(['token', 'token'])
@@ -78,8 +79,23 @@ describe('AuthService', () => {
   })
 
   describe('refresh', () => {
-    test('Returns eccess token if user have proper cookies with refreshToken', () => {
+    test('Returns access token if user have proper cookies with refreshToken', async () => {
+      const user: CreateUserDto = {
+        username: 'username',
+        password: 'password'
+      }
+      const cookie: MyCookie = {
+        jwt: 'CoRrEcT-ToKeN'
+      }
 
+      jest.spyOn(AuthService.prototype as any, 'verifyToken').mockReturnValue(true)
+      jest.spyOn((AuthService.prototype as any), 'generateTokens').mockResolvedValueOnce(['token', 'token'])
+
+      jest.spyOn(AuthService.prototype as any, 'findUserByProperty').mockReturnValue(user)
+
+      const result = await authService.refresh(cookie)
+      console.log('result: ', result)
+      expect(result).toBe('token')
     })
   })
 })

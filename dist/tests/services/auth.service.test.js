@@ -58,7 +58,7 @@ const bcrypt_1 = __importDefault(require("bcrypt"));
             };
             jest.spyOn(auth_service_1.default.prototype, 'findUserByProperty').mockReturnValue(loginData);
             jest.spyOn(bcrypt_1.default, 'compare').mockReturnValue(true);
-            jest.spyOn(auth_service_1.default.prototype, 'generateTokens').mockResolvedValue(['token', 'token']);
+            jest.spyOn(auth_service_1.default.prototype, 'generateTokens').mockResolvedValueOnce(['token', 'token']);
             jest.spyOn(auth_service_1.default.prototype, 'saveRefreshToken').mockResolvedValue(true);
             const result = await authService.login(loginData);
             (0, globals_1.expect)(result).toEqual(['token', 'token']);
@@ -74,7 +74,20 @@ const bcrypt_1 = __importDefault(require("bcrypt"));
         });
     });
     (0, globals_1.describe)('refresh', () => {
-        (0, globals_1.test)('Returns eccess token if user have proper cookies with refreshToken', () => {
+        (0, globals_1.test)('Returns access token if user have proper cookies with refreshToken', async () => {
+            const user = {
+                username: 'username',
+                password: 'password'
+            };
+            const cookie = {
+                jwt: 'CoRrEcT-ToKeN'
+            };
+            jest.spyOn(auth_service_1.default.prototype, 'verifyToken').mockReturnValue(true);
+            jest.spyOn(auth_service_1.default.prototype, 'generateTokens').mockResolvedValueOnce(['token', 'token']);
+            jest.spyOn(auth_service_1.default.prototype, 'findUserByProperty').mockReturnValue(user);
+            const result = await authService.refresh(cookie);
+            console.log('result: ', result);
+            (0, globals_1.expect)(result).toBe('token');
         });
     });
 });
