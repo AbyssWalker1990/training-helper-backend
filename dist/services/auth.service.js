@@ -57,6 +57,7 @@ class AuthService {
             throw new HttpException_1.default(401, 'Unauthorized');
         }
         const currentUser = await User_1.User.findOne({ refreshToken }).exec();
+        console.log('currentUser: ', currentUser);
         if (currentUser != null) {
             console.log(`User refresh token: ${currentUser.refreshToken}`);
             console.log(`Name: ${currentUser.username}`);
@@ -104,8 +105,9 @@ class AuthService {
         const refreshToken = jsonwebtoken_1.default.sign(payload, this.refreshSecret, { expiresIn: '1d' });
         return [accessToken, refreshToken];
     }
-    async saveRefreshToken(userData, refreshToken) {
-        userData.refreshToken = refreshToken;
+    async saveRefreshToken(userData, token) {
+        console.log('REFRESH TOKEN FROM saveRefreshToken: ', token);
+        userData.refreshToken = token;
         await userData.save();
     }
 }

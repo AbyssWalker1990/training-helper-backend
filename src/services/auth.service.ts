@@ -59,6 +59,7 @@ class AuthService {
       throw new HttpException(401, 'Unauthorized')
     }
     const currentUser = await User.findOne({ refreshToken }).exec() as UserModel
+    console.log('currentUser: ', currentUser)
     if (currentUser != null) {
       console.log(`User refresh token: ${currentUser.refreshToken}`)
       console.log(`Name: ${currentUser.username}`)
@@ -127,8 +128,9 @@ class AuthService {
 
   private async saveRefreshToken (userData: Document<unknown, any, UserModel> & Omit<UserModel & {
     _id: Types.ObjectId
-  }, never>, refreshToken: string): Promise<void> {
-    userData.refreshToken = refreshToken
+  }, never>, token: string): Promise<void> {
+    console.log('REFRESH TOKEN FROM saveRefreshToken: ', token)
+    userData.refreshToken = token
     await userData.save()
   }
 }
