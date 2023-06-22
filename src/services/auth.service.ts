@@ -17,19 +17,15 @@ class AuthService {
   public async register (userData: CreateUserDto): Promise<string> {
     const { username, password }: { username: string, password: string } = userData
     this.isDataFull(username, password)
-    let createdUser
 
-    try {
-      await this.isUserExists(username)
-      const HashedPassword = await bcrypt.hash(password, 10)
-      console.log('HashedPassword: ', HashedPassword)
-      createdUser = await User.create({
-        username,
-        password: HashedPassword
-      })
-    } catch (error) {
-      throw new HttpException(500, (error as Error).message)
-    }
+    await this.isUserExists(username)
+    const HashedPassword = await bcrypt.hash(password, 10)
+    console.log('HashedPassword: ', HashedPassword)
+    const createdUser = await User.create({
+      username,
+      password: HashedPassword
+    })
+
     return createdUser.username
   }
 
@@ -38,7 +34,6 @@ class AuthService {
     this.isDataFull(username, password)
     const currentUser = await this.findUserByProperty({ username })
     const match = await bcrypt.compare(password, currentUser.password)
-    console.log('Match: ', match)
     if (match === null || !match) throw new HttpException(401, 'Unauthorized')
     const [accessToken, refreshToken] = await this.generateTokens(username)
     await this.saveRefreshToken(currentUser, refreshToken)
@@ -53,6 +48,7 @@ class AuthService {
 
     const currentUser = await this.findUserByProperty({ refreshToken })
     console.log('currentUser: ', currentUser)
+
     if (currentUser != null) {
       console.log(`User refresh token: ${currentUser.refreshToken}`)
       console.log(`Name: ${currentUser.username}`)

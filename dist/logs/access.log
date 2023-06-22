@@ -2581,3 +2581,4 @@
 2023-06-22T17:44:08+03:00 POST /auth/login 401 43.430 ms PostmanRuntime/7.32.3
 2023-06-22T17:44:48+03:00 POST /auth/login 200 197.064 ms PostmanRuntime/7.32.3
 2023-06-22T17:44:51+03:00 GET /auth/refresh 200 28.476 ms PostmanRuntime/7.32.3
+2023-06-22T17:59:11+03:00 POST /auth/register 409 52.460 ms PostmanRuntime/7.32.3

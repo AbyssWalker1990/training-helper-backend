@@ -17,19 +17,13 @@ class AuthService {
     async register(userData) {
         const { username, password } = userData;
         this.isDataFull(username, password);
-        let createdUser;
-        try {
-            await this.isUserExists(username);
-            const HashedPassword = await bcrypt_1.default.hash(password, 10);
-            console.log('HashedPassword: ', HashedPassword);
-            createdUser = await User_1.User.create({
-                username,
-                password: HashedPassword
-            });
-        }
-        catch (error) {
-            throw new HttpException_1.default(500, error.message);
-        }
+        await this.isUserExists(username);
+        const HashedPassword = await bcrypt_1.default.hash(password, 10);
+        console.log('HashedPassword: ', HashedPassword);
+        const createdUser = await User_1.User.create({
+            username,
+            password: HashedPassword
+        });
         return createdUser.username;
     }
     async login(userData) {
@@ -37,7 +31,6 @@ class AuthService {
         this.isDataFull(username, password);
         const currentUser = await this.findUserByProperty({ username });
         const match = await bcrypt_1.default.compare(password, currentUser.password);
-        console.log('Match: ', match);
         if (match === null || !match)
             throw new HttpException_1.default(401, 'Unauthorized');
         const [accessToken, refreshToken] = await this.generateTokens(username);
