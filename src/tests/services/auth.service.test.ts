@@ -1,6 +1,6 @@
 import { describe, expect, test } from '@jest/globals'
 import AuthService from '../../services/auth.service'
-import { Model, Query, Document } from 'mongoose'
+import { Query } from 'mongoose'
 import HttpException from '../../exceptions/HttpException'
 import type CreateUserDto from '../../controllers/user.dto'
 import { User } from '../../models/User'
@@ -58,7 +58,7 @@ describe('AuthService', () => {
         username: 'username',
         password: 'password'
       }
-      jest.spyOn(AuthService.prototype as any, 'findUserByUsername').mockReturnValue(loginData)
+      jest.spyOn(AuthService.prototype as any, 'findUserByProperty').mockReturnValue(loginData)
       jest.spyOn(bcrypt, 'compare').mockReturnValue(true as any)
       jest.spyOn((AuthService.prototype as any), 'generateTokens').mockResolvedValue(['token', 'token'])
       jest.spyOn(AuthService.prototype as any, 'saveRefreshToken').mockResolvedValue(true)
@@ -71,9 +71,15 @@ describe('AuthService', () => {
         username: 'username',
         password: 'password'
       }
-      jest.spyOn(AuthService.prototype as any, 'findUserByUsername').mockReturnValue(loginData)
+      jest.spyOn(AuthService.prototype as any, 'findUserByProperty').mockReturnValue(loginData)
       jest.spyOn(bcrypt, 'compare').mockReturnValue(false as any)
       await expect(authService.login(loginData)).rejects.toThrow(new HttpException(401, 'Unauthorized'))
+    })
+  })
+
+  describe('refresh', () => {
+    test('Returns eccess token if user have proper cookies with refreshToken', () => {
+
     })
   })
 })

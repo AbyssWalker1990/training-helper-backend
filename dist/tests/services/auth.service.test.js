@@ -56,7 +56,7 @@ const bcrypt_1 = __importDefault(require("bcrypt"));
                 username: 'username',
                 password: 'password'
             };
-            jest.spyOn(auth_service_1.default.prototype, 'findUserByUsername').mockReturnValue(loginData);
+            jest.spyOn(auth_service_1.default.prototype, 'findUserByProperty').mockReturnValue(loginData);
             jest.spyOn(bcrypt_1.default, 'compare').mockReturnValue(true);
             jest.spyOn(auth_service_1.default.prototype, 'generateTokens').mockResolvedValue(['token', 'token']);
             jest.spyOn(auth_service_1.default.prototype, 'saveRefreshToken').mockResolvedValue(true);
@@ -68,9 +68,13 @@ const bcrypt_1 = __importDefault(require("bcrypt"));
                 username: 'username',
                 password: 'password'
             };
-            jest.spyOn(auth_service_1.default.prototype, 'findUserByUsername').mockReturnValue(loginData);
+            jest.spyOn(auth_service_1.default.prototype, 'findUserByProperty').mockReturnValue(loginData);
             jest.spyOn(bcrypt_1.default, 'compare').mockReturnValue(false);
             await (0, globals_1.expect)(authService.login(loginData)).rejects.toThrow(new HttpException_1.default(401, 'Unauthorized'));
+        });
+    });
+    (0, globals_1.describe)('refresh', () => {
+        (0, globals_1.test)('Returns eccess token if user have proper cookies with refreshToken', () => {
         });
     });
 });

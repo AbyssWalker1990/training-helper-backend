@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">47.22% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>34/68</span>
+                <span class='fraction'>34/72</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/10</span>
+                <span class='fraction'>6/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">47.22% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>34/68</span>
+                <span class='fraction'>34/72</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -175,7 +175,15 @@
 <a name='L110'></a><a href='#L110'>110</a>
 <a name='L111'></a><a href='#L111'>111</a>
 <a name='L112'></a><a href='#L112'>112</a>
-<a name='L113'></a><a href='#L113'>113</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -226,13 +234,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -261,6 +263,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -284,6 +287,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -324,7 +340,7 @@ class AuthService {
     async login(userData) {
         const { username, password } = userData;
         this.isDataFull(username, password);
-        const currentUser = await this.findUserByUsername(username);
+        const currentUser = await this.findUserByProperty({ username });
         const match = await bcrypt_1.default.compare(password, currentUser.password);
         console.log('Match: ', match);
         if (match === null || !match)
@@ -334,18 +350,12 @@ class AuthService {
         return [accessToken, refreshToken];
     }
 <span class="fstat-no" title="function not covered" >    as</span>ync refresh(cookies) {
-        const jwtCookie = <span class="cstat-no" title="statement not covered" >cookies;</span>
-<span class="cstat-no" title="statement not covered" >        if (jwtCookie.jwt === null || jwtCookie.jwt === undefined) {</span>
-<span class="cstat-no" title="statement not covered" >            console.log('NO COOKIES');</span>
-<span class="cstat-no" title="statement not covered" >            throw new HttpException_1.default(401, 'Unauthorized');</span>
-        }
-        const refreshToken = <span class="cstat-no" title="statement not covered" >jwtCookie.jwt;</span>
+<span class="cstat-no" title="statement not covered" >        this.isCookiesExists(cookies);</span>
+        const refreshToken = <span class="cstat-no" title="statement not covered" >cookies.jwt;</span>
+<span class="cstat-no" title="statement not covered" >        this.isRefreshTokenExists(refreshToken);</span>
 <span class="cstat-no" title="statement not covered" >        console.log(`Refresh token cookie: ${refreshToken}`);</span>
-<span class="cstat-no" title="statement not covered" >        if (refreshToken === undefined) {</span>
-<span class="cstat-no" title="statement not covered" >            console.log('REFRESH TOKEN UNDEFINED');</span>
-<span class="cstat-no" title="statement not covered" >            throw new HttpException_1.default(401, 'Unauthorized');</span>
-        }
-        const currentUser = <span class="cstat-no" title="statement not covered" >await User_1.User.findOne({ refreshToken }).exec();</span>
+        const currentUser = <span class="cstat-no" title="statement not covered" >await this.findUserByProperty({ refreshToken });</span>
+<span class="cstat-no" title="statement not covered" >        console.log('currentUser: ', currentUser);</span>
 <span class="cstat-no" title="statement not covered" >        if (currentUser != null) {</span>
 <span class="cstat-no" title="statement not covered" >            console.log(`User refresh token: ${currentUser.refreshToken}`);</span>
 <span class="cstat-no" title="statement not covered" >            console.log(`Name: ${currentUser.username}`);</span>
@@ -372,8 +382,9 @@ class AuthService {
         }
         return false;
     }
-<span class="fstat-no" title="function not covered" >    as</span>ync findUserByUsername(username) {
-        const user = <span class="cstat-no" title="statement not covered" >await User_1.User.findOne({ username }).exec();</span>
+<span class="fstat-no" title="function not covered" >    as</span>ync findUserByProperty(property) {
+<span class="cstat-no" title="statement not covered" >        console.log('property: ', property);</span>
+        const user = <span class="cstat-no" title="statement not covered" >await User_1.User.findOne(property).exec();</span>
 <span class="cstat-no" title="statement not covered" >        console.table(user);</span>
 <span class="cstat-no" title="statement not covered" >        if (user == null) {</span>
 <span class="cstat-no" title="statement not covered" >            throw new HttpException_1.default(401, 'Unauthorized');</span>
@@ -393,9 +404,22 @@ class AuthService {
         const refreshToken = <span class="cstat-no" title="statement not covered" >jsonwebtoken_1.default.sign(payload, this.refreshSecret, { expiresIn: '1d' });</span>
 <span class="cstat-no" title="statement not covered" >        return [accessToken, refreshToken];</span>
     }
-<span class="fstat-no" title="function not covered" >    as</span>ync saveRefreshToken(userData, refreshToken) {
-<span class="cstat-no" title="statement not covered" >        userData.refreshToken = refreshToken;</span>
+<span class="fstat-no" title="function not covered" >    as</span>ync saveRefreshToken(userData, token) {
+<span class="cstat-no" title="statement not covered" >        console.log('REFRESH TOKEN FROM saveRefreshToken: ', token);</span>
+<span class="cstat-no" title="statement not covered" >        userData.refreshToken = token;</span>
 <span class="cstat-no" title="statement not covered" >        await userData.save();</span>
+    }
+<span class="fstat-no" title="function not covered" >    is</span>CookiesExists(cookies) {
+<span class="cstat-no" title="statement not covered" >        if (cookies.jwt === null || cookies.jwt === undefined) {</span>
+<span class="cstat-no" title="statement not covered" >            console.log('NO COOKIES');</span>
+<span class="cstat-no" title="statement not covered" >            throw new HttpException_1.default(401, 'Unauthorized');</span>
+        }
+    }
+<span class="fstat-no" title="function not covered" >    is</span>RefreshTokenExists(token) {
+<span class="cstat-no" title="statement not covered" >        if (token === undefined) {</span>
+<span class="cstat-no" title="statement not covered" >            console.log('REFRESH TOKEN UNDEFINED');</span>
+<span class="cstat-no" title="statement not covered" >            throw new HttpException_1.default(401, 'Unauthorized');</span>
+        }
     }
 }
 exports.default = AuthService;
@@ -406,7 +430,7 @@ exports.default = AuthService;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-22T13:57:31.385Z
+                at 2023-06-22T14:46:48.122Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

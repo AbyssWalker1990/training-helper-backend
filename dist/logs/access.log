@@ -2569,3 +2569,15 @@
 2023-06-22T17:12:21+03:00 GET /trainings/648ec70a047ac5ef71313045 200 8.783 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 2023-06-22T17:12:21+03:00 GET /trainings/648ec70a047ac5ef71313045 304 8.596 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 2023-06-22T17:12:23+03:00 GET /trainings/648ec70a047ac5ef71313045 304 10.457 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+2023-06-22T17:20:40+03:00 GET /auth/refresh 403 26.812 ms PostmanRuntime/7.32.3
+2023-06-22T17:20:44+03:00 POST /auth/login 200 189.764 ms PostmanRuntime/7.32.3
+2023-06-22T17:20:47+03:00 GET /auth/refresh 200 12.316 ms PostmanRuntime/7.32.3
+2023-06-22T17:31:14+03:00 POST /auth/login 401 36.884 ms PostmanRuntime/7.32.3
+2023-06-22T17:31:18+03:00 POST /auth/login 401 5.916 ms PostmanRuntime/7.32.3
+2023-06-22T17:31:20+03:00 POST /auth/login 401 10.552 ms PostmanRuntime/7.32.3
+2023-06-22T17:42:20+03:00 POST /auth/login 401 44.235 ms PostmanRuntime/7.32.3
+2023-06-22T17:42:21+03:00 POST /auth/login 401 13.569 ms PostmanRuntime/7.32.3
+2023-06-22T17:42:25+03:00 GET /auth/refresh 401 13.700 ms PostmanRuntime/7.32.3
+2023-06-22T17:44:08+03:00 POST /auth/login 401 43.430 ms PostmanRuntime/7.32.3
+2023-06-22T17:44:48+03:00 POST /auth/login 200 197.064 ms PostmanRuntime/7.32.3
+2023-06-22T17:44:51+03:00 GET /auth/refresh 200 28.476 ms PostmanRuntime/7.32.3

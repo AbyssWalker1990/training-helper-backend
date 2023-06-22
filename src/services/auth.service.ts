@@ -1,5 +1,5 @@
 import { User } from '../models/User'
-import type { UserModel, DecodedToken, MyCookie } from '../interfaces/auth.interface'
+import type { UserModel, DecodedToken, MyCookie, PropertyFindUser } from '../interfaces/auth.interface'
 import type CreateUserDto from '../controllers/user.dto'
 import HttpException from '../exceptions/HttpException'
 import bcrypt from 'bcrypt'
@@ -36,7 +36,7 @@ class AuthService {
   public async login (userData: CreateUserDto): Promise<string[]> {
     const { username, password }: { username: string, password: string } = userData
     this.isDataFull(username, password)
-    const currentUser = await this.findUserByUsername(username)
+    const currentUser = await this.findUserByProperty({ username })
     const match = await bcrypt.compare(password, currentUser.password)
     console.log('Match: ', match)
     if (match === null || !match) throw new HttpException(401, 'Unauthorized')
@@ -46,19 +46,12 @@ class AuthService {
   }
 
   public async refresh (cookies: MyCookie): Promise<string> {
-    const jwtCookie = cookies
-    if (jwtCookie.jwt === null || jwtCookie.jwt === undefined) {
-      console.log('NO COOKIES')
-      throw new HttpException(401, 'Unauthorized')
-    }
-
-    const refreshToken = jwtCookie.jwt
+    this.isCookiesExists(cookies)
+    const refreshToken = cookies.jwt
+    this.isRefreshTokenExists(refreshToken)
     console.log(`Refresh token cookie: ${refreshToken}`)
-    if (refreshToken === undefined) {
-      console.log('REFRESH TOKEN UNDEFINED')
-      throw new HttpException(401, 'Unauthorized')
-    }
-    const currentUser = await User.findOne({ refreshToken }).exec() as UserModel
+
+    const currentUser = await this.findUserByProperty({ refreshToken })
     console.log('currentUser: ', currentUser)
     if (currentUser != null) {
       console.log(`User refresh token: ${currentUser.refreshToken}`)
@@ -92,10 +85,11 @@ class AuthService {
     return false
   }
 
-  private async findUserByUsername (username: string): Promise<Document<unknown, any, UserModel> & Omit<UserModel & {
+  private async findUserByProperty (property: PropertyFindUser): Promise<Document<unknown, any, UserModel> & Omit<UserModel & {
     _id: Types.ObjectId
   }, never>> {
-    const user = await User.findOne({ username }).exec()
+    console.log('property: ', property)
+    const user = await User.findOne(property).exec()
     console.table(user)
     if (user == null) {
       throw new HttpException(401, 'Unauthorized')
@@ -132,6 +126,20 @@ class AuthService {
     console.log('REFRESH TOKEN FROM saveRefreshToken: ', token)
     userData.refreshToken = token
     await userData.save()
+  }
+
+  private isCookiesExists (cookies: MyCookie): void {
+    if (cookies.jwt === null || cookies.jwt === undefined) {
+      console.log('NO COOKIES')
+      throw new HttpException(401, 'Unauthorized')
+    }
+  }
+
+  private isRefreshTokenExists (token: string): void {
+    if (token === undefined) {
+      console.log('REFRESH TOKEN UNDEFINED')
+      throw new HttpException(401, 'Unauthorized')
+    }
   }
 }
 

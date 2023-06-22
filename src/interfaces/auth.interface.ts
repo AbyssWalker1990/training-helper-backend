@@ -11,3 +11,8 @@ export interface UserModel {
   password: string
   refreshToken: string
 }
+
+export interface PropertyFindUser {
+  username?: string
+  refreshToken?: string
+}

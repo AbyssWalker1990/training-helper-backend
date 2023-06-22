@@ -35,7 +35,7 @@ class AuthService {
     async login(userData) {
         const { username, password } = userData;
         this.isDataFull(username, password);
-        const currentUser = await this.findUserByUsername(username);
+        const currentUser = await this.findUserByProperty({ username });
         const match = await bcrypt_1.default.compare(password, currentUser.password);
         console.log('Match: ', match);
         if (match === null || !match)
@@ -45,18 +45,11 @@ class AuthService {
         return [accessToken, refreshToken];
     }
     async refresh(cookies) {
-        const jwtCookie = cookies;
-        if (jwtCookie.jwt === null || jwtCookie.jwt === undefined) {
-            console.log('NO COOKIES');
-            throw new HttpException_1.default(401, 'Unauthorized');
-        }
-        const refreshToken = jwtCookie.jwt;
+        this.isCookiesExists(cookies);
+        const refreshToken = cookies.jwt;
+        this.isRefreshTokenExists(refreshToken);
         console.log(`Refresh token cookie: ${refreshToken}`);
-        if (refreshToken === undefined) {
-            console.log('REFRESH TOKEN UNDEFINED');
-            throw new HttpException_1.default(401, 'Unauthorized');
-        }
-        const currentUser = await User_1.User.findOne({ refreshToken }).exec();
+        const currentUser = await this.findUserByProperty({ refreshToken });
         console.log('currentUser: ', currentUser);
         if (currentUser != null) {
             console.log(`User refresh token: ${currentUser.refreshToken}`);
@@ -84,8 +77,9 @@ class AuthService {
         }
         return false;
     }
-    async findUserByUsername(username) {
-        const user = await User_1.User.findOne({ username }).exec();
+    async findUserByProperty(property) {
+        console.log('property: ', property);
+        const user = await User_1.User.findOne(property).exec();
         console.table(user);
         if (user == null) {
             throw new HttpException_1.default(401, 'Unauthorized');
@@ -109,6 +103,18 @@ class AuthService {
         console.log('REFRESH TOKEN FROM saveRefreshToken: ', token);
         userData.refreshToken = token;
         await userData.save();
+    }
+    isCookiesExists(cookies) {
+        if (cookies.jwt === null || cookies.jwt === undefined) {
+            console.log('NO COOKIES');
+            throw new HttpException_1.default(401, 'Unauthorized');
+        }
+    }
+    isRefreshTokenExists(token) {
+        if (token === undefined) {
+            console.log('REFRESH TOKEN UNDEFINED');
+            throw new HttpException_1.default(401, 'Unauthorized');
+        }
     }
 }
 exports.default = AuthService;
