@@ -19,7 +19,6 @@ class AuthService {
         this.isDataFull(username, password);
         await this.isUserExists(username);
         const HashedPassword = await bcrypt_1.default.hash(password, 10);
-        console.log('HashedPassword: ', HashedPassword);
         const createdUser = await User_1.User.create({
             username,
             password: HashedPassword
@@ -48,20 +47,11 @@ class AuthService {
             console.log(`User refresh token: ${currentUser.refreshToken}`);
             console.log(`Name: ${currentUser.username}`);
         }
-        if (currentUser == null) {
+        if (currentUser == null)
             throw new HttpException_1.default(403, 'Forbidden');
-        }
-        try {
-            const decoded = jsonwebtoken_1.default.verify(refreshToken, this.refreshSecret);
-            if (currentUser.username !== decoded.username) {
-                throw new HttpException_1.default(403, 'Forbidden');
-            }
-            const accessToken = jsonwebtoken_1.default.sign({ username: currentUser.username }, this.accessSecret, { expiresIn: '20m' });
-            return accessToken;
-        }
-        catch (error) {
-            throw new HttpException_1.default(403, 'Forbidden');
-        }
+        this.verifyToken(refreshToken, currentUser.username);
+        const [accessToken] = await this.generateTokens(currentUser.username);
+        return accessToken;
     }
     async isUserExists(username) {
         const duplicate = await User_1.User.findOne({ username });
@@ -108,6 +98,11 @@ class AuthService {
             console.log('REFRESH TOKEN UNDEFINED');
             throw new HttpException_1.default(401, 'Unauthorized');
         }
+    }
+    verifyToken(token, username) {
+        const decoded = jsonwebtoken_1.default.verify(token, this.refreshSecret);
+        if (username !== decoded.username)
+            throw new HttpException_1.default(403, 'Forbidden');
     }
 }
 exports.default = AuthService;

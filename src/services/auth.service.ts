@@ -7,8 +7,8 @@ import jwt, { type JwtPayload } from 'jsonwebtoken'
 import type { Types, Document } from 'mongoose'
 
 class AuthService {
-  accessSecret: string
-  refreshSecret: string
+  private readonly accessSecret: string
+  private readonly refreshSecret: string
   constructor () {
     this.accessSecret = process.env.ACCESS_TOKEN_SECRET as string
     this.refreshSecret = process.env.REFRESH_TOKEN_SECRET as string
@@ -17,15 +17,12 @@ class AuthService {
   public async register (userData: CreateUserDto): Promise<string> {
     const { username, password }: { username: string, password: string } = userData
     this.isDataFull(username, password)
-
     await this.isUserExists(username)
     const HashedPassword = await bcrypt.hash(password, 10)
-    console.log('HashedPassword: ', HashedPassword)
     const createdUser = await User.create({
       username,
       password: HashedPassword
     })
-
     return createdUser.username
   }
 
@@ -44,33 +41,11 @@ class AuthService {
     this.isCookiesExists(cookies)
     const refreshToken = cookies.jwt
     this.isRefreshTokenExists(refreshToken)
-    console.log(`Refresh token cookie: ${refreshToken}`)
-
     const currentUser = await this.findUserByProperty({ refreshToken })
-    console.log('currentUser: ', currentUser)
-
-    if (currentUser != null) {
-      console.log(`User refresh token: ${currentUser.refreshToken}`)
-      console.log(`Name: ${currentUser.username}`)
-    }
-
-    if (currentUser == null) {
-      throw new HttpException(403, 'Forbidden')
-    }
-    try {
-      const decoded = jwt.verify(refreshToken, this.refreshSecret) as DecodedToken
-      if (currentUser.username !== decoded.username) {
-        throw new HttpException(403, 'Forbidden')
-      }
-      const accessToken = jwt.sign(
-        { username: currentUser.username },
-        this.accessSecret,
-        { expiresIn: '20m' }
-      )
-      return accessToken
-    } catch (error) {
-      throw new HttpException(403, 'Forbidden')
-    }
+    if (currentUser == null) throw new HttpException(403, 'Forbidden')
+    this.verifyToken(refreshToken, currentUser.username)
+    const [accessToken] = await this.generateTokens(currentUser.username)
+    return accessToken
   }
 
   private async isUserExists (username: string): Promise<boolean> {
@@ -79,6 +54,26 @@ class AuthService {
       throw new HttpException(409, 'User already exists!')
     }
     return false
+  }
+
+  private isDataFull (username: string, password: string): void {
+    if (username === '' || password === '' || username === undefined || password === undefined) {
+      throw new HttpException(400, 'Username and password are required')
+    }
+  }
+
+  private isCookiesExists (cookies: MyCookie): void {
+    if (cookies.jwt === null || cookies.jwt === undefined) {
+      console.log('NO COOKIES')
+      throw new HttpException(401, 'Unauthorized')
+    }
+  }
+
+  private isRefreshTokenExists (token: string): void {
+    if (token === undefined) {
+      console.log('REFRESH TOKEN UNDEFINED')
+      throw new HttpException(401, 'Unauthorized')
+    }
   }
 
   private async findUserByProperty (property: PropertyFindUser): Promise<Document<unknown, any, UserModel> & Omit<UserModel & {
@@ -91,12 +86,6 @@ class AuthService {
       throw new HttpException(401, 'Unauthorized')
     }
     return user
-  }
-
-  private isDataFull (username: string, password: string): void {
-    if (username === '' || password === '' || username === undefined || password === undefined) {
-      throw new HttpException(400, 'Username and password are required')
-    }
   }
 
   private async generateTokens (username: string): Promise<[string, string]> {
@@ -124,18 +113,9 @@ class AuthService {
     await userData.save()
   }
 
-  private isCookiesExists (cookies: MyCookie): void {
-    if (cookies.jwt === null || cookies.jwt === undefined) {
-      console.log('NO COOKIES')
-      throw new HttpException(401, 'Unauthorized')
-    }
-  }
-
-  private isRefreshTokenExists (token: string): void {
-    if (token === undefined) {
-      console.log('REFRESH TOKEN UNDEFINED')
-      throw new HttpException(401, 'Unauthorized')
-    }
+  private verifyToken (token: string, username: string): void {
+    const decoded = jwt.verify(token, this.refreshSecret) as DecodedToken
+    if (username !== decoded.username) throw new HttpException(403, 'Forbidden')
   }
 }
 
