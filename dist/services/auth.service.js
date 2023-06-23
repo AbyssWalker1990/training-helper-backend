@@ -61,20 +61,16 @@ class AuthService {
     }
     isCookiesExists(cookies) {
         if (cookies.jwt === null || cookies.jwt === undefined) {
-            console.log('NO COOKIES');
             throw new HttpException_1.default(401, 'Unauthorized');
         }
     }
     isRefreshTokenExists(token) {
-        if (token === undefined) {
-            console.log('REFRESH TOKEN UNDEFINED');
+        if (token === undefined || token === '') {
             throw new HttpException_1.default(401, 'Unauthorized');
         }
     }
     async findUserByProperty(property) {
-        console.log('property: ', property);
         const user = await User_1.User.findOne(property).exec();
-        console.table(user);
         if (user == null) {
             throw new HttpException_1.default(401, 'Unauthorized');
         }
@@ -89,7 +85,6 @@ class AuthService {
         return [accessToken, refreshToken];
     }
     async saveRefreshToken(userData, token) {
-        console.log('REFRESH TOKEN FROM saveRefreshToken: ', token);
         userData.refreshToken = token;
         await userData.save();
     }

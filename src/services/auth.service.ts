@@ -7,8 +7,8 @@ import jwt, { type JwtPayload } from 'jsonwebtoken'
 import type { Types, Document } from 'mongoose'
 
 class AuthService {
-  private readonly accessSecret: string
-  private readonly refreshSecret: string
+  accessSecret: string
+  refreshSecret: string
   constructor () {
     this.accessSecret = process.env.ACCESS_TOKEN_SECRET as string
     this.refreshSecret = process.env.REFRESH_TOKEN_SECRET as string
@@ -44,6 +44,7 @@ class AuthService {
     const currentUser = await this.findUserByProperty({ refreshToken })
     if (currentUser == null) throw new HttpException(403, 'Forbidden')
     this.verifyToken(refreshToken, currentUser.username)
+
     const [accessToken] = await this.generateTokens(currentUser.username)
     return accessToken
   }
@@ -64,14 +65,12 @@ class AuthService {
 
   private isCookiesExists (cookies: MyCookie): void {
     if (cookies.jwt === null || cookies.jwt === undefined) {
-      console.log('NO COOKIES')
       throw new HttpException(401, 'Unauthorized')
     }
   }
 
   private isRefreshTokenExists (token: string): void {
-    if (token === undefined) {
-      console.log('REFRESH TOKEN UNDEFINED')
+    if (token === undefined || token === '') {
       throw new HttpException(401, 'Unauthorized')
     }
   }
@@ -79,9 +78,7 @@ class AuthService {
   private async findUserByProperty (property: PropertyFindUser): Promise<Document<unknown, any, UserModel> & Omit<UserModel & {
     _id: Types.ObjectId
   }, never>> {
-    console.log('property: ', property)
     const user = await User.findOne(property).exec()
-    console.table(user)
     if (user == null) {
       throw new HttpException(401, 'Unauthorized')
     }
@@ -108,7 +105,6 @@ class AuthService {
   private async saveRefreshToken (userData: Document<unknown, any, UserModel> & Omit<UserModel & {
     _id: Types.ObjectId
   }, never>, token: string): Promise<void> {
-    console.log('REFRESH TOKEN FROM saveRefreshToken: ', token)
     userData.refreshToken = token
     await userData.save()
   }

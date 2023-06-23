@@ -10,19 +10,12 @@ const HttpException_1 = __importDefault(require("../../exceptions/HttpException"
 const User_1 = require("../../models/User");
 const bcrypt_1 = __importDefault(require("bcrypt"));
 (0, globals_1.describe)('AuthService', () => {
-    const authService = new auth_service_1.default();
-    (0, globals_1.describe)('isUserExists', () => {
-        (0, globals_1.test)('Returns false if can not find user in database', async () => {
-            jest.spyOn(mongoose_1.Query.prototype, 'exec').mockResolvedValue(null);
-            const user = await auth_service_1.default.prototype.isUserExists('username');
-            console.log('USER from test: ', user);
-            (0, globals_1.expect)(user).toBe(false);
-        });
-        (0, globals_1.test)('Throw error if user already exists in database', async () => {
-            jest.spyOn(mongoose_1.Query.prototype, 'exec').mockResolvedValueOnce('anyValue');
-            const authServiceProto = Object.getPrototypeOf(authService);
-            await (0, globals_1.expect)(authServiceProto.isUserExists('username')).rejects.toThrow(new HttpException_1.default(409, 'User already exists!'));
-        });
+    let authService;
+    beforeAll(() => {
+        process.env = Object.assign(process.env, { REFRESH_TOKEN_SECRET: process.env.REFRESH_TOKEN_SECRET });
+    });
+    beforeEach(() => {
+        authService = new auth_service_1.default();
     });
     (0, globals_1.describe)('register', () => {
         (0, globals_1.test)('Returns username of created user', async () => {
@@ -30,8 +23,8 @@ const bcrypt_1 = __importDefault(require("bcrypt"));
                 username: 'username',
                 password: 'password'
             };
-            jest.spyOn(auth_service_1.default.prototype, 'isUserExists').mockResolvedValue(false);
-            jest.spyOn(User_1.User, 'create').mockReturnValue(userData);
+            jest.spyOn(authService, 'isUserExists').mockResolvedValueOnce(false);
+            jest.spyOn(User_1.User, 'create').mockReturnValueOnce(userData);
             const result = await authService.register(userData);
             (0, globals_1.expect)(result).toBe('username');
         });
@@ -51,15 +44,15 @@ const bcrypt_1 = __importDefault(require("bcrypt"));
         });
     });
     (0, globals_1.describe)('login', () => {
-        (0, globals_1.test)('Returns an array with accessToken and refreshToken', async () => {
+        (0, globals_1.test)('Returns an array with accessToken and refreshToken if passed proper credentials', async () => {
             const loginData = {
                 username: 'username',
                 password: 'password'
             };
-            jest.spyOn(auth_service_1.default.prototype, 'findUserByProperty').mockReturnValue(loginData);
+            jest.spyOn(authService, 'findUserByProperty').mockReturnValue(loginData);
             jest.spyOn(bcrypt_1.default, 'compare').mockReturnValue(true);
-            jest.spyOn(auth_service_1.default.prototype, 'generateTokens').mockResolvedValueOnce(['token', 'token']);
-            jest.spyOn(auth_service_1.default.prototype, 'saveRefreshToken').mockResolvedValue(true);
+            jest.spyOn(authService, 'generateTokens').mockResolvedValueOnce(['token', 'token']);
+            jest.spyOn(authService, 'saveRefreshToken').mockResolvedValue(true);
             const result = await authService.login(loginData);
             (0, globals_1.expect)(result).toEqual(['token', 'token']);
         });
@@ -68,9 +61,23 @@ const bcrypt_1 = __importDefault(require("bcrypt"));
                 username: 'username',
                 password: 'password'
             };
-            jest.spyOn(auth_service_1.default.prototype, 'findUserByProperty').mockReturnValue(loginData);
+            jest.spyOn(authService, 'findUserByProperty').mockReturnValueOnce(loginData);
             jest.spyOn(bcrypt_1.default, 'compare').mockReturnValue(false);
             await (0, globals_1.expect)(authService.login(loginData)).rejects.toThrow(new HttpException_1.default(401, 'Unauthorized'));
+        });
+        (0, globals_1.test)('Returns an error if username is blank', async () => {
+            const loginData = {
+                username: '',
+                password: 'password'
+            };
+            await (0, globals_1.expect)(authService.login(loginData)).rejects.toThrow(new HttpException_1.default(400, 'Username and password are required'));
+        });
+        (0, globals_1.test)('Returns an error if password is blank', async () => {
+            const loginData = {
+                username: 'username',
+                password: ''
+            };
+            await (0, globals_1.expect)(authService.login(loginData)).rejects.toThrow(new HttpException_1.default(400, 'Username and password are required'));
         });
     });
     (0, globals_1.describe)('refresh', () => {
@@ -80,14 +87,45 @@ const bcrypt_1 = __importDefault(require("bcrypt"));
                 password: 'password'
             };
             const cookie = {
-                jwt: 'CoRrEcT-ToKeN'
+                jwt: 'CoRrEcT-ToKen'
             };
-            jest.spyOn(auth_service_1.default.prototype, 'verifyToken').mockReturnValue(true);
-            jest.spyOn(auth_service_1.default.prototype, 'generateTokens').mockResolvedValueOnce(['token', 'token']);
-            jest.spyOn(auth_service_1.default.prototype, 'findUserByProperty').mockReturnValue(user);
+            jest.spyOn(authService, 'verifyToken').mockReturnValue(true);
+            jest.spyOn(authService, 'generateTokens').mockResolvedValueOnce(['token', 'token']);
+            jest.spyOn(authService, 'findUserByProperty').mockReturnValueOnce(user);
             const result = await authService.refresh(cookie);
-            console.log('result: ', result);
             (0, globals_1.expect)(result).toBe('token');
+        });
+        (0, globals_1.test)('Throws an error when there is no jwt in cookies', async () => {
+            const cookie = {};
+            await (0, globals_1.expect)(authService.refresh(cookie)).rejects.toThrow(new HttpException_1.default(401, 'Unauthorized'));
+        });
+        (0, globals_1.test)('Throws an error when refreshToken isnt within cookies', async () => {
+            const cookie = {
+                jwt: ''
+            };
+            jest.spyOn(authService, 'isCookiesExists').mockResolvedValueOnce(true);
+            await (0, globals_1.expect)(authService.refresh(cookie)).rejects.toThrow(new HttpException_1.default(401, 'Unauthorized'));
+        });
+        (0, globals_1.test)('Throws an error when there is no user in database', async () => {
+            const cookie = {
+                jwt: 'token'
+            };
+            jest.spyOn(authService, 'isCookiesExists').mockResolvedValueOnce(true);
+            jest.spyOn(authService, 'isRefreshTokenExists').mockResolvedValueOnce(true);
+            jest.spyOn(authService, 'findUserByProperty').mockResolvedValueOnce(null);
+            await (0, globals_1.expect)(authService.refresh(cookie)).rejects.toThrow(new HttpException_1.default(403, 'Forbidden'));
+        });
+    });
+    (0, globals_1.describe)('isUserExists', () => {
+        (0, globals_1.test)('Returns false if can not find user in database', async () => {
+            jest.spyOn(mongoose_1.Model, 'findOne').mockResolvedValueOnce(null);
+            const user = await authService.isUserExists('username');
+            (0, globals_1.expect)(user).toBe(false);
+        });
+        (0, globals_1.test)('Throws an error if user already exists in database', async () => {
+            jest.spyOn(mongoose_1.Model, 'findOne').mockResolvedValueOnce('anyValue');
+            const authServiceProto = Object.getPrototypeOf(authService);
+            await (0, globals_1.expect)(authServiceProto.isUserExists('username')).rejects.toThrow(new HttpException_1.default(409, 'User already exists!'));
         });
     });
 });

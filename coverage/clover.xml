@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687448657925" clover="3.2.0">
-  <project timestamp="1687448657925" name="All files">
-    <metrics statements="550" coveredstatements="54" conditionals="279" coveredconditionals="30" methods="112" coveredmethods="11" elements="941" coveredelements="95" complexity="0" loc="550" ncloc="550" packages="10" files="32" classes="32"/>
+<coverage generated="1687522627435" clover="3.2.0">
+  <project timestamp="1687522627435" name="All files">
+    <metrics statements="545" coveredstatements="57" conditionals="281" coveredconditionals="35" methods="112" coveredmethods="11" elements="938" coveredelements="103" complexity="0" loc="545" ncloc="545" packages="10" files="32" classes="32"/>
     <package name="dist">
       <metrics statements="54" coveredstatements="0" conditionals="16" coveredconditionals="0" methods="11" coveredmethods="0"/>
       <file name="app.js" path="/home/vova/Documents/js/training-helper-backend/dist/app.js">
@@ -325,9 +325,9 @@
       <file name="HttpException.js" path="/home/vova/Documents/js/training-helper-backend/dist/exceptions/HttpException.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="2" count="1" type="stmt"/>
-        <line num="7" count="8" type="stmt"/>
-        <line num="8" count="8" type="stmt"/>
-        <line num="9" count="8" type="stmt"/>
+        <line num="7" count="18" type="stmt"/>
+        <line num="8" count="18" type="stmt"/>
+        <line num="9" count="18" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
       </file>
     </package>
@@ -522,9 +522,9 @@
       </file>
     </package>
     <package name="dist.services">
-      <metrics statements="145" coveredstatements="41" conditionals="72" coveredconditionals="24" methods="33" coveredmethods="9"/>
+      <metrics statements="140" coveredstatements="44" conditionals="74" coveredconditionals="29" methods="33" coveredmethods="9"/>
       <file name="auth.service.js" path="/home/vova/Documents/js/training-helper-backend/dist/services/auth.service.js">
-        <metrics statements="62" coveredstatements="41" conditionals="31" coveredconditionals="24" methods="13" coveredmethods="9"/>
+        <metrics statements="57" coveredstatements="44" conditionals="33" coveredconditionals="29" methods="13" coveredmethods="9"/>
         <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
         <line num="3" count="3" type="cond" truecount="4" falsecount="0"/>
         <line num="5" count="1" type="stmt"/>
@@ -532,16 +532,16 @@
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
+        <line num="14" count="13" type="stmt"/>
+        <line num="15" count="13" type="stmt"/>
         <line num="18" count="3" type="stmt"/>
         <line num="19" count="3" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
-        <line num="29" count="2" type="stmt"/>
-        <line num="30" count="2" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="30" count="4" type="stmt"/>
         <line num="31" count="2" type="stmt"/>
         <line num="32" count="2" type="stmt"/>
         <line num="33" count="2" type="cond" truecount="4" falsecount="0"/>
@@ -549,12 +549,12 @@
         <line num="35" count="1" type="stmt"/>
         <line num="36" count="1" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="41" count="1" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
-        <line num="44" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="45" count="0" type="stmt"/>
+        <line num="40" count="4" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="42" count="3" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="44" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="45" count="1" type="stmt"/>
         <line num="46" count="1" type="stmt"/>
         <line num="47" count="1" type="stmt"/>
         <line num="48" count="1" type="stmt"/>
@@ -562,31 +562,26 @@
         <line num="52" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="53" count="1" type="stmt"/>
         <line num="55" count="1" type="stmt"/>
-        <line num="58" count="5" type="cond" truecount="6" falsecount="0"/>
-        <line num="59" count="2" type="stmt"/>
-        <line num="63" count="1" type="cond" truecount="3" falsecount="1"/>
-        <line num="64" count="0" type="stmt"/>
-        <line num="65" count="0" type="stmt"/>
-        <line num="69" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="70" count="0" type="stmt"/>
-        <line num="71" count="0" type="stmt"/>
+        <line num="58" count="7" type="cond" truecount="6" falsecount="0"/>
+        <line num="59" count="4" type="stmt"/>
+        <line num="63" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="68" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="74" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="75" count="0" type="stmt"/>
-        <line num="76" count="0" type="stmt"/>
         <line num="77" count="0" type="stmt"/>
-        <line num="78" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="79" count="0" type="stmt"/>
-        <line num="81" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
         <line num="84" count="0" type="stmt"/>
-        <line num="87" count="0" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
         <line num="88" count="0" type="stmt"/>
         <line num="89" count="0" type="stmt"/>
         <line num="92" count="0" type="stmt"/>
-        <line num="93" count="0" type="stmt"/>
+        <line num="93" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="94" count="0" type="stmt"/>
-        <line num="97" count="0" type="stmt"/>
-        <line num="98" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="99" count="0" type="stmt"/>
-        <line num="102" count="1" type="stmt"/>
+        <line num="97" count="1" type="stmt"/>
       </file>
       <file name="test.services.js" path="/home/vova/Documents/js/training-helper-backend/dist/services/test.services.js">
         <metrics statements="31" coveredstatements="0" conditionals="7" coveredconditionals="0" methods="7" coveredmethods="0"/>
