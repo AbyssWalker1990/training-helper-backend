@@ -15,7 +15,7 @@ class TrainingController implements Controller {
   public router = express.Router()
   public trainingService = new TrainingService()
 
-  constructor() {
+  constructor () {
     this.initRoutes()
   }
 

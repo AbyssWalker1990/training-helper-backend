@@ -2602,3 +2602,9 @@
 2023-06-23T15:06:26+03:00 POST /auth/login 200 145.480 ms PostmanRuntime/7.32.3
 2023-06-23T15:12:05+03:00 POST /auth/login 200 235.022 ms PostmanRuntime/7.32.3
 2023-06-23T15:14:33+03:00 POST /auth/login 200 219.686 ms PostmanRuntime/7.32.3
+2023-06-23T15:53:08+03:00 POST /trainings/ 201 106.758 ms PostmanRuntime/7.32.3
+2023-06-23T15:53:17+03:00 POST /trainings/ 201 22.300 ms PostmanRuntime/7.32.3
+2023-06-23T16:03:22+03:00 GET /trainings/645009a8b091a26619836a56 400 22.509 ms PostmanRuntime/7.32.3
+2023-06-23T16:03:28+03:00 POST /trainings/user 500 30.619 ms PostmanRuntime/7.32.3
+2023-06-23T16:03:34+03:00 POST /auth/login 200 105.913 ms PostmanRuntime/7.32.3
+2023-06-23T16:03:48+03:00 POST /trainings/user 200 35.689 ms PostmanRuntime/7.32.3
