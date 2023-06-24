@@ -29,13 +29,16 @@ class App {
     this.app.use(morgan(logFormat, { stream: { write: logToConsoleAndFile } }))
     // Extra check before CORS
     this.app.use(credentials)
-    const cspMiddleware = helmet.contentSecurityPolicy({
-      directives: {
-        defaultSrc: ["'none'"],
-        connectSrc: ["'self'", 'https://training-helper-247e77a6b6b1.herokuapp.com']
-      }
-    })
-    this.app.use(cspMiddleware)
+    // const cspMiddleware = helmet.contentSecurityPolicy({
+    //   directives: {
+    //     defaultSrc: ["'none'"],
+    //     connectSrc: ["'self'", 'https://training-helper-247e77a6b6b1.herokuapp.com']
+    //   }
+    // })
+    this.app.use(helmet({
+      contentSecurityPolicy: false,
+      xDownloadOptions: false
+    }))
     // CORS
     this.app.use(cors(corsOptions))
     // Built-in middleware
