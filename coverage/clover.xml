@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687630095702" clover="3.2.0">
-  <project timestamp="1687630095702" name="All files">
-    <metrics statements="482" coveredstatements="318" conditionals="261" coveredconditionals="196" methods="103" coveredmethods="60" elements="846" coveredelements="574" complexity="0" loc="482" ncloc="482" packages="8" files="25" classes="25"/>
+<coverage generated="1687631379855" clover="3.2.0">
+  <project timestamp="1687631379855" name="All files">
+    <metrics statements="485" coveredstatements="321" conditionals="261" coveredconditionals="196" methods="103" coveredmethods="60" elements="849" coveredelements="577" complexity="0" loc="485" ncloc="485" packages="8" files="25" classes="25"/>
     <package name="dist">
-      <metrics statements="32" coveredstatements="30" conditionals="7" coveredconditionals="7" methods="9" coveredmethods="7"/>
+      <metrics statements="35" coveredstatements="33" conditionals="7" coveredconditionals="7" methods="9" coveredmethods="7"/>
       <file name="app.js" path="/home/vova/Documents/js/training-helper-backend/dist/app.js">
-        <metrics statements="32" coveredstatements="30" conditionals="7" coveredconditionals="7" methods="9" coveredmethods="7"/>
+        <metrics statements="35" coveredstatements="33" conditionals="7" coveredconditionals="7" methods="9" coveredmethods="7"/>
         <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
-        <line num="3" count="8" type="cond" truecount="4" falsecount="0"/>
+        <line num="3" count="9" type="cond" truecount="4" falsecount="0"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
@@ -19,25 +19,28 @@
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
         <line num="38" count="1" type="stmt"/>
-        <line num="41" count="1" type="stmt"/>
-        <line num="42" count="4" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
         <line num="46" count="1" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="50" count="4" type="stmt"/>
         <line num="54" count="1" type="stmt"/>
-        <line num="57" count="1" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
       </file>
     </package>
     <package name="dist.config">
@@ -512,18 +515,18 @@
         <line num="22" count="2" type="stmt"/>
         <line num="23" count="2" type="stmt"/>
         <line num="24" count="2" type="stmt"/>
-        <line num="25" count="12" type="stmt"/>
-        <line num="26" count="12" type="stmt"/>
-        <line num="31" count="12" type="stmt"/>
+        <line num="25" count="6" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="31" count="6" type="stmt"/>
         <line num="33" count="2" type="stmt"/>
         <line num="35" count="2" type="stmt"/>
-        <line num="36" count="13" type="stmt"/>
-        <line num="37" count="13" type="stmt"/>
-        <line num="38" count="58" type="stmt"/>
-        <line num="43" count="58" type="stmt"/>
-        <line num="45" count="13" type="stmt"/>
+        <line num="36" count="7" type="stmt"/>
+        <line num="37" count="7" type="stmt"/>
+        <line num="38" count="39" type="stmt"/>
+        <line num="43" count="39" type="stmt"/>
+        <line num="45" count="7" type="stmt"/>
         <line num="47" count="2" type="stmt"/>
-        <line num="48" count="213" type="stmt"/>
+        <line num="48" count="138" type="stmt"/>
         <line num="50" count="2" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>

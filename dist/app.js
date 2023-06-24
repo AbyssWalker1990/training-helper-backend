@@ -13,6 +13,7 @@ const credentials_1 = __importDefault(require("./middleware/credentials"));
 const morgan_1 = __importDefault(require("morgan"));
 const morganOptions_1 = require("./config/morganOptions");
 const errorMiddleware_1 = __importDefault(require("./middleware/errorMiddleware"));
+const helmet_1 = __importDefault(require("helmet"));
 class App {
     app;
     port;
@@ -28,6 +29,13 @@ class App {
         this.app.use((0, morgan_1.default)(morganOptions_1.logFormat, { stream: { write: morganOptions_1.logToConsoleAndFile } }));
         // Extra check before CORS
         this.app.use(credentials_1.default);
+        const cspMiddleware = helmet_1.default.contentSecurityPolicy({
+            directives: {
+                defaultSrc: ["'none'"],
+                connectSrc: ["'self'", 'https://training-helper-247e77a6b6b1.herokuapp.com']
+            }
+        });
+        this.app.use(cspMiddleware);
         // CORS
         this.app.use((0, cors_1.default)(corsOptions_1.default));
         // Built-in middleware

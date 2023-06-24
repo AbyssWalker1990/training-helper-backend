@@ -9,6 +9,7 @@ import morgan from 'morgan'
 import { logFormat, logToConsoleAndFile } from './config/morganOptions'
 import type Controller from './interfaces/controller.interface'
 import errorMiddleware from './middleware/errorMiddleware'
+import helmet from 'helmet'
 
 class App {
   public app: express.Application
@@ -28,6 +29,13 @@ class App {
     this.app.use(morgan(logFormat, { stream: { write: logToConsoleAndFile } }))
     // Extra check before CORS
     this.app.use(credentials)
+    const cspMiddleware = helmet.contentSecurityPolicy({
+      directives: {
+        defaultSrc: ["'none'"],
+        connectSrc: ["'self'", 'https://training-helper-247e77a6b6b1.herokuapp.com']
+      }
+    })
+    this.app.use(cspMiddleware)
     // CORS
     this.app.use(cors(corsOptions))
     // Built-in middleware
