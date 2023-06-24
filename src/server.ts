@@ -2,7 +2,7 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import { connectDatabase } from './config/connectDatabase'
 
-// import moment from 'moment-timezone'
+import moment from 'moment-timezone'
 import App from './app'
 import AuthController from './controllers/AuthController'
 import SwaggerController from './controllers/SwaggerController'
@@ -18,7 +18,7 @@ const app = new App([
   new TestController()
 ], PORT)
 
-// moment.tz.setDefault('Europe/Kiev')
+moment.tz.setDefault('Europe/Kiev')
 
 // Connect to database
 connectDatabase()
