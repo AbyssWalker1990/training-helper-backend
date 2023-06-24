@@ -31,7 +31,7 @@ class App {
         this.app.use(credentials_1.default);
         const cspMiddleware = helmet_1.default.contentSecurityPolicy({
             directives: {
-                defaultSrc: ["'self'"],
+                defaultSrc: ["'self'", 'https://training-helper-247e77a6b6b1.herokuapp.com'],
                 connectSrc: ["'self'", 'https://training-helper-247e77a6b6b1.herokuapp.com']
             }
         });
