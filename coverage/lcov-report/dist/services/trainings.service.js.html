@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">57.69% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>26/52</span>
+                <span class='fraction'>30/52</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.88% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>19/34</span>
+                <span class='fraction'>24/36</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.15% </span>
+                <span class="strong">53.84% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/13</span>
+                <span class='fraction'>7/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">57.69% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>26/52</span>
+                <span class='fraction'>30/52</span>
             </div>
         
             
@@ -178,22 +178,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -201,21 +195,27 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -273,8 +273,8 @@ class TrainingService {
         const currentUser = await this.isExistingUser(accessToken);
         const currentUserName = currentUser.username;
         const training = await Training_1.Training.findById(trainingId);
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (training === null) {
-<span class="cstat-no" title="statement not covered" >            throw new MissingDataException_1.default(`There is no training with ${trainingId} ID`);</span>
+        if (training === null) {
+            throw new MissingDataException_1.default(`There is no training with ${trainingId} ID`);
         }
         this.isOwnerOfTraining(training, currentUserName);
         return await Training_1.Training.findByIdAndDelete(trainingId);
@@ -296,16 +296,16 @@ class TrainingService {
 <span class="cstat-no" title="statement not covered" >        return training;</span>
     }
     isAccessToken(cookies) {
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (cookies?.jwt === null)
-<span class="cstat-no" title="statement not covered" >            throw new HttpException_1.default(401, 'Unauthorized');</span>
+        if (cookies?.jwt === null || cookies?.jwt === '')
+            throw new HttpException_1.default(401, 'Unauthorized');
     }
 <span class="fstat-no" title="function not covered" >    is</span>AccessTokenString(token) {
 <span class="cstat-no" title="statement not covered" >        if (token === undefined)</span>
 <span class="cstat-no" title="statement not covered" >            throw new HttpException_1.default(401, 'Unauthorized');</span>
     }
-<span class="fstat-no" title="function not covered" >    is</span>OwnerOfTraining(training, currentUser) {
-<span class="cstat-no" title="statement not covered" >        if (training.username !== currentUser)</span>
-<span class="cstat-no" title="statement not covered" >            throw new HttpException_1.default(403, 'Forbidden, not owner');</span>
+    isOwnerOfTraining(training, currentUser) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (training.username !== currentUser)
+            throw new HttpException_1.default(403, 'Forbidden, not owner');
     }
 <span class="fstat-no" title="function not covered" >    as</span>ync isExistingUser(token) {
         const currentUser = <span class="cstat-no" title="statement not covered" >await this.decodeUserName(token, this.accessSecret);</span>
@@ -340,7 +340,7 @@ exports.default = TrainingService;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-24T13:53:24.018Z
+                at 2023-06-24T14:18:01.710Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

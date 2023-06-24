@@ -51,7 +51,7 @@ class TrainingService {
         return training;
     }
     isAccessToken(cookies) {
-        if (cookies?.jwt === null)
+        if (cookies?.jwt === null || cookies?.jwt === '')
             throw new HttpException_1.default(401, 'Unauthorized');
     }
     isAccessTokenString(token) {

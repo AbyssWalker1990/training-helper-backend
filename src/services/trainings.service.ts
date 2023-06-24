@@ -5,7 +5,6 @@ import HttpException from '../exceptions/HttpException'
 import { User } from '../models/User'
 import jwt from 'jsonwebtoken'
 import type { UserModel, MyCookie, DecodedToken } from '../interfaces/auth.interface'
-import { Query } from 'mongoose'
 
 class TrainingService {
   private readonly accessSecret: string
@@ -55,7 +54,7 @@ class TrainingService {
   }
 
   private isAccessToken (cookies: MyCookie): void {
-    if (cookies?.jwt === null) throw new HttpException(401, 'Unauthorized')
+    if (cookies?.jwt === null || cookies?.jwt === '') throw new HttpException(401, 'Unauthorized')
   }
 
   private isAccessTokenString (token: string): void {
