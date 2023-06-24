@@ -3,6 +3,7 @@ import TrainingService from '../../services/trainings.service'
 import { type Exercise } from '../../interfaces/training.interface'
 import { Training } from '../../models/Training'
 import MissingDataException from '../../exceptions/trainingsExceptions/MissingDataException'
+import type CreateUserDto from '../../controllers/user.dto'
 
 describe('TrainingService', () => {
   const trainingService = new TrainingService()
@@ -49,6 +50,23 @@ describe('TrainingService', () => {
     test('Throws an error if title is blank', async () => {
       await expect(trainingService.createSingleTraining('username', '', exercises))
         .rejects.toThrow(new MissingDataException('Title required to create new training instance'))
+    })
+  })
+
+  describe('deleteSingleTraining', () => {
+    const user = {
+      username: 'username'
+    }
+    test('Triggers mongoose delete method if all checking passed', async () => {
+      jest.spyOn(trainingService as any, 'decodeUserName').mockResolvedValueOnce(user)
+      jest.spyOn(trainingService as any, 'isExistingUser').mockResolvedValueOnce(user)
+      jest.spyOn(Training, 'findById').mockResolvedValueOnce('training')
+      jest.spyOn(trainingService as any, 'isOwnerOfTraining').mockReturnValueOnce(true)
+      jest.spyOn(Training, 'findByIdAndDelete').mockResolvedValueOnce('deleted')
+      const mainFn = jest.spyOn(trainingService, 'deleteSingleTraining')
+      const result = await trainingService.deleteSingleTraining({ jwt: 'token' }, '648ec636047ac5ef71312fef')
+      expect(mainFn).toBeCalledTimes(1)
+      expect(result).toBe('deleted')
     })
   })
 })

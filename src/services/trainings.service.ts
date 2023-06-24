@@ -5,6 +5,7 @@ import HttpException from '../exceptions/HttpException'
 import { User } from '../models/User'
 import jwt from 'jsonwebtoken'
 import type { UserModel, MyCookie, DecodedToken } from '../interfaces/auth.interface'
+import { Query } from 'mongoose'
 
 class TrainingService {
   private readonly accessSecret: string
@@ -22,7 +23,7 @@ class TrainingService {
     return createdTraining
   }
 
-  public async deleteSingleTraining (cookies: MyCookie, trainingId: string): Promise<void> {
+  public async deleteSingleTraining (cookies: MyCookie, trainingId: string): Promise<TrainingModel | null> {
     this.isAccessToken(cookies)
     const accessToken = cookies.jwt
     const currentUser = await this.isExistingUser(accessToken)
@@ -32,7 +33,7 @@ class TrainingService {
       throw new MissingDataException(`There is no training with ${trainingId} ID`)
     }
     this.isOwnerOfTraining(training, currentUserName)
-    await Training.findByIdAndDelete(trainingId)
+    return await Training.findByIdAndDelete(trainingId)
   }
 
   public async getAllTrainingsByUser (token: string): Promise<TrainingModel[]> {

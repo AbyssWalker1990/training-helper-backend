@@ -32,7 +32,7 @@ class TrainingService {
             throw new MissingDataException_1.default(`There is no training with ${trainingId} ID`);
         }
         this.isOwnerOfTraining(training, currentUserName);
-        await Training_1.Training.findByIdAndDelete(trainingId);
+        return await Training_1.Training.findByIdAndDelete(trainingId);
     }
     async getAllTrainingsByUser(token) {
         this.isAccessTokenString(token);

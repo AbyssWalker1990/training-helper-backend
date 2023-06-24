@@ -50,4 +50,20 @@ const MissingDataException_1 = __importDefault(require("../../exceptions/trainin
                 .rejects.toThrow(new MissingDataException_1.default('Title required to create new training instance'));
         });
     });
+    (0, globals_1.describe)('deleteSingleTraining', () => {
+        const user = {
+            username: 'username'
+        };
+        (0, globals_1.test)('Triggers mongoose delete method if all checking passed', async () => {
+            jest.spyOn(trainingService, 'decodeUserName').mockResolvedValueOnce(user);
+            jest.spyOn(trainingService, 'isExistingUser').mockResolvedValueOnce(user);
+            jest.spyOn(Training_1.Training, 'findById').mockResolvedValueOnce('training');
+            jest.spyOn(trainingService, 'isOwnerOfTraining').mockReturnValueOnce(true);
+            jest.spyOn(Training_1.Training, 'findByIdAndDelete').mockResolvedValueOnce('deleted');
+            const mainFn = jest.spyOn(trainingService, 'deleteSingleTraining');
+            const result = await trainingService.deleteSingleTraining({ jwt: 'token' }, '648ec636047ac5ef71312fef');
+            (0, globals_1.expect)(mainFn).toBeCalledTimes(1);
+            (0, globals_1.expect)(result).toBe('deleted');
+        });
+    });
 });
