@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">47.05% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>8/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">54.54% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>6/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>2/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">47.05% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>8/17</span>
             </div>
         
             
@@ -95,23 +95,20 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -125,16 +122,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
-var __importDefault = <span class="cstat-no" title="statement not covered" >(this &amp;&amp; this.__importDefault) || <span class="fstat-no" title="function not covered" >fu</span>nction (mod) {</span>
-<span class="cstat-no" title="statement not covered" >    return (mod &amp;&amp; mod.__esModule) ? mod : { "default": mod };</span>
+var __importDefault = (this &amp;&amp; this.__importDefault) || function (mod) {
+    return (mod &amp;&amp; mod.__esModule) ? mod : <span class="branch-1 cbranch-no" title="branch not covered" >{ "default": mod };</span>
 };
-<span class="cstat-no" title="statement not covered" >Object.defineProperty(exports, "__esModule", { value: true });</span>
-const class_transformer_1 = <span class="cstat-no" title="statement not covered" >require("class-transformer");</span>
-const class_validator_1 = <span class="cstat-no" title="statement not covered" >require("class-validator");</span>
-const HttpException_1 = <span class="cstat-no" title="statement not covered" >__importDefault(require("../exceptions/HttpException"));</span>
-function <span class="fstat-no" title="function not covered" >validationMiddleware(</span>type) {
-<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >(r</span>eq, res, next) =&gt; {</span>
+Object.defineProperty(exports, "__esModule", { value: true });
+const class_transformer_1 = require("class-transformer");
+const class_validator_1 = require("class-validator");
+const HttpException_1 = __importDefault(require("../exceptions/HttpException"));
+function validationMiddleware(type) {
+    return <span class="fstat-no" title="function not covered" >(r</span>eq, res, next) =&gt; {
 <span class="cstat-no" title="statement not covered" >        (0, class_validator_1.validate)((0, class_transformer_1.plainToInstance)(type, req.body))</span>
             .then(<span class="fstat-no" title="function not covered" >(e</span>rrors) =&gt; {
 <span class="cstat-no" title="statement not covered" >            if (errors.length &gt; 0) {</span>
@@ -155,7 +155,7 @@ function <span class="fstat-no" title="function not covered" >validationMiddlewa
             .catch(<span class="fstat-no" title="function not covered" >(e</span>rr) =&gt; { <span class="cstat-no" title="statement not covered" >console.log(err); </span>});
     };
 }
-<span class="cstat-no" title="statement not covered" >exports.default = validationMiddleware;</span>
+exports.default = validationMiddleware;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -163,7 +163,7 @@ function <span class="fstat-no" title="function not covered" >validationMiddlewa
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-24T15:15:24.574Z
+                at 2023-06-24T16:31:48.424Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

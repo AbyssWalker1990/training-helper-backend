@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">70.58% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>12/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>6/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">70.58% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>12/17</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -92,49 +92,49 @@
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
-var __importDefault = <span class="cstat-no" title="statement not covered" >(this &amp;&amp; this.__importDefault) || <span class="fstat-no" title="function not covered" >fu</span>nction (mod) {</span>
-<span class="cstat-no" title="statement not covered" >    return (mod &amp;&amp; mod.__esModule) ? mod : { "default": mod };</span>
+var __importDefault = (this &amp;&amp; this.__importDefault) || function (mod) {
+    return (mod &amp;&amp; mod.__esModule) ? <span class="branch-0 cbranch-no" title="branch not covered" >mod </span>: { "default": mod };
 };
-<span class="cstat-no" title="statement not covered" >Object.defineProperty(exports, "__esModule", { value: true });</span>
-<span class="cstat-no" title="statement not covered" >exports.logFormat = exports.logToConsoleAndFile = void 0;</span>
-const fs_1 = <span class="cstat-no" title="statement not covered" >__importDefault(require("fs"));</span>
-const path_1 = <span class="cstat-no" title="statement not covered" >__importDefault(require("path"));</span>
-const moment_timezone_1 = <span class="cstat-no" title="statement not covered" >__importDefault(require("moment-timezone"));</span>
-const accessLogStream = <span class="cstat-no" title="statement not covered" >fs_1.default.createWriteStream(path_1.default.join(__dirname, '..', 'logs', 'access.log'), { flags: 'a' });</span>
-const logToConsoleAndFile = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(m</span>essage) =&gt; {</span>
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.logFormat = exports.logToConsoleAndFile = void 0;
+const fs_1 = __importDefault(require("fs"));
+const path_1 = __importDefault(require("path"));
+const moment_timezone_1 = __importDefault(require("moment-timezone"));
+const accessLogStream = fs_1.default.createWriteStream(path_1.default.join(__dirname, '..', 'logs', 'access.log'), { flags: 'a' });
+const logToConsoleAndFile = <span class="fstat-no" title="function not covered" >(m</span>essage) =&gt; {
 <span class="cstat-no" title="statement not covered" >    console.log(message);</span>
 <span class="cstat-no" title="statement not covered" >    accessLogStream.write(`${message}`);</span>
 };
-<span class="cstat-no" title="statement not covered" >exports.logToConsoleAndFile = logToConsoleAndFile;</span>
-const logFormat = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(t</span>okens, req, res) =&gt; {</span>
+exports.logToConsoleAndFile = logToConsoleAndFile;
+const logFormat = <span class="fstat-no" title="function not covered" >(t</span>okens, req, res) =&gt; {
     const timeZone = <span class="cstat-no" title="statement not covered" >'Europe/Kiev';</span> // Set the timezone to Kiev
     const timestamp = <span class="cstat-no" title="statement not covered" >(0, moment_timezone_1.default)().tz(timeZone).format();</span> // Get the current timestamp in Kiev timezone
 <span class="cstat-no" title="statement not covered" >    return [</span>
@@ -146,7 +146,7 @@ const logFormat = <span class="cstat-no" title="statement not covered" ><span cl
         tokens['user-agent'](req, res)
     ].join(' ');
 };
-<span class="cstat-no" title="statement not covered" >exports.logFormat = logFormat;</span>
+exports.logFormat = logFormat;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -154,7 +154,7 @@ const logFormat = <span class="cstat-no" title="statement not covered" ><span cl
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-24T15:15:24.574Z
+                at 2023-06-24T16:31:48.424Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
