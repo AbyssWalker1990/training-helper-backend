@@ -84,4 +84,21 @@ const HttpException_1 = __importDefault(require("../../exceptions/HttpException"
             await (0, globals_1.expect)(trainingService.deleteSingleTraining({ jwt: '' }, '648ec636047ac5ef71312fef')).rejects.toThrow(new HttpException_1.default(401, 'Unauthorized'));
         });
     });
+    (0, globals_1.describe)('getAllTrainingsByUser', () => {
+        const user = {
+            username: 'username'
+        };
+        (0, globals_1.test)('Returns list of trainings', async () => {
+            jest.spyOn(trainingService, 'isAccessTokenString').mockReturnValueOnce(true);
+            jest.spyOn(trainingService, 'decodeUserName').mockResolvedValueOnce(user);
+            jest.spyOn(Training_1.Training, 'find').mockResolvedValueOnce('trainingArray');
+            const result = await trainingService.getAllTrainingsByUser('token');
+            (0, globals_1.expect)(result).toBe('trainingArray');
+        });
+        (0, globals_1.test)('Throws an error if token arg is not string', async () => {
+            await (0, globals_1.expect)(trainingService.getAllTrainingsByUser(1)).rejects.toThrow(new HttpException_1.default(401, 'Unauthorized'));
+            await (0, globals_1.expect)(trainingService.getAllTrainingsByUser(true)).rejects.toThrow(new HttpException_1.default(401, 'Unauthorized'));
+            await (0, globals_1.expect)(trainingService.getAllTrainingsByUser([])).rejects.toThrow(new HttpException_1.default(401, 'Unauthorized'));
+        });
+    });
 });

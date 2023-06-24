@@ -55,7 +55,7 @@ class TrainingService {
             throw new HttpException_1.default(401, 'Unauthorized');
     }
     isAccessTokenString(token) {
-        if (token === undefined)
+        if (token === undefined || typeof token !== 'string')
             throw new HttpException_1.default(401, 'Unauthorized');
     }
     isOwnerOfTraining(training, currentUser) {

@@ -58,7 +58,7 @@ class TrainingService {
   }
 
   private isAccessTokenString (token: string): void {
-    if (token === undefined) throw new HttpException(401, 'Unauthorized')
+    if (token === undefined || typeof token !== 'string') throw new HttpException(401, 'Unauthorized')
   }
 
   private isOwnerOfTraining (training: TrainingModel, currentUser: string): void {

@@ -3,7 +3,6 @@ import TrainingService from '../../services/trainings.service'
 import { type Exercise } from '../../interfaces/training.interface'
 import { Training } from '../../models/Training'
 import MissingDataException from '../../exceptions/trainingsExceptions/MissingDataException'
-import type CreateUserDto from '../../controllers/user.dto'
 import HttpException from '../../exceptions/HttpException'
 
 describe('TrainingService', () => {
@@ -88,6 +87,26 @@ describe('TrainingService', () => {
 
     test('Throws an error if there is no jwt in cookies', async () => {
       await expect(trainingService.deleteSingleTraining({ jwt: '' }, '648ec636047ac5ef71312fef')).rejects.toThrow(new HttpException(401, 'Unauthorized'))
+    })
+  })
+
+  describe('getAllTrainingsByUser', () => {
+    const user = {
+      username: 'username'
+    }
+    test('Returns list of trainings', async () => {
+      jest.spyOn(trainingService as any, 'isAccessTokenString').mockReturnValueOnce(true)
+      jest.spyOn(trainingService as any, 'decodeUserName').mockResolvedValueOnce(user)
+      jest.spyOn(Training, 'find').mockResolvedValueOnce('trainingArray' as any)
+
+      const result = await trainingService.getAllTrainingsByUser('token')
+      expect(result).toBe('trainingArray')
+    })
+
+    test('Throws an error if token arg is not string', async () => {
+      await expect(trainingService.getAllTrainingsByUser(1 as any)).rejects.toThrow(new HttpException(401, 'Unauthorized'))
+      await expect(trainingService.getAllTrainingsByUser(true as any)).rejects.toThrow(new HttpException(401, 'Unauthorized'))
+      await expect(trainingService.getAllTrainingsByUser([] as any)).rejects.toThrow(new HttpException(401, 'Unauthorized'))
     })
   })
 })
