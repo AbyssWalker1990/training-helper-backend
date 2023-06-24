@@ -4,7 +4,6 @@
   "description": "App for storing training history",
   "main": "server.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
     "test": "jest",
     "start": "node dist/server.js",
     "dev": "nodemon dist/server.js",
@@ -12,6 +11,9 @@
   },
   "author": "Volodymyr Bordiian",
   "license": "ISC",
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "bcrypt": "^5.1.0",
     "class-transformer": "^0.5.1",

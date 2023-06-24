@@ -2616,3 +2616,16 @@
 2023-06-24T17:50:23+03:00 POST /auth/login 200 154.319 ms undici
 2023-06-24T17:50:25+03:00 OPTIONS /trainings/user 200 1.093 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 2023-06-24T17:50:25+03:00 POST /trainings/user 200 37.710 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+2023-06-24T19:44:57+03:00 OPTIONS /trainings/user 200 4.915 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+2023-06-24T19:44:57+03:00 POST /trainings/user 500 57.464 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+2023-06-24T19:45:03+03:00 POST /auth/login 200 100.471 ms undici
+2023-06-24T19:45:04+03:00 OPTIONS /trainings/user 200 0.323 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+2023-06-24T19:45:04+03:00 POST /trainings/user 200 29.869 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+2023-06-24T19:45:07+03:00 GET /trainings/648ec636047ac5ef71312fef 304 44.561 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+2023-06-24T19:45:07+03:00 GET /trainings/648ec636047ac5ef71312fef 304 9.929 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+2023-06-24T19:45:10+03:00 GET /trainings/648ec636047ac5ef71312fef 304 8.268 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+2023-06-24T20:17:43+03:00 GET /api-docs/ 304 9.540 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+2023-06-24T20:17:43+03:00 GET /api-docs/swagger-ui-standalone-preset.js 200 20.599 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+2023-06-24T20:17:43+03:00 GET /api-docs/swagger-ui.css 304 4.261 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+2023-06-24T20:17:43+03:00 GET /api-docs/swagger-ui-bundle.js 200 19.137 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+2023-06-24T20:17:43+03:00 GET /api-docs/swagger-ui-init.js 304 5.563 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
