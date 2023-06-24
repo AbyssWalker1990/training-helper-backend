@@ -109,4 +109,26 @@ describe('TrainingService', () => {
       await expect(trainingService.getAllTrainingsByUser([] as any)).rejects.toThrow(new HttpException(401, 'Unauthorized'))
     })
   })
+
+  describe('getSingleTrainingById', () => {
+    test('Returns training object if it exists in database', async () => {
+      jest.spyOn(Training, 'findById').mockResolvedValueOnce('trainingArray' as any)
+      const result = await trainingService.getSingleTrainingById('trainingId')
+      expect(result).toBe('trainingArray')
+    })
+
+    test('Throw an error if cant find training in database', async () => {
+      jest.spyOn(Training, 'findById').mockResolvedValueOnce(null)
+      await expect(trainingService.getSingleTrainingById('trainingId')).rejects.toThrow(new MissingDataException('There is no training with trainingId ID'))
+    })
+
+    test('Throw an error training id is not a string', async () => {
+      await expect(trainingService.getSingleTrainingById(1 as any)).rejects.toThrow(new MissingDataException('Invalid training ID'))
+      await expect(trainingService.getSingleTrainingById(true as any)).rejects.toThrow(new MissingDataException('Invalid training ID'))
+      await expect(trainingService.getSingleTrainingById([] as any)).rejects.toThrow(new MissingDataException('Invalid training ID'))
+      await expect(trainingService.getSingleTrainingById('')).rejects.toThrow(new MissingDataException('Invalid training ID'))
+      await expect(trainingService.getSingleTrainingById(undefined as any)).rejects.toThrow(new MissingDataException('Invalid training ID'))
+      await expect(trainingService.getSingleTrainingById(null as any)).rejects.toThrow(new MissingDataException('Invalid training ID'))
+    })
+  })
 })

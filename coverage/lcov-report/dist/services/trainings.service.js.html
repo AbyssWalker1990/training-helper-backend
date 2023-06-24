@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.23% </span>
+                <span class="strong">86% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>36/52</span>
+                <span class='fraction'>43/50</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.05% </span>
+                <span class="strong">89.74% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>27/38</span>
+                <span class='fraction'>35/39</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.23% </span>
+                <span class="strong">84.61% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>9/13</span>
+                <span class='fraction'>11/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.23% </span>
+                <span class="strong">86% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>36/52</span>
+                <span class='fraction'>43/50</span>
             </div>
         
             
@@ -153,7 +153,8 @@
 <a name='L88'></a><a href='#L88'>88</a>
 <a name='L89'></a><a href='#L89'>89</a>
 <a name='L90'></a><a href='#L90'>90</a>
-<a name='L91'></a><a href='#L91'>91</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -196,14 +197,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
@@ -224,8 +223,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -285,15 +287,13 @@ class TrainingService {
         const trainingList = await Training_1.Training.find({ username: currentUser.username });
         return trainingList;
     }
-<span class="fstat-no" title="function not covered" >    as</span>ync getSingleTrainingById(trainingId) {
-<span class="cstat-no" title="statement not covered" >        this.isValidTrainingId(trainingId);</span>
-        const training = <span class="cstat-no" title="statement not covered" >await Training_1.Training.findById(trainingId);</span>
-<span class="cstat-no" title="statement not covered" >        if (training === null) {</span>
-<span class="cstat-no" title="statement not covered" >            throw new MissingDataException_1.default(`There is no training with ${trainingId} ID`);</span>
+    async getSingleTrainingById(trainingId) {
+        this.isValidTrainingId(trainingId);
+        const training = await Training_1.Training.findById(trainingId);
+        if (training === null) {
+            throw new MissingDataException_1.default(`There is no training with ${trainingId} ID`);
         }
-        const { username, title } = <span class="cstat-no" title="statement not covered" >training;</span>
-<span class="cstat-no" title="statement not covered" >        this.isValidTraining(username, title);</span>
-<span class="cstat-no" title="statement not covered" >        return training;</span>
+        return training;
     }
     isAccessToken(cookies) {
         if (cookies?.jwt === null || cookies?.jwt === '')
@@ -313,9 +313,12 @@ class TrainingService {
 <span class="cstat-no" title="statement not covered" >            throw new HttpException_1.default(403, 'Forbidden, user does not exist');</span>
 <span class="cstat-no" title="statement not covered" >        return currentUser;</span>
     }
-<span class="fstat-no" title="function not covered" >    is</span>ValidTrainingId(trainingId) {
-<span class="cstat-no" title="statement not covered" >        if (trainingId == null || trainingId === undefined || trainingId === '') {</span>
-<span class="cstat-no" title="statement not covered" >            throw new MissingDataException_1.default('Invalid training ID');</span>
+    isValidTrainingId(trainingId) {
+        if (trainingId == null ||
+            trainingId === undefined ||
+            trainingId === '' ||
+            typeof trainingId !== 'string') {
+            throw new MissingDataException_1.default('Invalid training ID');
         }
     }
     isValidTraining(username, title) {
@@ -340,7 +343,7 @@ exports.default = TrainingService;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-24T14:50:14.948Z
+                at 2023-06-24T15:15:24.574Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

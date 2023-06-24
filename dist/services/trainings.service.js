@@ -46,8 +46,6 @@ class TrainingService {
         if (training === null) {
             throw new MissingDataException_1.default(`There is no training with ${trainingId} ID`);
         }
-        const { username, title } = training;
-        this.isValidTraining(username, title);
         return training;
     }
     isAccessToken(cookies) {
@@ -69,7 +67,10 @@ class TrainingService {
         return currentUser;
     }
     isValidTrainingId(trainingId) {
-        if (trainingId == null || trainingId === undefined || trainingId === '') {
+        if (trainingId == null ||
+            trainingId === undefined ||
+            trainingId === '' ||
+            typeof trainingId !== 'string') {
             throw new MissingDataException_1.default('Invalid training ID');
         }
     }

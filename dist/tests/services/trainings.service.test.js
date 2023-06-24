@@ -101,4 +101,23 @@ const HttpException_1 = __importDefault(require("../../exceptions/HttpException"
             await (0, globals_1.expect)(trainingService.getAllTrainingsByUser([])).rejects.toThrow(new HttpException_1.default(401, 'Unauthorized'));
         });
     });
+    (0, globals_1.describe)('getSingleTrainingById', () => {
+        (0, globals_1.test)('Returns training object if it exists in database', async () => {
+            jest.spyOn(Training_1.Training, 'findById').mockResolvedValueOnce('trainingArray');
+            const result = await trainingService.getSingleTrainingById('trainingId');
+            (0, globals_1.expect)(result).toBe('trainingArray');
+        });
+        (0, globals_1.test)('Throw an error if cant find training in database', async () => {
+            jest.spyOn(Training_1.Training, 'findById').mockResolvedValueOnce(null);
+            await (0, globals_1.expect)(trainingService.getSingleTrainingById('trainingId')).rejects.toThrow(new MissingDataException_1.default('There is no training with trainingId ID'));
+        });
+        (0, globals_1.test)('Throw an error training id is not a string', async () => {
+            await (0, globals_1.expect)(trainingService.getSingleTrainingById(1)).rejects.toThrow(new MissingDataException_1.default('Invalid training ID'));
+            await (0, globals_1.expect)(trainingService.getSingleTrainingById(true)).rejects.toThrow(new MissingDataException_1.default('Invalid training ID'));
+            await (0, globals_1.expect)(trainingService.getSingleTrainingById([])).rejects.toThrow(new MissingDataException_1.default('Invalid training ID'));
+            await (0, globals_1.expect)(trainingService.getSingleTrainingById('')).rejects.toThrow(new MissingDataException_1.default('Invalid training ID'));
+            await (0, globals_1.expect)(trainingService.getSingleTrainingById(undefined)).rejects.toThrow(new MissingDataException_1.default('Invalid training ID'));
+            await (0, globals_1.expect)(trainingService.getSingleTrainingById(null)).rejects.toThrow(new MissingDataException_1.default('Invalid training ID'));
+        });
+    });
 });

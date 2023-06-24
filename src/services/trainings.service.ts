@@ -48,8 +48,6 @@ class TrainingService {
     if (training === null) {
       throw new MissingDataException(`There is no training with ${trainingId} ID`)
     }
-    const { username, title } = training
-    this.isValidTraining(username, title)
     return training
   }
 
@@ -72,7 +70,10 @@ class TrainingService {
   }
 
   private isValidTrainingId (trainingId: string): void {
-    if (trainingId == null || trainingId === undefined || trainingId === '') {
+    if (trainingId == null ||
+      trainingId === undefined ||
+      trainingId === '' ||
+      typeof trainingId !== 'string') {
       throw new MissingDataException('Invalid training ID')
     }
   }
