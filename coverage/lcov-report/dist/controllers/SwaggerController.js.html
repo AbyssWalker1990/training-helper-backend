@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -83,43 +83,43 @@
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
-var __importDefault = <span class="cstat-no" title="statement not covered" >(this &amp;&amp; this.__importDefault) || <span class="fstat-no" title="function not covered" >fu</span>nction (mod) {</span>
-<span class="cstat-no" title="statement not covered" >    return (mod &amp;&amp; mod.__esModule) ? mod : { "default": mod };</span>
+var __importDefault = (this &amp;&amp; this.__importDefault) || function (mod) {
+    return (mod &amp;&amp; mod.__esModule) ? mod : { "default": mod };
 };
-<span class="cstat-no" title="statement not covered" >Object.defineProperty(exports, "__esModule", { value: true });</span>
-const swagger_ui_express_1 = <span class="cstat-no" title="statement not covered" >__importDefault(require("swagger-ui-express"));</span>
-const swaggerOptions_1 = <span class="cstat-no" title="statement not covered" >__importDefault(require("../config/swaggerOptions"));</span>
-const express_1 = <span class="cstat-no" title="statement not covered" >__importDefault(require("express"));</span>
+Object.defineProperty(exports, "__esModule", { value: true });
+const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
+const swaggerOptions_1 = __importDefault(require("../config/swaggerOptions"));
+const express_1 = __importDefault(require("express"));
 class SwaggerController {
-    path = <span class="cstat-no" title="statement not covered" >'';</span>
-    router = <span class="cstat-no" title="statement not covered" >express_1.default.Router();</span>
-<span class="fstat-no" title="function not covered" >    co</span>nstructor() {
-<span class="cstat-no" title="statement not covered" >        this.initRoutes();</span>
+    path = '';
+    router = express_1.default.Router();
+    constructor() {
+        this.initRoutes();
     }
-<span class="fstat-no" title="function not covered" >    in</span>itRoutes() {
-<span class="cstat-no" title="statement not covered" >        this.router.use('/api-docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerOptions_1.default));</span>
+    initRoutes() {
+        this.router.use('/api-docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerOptions_1.default));
     }
 }
-<span class="cstat-no" title="statement not covered" >exports.default = SwaggerController;</span>
+exports.default = SwaggerController;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -127,7 +127,7 @@ class SwaggerController {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-24T16:31:48.424Z
+                at 2023-06-24T16:43:50.868Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

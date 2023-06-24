@@ -2,7 +2,10 @@
     "automock": false,
     "collectCoverage": true,
     "modulePathIgnorePatterns": [
-        "<rootDir>/src/"
+        "<rootDir>/src/",
+        "<rootDir>/dist/config",
+        "<rootDir>/dist/interfaces",
+        "<rootDir>/dist/server.js"
     ],
     "collectCoverageFrom": [
         "dist/**/*.{js,jsx}"

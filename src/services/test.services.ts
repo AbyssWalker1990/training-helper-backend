@@ -25,11 +25,10 @@ class TestService {
       const exercise: Exercise = {
         position: i,
         name: exercisesList[this.getRandomNumber(0, exercisesList.length - 1)],
-        sets: sets
+        sets
       }
       exercises.push(exercise)
     }
-    console.log(exercises)
     return exercises
   }
 

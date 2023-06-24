@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687624308498" clover="3.2.0">
-  <project timestamp="1687624308498" name="All files">
-    <metrics statements="543" coveredstatements="270" conditionals="286" coveredconditionals="169" methods="112" coveredmethods="50" elements="941" coveredelements="489" complexity="0" loc="543" ncloc="543" packages="10" files="32" classes="32"/>
+<coverage generated="1687625030962" clover="3.2.0">
+  <project timestamp="1687625030962" name="All files">
+    <metrics statements="484" coveredstatements="319" conditionals="261" coveredconditionals="196" methods="103" coveredmethods="60" elements="848" coveredelements="575" complexity="0" loc="484" ncloc="484" packages="8" files="25" classes="25"/>
     <package name="dist">
-      <metrics statements="54" coveredstatements="31" conditionals="16" coveredconditionals="7" methods="11" coveredmethods="7"/>
+      <metrics statements="32" coveredstatements="30" conditionals="7" coveredconditionals="7" methods="9" coveredmethods="7"/>
       <file name="app.js" path="/home/vova/Documents/js/training-helper-backend/dist/app.js">
-        <metrics statements="33" coveredstatements="31" conditionals="7" coveredconditionals="7" methods="9" coveredmethods="7"/>
+        <metrics statements="32" coveredstatements="30" conditionals="7" coveredconditionals="7" methods="9" coveredmethods="7"/>
         <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
         <line num="3" count="8" type="cond" truecount="4" falsecount="0"/>
         <line num="5" count="1" type="stmt"/>
@@ -30,71 +30,23 @@
         <line num="34" count="1" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
         <line num="36" count="1" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
-        <line num="47" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="4" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
         <line num="50" count="0" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
-        <line num="55" count="1" type="stmt"/>
-        <line num="58" count="1" type="stmt"/>
-      </file>
-      <file name="server.js" path="/home/vova/Documents/js/training-helper-backend/dist/server.js">
-        <metrics statements="21" coveredstatements="0" conditionals="9" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="2" count="0" type="cond" truecount="0" falsecount="3"/>
-        <line num="3" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
       </file>
     </package>
     <package name="dist.config">
-      <metrics statements="72" coveredstatements="24" conditionals="41" coveredconditionals="12" methods="13" coveredmethods="2"/>
+      <metrics statements="40" coveredstatements="32" conditionals="25" coveredconditionals="18" methods="6" coveredmethods="3"/>
       <file name="allowedHosts.js" path="/home/vova/Documents/js/training-helper-backend/dist/config/allowedHosts.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
-      </file>
-      <file name="connectDatabase.js" path="/home/vova/Documents/js/training-helper-backend/dist/config/connectDatabase.js">
-        <metrics statements="20" coveredstatements="0" conditionals="9" coveredconditionals="0" methods="5" coveredmethods="0"/>
-        <line num="2" count="0" type="cond" truecount="0" falsecount="3"/>
-        <line num="3" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
       </file>
       <file name="corsOptions.js" path="/home/vova/Documents/js/training-helper-backend/dist/config/corsOptions.js">
         <metrics statements="9" coveredstatements="6" conditionals="11" coveredconditionals="6" methods="2" coveredmethods="1"/>
@@ -110,24 +62,9 @@
       </file>
       <file name="exercisesList.js" path="/home/vova/Documents/js/training-helper-backend/dist/config/exercisesList.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="54" count="1" type="stmt"/>
-      </file>
-      <file name="memoryDb.js" path="/home/vova/Documents/js/training-helper-backend/dist/config/memoryDb.js">
-        <metrics statements="12" coveredstatements="0" conditionals="7" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="2" count="0" type="cond" truecount="0" falsecount="3"/>
-        <line num="3" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
       </file>
       <file name="morganOptions.js" path="/home/vova/Documents/js/training-helper-backend/dist/config/morganOptions.js">
         <metrics statements="17" coveredstatements="12" conditionals="7" coveredconditionals="6" methods="3" coveredmethods="1"/>
@@ -150,19 +87,19 @@
         <line num="28" count="1" type="stmt"/>
       </file>
       <file name="swaggerOptions.js" path="/home/vova/Documents/js/training-helper-backend/dist/config/swaggerOptions.js">
-        <metrics statements="8" coveredstatements="0" conditionals="7" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="2" count="0" type="cond" truecount="0" falsecount="3"/>
-        <line num="3" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
+        <metrics statements="8" coveredstatements="8" conditionals="7" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
+        <line num="3" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
       </file>
     </package>
     <package name="dist.controllers">
-      <metrics statements="141" coveredstatements="30" conditionals="54" coveredconditionals="17" methods="24" coveredmethods="4"/>
+      <metrics statements="141" coveredstatements="73" conditionals="54" coveredconditionals="38" methods="24" coveredmethods="13"/>
       <file name="AuthController.js" path="/home/vova/Documents/js/training-helper-backend/dist/controllers/AuthController.js">
         <metrics statements="51" coveredstatements="21" conditionals="11" coveredconditionals="7" methods="7" coveredmethods="3"/>
         <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
@@ -218,77 +155,77 @@
         <line num="83" count="1" type="stmt"/>
       </file>
       <file name="SwaggerController.js" path="/home/vova/Documents/js/training-helper-backend/dist/controllers/SwaggerController.js">
-        <metrics statements="11" coveredstatements="0" conditionals="7" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="2" count="0" type="cond" truecount="0" falsecount="3"/>
-        <line num="3" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
+        <metrics statements="11" coveredstatements="11" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="3"/>
+        <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
+        <line num="3" count="3" type="cond" truecount="4" falsecount="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
       </file>
       <file name="TestController.js" path="/home/vova/Documents/js/training-helper-backend/dist/controllers/TestController.js">
-        <metrics statements="25" coveredstatements="0" conditionals="7" coveredconditionals="0" methods="5" coveredmethods="0"/>
-        <line num="2" count="0" type="cond" truecount="0" falsecount="3"/>
-        <line num="3" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
+        <metrics statements="25" coveredstatements="14" conditionals="7" coveredconditionals="7" methods="5" coveredmethods="3"/>
+        <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
+        <line num="3" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
       </file>
       <file name="TrainingController.js" path="/home/vova/Documents/js/training-helper-backend/dist/controllers/TrainingController.js">
-        <metrics statements="42" coveredstatements="0" conditionals="7" coveredconditionals="0" methods="7" coveredmethods="0"/>
-        <line num="2" count="0" type="cond" truecount="0" falsecount="3"/>
-        <line num="3" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
+        <metrics statements="42" coveredstatements="18" conditionals="7" coveredconditionals="7" methods="7" coveredmethods="3"/>
+        <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
+        <line num="3" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
         <line num="46" count="0" type="stmt"/>
@@ -296,13 +233,13 @@
         <line num="48" count="0" type="stmt"/>
         <line num="49" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
         <line num="57" count="0" type="stmt"/>
         <line num="58" count="0" type="stmt"/>
         <line num="59" count="0" type="stmt"/>
         <line num="62" count="0" type="stmt"/>
-        <line num="66" count="0" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
       </file>
       <file name="user.dto.js" path="/home/vova/Documents/js/training-helper-backend/dist/controllers/user.dto.js">
         <metrics statements="12" coveredstatements="9" conditionals="22" coveredconditionals="10" methods="2" coveredmethods="1"/>
@@ -335,34 +272,12 @@
       <metrics statements="6" coveredstatements="6" conditionals="7" coveredconditionals="6" methods="2" coveredmethods="2"/>
       <file name="MissingDataException.js" path="/home/vova/Documents/js/training-helper-backend/dist/exceptions/trainingsExceptions/MissingDataException.js">
         <metrics statements="6" coveredstatements="6" conditionals="7" coveredconditionals="6" methods="2" coveredmethods="2"/>
-        <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
-        <line num="3" count="1" type="cond" truecount="3" falsecount="1"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
+        <line num="2" count="2" type="cond" truecount="3" falsecount="0"/>
+        <line num="3" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
         <line num="9" count="20" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="dist.interfaces">
-      <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="auth.interface.js" path="/home/vova/Documents/js/training-helper-backend/dist/interfaces/auth.interface.js">
-        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="2" count="0" type="stmt"/>
-      </file>
-      <file name="controller.interface.js" path="/home/vova/Documents/js/training-helper-backend/dist/interfaces/controller.interface.js">
-        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="2" count="0" type="stmt"/>
-      </file>
-      <file name="training.interface.js" path="/home/vova/Documents/js/training-helper-backend/dist/interfaces/training.interface.js">
-        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="2" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="dist.interfaces.trainings">
-      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="exercise.interface.js" path="/home/vova/Documents/js/training-helper-backend/dist/interfaces/trainings/exercise.interface.js">
-        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="2" count="0" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
       </file>
     </package>
     <package name="dist.middleware">
@@ -500,14 +415,14 @@
       <metrics statements="16" coveredstatements="16" conditionals="14" coveredconditionals="12" methods="2" coveredmethods="2"/>
       <file name="Training.js" path="/home/vova/Documents/js/training-helper-backend/dist/models/Training.js">
         <metrics statements="8" coveredstatements="8" conditionals="7" coveredconditionals="6" methods="1" coveredmethods="1"/>
-        <line num="2" count="2" type="cond" truecount="3" falsecount="0"/>
-        <line num="3" count="2" type="cond" truecount="3" falsecount="1"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="48" count="2" type="stmt"/>
+        <line num="2" count="3" type="cond" truecount="3" falsecount="0"/>
+        <line num="3" count="3" type="cond" truecount="3" falsecount="1"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="48" count="3" type="stmt"/>
       </file>
       <file name="User.js" path="/home/vova/Documents/js/training-helper-backend/dist/models/User.js">
         <metrics statements="8" coveredstatements="8" conditionals="7" coveredconditionals="6" methods="1" coveredmethods="1"/>
@@ -522,7 +437,7 @@
       </file>
     </package>
     <package name="dist.services">
-      <metrics statements="138" coveredstatements="115" conditionals="79" coveredconditionals="70" methods="33" coveredmethods="25"/>
+      <metrics statements="137" coveredstatements="114" conditionals="79" coveredconditionals="70" methods="33" coveredmethods="25"/>
       <file name="auth.service.js" path="/home/vova/Documents/js/training-helper-backend/dist/services/auth.service.js">
         <metrics statements="57" coveredstatements="44" conditionals="33" coveredconditionals="29" methods="13" coveredmethods="9"/>
         <line num="2" count="2" type="cond" truecount="3" falsecount="0"/>
@@ -584,50 +499,49 @@
         <line num="97" count="2" type="stmt"/>
       </file>
       <file name="test.services.js" path="/home/vova/Documents/js/training-helper-backend/dist/services/test.services.js">
-        <metrics statements="31" coveredstatements="28" conditionals="7" coveredconditionals="6" methods="7" coveredmethods="5"/>
-        <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
-        <line num="3" count="1" type="cond" truecount="3" falsecount="1"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
+        <metrics statements="30" coveredstatements="27" conditionals="7" coveredconditionals="6" methods="7" coveredmethods="5"/>
+        <line num="2" count="2" type="cond" truecount="3" falsecount="0"/>
+        <line num="3" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
         <line num="23" count="2" type="stmt"/>
         <line num="24" count="2" type="stmt"/>
-        <line num="25" count="8" type="stmt"/>
-        <line num="26" count="8" type="stmt"/>
-        <line num="31" count="8" type="stmt"/>
+        <line num="25" count="11" type="stmt"/>
+        <line num="26" count="11" type="stmt"/>
+        <line num="31" count="11" type="stmt"/>
         <line num="33" count="2" type="stmt"/>
-        <line num="34" count="2" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="37" count="9" type="stmt"/>
-        <line num="38" count="9" type="stmt"/>
-        <line num="39" count="57" type="stmt"/>
-        <line num="44" count="57" type="stmt"/>
-        <line num="46" count="9" type="stmt"/>
-        <line num="48" count="1" type="stmt"/>
-        <line num="49" count="198" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="12" type="stmt"/>
+        <line num="37" count="12" type="stmt"/>
+        <line num="38" count="68" type="stmt"/>
+        <line num="43" count="68" type="stmt"/>
+        <line num="45" count="12" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
+        <line num="48" count="240" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
-        <line num="56" count="1" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
       </file>
       <file name="trainings.service.js" path="/home/vova/Documents/js/training-helper-backend/dist/services/trainings.service.js">
         <metrics statements="50" coveredstatements="43" conditionals="39" coveredconditionals="35" methods="13" coveredmethods="11"/>
-        <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
-        <line num="3" count="3" type="cond" truecount="4" falsecount="0"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
+        <line num="2" count="2" type="cond" truecount="3" falsecount="0"/>
+        <line num="3" count="6" type="cond" truecount="4" falsecount="0"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
         <line num="17" count="3" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
@@ -668,7 +582,7 @@
         <line num="86" count="0" type="stmt"/>
         <line num="87" count="0" type="stmt"/>
         <line num="88" count="0" type="stmt"/>
-        <line num="91" count="1" type="stmt"/>
+        <line num="91" count="2" type="stmt"/>
       </file>
     </package>
   </project>

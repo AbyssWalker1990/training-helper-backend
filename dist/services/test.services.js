@@ -26,11 +26,10 @@ class TestService {
             const exercise = {
                 position: i,
                 name: exercisesList_1.default[this.getRandomNumber(0, exercisesList_1.default.length - 1)],
-                sets: sets
+                sets
             };
             exercises.push(exercise);
         }
-        console.log(exercises);
         return exercises;
     };
     createSetListForSingleExercise = () => {
