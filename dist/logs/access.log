@@ -2629,3 +2629,11 @@
 2023-06-24T20:17:43+03:00 GET /api-docs/swagger-ui.css 304 4.261 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 2023-06-24T20:17:43+03:00 GET /api-docs/swagger-ui-bundle.js 200 19.137 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 2023-06-24T20:17:43+03:00 GET /api-docs/swagger-ui-init.js 304 5.563 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sat Jun 24 2023 18:09:04 GMT+0000 (Coordinated Universal Time) GET /api-docs/ 304 19.209 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sat Jun 24 2023 18:09:04 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui.css 304 7.084 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sat Jun 24 2023 18:09:04 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-bundle.js 304 8.594 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sat Jun 24 2023 18:09:04 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-init.js 304 4.030 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sat Jun 24 2023 18:09:04 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-standalone-preset.js 304 7.067 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sat Jun 24 2023 18:09:04 GMT+0000 (Coordinated Universal Time) GET /api-docs/favicon-32x32.png 304 2.641 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sat Jun 24 2023 18:09:50 GMT+0000 (Coordinated Universal Time) POST /auth/login 401 39.369 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sat Jun 24 2023 18:10:27 GMT+0000 (Coordinated Universal Time) POST /auth/login 401 8.417 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36

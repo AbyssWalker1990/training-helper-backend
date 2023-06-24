@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687629378425" clover="3.2.0">
-  <project timestamp="1687629378425" name="All files">
-    <metrics statements="484" coveredstatements="319" conditionals="261" coveredconditionals="196" methods="103" coveredmethods="60" elements="848" coveredelements="575" complexity="0" loc="484" ncloc="484" packages="8" files="25" classes="25"/>
+<coverage generated="1687630095702" clover="3.2.0">
+  <project timestamp="1687630095702" name="All files">
+    <metrics statements="482" coveredstatements="318" conditionals="261" coveredconditionals="196" methods="103" coveredmethods="60" elements="846" coveredelements="574" complexity="0" loc="482" ncloc="482" packages="8" files="25" classes="25"/>
     <package name="dist">
       <metrics statements="32" coveredstatements="30" conditionals="7" coveredconditionals="7" methods="9" coveredmethods="7"/>
       <file name="app.js" path="/home/vova/Documents/js/training-helper-backend/dist/app.js">
@@ -41,7 +41,7 @@
       </file>
     </package>
     <package name="dist.config">
-      <metrics statements="40" coveredstatements="32" conditionals="25" coveredconditionals="18" methods="6" coveredmethods="3"/>
+      <metrics statements="38" coveredstatements="31" conditionals="25" coveredconditionals="18" methods="6" coveredmethods="3"/>
       <file name="allowedHosts.js" path="/home/vova/Documents/js/training-helper-backend/dist/config/allowedHosts.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
@@ -67,21 +67,19 @@
         <line num="54" count="2" type="stmt"/>
       </file>
       <file name="morganOptions.js" path="/home/vova/Documents/js/training-helper-backend/dist/config/morganOptions.js">
-        <metrics statements="17" coveredstatements="12" conditionals="7" coveredconditionals="6" methods="3" coveredmethods="1"/>
+        <metrics statements="15" coveredstatements="11" conditionals="7" coveredconditionals="6" methods="3" coveredmethods="1"/>
         <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
-        <line num="3" count="3" type="cond" truecount="3" falsecount="1"/>
+        <line num="3" count="2" type="cond" truecount="3" falsecount="1"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
@@ -514,18 +512,18 @@
         <line num="22" count="2" type="stmt"/>
         <line num="23" count="2" type="stmt"/>
         <line num="24" count="2" type="stmt"/>
-        <line num="25" count="11" type="stmt"/>
-        <line num="26" count="11" type="stmt"/>
-        <line num="31" count="11" type="stmt"/>
+        <line num="25" count="12" type="stmt"/>
+        <line num="26" count="12" type="stmt"/>
+        <line num="31" count="12" type="stmt"/>
         <line num="33" count="2" type="stmt"/>
         <line num="35" count="2" type="stmt"/>
-        <line num="36" count="12" type="stmt"/>
-        <line num="37" count="12" type="stmt"/>
-        <line num="38" count="67" type="stmt"/>
-        <line num="43" count="67" type="stmt"/>
-        <line num="45" count="12" type="stmt"/>
+        <line num="36" count="13" type="stmt"/>
+        <line num="37" count="13" type="stmt"/>
+        <line num="38" count="58" type="stmt"/>
+        <line num="43" count="58" type="stmt"/>
+        <line num="45" count="13" type="stmt"/>
         <line num="47" count="2" type="stmt"/>
-        <line num="48" count="237" type="stmt"/>
+        <line num="48" count="213" type="stmt"/>
         <line num="50" count="2" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>

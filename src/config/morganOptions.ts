@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import moment from 'moment-timezone'
+// import moment from 'moment-timezone'
 import type { TokenIndexer } from 'morgan'
 import type { IncomingMessage, ServerResponse } from 'http'
 
@@ -12,8 +12,9 @@ export const logToConsoleAndFile = (message: string): void => {
 }
 
 export const logFormat = (tokens: TokenIndexer, req: IncomingMessage, res: ServerResponse): string => {
-  const timeZone = 'Europe/Kiev' // Set the timezone to Kiev
-  const timestamp = moment().tz(timeZone).format() // Get the current timestamp in Kiev timezone
+  // const timeZone = 'Europe/Kiev' // Set the timezone to Kiev
+  // const timestamp = moment().tz(timeZone).format() // Get the current timestamp in Kiev timezone
+  const timestamp = new Date()
   return [
     timestamp,
     tokens.method(req, res),
