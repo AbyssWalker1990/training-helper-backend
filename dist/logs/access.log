@@ -2637,3 +2637,11 @@ Sat Jun 24 2023 18:09:04 GMT+0000 (Coordinated Universal Time) GET /api-docs/swa
 Sat Jun 24 2023 18:09:04 GMT+0000 (Coordinated Universal Time) GET /api-docs/favicon-32x32.png 304 2.641 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 Sat Jun 24 2023 18:09:50 GMT+0000 (Coordinated Universal Time) POST /auth/login 401 39.369 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 Sat Jun 24 2023 18:10:27 GMT+0000 (Coordinated Universal Time) POST /auth/login 401 8.417 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sat Jun 24 2023 19:00:51 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 204.907 ms undici
+Sat Jun 24 2023 19:00:52 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 2.094 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sat Jun 24 2023 19:00:52 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 37.748 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sat Jun 24 2023 19:01:13 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 84.739 ms undici
+Sat Jun 24 2023 19:01:25 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/ 200 0.277 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sat Jun 24 2023 19:01:25 GMT+0000 (Coordinated Universal Time) POST /trainings/ 201 23.637 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sat Jun 24 2023 19:01:29 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.770 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sat Jun 24 2023 19:01:29 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 37.133 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
