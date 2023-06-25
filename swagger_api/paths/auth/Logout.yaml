@@ -1,0 +1,7 @@
+get:
+  tags: [Auth]
+  summary: Log out user
+  responses:
+    "204":
+      description: Logged out
+

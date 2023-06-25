@@ -1,0 +1,54 @@
+post:
+  tags:
+    - Auth
+  summary: Register a new user
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemes/auth/User.yaml'
+  responses:
+    "201":
+      description: User registered successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+                description: a message
+                example: New User Abcdef created!!!
+    "400":
+      description: Invalid request body
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: number
+                description: status code
+                example: 400
+              message:
+                type: string
+                description: a message
+                example: Username and password are required
+    "409":
+      description: Conflict, user already exists
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: number
+                description: status code
+                example: 409
+              message:
+                type: string
+                description: a message
+                example: User already exists
+    "500":
+      description: Server Error
