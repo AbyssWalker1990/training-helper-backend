@@ -466,3 +466,9 @@
 25-06-2023  10:25:44  a8c8b07c-4aa4-4c80-9efb-ca140a9085b9  Unauthorized
 25-06-2023  10:25:47  58fb8768-b180-4b9c-a2b4-866e7051c245  Unauthorized
 25-06-2023  10:26:25  45378cd4-ddc8-40bf-a60b-771e41e2196d  Unauthorized
+25-06-2023  15:50:48  fd2a2526-02a1-4f17-a559-8d2cd1fd9da4  Username required to create new training instance
+25-06-2023  15:52:23  3e6464a8-3d86-40d3-9c79-1192ec1f6212  Title required to create new training instance
+25-06-2023  16:22:43  9d7f35ac-5994-4bc5-bfd4-426661faacf8  jwt expired
+25-06-2023  16:22:51  85dacd39-e4b1-4622-b07b-7da8923c2991  jwt expired
+25-06-2023  16:24:09  0c7de6f0-e5a1-4dce-8dad-46378a79844b  invalid signature
+25-06-2023  16:27:09  bbbead59-5fae-4f2e-852f-aae2b5cb2529  invalid signature

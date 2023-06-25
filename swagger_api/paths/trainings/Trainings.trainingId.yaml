@@ -1,0 +1,25 @@
+delete:
+  tags:
+      - "Trainings"
+  summary: "Delete training by ID"
+  parameters:
+  - in: path
+    name: trainingId   
+    required: true
+    description: 'ID of training required'
+    schema:
+      type: string
+  produces:
+    - "application/json"
+  responses:
+    "200":
+      description: "User authenticated!"
+      content:
+        application/json:
+          schema:
+            type: "object"
+            properties:
+              username:
+                type: "string"
+                description: "User name"
+                example: "Smith"

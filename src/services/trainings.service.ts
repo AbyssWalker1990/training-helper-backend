@@ -8,8 +8,10 @@ import type { UserModel, MyCookie, DecodedToken } from '../interfaces/auth.inter
 
 class TrainingService {
   private readonly accessSecret: string
+  private readonly refreshSecret: string
   constructor () {
     this.accessSecret = process.env.ACCESS_TOKEN_SECRET as string
+    this.refreshSecret = process.env.REFRESH_TOKEN_SECRET as string
   }
 
   public async createSingleTraining (username: string, title: string, exercises: Exercise[]): Promise<TrainingModel> {
@@ -64,7 +66,7 @@ class TrainingService {
   }
 
   private async isExistingUser (token: string): Promise<UserModel> {
-    const currentUser = await this.decodeUserName(token, this.accessSecret)
+    const currentUser = await this.decodeUserName(token, this.refreshSecret)
     if (currentUser == null) throw new HttpException(403, 'Forbidden, user does not exist')
     return currentUser
   }

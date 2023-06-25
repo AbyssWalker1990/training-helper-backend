@@ -1,0 +1,42 @@
+post:
+  tags:
+    - "Trainings"
+  summary: "Create single training"
+  consumes:
+    - "application/json"
+  produces:
+    - "application/json"
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemes/training/Training.yaml"
+  responses:
+    "201":
+      description: "Training created"
+      content:
+        application/json:
+          schema:
+            type: "object"
+            properties:
+              success:
+                type: "string"
+                description: "message"
+                example: "New Training trainingName created!!!"
+    "400":
+          description: "Invalid request body"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  status:
+                    type: "number"
+                    description: "status"
+                    example: 400
+                  message:
+                    type: "string"
+                    description: "message"
+                    example: "Username required to create new training instance || Title required to create new training instance"
+

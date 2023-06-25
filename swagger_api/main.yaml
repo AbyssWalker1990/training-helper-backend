@@ -5,6 +5,8 @@ info:
 tags:
   - name: Auth
     description: Authentication and user management
+  - name: Trainings
+    description: Trainings CRUD
 components:
   schemas:
     User:
@@ -20,3 +22,7 @@ paths:
     $ref: './paths/auth/Refresh.yaml'
   /auth/logout:
     $ref: './paths/auth/Logout.yaml'
+  /trainings:
+    $ref: './paths/trainings/Trainings.yaml'
+  /trainings/{trainingId}:
+    $ref: './paths/trainings/Trainings.trainingId.yaml'

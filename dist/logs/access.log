@@ -2906,3 +2906,62 @@ Sun Jun 25 2023 15:41:33 GMT+0000 (Coordinated Universal Time) GET /api-docs/swa
 Sun Jun 25 2023 15:41:33 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-bundle.js 304 13.714 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 Sun Jun 25 2023 15:41:33 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-standalone-preset.js 304 12.930 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 Sun Jun 25 2023 15:41:33 GMT+0000 (Coordinated Universal Time) GET /api-docs/favicon-32x32.png 304 1.169 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 15:45:33 GMT+0000 (Coordinated Universal Time) POST /trainings/ 201 88.456 ms PostmanRuntime/7.32.3
+Sun Jun 25 2023 15:48:39 GMT+0000 (Coordinated Universal Time) GET /api-docs/ 304 17.883 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 15:48:39 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui.css 304 16.439 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 15:48:39 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-init.js 200 11.032 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 15:48:39 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-standalone-preset.js 304 18.077 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 15:48:39 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-bundle.js 304 17.050 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 15:48:39 GMT+0000 (Coordinated Universal Time) GET /api-docs/favicon-32x32.png 304 1.626 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 15:50:48 GMT+0000 (Coordinated Universal Time) POST /trainings/ 400 34.967 ms PostmanRuntime/7.32.3
+Sun Jun 25 2023 15:52:23 GMT+0000 (Coordinated Universal Time) POST /trainings/ 400 5.084 ms PostmanRuntime/7.32.3
+Sun Jun 25 2023 15:59:04 GMT+0000 (Coordinated Universal Time) GET /api-docs/ 304 18.587 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 15:59:04 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui.css 304 9.573 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 15:59:04 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-init.js 200 3.960 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 15:59:04 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-bundle.js 304 12.817 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 15:59:04 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-standalone-preset.js 304 12.193 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 15:59:04 GMT+0000 (Coordinated Universal Time) GET /api-docs/favicon-32x32.png 304 3.540 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:11:35 GMT+0000 (Coordinated Universal Time) GET /api-docs/ 304 19.620 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:11:35 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui.css 304 4.136 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:11:35 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-init.js 200 5.073 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:11:35 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-bundle.js 304 11.907 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:11:35 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-standalone-preset.js 304 7.729 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:11:36 GMT+0000 (Coordinated Universal Time) GET /api-docs/favicon-32x32.png 304 1.367 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:13:19 GMT+0000 (Coordinated Universal Time) GET /api-docs/ 304 9.577 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:13:19 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui.css 304 7.330 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:13:19 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-init.js 200 1.819 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:13:19 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-standalone-preset.js 304 8.995 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:13:19 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-bundle.js 304 6.657 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:13:19 GMT+0000 (Coordinated Universal Time) GET /api-docs/favicon-32x32.png 304 3.644 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:14:09 GMT+0000 (Coordinated Universal Time) GET /api-docs/ 304 11.304 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:14:09 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui.css 304 12.560 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:14:09 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-init.js 200 4.045 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:14:09 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-bundle.js 304 12.808 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:14:09 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-standalone-preset.js 304 11.375 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:14:09 GMT+0000 (Coordinated Universal Time) GET /api-docs/favicon-32x32.png 304 3.590 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:16:12 GMT+0000 (Coordinated Universal Time) GET /api-docs/ 304 19.464 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:16:12 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui.css 304 4.417 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:16:12 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-init.js 200 2.711 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:16:12 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-standalone-preset.js 304 7.870 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:16:12 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-bundle.js 304 7.573 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:16:12 GMT+0000 (Coordinated Universal Time) GET /api-docs/favicon-32x32.png 304 1.852 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:18:44 GMT+0000 (Coordinated Universal Time) GET /api-docs/ 304 19.490 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:18:44 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui.css 304 7.578 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:18:44 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-init.js 200 5.258 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:18:44 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-standalone-preset.js 304 7.871 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:18:44 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-bundle.js 304 8.550 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:18:44 GMT+0000 (Coordinated Universal Time) GET /api-docs/favicon-32x32.png 304 1.780 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:20:13 GMT+0000 (Coordinated Universal Time) GET /api-docs/ 304 19.337 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:20:13 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui.css 304 8.457 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:20:13 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-init.js 200 2.190 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:20:13 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-bundle.js 304 6.934 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:20:13 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-standalone-preset.js 304 7.838 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:20:13 GMT+0000 (Coordinated Universal Time) GET /api-docs/favicon-32x32.png 304 2.407 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Sun Jun 25 2023 16:22:43 GMT+0000 (Coordinated Universal Time) POST /trainings/user 500 54.271 ms PostmanRuntime/7.32.3
+Sun Jun 25 2023 16:22:47 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 146.933 ms PostmanRuntime/7.32.3
+Sun Jun 25 2023 16:22:51 GMT+0000 (Coordinated Universal Time) POST /trainings/user 500 10.472 ms PostmanRuntime/7.32.3
+Sun Jun 25 2023 16:23:21 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 223.375 ms PostmanRuntime/7.32.3
+Sun Jun 25 2023 16:23:39 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 73.045 ms PostmanRuntime/7.32.3
+Sun Jun 25 2023 16:24:09 GMT+0000 (Coordinated Universal Time) DELETE /trainings/64973d853fa5c3b543592bcd 500 8.902 ms PostmanRuntime/7.32.3
+Sun Jun 25 2023 16:27:09 GMT+0000 (Coordinated Universal Time) DELETE /trainings/64973d853fa5c3b543592bcd 500 3.464 ms PostmanRuntime/7.32.3
+Sun Jun 25 2023 16:28:17 GMT+0000 (Coordinated Universal Time) DELETE /trainings/64973d853fa5c3b543592bcd 204 65.943 ms PostmanRuntime/7.32.3

@@ -8,6 +8,10 @@
     {
       "name": "Auth",
       "description": "Authentication and user management"
+    },
+    {
+      "name": "Trainings",
+      "description": "Trainings CRUD"
     }
   ],
   "components": {
@@ -339,6 +343,112 @@
         "responses": {
           "204": {
             "description": "Logged out"
+          }
+        }
+      }
+    },
+    "/trainings": {
+      "post": {
+        "tags": [
+          "Trainings"
+        ],
+        "summary": "Create single training",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Training"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Training created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "string",
+                      "description": "message",
+                      "example": "New Training trainingName created!!!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request body",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "number",
+                      "description": "status",
+                      "example": 400
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "message",
+                      "example": "Username required to create new training instance || Title required to create new training instance"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/trainings/{trainingId}": {
+      "delete": {
+        "tags": [
+          "Trainings"
+        ],
+        "summary": "Delete training by ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "trainingId",
+            "required": true,
+            "description": "ID of training required",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "User authenticated!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "username": {
+                      "type": "string",
+                      "description": "User name",
+                      "example": "Smith"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }

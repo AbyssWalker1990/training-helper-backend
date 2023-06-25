@@ -10,8 +10,10 @@ const User_1 = require("../models/User");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 class TrainingService {
     accessSecret;
+    refreshSecret;
     constructor() {
         this.accessSecret = process.env.ACCESS_TOKEN_SECRET;
+        this.refreshSecret = process.env.REFRESH_TOKEN_SECRET;
     }
     async createSingleTraining(username, title, exercises) {
         this.isValidTraining(username, title);
@@ -61,7 +63,7 @@ class TrainingService {
             throw new HttpException_1.default(403, 'Forbidden, not owner');
     }
     async isExistingUser(token) {
-        const currentUser = await this.decodeUserName(token, this.accessSecret);
+        const currentUser = await this.decodeUserName(token, this.refreshSecret);
         if (currentUser == null)
             throw new HttpException_1.default(403, 'Forbidden, user does not exist');
         return currentUser;
