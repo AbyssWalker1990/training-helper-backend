@@ -32,6 +32,48 @@
           "username": "YourUsername",
           "password": "123456abcd"
         }
+      },
+      "Training": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "exercises": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "position": {
+                  "type": "number"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "sets": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "setPos": {
+                        "type": "integer"
+                      },
+                      "reps": {
+                        "type": "integer"
+                      },
+                      "weight": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   },

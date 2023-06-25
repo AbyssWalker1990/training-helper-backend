@@ -1,0 +1,8 @@
+type: object
+properties:
+  setPos:
+    type: integer
+  reps:
+    type: integer
+  weight:
+    type: integer

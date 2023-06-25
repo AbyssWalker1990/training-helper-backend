@@ -9,6 +9,8 @@ components:
   schemas:
     User:
       $ref: './schemes/auth/User.yaml'
+    Training:
+      $ref: './schemes/training/Training.yaml'
 paths:
   /auth/register:
     post:

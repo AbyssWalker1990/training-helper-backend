@@ -1,0 +1,10 @@
+type: object
+properties:
+  position:
+    type: number
+  name:
+    type: string
+  sets:
+    type: array
+    items:
+      $ref: './Set.yaml'

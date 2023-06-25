@@ -1,0 +1,10 @@
+type: object
+properties:
+  username:
+    type: string
+  title:
+    type: string
+  exercises:
+    type: array
+    items:
+      $ref: './Exercise.yaml'
