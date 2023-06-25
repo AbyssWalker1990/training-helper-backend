@@ -456,3 +456,13 @@
 24-06-2023  19:26:35  92c39124-14e4-4161-a7ea-c691584a05d2  jwt expired
 24-06-2023  19:26:42  69b8b446-b31a-492c-9021-2a306f7a69f7  jwt expired
 24-06-2023  19:34:57  be13a21a-40f0-4448-b7ee-28b548757019  User already exists!
+25-06-2023  10:07:39  d11c83f9-cb8c-48d3-a2fe-01922a28b16c  Username and password are required
+25-06-2023  10:08:31  363194f0-4b66-4b32-a587-331ed4219617  Unauthorized
+25-06-2023  10:10:03  dff92875-f561-432e-ad3f-5b6e1d1ffb97  Username and password are required
+25-06-2023  10:14:55  d89470e5-6ff5-4af3-9e0e-e630d693c197  Unauthorized
+25-06-2023  10:16:44  fa7e3092-cd3e-435a-9d57-62047982ed0c  Unauthorized
+25-06-2023  10:18:51  a2f18fef-dabe-46bc-a850-a277dd5db75b  User already exists!
+25-06-2023  10:24:48  b3f74516-e37d-4c17-b0cb-8791136d5685  Unauthorized
+25-06-2023  10:25:44  a8c8b07c-4aa4-4c80-9efb-ca140a9085b9  Unauthorized
+25-06-2023  10:25:47  58fb8768-b180-4b9c-a2b4-866e7051c245  Unauthorized
+25-06-2023  10:26:25  45378cd4-ddc8-40bf-a60b-771e41e2196d  Unauthorized

@@ -62,7 +62,7 @@ paths:
                     description: a message
                     example: Username and password are required
         "409":
-          decription: Conflict
+          description: Conflict, user already exists
           content:
             application/json:
               schema:
@@ -87,7 +87,6 @@ paths:
         - "application/json"
       produces:
         - "application/json"
-      parameters: []
       requestBody:
         required: true
         content:
@@ -97,28 +96,53 @@ paths:
       responses:
         "200":
           description: "User authenticated!"
-          schema:
-            type: "object"
-            properties:
-              username:
-                type: "string"
-                description: "User name"
-                example: "Smith"
-              accessToken:
-                type: "string"
-                description: "Access Token"
-                example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlZvdmEiLCJpYXQiOjE2Nzg4ODQ0NjEsImV4cCI6MTY3ODg4NTY2MX0.DY5dlRiOZxqyMAlLRNzOJNxPlkkIKhOoN6fQJ87CAr4"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  username:
+                    type: "string"
+                    description: "User name"
+                    example: "Smith"
+                  accessToken:
+                    type: "string"
+                    description: "Access Token"
+                    example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlZvdmEiLCJpYXQiOjE2Nzg4ODQ0NjEsImV4cCI6MTY3ODg4NTY2MX0.DY5dlRiOZxqyMAlLRNzOJNxPlkkIKhOoN6fQJ87CAr4"
+                  refreshToken:
+                    type: "string"
+                    description: "Refresh Token"
+                    example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlZvdmEiLCJpYXQiOjE2Nzg4ODQ0NjEsImV4cCI6MTY3ODg4NTY2MX0.DY5dlRiOZxqyMAlLRNzOJNxPlkkIKhOoN6fQJ87CAr4"
         "400":
           description: "Invalid request body"
-          schema:
-            type: "object"
-            properties:
-              message:
-                type: "string"
-                description: "a message"
-                example: "Username and password are required"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  status:
+                    type: "number"
+                    description: "status"
+                    example: 400
+                  message:
+                    type: "string"
+                    description: "message"
+                    example: "Username and password are required"
         "401":
           description: "Unauthorized"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  status:
+                    type: "number"
+                    description: "status"
+                    example: 401
+                  message:
+                    type: "string"
+                    description: "message"
+                    example: "Unauthorized"
   /auth/refresh:
     get:
       tags: [Auth]
@@ -137,8 +161,35 @@ paths:
                     example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlZvdmEiLCJpYXQiOjE2Nzg4ODQ0NjEsImV4cCI6MTY3ODg4NTY2MX0.DY5dlRiOZxqyMAlLRNzOJNxPlkkIKhOoN6fQJ87CAr4
         "401":
           description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  status:
+                    type: "number"
+                    description: "status"
+                    example: 401
+                  message:
+                    type: "string"
+                    description: "message"
+                    example: "Unauthorized"
         "403":
           description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  status:
+                    type: "number"
+                    description: "status"
+                    example: 403
+                  message:
+                    type: "string"
+                    description: "message"
+                    example: "Forbidden"
+
   /auth/logout:
     get:
       tags: [Auth]
