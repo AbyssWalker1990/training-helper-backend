@@ -12,14 +12,11 @@ const options = {
     servers: [
       {
         url: 'http://localhost:3500'
-      },
-      {
-        url: 'https://large-periodic-guan.glitch.me/'
       }
     ]
   },
   apis: [
-    path.join(__dirname, 'swagger_api/*.yaml')
+    path.join(__dirname, '..', '..', 'swagger_api/merged-api.yaml')
   ]
 }
 

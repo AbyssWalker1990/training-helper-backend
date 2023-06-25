@@ -8,20 +8,7 @@ tags:
 components:
   schemas:
     User:
-      type: object
-      required:
-        - username
-        - password
-      properties:
-        username:
-          type: string
-          description: Username of new or logging in user
-        password:
-          type: string
-          description: Password for registering or logging in user
-      example:
-        username: YourUsername
-        password: 123456abcd
+      $ref: './schemes/auth/User.yaml'
 paths:
   /auth/register:
     post:

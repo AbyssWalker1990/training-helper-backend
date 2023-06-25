@@ -16,14 +16,11 @@ const options = {
         servers: [
             {
                 url: 'http://localhost:3500'
-            },
-            {
-                url: 'https://large-periodic-guan.glitch.me/'
             }
         ]
     },
     apis: [
-        path_1.default.join(__dirname, 'swagger_api/*.yaml')
+        path_1.default.join(__dirname, '..', '..', 'swagger_api/merged-api.yaml')
     ]
 };
 const specsSwagger = (0, swagger_jsdoc_1.default)(options);

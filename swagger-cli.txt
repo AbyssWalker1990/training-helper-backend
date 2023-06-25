@@ -1,0 +1,2 @@
+swagger-cli bundle --outfile merged-api.yaml main.yaml
+// create bundle from main as entry point
