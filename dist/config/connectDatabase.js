@@ -20,7 +20,7 @@ const connectDatabase = () => {
         uri = process.env.DATABASE_URI;
     }
     mongoose_1.default.connect(uri)
-        .then(() => { console.log('Connect to: ', LOCAL_DB_URI); })
+        .then(() => { console.log('Connect to: ', uri); })
         .catch((err) => {
         console.log(err);
     });

@@ -6,16 +6,16 @@ dotenv.config()
 const LOCAL_DB_URI = 'mongodb://admin:password@mongodb:27017'
 
 export const connectDatabase = (): void => {
-  let uri
+  let uri: string
   if (process.env.NODE_ENV === 'development') {
     uri = LOCAL_DB_URI
     console.log('LOCAL DATABASE / DOCKER CONTAINER')
     console.log(uri)
   } else {
-    uri = process.env.DATABASE_URI
+    uri = process.env.DATABASE_URI as string
   }
-  mongoose.connect(uri as string)
-    .then(() => { console.log('Connect to: ', LOCAL_DB_URI) })
+  mongoose.connect(uri)
+    .then(() => { console.log('Connect to: ', uri) })
     .catch((err) => {
       console.log(err)
     })
