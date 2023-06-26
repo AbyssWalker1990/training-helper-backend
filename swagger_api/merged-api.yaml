@@ -426,15 +426,16 @@
             "description": "ID of training required",
             "schema": {
               "type": "string"
-            }
+            },
+            "example": "648ec636047ac5ef71312fef"
           }
         ],
         "produces": [
           "application/json"
         ],
         "responses": {
-          "200": {
-            "description": "User authenticated!",
+          "204": {
+            "description": "Training deleted",
             "content": {
               "application/json": {
                 "schema": {
@@ -446,6 +447,140 @@
                       "example": "Smith"
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Trainings"
+        ],
+        "summary": "Get training by ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "trainingId",
+            "required": true,
+            "description": "ID of training required",
+            "schema": {
+              "type": "string"
+            },
+            "example": "648ec636047ac5ef71312fef"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Get single training",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Training"
+                },
+                "example": {
+                  "_id": "648ec636047ac5ef71312fef",
+                  "username": "Vova",
+                  "title": "Leg day",
+                  "exercises": [
+                    {
+                      "position": "1",
+                      "name": "Squat",
+                      "sets": [
+                        {
+                          "setPos": 1,
+                          "reps": 10,
+                          "weight": 40,
+                          "_id": "648ec636047ac5ef71312ff1"
+                        },
+                        {
+                          "setPos": 2,
+                          "reps": 12,
+                          "weight": 33,
+                          "_id": "648ec636047ac5ef71312ff2"
+                        },
+                        {
+                          "setPos": 3,
+                          "reps": 67,
+                          "weight": 33,
+                          "_id": "648ec636047ac5ef71312ff3"
+                        }
+                      ],
+                      "_id": "648ec636047ac5ef71312ff0"
+                    },
+                    {
+                      "position": "2",
+                      "name": "Extension leg",
+                      "sets": [
+                        {
+                          "setPos": 1,
+                          "reps": 1,
+                          "weight": 2,
+                          "_id": "648ec636047ac5ef71312ff5"
+                        },
+                        {
+                          "setPos": 2,
+                          "reps": 3,
+                          "weight": 4,
+                          "_id": "648ec636047ac5ef71312ff6"
+                        },
+                        {
+                          "setPos": 3,
+                          "reps": 5,
+                          "weight": 6,
+                          "_id": "648ec636047ac5ef71312ff7"
+                        },
+                        {
+                          "setPos": 4,
+                          "reps": 8,
+                          "weight": 9,
+                          "_id": "648ec636047ac5ef71312ff8"
+                        }
+                      ],
+                      "_id": "648ec636047ac5ef71312ff4"
+                    },
+                    {
+                      "position": "3",
+                      "name": "Curl Leg",
+                      "sets": [
+                        {
+                          "setPos": 1,
+                          "reps": 10,
+                          "weight": 40,
+                          "_id": "648ec636047ac5ef71312ffa"
+                        },
+                        {
+                          "setPos": 2,
+                          "reps": 10,
+                          "weight": 40,
+                          "_id": "648ec636047ac5ef71312ffb"
+                        },
+                        {
+                          "setPos": 3,
+                          "reps": 10,
+                          "weight": 40,
+                          "_id": "648ec636047ac5ef71312ffc"
+                        },
+                        {
+                          "setPos": 4,
+                          "reps": 40,
+                          "weight": 10,
+                          "_id": "648ec636047ac5ef71312ffd"
+                        },
+                        {
+                          "setPos": 5,
+                          "reps": 10,
+                          "weight": 40,
+                          "_id": "648ec636047ac5ef71312ffe"
+                        }
+                      ]
+                    }
+                  ],
+                  "date": "2023-06-18T08:54:14.507Z",
+                  "__v": 0
                 }
               }
             }

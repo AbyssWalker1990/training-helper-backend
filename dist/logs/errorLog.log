@@ -472,3 +472,12 @@
 25-06-2023  16:22:51  85dacd39-e4b1-4622-b07b-7da8923c2991  jwt expired
 25-06-2023  16:24:09  0c7de6f0-e5a1-4dce-8dad-46378a79844b  invalid signature
 25-06-2023  16:27:09  bbbead59-5fae-4f2e-852f-aae2b5cb2529  invalid signature
+26-06-2023  08:17:49  d3457a2b-74e7-48db-a7f0-0e876d51a3f3  jwt expired
+26-06-2023  09:31:45  f29e658a-3101-43f2-ab0c-ca22477dcead  Cast to ObjectId failed for value "234324" (type string) at path "_id" for model "Training"
+26-06-2023  09:38:15  b034798f-647c-4f41-a3e3-244c63b36f26  There is no training with 648ec636047ac5ef71312fe ID
+26-06-2023  09:38:23  3d62475b-de9a-47e5-bd09-3ac2129a21e4  There is no training with 648ec636047ac5ef71312 ID
+26-06-2023  09:49:30  7d39a8d2-d16a-4bea-a24f-9c49014be23f  There is no training with 648ec636047ac5ef71312 ID
+26-06-2023  09:49:35  73e2312b-f8e4-42e9-8e21-1a273caeb130  There is no training with 648ec636047ac5ef713 ID
+26-06-2023  09:49:56  3139cb6f-433c-4909-bbd1-578385f7df87  There is no training with 645009a8b091a26619836a56 ID
+26-06-2023  09:50:02  9c99c7f0-33ec-4dcd-ac02-8e8fa67ce311  There is no training with 648ec636047ac5ef71312 ID
+26-06-2023  09:50:05  088c578d-2dca-4af1-ab38-584e01b49fb6  There is no training with 648ec636047ac5ef71312fe ID

@@ -63,7 +63,7 @@ class TrainingController implements Controller {
   private readonly getTrainingById = async (req: CustomRequest, res: Response, next: NextFunction): Promise<any> => {
     const trainingId = req.params.trainingId
     try {
-      const training = await this.trainingService.getSingleTrainingById(trainingId)
+      const training = await this.trainingService.getSingleTrainingById(trainingId, next)
       res.status(200).json(training)
     } catch (error) {
       next(error)

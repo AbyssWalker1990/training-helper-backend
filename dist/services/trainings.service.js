@@ -44,11 +44,16 @@ class TrainingService {
     }
     async getSingleTrainingById(trainingId) {
         this.isValidTrainingId(trainingId);
-        const training = await Training_1.Training.findById(trainingId);
-        if (training === null) {
+        try {
+            const training = await Training_1.Training.findById(trainingId);
+            if (training === null)
+                throw new MissingDataException_1.default(`There is no training with ${trainingId} ID`);
+            return training;
+        }
+        catch (error) {
+            console.log(error);
             throw new MissingDataException_1.default(`There is no training with ${trainingId} ID`);
         }
-        return training;
     }
     isAccessToken(cookies) {
         if (cookies?.jwt === null || cookies?.jwt === '')

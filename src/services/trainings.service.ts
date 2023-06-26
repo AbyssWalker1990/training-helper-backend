@@ -5,6 +5,7 @@ import HttpException from '../exceptions/HttpException'
 import { User } from '../models/User'
 import jwt from 'jsonwebtoken'
 import type { UserModel, MyCookie, DecodedToken } from '../interfaces/auth.interface'
+import { NextFunction } from 'express'
 
 class TrainingService {
   private readonly accessSecret: string
@@ -44,13 +45,15 @@ class TrainingService {
     return trainingList
   }
 
-  public async getSingleTrainingById (trainingId: string): Promise<TrainingModel> {
+  public async getSingleTrainingById (trainingId: string, next: NextFunction): Promise<TrainingModel | undefined> {
     this.isValidTrainingId(trainingId)
-    const training = await Training.findById(trainingId) as TrainingModel
-    if (training === null) {
-      throw new MissingDataException(`There is no training with ${trainingId} ID`)
+    try {
+      const training = await Training.findById(trainingId) as TrainingModel
+      if (training === null) throw new MissingDataException(`There is no training with ${trainingId} ID`)
+      return training
+    } catch (error) {
+      next(error)
     }
-    return training
   }
 
   private isAccessToken (cookies: MyCookie): void {
