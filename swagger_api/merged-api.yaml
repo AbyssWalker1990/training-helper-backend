@@ -584,6 +584,50 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "No training with this ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "number",
+                      "description": "status",
+                      "example": 400
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "message",
+                      "example": "There is no training with trainingId ID"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Invalid ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "number",
+                      "description": "status",
+                      "example": 500
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "message",
+                      "example": "Incorrect ID"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }

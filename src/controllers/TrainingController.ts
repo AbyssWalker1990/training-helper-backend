@@ -1,6 +1,7 @@
 import type Controller from '../interfaces/controller.interface'
 import express, { type NextFunction, type Request, type Response } from 'express'
 import TrainingService from '../services/trainings.service'
+import HttpException from '../exceptions/HttpException'
 
 interface MyCookie {
   jwt: string
@@ -50,8 +51,6 @@ class TrainingController implements Controller {
 
   private readonly getTrainingsByUser = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
     const { token } = req.body
-    console.log(req.body)
-    console.log(token)
     try {
       const trainingList = await this.trainingService.getAllTrainingsByUser(token)
       res.status(200).json(trainingList)

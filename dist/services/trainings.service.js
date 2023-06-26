@@ -42,7 +42,7 @@ class TrainingService {
         const trainingList = await Training_1.Training.find({ username: currentUser.username });
         return trainingList;
     }
-    async getSingleTrainingById(trainingId) {
+    async getSingleTrainingById(trainingId, next) {
         this.isValidTrainingId(trainingId);
         try {
             const training = await Training_1.Training.findById(trainingId);
@@ -51,8 +51,9 @@ class TrainingService {
             return training;
         }
         catch (error) {
-            console.log(error);
-            throw new MissingDataException_1.default(`There is no training with ${trainingId} ID`);
+            if (error.name === 'CastError')
+                next(new HttpException_1.default(500, 'Incorrect ID'));
+            next(error);
         }
     }
     isAccessToken(cookies) {

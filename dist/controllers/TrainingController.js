@@ -42,8 +42,6 @@ class TrainingController {
     };
     getTrainingsByUser = async (req, res, next) => {
         const { token } = req.body;
-        console.log(req.body);
-        console.log(token);
         try {
             const trainingList = await this.trainingService.getAllTrainingsByUser(token);
             res.status(200).json(trainingList);
@@ -55,7 +53,7 @@ class TrainingController {
     getTrainingById = async (req, res, next) => {
         const trainingId = req.params.trainingId;
         try {
-            const training = await this.trainingService.getSingleTrainingById(trainingId);
+            const training = await this.trainingService.getSingleTrainingById(trainingId, next);
             res.status(200).json(training);
         }
         catch (error) {

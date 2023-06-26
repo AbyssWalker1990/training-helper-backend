@@ -3195,3 +3195,53 @@ Mon Jun 26 2023 09:49:56 GMT+0000 (Coordinated Universal Time) GET /trainings/64
 Mon Jun 26 2023 09:50:02 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312 400 2.936 ms PostmanRuntime/7.32.3
 Mon Jun 26 2023 09:50:05 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fe 400 3.168 ms PostmanRuntime/7.32.3
 Mon Jun 26 2023 09:50:08 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 200 35.952 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 09:59:54 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fe 400 6.311 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:08:19 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fe 200 19.045 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:08:25 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fe 200 8.011 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:08:31 GMT+0000 (Coordinated Universal Time) GET /api-docs/ 304 6.001 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 10:08:31 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui.css 304 11.243 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 10:08:31 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-init.js 200 10.219 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 10:08:31 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-bundle.js 304 17.467 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 10:08:31 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-standalone-preset.js 304 17.829 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 10:08:31 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui.css.map 304 1.824 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 10:08:31 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-bundle.js.map 304 5.120 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 10:08:31 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-standalone-preset.js.map 304 4.236 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 10:08:32 GMT+0000 (Coordinated Universal Time) GET /api-docs/favicon-32x32.png 304 2.027 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 10:08:48 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 120.362 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:08:51 GMT+0000 (Coordinated Universal Time) POST /trainings/user 500 8.290 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:09:04 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 30.093 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:09:11 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 200 11.037 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:09:14 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312f 200 4.790 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:09:20 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312 200 5.822 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:11:22 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312 200 45.056 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:12:47 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef713 200 9.887 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:14:18 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef713 200 47.747 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:20:12 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef713 200 21.050 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:20:15 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71 200 11.535 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:22:02 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71 200 19.575 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:25:50 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71 200 26.700 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:27:45 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71 200 19.572 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:34:08 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef7 200 41.035 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:34:16 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71 200 10.214 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:34:20 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef713 200 3.748 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:34:22 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312 200 5.697 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:34:24 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 200 43.828 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:34:28 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fey 200 3.032 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:34:37 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fe9 200 12.698 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:36:09 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fe9 200 24.693 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:37:12 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fe9 200 23.359 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:39:13 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fe9 200 25.329 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:41:27 GMT+0000 (Coordinated Universal Time) GET /trainings/trainingId 200 5.704 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:46:31 GMT+0000 (Coordinated Universal Time) GET /trainings/trainingId 200 23.093 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:46:37 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fe 200 8.189 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:46:49 GMT+0000 (Coordinated Universal Time) GET /trainings/645009a8b091a26619836a56 200 10.354 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:49:34 GMT+0000 (Coordinated Universal Time) GET /trainings/645009a8b091a26619836a5 200 30.122 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 10:50:26 GMT+0000 (Coordinated Universal Time) GET /api-docs/ 304 18.918 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 10:50:26 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui.css 304 13.107 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 10:50:26 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-bundle.js 304 12.292 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 10:50:26 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-init.js 200 9.675 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 10:50:26 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-standalone-preset.js 304 13.902 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 10:50:26 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui.css.map 304 2.715 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 10:50:26 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-bundle.js.map 304 3.808 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 10:50:26 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-standalone-preset.js.map 304 2.102 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 10:50:26 GMT+0000 (Coordinated Universal Time) GET /api-docs/favicon-32x32.png 304 2.538 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36

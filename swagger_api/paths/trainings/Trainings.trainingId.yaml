@@ -111,3 +111,33 @@ get:
                     _id: "648ec636047ac5ef71312ffe"
             date: "2023-06-18T08:54:14.507Z"
             __v: 0
+    "400":
+      description: "No training with this ID"
+      content:
+        application/json:
+          schema:
+            type: "object"
+            properties:
+              status:
+                type: "number"
+                description: "status"
+                example: 400
+              message:
+                type: "string"
+                description: "message"
+                example: "There is no training with trainingId ID"
+    "500":
+      description: "Invalid ID"
+      content:
+        application/json:
+          schema:
+            type: "object"
+            properties:
+              status:
+                type: "number"
+                description: "status"
+                example: 500
+              message:
+                type: "string"
+                description: "message"
+                example: "Incorrect ID"

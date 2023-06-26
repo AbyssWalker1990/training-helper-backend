@@ -481,3 +481,29 @@
 26-06-2023  09:49:56  3139cb6f-433c-4909-bbd1-578385f7df87  There is no training with 645009a8b091a26619836a56 ID
 26-06-2023  09:50:02  9c99c7f0-33ec-4dcd-ac02-8e8fa67ce311  There is no training with 648ec636047ac5ef71312 ID
 26-06-2023  09:50:05  088c578d-2dca-4af1-ab38-584e01b49fb6  There is no training with 648ec636047ac5ef71312fe ID
+26-06-2023  09:59:54  1aa29f5f-2749-47f0-a9bc-22157f4691c8  There is no training with 648ec636047ac5ef71312fe ID
+26-06-2023  10:08:19  78412d98-ad59-4568-bb4e-4924c93727ae  Cast to ObjectId failed for value "648ec636047ac5ef71312fe" (type string) at path "_id" for model "Training"
+26-06-2023  10:08:25  f16e50a6-fc75-4eb6-af05-6642529f7266  Cast to ObjectId failed for value "648ec636047ac5ef71312fe" (type string) at path "_id" for model "Training"
+26-06-2023  10:08:51  96bc2ac1-a147-4dd6-a069-eb3f24c4d9df  jwt expired
+26-06-2023  10:09:14  04645236-f4c6-4b2d-be7d-aab4e26a8d9c  Cast to ObjectId failed for value "648ec636047ac5ef71312f" (type string) at path "_id" for model "Training"
+26-06-2023  10:09:20  5f851ca8-8449-4b0c-9669-dbc138aff94a  Cast to ObjectId failed for value "648ec636047ac5ef71312" (type string) at path "_id" for model "Training"
+26-06-2023  10:11:22  1a76eb17-98f2-4bfa-96cd-89e29b638d27  Cast to ObjectId failed for value "648ec636047ac5ef71312" (type string) at path "_id" for model "Training"
+26-06-2023  10:12:47  2993d8c4-76e5-4845-98d0-a918103a8d25  Cast to ObjectId failed for value "648ec636047ac5ef713" (type string) at path "_id" for model "Training"
+26-06-2023  10:14:18  9ad45935-7c77-4eda-8abd-c41730e05acb  Cast to ObjectId failed for value "648ec636047ac5ef713" (type string) at path "_id" for model "Training"
+26-06-2023  10:20:12  5087a940-f77e-494b-a574-bcf32c8f46c2  Cast to ObjectId failed for value "648ec636047ac5ef713" (type string) at path "_id" for model "Training"
+26-06-2023  10:20:15  f7ec3d7d-7f7d-4cf1-8b48-195d1ae067d1  Cast to ObjectId failed for value "648ec636047ac5ef71" (type string) at path "_id" for model "Training"
+26-06-2023  10:22:02  96d155c4-3143-4ac9-b123-70f23d727ee7  Cast to ObjectId failed for value "648ec636047ac5ef71" (type string) at path "_id" for model "Training"
+26-06-2023  10:25:50  c42ca422-539b-412c-90b4-8a94e400c22b  Cast to ObjectId failed for value "648ec636047ac5ef71" (type string) at path "_id" for model "Training"
+26-06-2023  10:27:45  afc636ea-2b84-4785-9ae7-82d7c605a794  CastError
+26-06-2023  10:34:08  564ce975-3aae-433d-ba92-d9fb65c47119  Incorrect ID
+26-06-2023  10:34:16  b5e04e50-4643-49cb-93b2-d538cf212af4  Incorrect ID
+26-06-2023  10:34:20  c9ac53ab-0020-4fd2-96ad-36c697f3c63a  Incorrect ID
+26-06-2023  10:34:22  beb6faaf-baaa-45d9-b6cc-5da43c2c89aa  Incorrect ID
+26-06-2023  10:34:28  a76353cc-df9a-4dcf-9b2b-f636bf1b32aa  Incorrect ID
+26-06-2023  10:34:37  cb610fd4-9eb5-47b5-9200-5f9034e5f78a  Error
+26-06-2023  10:39:13  32f76266-84e5-41c7-a7a8-55c90b2ac9a3  There is no training with 648ec636047ac5ef71312fe9 ID
+26-06-2023  10:41:27  45db3c74-3b4a-4100-bb69-606b5ec9b1c8  Incorrect ID
+26-06-2023  10:46:31  83c73477-d22b-4e9b-862b-7c79aa0ba967  Incorrect ID
+26-06-2023  10:46:37  8c9ac9f9-e150-473a-8979-88623b9b2790  Incorrect ID
+26-06-2023  10:46:49  f54df814-3820-4edb-a53d-c83f41fc086f  There is no training with 645009a8b091a26619836a56 ID
+26-06-2023  10:49:34  35b160bd-3091-4d0e-a571-1a33ce3dbaf3  Incorrect ID

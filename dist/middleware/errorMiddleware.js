@@ -4,6 +4,9 @@ const logEvents_1 = require("./logEvents");
 function errorMiddleware(err, req, res, next) {
     const status = err.status;
     const message = err.message;
+    console.log('Error middleware working');
+    console.log(status);
+    console.log(message);
     (0, logEvents_1.logEvents)(message, 'errorLog.log')
         .catch((err) => { console.log(err); });
     return res.status(status).json({ status, message });

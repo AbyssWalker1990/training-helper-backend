@@ -51,7 +51,8 @@ class TrainingService {
       const training = await Training.findById(trainingId) as TrainingModel
       if (training === null) throw new MissingDataException(`There is no training with ${trainingId} ID`)
       return training
-    } catch (error) {
+    } catch (error: any) {
+      if (error.name === 'CastError') next(new HttpException(500, 'Incorrect ID'))
       next(error)
     }
   }
