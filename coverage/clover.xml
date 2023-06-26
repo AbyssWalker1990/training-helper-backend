@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687776451917" clover="3.2.0">
-  <project timestamp="1687776451917" name="All files">
-    <metrics statements="493" coveredstatements="322" conditionals="263" coveredconditionals="195" methods="103" coveredmethods="60" elements="859" coveredelements="577" complexity="0" loc="493" ncloc="493" packages="8" files="25" classes="25"/>
+<coverage generated="1687778503939" clover="3.2.0">
+  <project timestamp="1687778503939" name="All files">
+    <metrics statements="491" coveredstatements="322" conditionals="263" coveredconditionals="195" methods="103" coveredmethods="60" elements="857" coveredelements="577" complexity="0" loc="491" ncloc="491" packages="8" files="25" classes="25"/>
     <package name="dist">
       <metrics statements="35" coveredstatements="33" conditionals="7" coveredconditionals="7" methods="9" coveredmethods="7"/>
       <file name="app.js" path="/home/vova/Documents/js/training-helper-backend/dist/app.js">
@@ -100,7 +100,7 @@
       </file>
     </package>
     <package name="dist.controllers">
-      <metrics statements="141" coveredstatements="73" conditionals="54" coveredconditionals="38" methods="24" coveredmethods="13"/>
+      <metrics statements="139" coveredstatements="73" conditionals="54" coveredconditionals="38" methods="24" coveredmethods="13"/>
       <file name="AuthController.js" path="/home/vova/Documents/js/training-helper-backend/dist/controllers/AuthController.js">
         <metrics statements="51" coveredstatements="21" conditionals="11" coveredconditionals="7" methods="7" coveredmethods="3"/>
         <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
@@ -198,7 +198,7 @@
         <line num="42" count="1" type="stmt"/>
       </file>
       <file name="TrainingController.js" path="/home/vova/Documents/js/training-helper-backend/dist/controllers/TrainingController.js">
-        <metrics statements="42" coveredstatements="18" conditionals="7" coveredconditionals="7" methods="7" coveredmethods="3"/>
+        <metrics statements="40" coveredstatements="18" conditionals="7" coveredconditionals="7" methods="7" coveredmethods="3"/>
         <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
         <line num="3" count="2" type="cond" truecount="4" falsecount="0"/>
         <line num="5" count="1" type="stmt"/>
@@ -231,16 +231,14 @@
         <line num="45" count="0" type="stmt"/>
         <line num="46" count="0" type="stmt"/>
         <line num="47" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="52" count="0" type="stmt"/>
-        <line num="55" count="1" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
         <line num="57" count="0" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="66" count="1" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
       </file>
       <file name="user.dto.js" path="/home/vova/Documents/js/training-helper-backend/dist/controllers/user.dto.js">
         <metrics statements="12" coveredstatements="9" conditionals="22" coveredconditionals="10" methods="2" coveredmethods="1"/>
@@ -525,11 +523,11 @@
         <line num="35" count="2" type="stmt"/>
         <line num="36" count="11" type="stmt"/>
         <line num="37" count="11" type="stmt"/>
-        <line num="38" count="57" type="stmt"/>
-        <line num="43" count="57" type="stmt"/>
+        <line num="38" count="66" type="stmt"/>
+        <line num="43" count="66" type="stmt"/>
         <line num="45" count="11" type="stmt"/>
         <line num="47" count="2" type="stmt"/>
-        <line num="48" count="204" type="stmt"/>
+        <line num="48" count="231" type="stmt"/>
         <line num="50" count="2" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>

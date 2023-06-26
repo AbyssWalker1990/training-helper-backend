@@ -631,6 +631,52 @@
           }
         }
       }
+    },
+    "/trainings/user": {
+      "post": {
+        "tags": [
+          "Trainings"
+        ],
+        "summary": "Get all trainings of user",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "accessToken": {
+                    "type": "string",
+                    "description": "Access Token",
+                    "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlZvdmEiLCJpYXQiOjE2Nzg4ODQ0NjEsImV4cCI6MTY3ODg4NTY2MX0.DY5dlRiOZxqyMAlLRNzOJNxPlkkIKhOoN6fQJ87CAr4"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Get array of all trainings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Training"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

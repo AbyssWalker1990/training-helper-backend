@@ -26,3 +26,5 @@ paths:
     $ref: './paths/trainings/Trainings.yaml'
   /trainings/{trainingId}:
     $ref: './paths/trainings/Trainings.trainingId.yaml'
+  /trainings/user:
+    $ref: './paths/trainings/Trainings.user.yaml'
