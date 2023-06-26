@@ -16,6 +16,9 @@ const options = {
         servers: [
             {
                 url: 'http://localhost:3500'
+            },
+            {
+                url: 'https://training-helper-247e77a6b6b1.herokuapp.com/'
             }
         ]
     },
