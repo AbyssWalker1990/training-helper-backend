@@ -91,17 +91,16 @@ class TrainingService {
         }
     }
     async decodeUserName(token, secret) {
-        let decoded;
         try {
-            decoded = jsonwebtoken_1.default.verify(token, '4534');
+            const decoded = jsonwebtoken_1.default.verify(token, secret);
+            const currentUser = await User_1.User.findOne({ username: decoded.username }).exec();
+            return currentUser;
         }
         catch (error) {
             if (error.name === 'TokenExpiredError')
                 throw new HttpException_1.default(401, 'Access Token Expired!');
             throw new HttpException_1.default(500, error.name);
         }
-        const currentUser = await User_1.User.findOne({ username: decoded.username }).exec();
-        return currentUser;
     }
 }
 exports.default = TrainingService;

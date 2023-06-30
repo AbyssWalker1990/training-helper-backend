@@ -5,7 +5,7 @@ import HttpException from '../exceptions/HttpException'
 import { User } from '../models/User'
 import jwt from 'jsonwebtoken'
 import type { UserModel, MyCookie, DecodedToken } from '../interfaces/auth.interface'
-import { NextFunction } from 'express'
+import { type NextFunction } from 'express'
 
 class TrainingService {
   private readonly accessSecret: string
@@ -94,15 +94,14 @@ class TrainingService {
   }
 
   private async decodeUserName (token: string, secret: string): Promise<UserModel> {
-    let decoded
     try {
-      decoded = jwt.verify(token, '4534') as DecodedToken
+      const decoded = jwt.verify(token, secret) as DecodedToken
+      const currentUser = await User.findOne({ username: decoded.username }).exec() as UserModel
+      return currentUser
     } catch (error: any) {
       if (error.name === 'TokenExpiredError') throw new HttpException(401, 'Access Token Expired!')
       throw new HttpException(500, error.name)
     }
-    const currentUser = await User.findOne({ username: decoded.username }).exec() as UserModel
-    return currentUser
   }
 }
 
