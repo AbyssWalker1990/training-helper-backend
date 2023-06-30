@@ -3277,3 +3277,172 @@ Mon Jun 26 2023 11:26:59 GMT+0000 (Coordinated Universal Time) GET /api-docs/swa
 Mon Jun 26 2023 11:26:59 GMT+0000 (Coordinated Universal Time) GET /api-docs/swagger-ui-standalone-preset.js.map 304 2.335 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 Mon Jun 26 2023 11:26:59 GMT+0000 (Coordinated Universal Time) GET /api-docs/favicon-32x32.png 304 3.185 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 Mon Jun 26 2023 12:01:42 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 190.080 ms undici
+Mon Jun 26 2023 15:33:18 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 354.978 ms undici
+Mon Jun 26 2023 15:36:15 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 121.266 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 15:36:32 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 48.085 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 15:36:36 GMT+0000 (Coordinated Universal Time) GET /trainings/645009a8b091a26619836a5 200 16.394 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 15:36:45 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 200 27.143 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 15:36:55 GMT+0000 (Coordinated Universal Time) POST /trainings/ 400 13.043 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 15:37:00 GMT+0000 (Coordinated Universal Time) POST /trainings/ 201 31.998 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 15:37:03 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 50.079 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 15:37:58 GMT+0000 (Coordinated Universal Time) DELETE /trainings/649595b4fe858f73a6665527 204 22.184 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 15:38:04 GMT+0000 (Coordinated Universal Time) GET /trainings/649595b4fe858f73a6665527 200 8.965 ms PostmanRuntime/7.32.3
+Mon Jun 26 2023 15:42:26 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 128.774 ms undici
+Mon Jun 26 2023 15:48:24 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 76.132 ms undici
+Mon Jun 26 2023 15:48:29 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 1.699 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:48:29 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 35.026 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:48:56 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/ 200 0.468 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:48:56 GMT+0000 (Coordinated Universal Time) POST /trainings/ 500 20.362 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:49:51 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/ 200 0.438 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:49:51 GMT+0000 (Coordinated Universal Time) POST /trainings/ 201 22.776 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:49:55 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.751 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:49:55 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 41.756 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:50:27 GMT+0000 (Coordinated Universal Time) OPTIONS /auth/register 200 0.432 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:50:27 GMT+0000 (Coordinated Universal Time) POST /auth/register 201 92.233 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:50:28 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 125.522 ms undici
+Mon Jun 26 2023 15:50:35 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.456 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:50:35 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 10.076 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:50:53 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/ 200 0.224 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:50:53 GMT+0000 (Coordinated Universal Time) POST /trainings/ 201 18.563 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:50:57 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.892 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:50:57 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 13.409 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:51:13 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.407 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:51:13 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 11.462 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:54:29 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 120.828 ms undici
+Mon Jun 26 2023 15:54:39 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.351 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:54:39 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 22.003 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:55:04 GMT+0000 (Coordinated Universal Time) OPTIONS /auth/register 200 0.507 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:55:04 GMT+0000 (Coordinated Universal Time) POST /auth/register 201 113.154 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 15:55:04 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 117.025 ms undici
+Mon Jun 26 2023 15:56:41 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 80.802 ms undici
+Mon Jun 26 2023 16:02:01 GMT+0000 (Coordinated Universal Time) OPTIONS /auth/register 200 0.539 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:02:01 GMT+0000 (Coordinated Universal Time) POST /auth/register 201 96.697 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:02:01 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 109.347 ms undici
+Mon Jun 26 2023 16:05:10 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 116.057 ms undici
+Mon Jun 26 2023 16:05:16 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 73.927 ms undici
+Mon Jun 26 2023 16:05:18 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.346 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:05:19 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 20.071 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:07:47 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 124.240 ms undici
+Mon Jun 26 2023 16:10:45 GMT+0000 (Coordinated Universal Time) OPTIONS /auth/register 200 0.412 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:10:45 GMT+0000 (Coordinated Universal Time) POST /auth/register 201 76.299 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:12:35 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 85.893 ms undici
+Mon Jun 26 2023 16:12:54 GMT+0000 (Coordinated Universal Time) OPTIONS /auth/register 200 0.430 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:12:54 GMT+0000 (Coordinated Universal Time) POST /auth/register 201 115.805 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:12:54 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 78.999 ms undici
+Mon Jun 26 2023 16:16:45 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 78.212 ms undici
+Mon Jun 26 2023 16:16:49 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.324 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:16:49 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 22.083 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:16:51 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec708047ac5ef71313033 304 10.182 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:16:51 GMT+0000 (Coordinated Universal Time) GET /favicon.ico 404 1.953 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:17:00 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec708047ac5ef71313033 304 10.695 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:17:02 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec708047ac5ef71313033 304 10.937 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:17:14 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.537 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:17:14 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 40.706 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:17:18 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec708047ac5ef71313033 304 12.332 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:17:27 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.407 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:17:27 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 46.080 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:25:04 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 96.029 ms undici
+Mon Jun 26 2023 16:26:20 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 87.919 ms undici
+Mon Jun 26 2023 16:26:44 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.333 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:26:44 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 45.939 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:26:52 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 9.929 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:27:02 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.753 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:27:02 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 20.139 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:27:04 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec708047ac5ef71313033 304 9.009 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:27:09 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.406 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:27:09 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 24.234 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:29:30 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.234 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:29:30 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 24.261 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:29:32 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec708047ac5ef71313033 304 9.401 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:29:33 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec708047ac5ef71313033 304 10.116 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:29:38 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.211 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:29:38 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 17.776 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:30:09 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 117.574 ms undici
+Mon Jun 26 2023 16:30:14 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.296 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:30:14 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 58.672 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:30:16 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 12.002 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:31:53 GMT+0000 (Coordinated Universal Time) GET / 404 2.481 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:32:09 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 80.927 ms undici
+Mon Jun 26 2023 16:32:13 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.209 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:32:13 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 21.030 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:32:14 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 9.379 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:35:06 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 93.280 ms undici
+Mon Jun 26 2023 16:35:11 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.372 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:35:11 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 22.736 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:36:55 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.329 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:36:55 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 22.361 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:41:58 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 124.482 ms undici
+Mon Jun 26 2023 16:42:04 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.316 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:42:04 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 27.429 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:45:44 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 89.654 ms undici
+Mon Jun 26 2023 16:45:47 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.435 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:45:47 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 19.894 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:48:25 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 120.450 ms undici
+Mon Jun 26 2023 16:48:29 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.487 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:48:29 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 15.699 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:48:31 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 7.638 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:48:31 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 8.807 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:48:35 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 14.743 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:48:35 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 16.749 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:48:36 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 12.775 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:49:05 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/ 200 0.362 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:49:05 GMT+0000 (Coordinated Universal Time) POST /trainings/ 201 26.770 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:49:13 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/ 200 0.410 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:49:13 GMT+0000 (Coordinated Universal Time) POST /trainings/ 201 24.356 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:49:22 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/ 200 0.368 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 16:49:22 GMT+0000 (Coordinated Universal Time) POST /trainings/ 201 23.038 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:12:35 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.338 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:12:35 GMT+0000 (Coordinated Universal Time) POST /trainings/user 500 5.397 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:12:51 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 112.946 ms undici
+Mon Jun 26 2023 17:12:53 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.537 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:12:53 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 27.261 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:12:56 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 6.716 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:12:56 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 10.955 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:12:59 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 7.742 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:18:37 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 6.720 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:19:20 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.182 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:19:20 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 31.766 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:19:23 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 7.138 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:19:23 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 6.933 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:19:26 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 10.962 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:22:31 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 5.949 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:23:17 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 8.043 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:23:48 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 80.344 ms undici
+Mon Jun 26 2023 17:23:51 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.368 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:23:51 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 53.374 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:23:54 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 6.453 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:23:54 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 7.397 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:23:58 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 10.796 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:24:41 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 9.757 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:25:20 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.316 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:25:20 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 45.336 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:25:23 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 6.658 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:25:23 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 6.812 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:25:31 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 10.602 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:29:04 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.220 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:29:04 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 35.861 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:29:10 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 7.270 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:29:10 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 8.451 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Mon Jun 26 2023 17:29:17 GMT+0000 (Coordinated Universal Time) GET /trainings/648ec636047ac5ef71312fef 304 10.041 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Fri Jun 30 2023 08:01:24 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 352.387 ms undici
+Fri Jun 30 2023 08:02:06 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 115.047 ms undici
+Fri Jun 30 2023 08:02:21 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 2.671 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Fri Jun 30 2023 08:02:21 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 64.506 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Fri Jun 30 2023 08:26:18 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 0.821 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Fri Jun 30 2023 08:26:18 GMT+0000 (Coordinated Universal Time) POST /trainings/user 500 26.714 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Fri Jun 30 2023 08:27:27 GMT+0000 (Coordinated Universal Time) POST /trainings/user 500 4.644 ms PostmanRuntime/7.32.3
+Fri Jun 30 2023 08:27:48 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 83.089 ms PostmanRuntime/7.32.3
+Fri Jun 30 2023 08:28:00 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 58.061 ms PostmanRuntime/7.32.3
+Fri Jun 30 2023 08:32:11 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 68.232 ms PostmanRuntime/7.32.3
+Fri Jun 30 2023 08:32:31 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 27.920 ms PostmanRuntime/7.32.3
+Fri Jun 30 2023 08:32:51 GMT+0000 (Coordinated Universal Time) POST /trainings/user 500 21.502 ms PostmanRuntime/7.32.3
+Fri Jun 30 2023 08:37:52 GMT+0000 (Coordinated Universal Time) POST /trainings/user 401 31.218 ms PostmanRuntime/7.32.3
+Fri Jun 30 2023 08:49:32 GMT+0000 (Coordinated Universal Time) POST /trainings/user 401 31.750 ms PostmanRuntime/7.32.3
+Fri Jun 30 2023 08:55:47 GMT+0000 (Coordinated Universal Time) OPTIONS /trainings/user 200 2.986 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Fri Jun 30 2023 08:55:47 GMT+0000 (Coordinated Universal Time) POST /trainings/user 401 40.331 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Fri Jun 30 2023 08:56:07 GMT+0000 (Coordinated Universal Time) POST /trainings/user 401 10.658 ms PostmanRuntime/7.32.3
+Fri Jun 30 2023 08:56:17 GMT+0000 (Coordinated Universal Time) POST /auth/login 200 126.681 ms PostmanRuntime/7.32.3
+Fri Jun 30 2023 08:56:31 GMT+0000 (Coordinated Universal Time) POST /trainings/user 401 3.749 ms PostmanRuntime/7.32.3
+Fri Jun 30 2023 08:56:38 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 38.696 ms PostmanRuntime/7.32.3
+Fri Jun 30 2023 08:57:14 GMT+0000 (Coordinated Universal Time) POST /trainings/user 500 54.084 ms PostmanRuntime/7.32.3
+Fri Jun 30 2023 08:58:22 GMT+0000 (Coordinated Universal Time) POST /trainings/user 500 35.825 ms PostmanRuntime/7.32.3

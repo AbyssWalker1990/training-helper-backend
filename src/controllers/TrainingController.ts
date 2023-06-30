@@ -2,6 +2,7 @@ import type Controller from '../interfaces/controller.interface'
 import express, { type NextFunction, type Request, type Response } from 'express'
 import TrainingService from '../services/trainings.service'
 import HttpException from '../exceptions/HttpException'
+import { Error } from 'mongoose'
 
 interface MyCookie {
   jwt: string
@@ -54,7 +55,7 @@ class TrainingController implements Controller {
     try {
       const trainingList = await this.trainingService.getAllTrainingsByUser(token)
       res.status(200).json(trainingList)
-    } catch (error) {
+    } catch (error: any) {
       next(error)
     }
   }

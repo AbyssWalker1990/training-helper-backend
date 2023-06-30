@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687778503939" clover="3.2.0">
-  <project timestamp="1687778503939" name="All files">
+<coverage generated="1687793768588" clover="3.2.0">
+  <project timestamp="1687793768589" name="All files">
     <metrics statements="491" coveredstatements="322" conditionals="263" coveredconditionals="195" methods="103" coveredmethods="60" elements="857" coveredelements="577" complexity="0" loc="491" ncloc="491" packages="8" files="25" classes="25"/>
     <package name="dist">
       <metrics statements="35" coveredstatements="33" conditionals="7" coveredconditionals="7" methods="9" coveredmethods="7"/>
@@ -49,7 +49,7 @@
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
       </file>
       <file name="corsOptions.js" path="/home/vova/Documents/js/training-helper-backend/dist/config/corsOptions.js">
         <metrics statements="9" coveredstatements="6" conditionals="11" coveredconditionals="6" methods="2" coveredmethods="1"/>
@@ -95,8 +95,8 @@
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
       </file>
     </package>
     <package name="dist.controllers">
@@ -516,18 +516,18 @@
         <line num="22" count="2" type="stmt"/>
         <line num="23" count="2" type="stmt"/>
         <line num="24" count="2" type="stmt"/>
-        <line num="25" count="10" type="stmt"/>
-        <line num="26" count="10" type="stmt"/>
-        <line num="31" count="10" type="stmt"/>
+        <line num="25" count="9" type="stmt"/>
+        <line num="26" count="9" type="stmt"/>
+        <line num="31" count="9" type="stmt"/>
         <line num="33" count="2" type="stmt"/>
         <line num="35" count="2" type="stmt"/>
-        <line num="36" count="11" type="stmt"/>
-        <line num="37" count="11" type="stmt"/>
-        <line num="38" count="66" type="stmt"/>
-        <line num="43" count="66" type="stmt"/>
-        <line num="45" count="11" type="stmt"/>
+        <line num="36" count="10" type="stmt"/>
+        <line num="37" count="10" type="stmt"/>
+        <line num="38" count="54" type="stmt"/>
+        <line num="43" count="54" type="stmt"/>
+        <line num="45" count="10" type="stmt"/>
         <line num="47" count="2" type="stmt"/>
-        <line num="48" count="231" type="stmt"/>
+        <line num="48" count="192" type="stmt"/>
         <line num="50" count="2" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>

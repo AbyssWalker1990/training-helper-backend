@@ -8,6 +8,7 @@ const allowedHosts = [
     'http://training-helper-*.herokuapp.com/',
     'https://www.google.com',
     'https://training-helper-247e77a6b6b1.herokuapp.com',
-    'https://training-helper-frontend.vercel.app'
+    'https://training-helper-frontend.vercel.app',
+    'https://training-helper-frontend.vercel.app/'
 ];
 exports.default = allowedHosts;

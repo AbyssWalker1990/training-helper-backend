@@ -94,7 +94,13 @@ class TrainingService {
   }
 
   private async decodeUserName (token: string, secret: string): Promise<UserModel> {
-    const decoded = jwt.verify(token, secret) as DecodedToken
+    let decoded
+    try {
+      decoded = jwt.verify(token, '4534') as DecodedToken
+    } catch (error: any) {
+      if (error.name === 'TokenExpiredError') throw new HttpException(401, 'Access Token Expired!')
+      throw new HttpException(500, error.name)
+    }
     const currentUser = await User.findOne({ username: decoded.username }).exec() as UserModel
     return currentUser
   }
