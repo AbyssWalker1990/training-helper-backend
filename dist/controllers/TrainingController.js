@@ -25,7 +25,6 @@ class TrainingController {
             res.status(201).json({ success: `New Training ${newTraining.title} created!!!` });
         }
         catch (error) {
-            console.log(error);
             next(error);
         }
     };
@@ -53,7 +52,7 @@ class TrainingController {
     getTrainingById = async (req, res, next) => {
         const trainingId = req.params.trainingId;
         try {
-            const training = await this.trainingService.getSingleTrainingById(trainingId, next);
+            const training = await this.trainingService.getSingleTrainingById(trainingId);
             res.status(200).json(training);
         }
         catch (error) {

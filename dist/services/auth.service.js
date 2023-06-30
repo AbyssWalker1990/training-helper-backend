@@ -36,11 +36,10 @@ class AuthService {
         await this.saveRefreshToken(currentUser, refreshToken);
         return [accessToken, refreshToken];
     }
-    async refresh(cookies) {
-        this.isCookiesExists(cookies);
-        const refreshToken = cookies.jwt;
+    async refresh(refreshToken) {
         this.isRefreshTokenExists(refreshToken);
         const currentUser = await this.findUserByProperty({ refreshToken });
+        console.log({ refreshToken });
         if (currentUser == null)
             throw new HttpException_1.default(403, 'Forbidden');
         this.verifyToken(refreshToken, currentUser.username);
@@ -59,11 +58,6 @@ class AuthService {
             throw new HttpException_1.default(400, 'Username and password are required');
         }
     }
-    isCookiesExists(cookies) {
-        if (cookies.jwt === null || cookies.jwt === undefined) {
-            throw new HttpException_1.default(401, 'Unauthorized');
-        }
-    }
     isRefreshTokenExists(token) {
         if (token === undefined || token === '') {
             throw new HttpException_1.default(401, 'Unauthorized');
@@ -80,7 +74,7 @@ class AuthService {
         const payload = {
             username
         };
-        const accessToken = jsonwebtoken_1.default.sign(payload, this.accessSecret, { expiresIn: '20m' });
+        const accessToken = jsonwebtoken_1.default.sign(payload, this.accessSecret, { expiresIn: '30s' });
         const refreshToken = jsonwebtoken_1.default.sign(payload, this.refreshSecret, { expiresIn: '1d' });
         return [accessToken, refreshToken];
     }

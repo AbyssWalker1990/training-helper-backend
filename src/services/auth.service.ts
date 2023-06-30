@@ -1,5 +1,5 @@
 import { User } from '../models/User'
-import type { UserModel, DecodedToken, MyCookie, PropertyFindUser } from '../interfaces/auth.interface'
+import type { UserModel, DecodedToken, PropertyFindUser } from '../interfaces/auth.interface'
 import type CreateUserDto from '../controllers/user.dto'
 import HttpException from '../exceptions/HttpException'
 import bcrypt from 'bcrypt'
@@ -37,11 +37,10 @@ class AuthService {
     return [accessToken, refreshToken]
   }
 
-  public async refresh (cookies: MyCookie): Promise<string> {
-    this.isCookiesExists(cookies)
-    const refreshToken = cookies.jwt
+  public async refresh (refreshToken: string): Promise<string> {
     this.isRefreshTokenExists(refreshToken)
     const currentUser = await this.findUserByProperty({ refreshToken })
+    console.log({ refreshToken })
     if (currentUser == null) throw new HttpException(403, 'Forbidden')
     this.verifyToken(refreshToken, currentUser.username)
 
@@ -63,11 +62,6 @@ class AuthService {
     }
   }
 
-  private isCookiesExists (cookies: MyCookie): void {
-    if (cookies.jwt === null || cookies.jwt === undefined) {
-      throw new HttpException(401, 'Unauthorized')
-    }
-  }
 
   private isRefreshTokenExists (token: string): void {
     if (token === undefined || token === '') {
@@ -92,7 +86,7 @@ class AuthService {
     const accessToken = jwt.sign(
       payload,
       this.accessSecret,
-      { expiresIn: '20m' }
+      { expiresIn: '30s' }
     )
     const refreshToken = jwt.sign(
       payload,

@@ -1,8 +1,6 @@
 import type Controller from '../interfaces/controller.interface'
 import express, { type NextFunction, type Request, type Response } from 'express'
 import TrainingService from '../services/trainings.service'
-import HttpException from '../exceptions/HttpException'
-import { Error } from 'mongoose'
 
 interface MyCookie {
   jwt: string
@@ -34,7 +32,6 @@ class TrainingController implements Controller {
       const newTraining = await this.trainingService.createSingleTraining(username, title, exercises)
       res.status(201).json({ success: `New Training ${newTraining.title} created!!!` })
     } catch (error) {
-      console.log(error)
       next(error)
     }
   }
@@ -63,7 +60,7 @@ class TrainingController implements Controller {
   private readonly getTrainingById = async (req: CustomRequest, res: Response, next: NextFunction): Promise<any> => {
     const trainingId = req.params.trainingId
     try {
-      const training = await this.trainingService.getSingleTrainingById(trainingId, next)
+      const training = await this.trainingService.getSingleTrainingById(trainingId)
       res.status(200).json(training)
     } catch (error) {
       next(error)

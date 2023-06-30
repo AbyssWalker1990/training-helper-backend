@@ -5,7 +5,6 @@ import HttpException from '../exceptions/HttpException'
 import { User } from '../models/User'
 import jwt from 'jsonwebtoken'
 import type { UserModel, MyCookie, DecodedToken } from '../interfaces/auth.interface'
-import { type NextFunction } from 'express'
 
 class TrainingService {
   private readonly accessSecret: string
@@ -17,52 +16,57 @@ class TrainingService {
 
   public async createSingleTraining (username: string, title: string, exercises: Exercise[]): Promise<TrainingModel> {
     this.isValidTraining(username, title)
-    const createdTraining = await Training.create({
-      username,
-      title,
-      exercises
-    })
-    return createdTraining
+    try {
+      const createdTraining = await Training.create({
+        username,
+        title,
+        exercises
+      })
+      return createdTraining
+    } catch (error: any) {
+      throw new HttpException(error.status ?? 500, error.message)
+    }
   }
 
   public async deleteSingleTraining (cookies: MyCookie, trainingId: string): Promise<TrainingModel | null> {
     this.isAccessToken(cookies)
     const accessToken = cookies.jwt
-    const currentUser = await this.isExistingUser(accessToken)
-    const currentUserName = currentUser.username
-    const training = await Training.findById(trainingId) as TrainingModel
-    if (training === null) {
-      throw new MissingDataException(`There is no training with ${trainingId} ID`)
+    try {
+      const currentUser = await this.isExistingUser(accessToken)
+      const currentUserName = currentUser.username
+      const training = await Training.findById(trainingId) as TrainingModel
+      if (training === null) throw new MissingDataException(`There is no training with ${trainingId} ID`)
+      this.isOwnerOfTraining(training, currentUserName)
+      return await Training.findByIdAndDelete(trainingId)
+    } catch (error: any) {
+      throw new HttpException(error.status ?? 500, error.message)
     }
-    this.isOwnerOfTraining(training, currentUserName)
-    return await Training.findByIdAndDelete(trainingId)
   }
 
-  public async getAllTrainingsByUser (token: string): Promise<TrainingModel[]> {
-    this.isAccessTokenString(token)
-    const currentUser = await this.decodeUserName(token, this.accessSecret)
-    const trainingList = await Training.find({ username: currentUser.username })
-    return trainingList
+  public async getAllTrainingsByUser (token: string): Promise<TrainingModel[] | undefined> {
+    try {
+      const currentUser = await this.decodeUserName(token, this.accessSecret)
+      const trainingList = await Training.find({ username: currentUser.username })
+      return trainingList
+    } catch (error: any) {
+      throw new HttpException(error.status ?? 500, error.message)
+    }
   }
 
-  public async getSingleTrainingById (trainingId: string, next: NextFunction): Promise<TrainingModel | undefined> {
+  public async getSingleTrainingById (trainingId: string): Promise<TrainingModel | undefined> {
     this.isValidTrainingId(trainingId)
     try {
       const training = await Training.findById(trainingId) as TrainingModel
       if (training === null) throw new MissingDataException(`There is no training with ${trainingId} ID`)
       return training
     } catch (error: any) {
-      if (error.name === 'CastError') next(new HttpException(500, 'Incorrect ID'))
-      next(error)
+      if (error.name === 'CastError') throw new HttpException(500, 'Incorrect ID')
+      throw new HttpException(error.status ?? 500, error.message)
     }
   }
 
   private isAccessToken (cookies: MyCookie): void {
     if (cookies?.jwt === null || cookies?.jwt === '') throw new HttpException(401, 'Unauthorized')
-  }
-
-  private isAccessTokenString (token: string): void {
-    if (token === undefined || typeof token !== 'string') throw new HttpException(401, 'Unauthorized')
   }
 
   private isOwnerOfTraining (training: TrainingModel, currentUser: string): void {

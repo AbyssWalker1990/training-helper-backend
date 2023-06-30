@@ -17,32 +17,45 @@ class TrainingService {
     }
     async createSingleTraining(username, title, exercises) {
         this.isValidTraining(username, title);
-        const createdTraining = await Training_1.Training.create({
-            username,
-            title,
-            exercises
-        });
-        return createdTraining;
+        try {
+            const createdTraining = await Training_1.Training.create({
+                username,
+                title,
+                exercises
+            });
+            return createdTraining;
+        }
+        catch (error) {
+            throw new HttpException_1.default(error.status ?? 500, error.message);
+        }
     }
     async deleteSingleTraining(cookies, trainingId) {
         this.isAccessToken(cookies);
         const accessToken = cookies.jwt;
-        const currentUser = await this.isExistingUser(accessToken);
-        const currentUserName = currentUser.username;
-        const training = await Training_1.Training.findById(trainingId);
-        if (training === null) {
-            throw new MissingDataException_1.default(`There is no training with ${trainingId} ID`);
+        try {
+            const currentUser = await this.isExistingUser(accessToken);
+            const currentUserName = currentUser.username;
+            const training = await Training_1.Training.findById(trainingId);
+            if (training === null)
+                throw new MissingDataException_1.default(`There is no training with ${trainingId} ID`);
+            this.isOwnerOfTraining(training, currentUserName);
+            return await Training_1.Training.findByIdAndDelete(trainingId);
         }
-        this.isOwnerOfTraining(training, currentUserName);
-        return await Training_1.Training.findByIdAndDelete(trainingId);
+        catch (error) {
+            throw new HttpException_1.default(error.status ?? 500, error.message);
+        }
     }
     async getAllTrainingsByUser(token) {
-        this.isAccessTokenString(token);
-        const currentUser = await this.decodeUserName(token, this.accessSecret);
-        const trainingList = await Training_1.Training.find({ username: currentUser.username });
-        return trainingList;
+        try {
+            const currentUser = await this.decodeUserName(token, this.accessSecret);
+            const trainingList = await Training_1.Training.find({ username: currentUser.username });
+            return trainingList;
+        }
+        catch (error) {
+            throw new HttpException_1.default(error.status ?? 500, error.message);
+        }
     }
-    async getSingleTrainingById(trainingId, next) {
+    async getSingleTrainingById(trainingId) {
         this.isValidTrainingId(trainingId);
         try {
             const training = await Training_1.Training.findById(trainingId);
@@ -52,16 +65,12 @@ class TrainingService {
         }
         catch (error) {
             if (error.name === 'CastError')
-                next(new HttpException_1.default(500, 'Incorrect ID'));
-            next(error);
+                throw new HttpException_1.default(500, 'Incorrect ID');
+            throw new HttpException_1.default(error.status ?? 500, error.message);
         }
     }
     isAccessToken(cookies) {
         if (cookies?.jwt === null || cookies?.jwt === '')
-            throw new HttpException_1.default(401, 'Unauthorized');
-    }
-    isAccessTokenString(token) {
-        if (token === undefined || typeof token !== 'string')
             throw new HttpException_1.default(401, 'Unauthorized');
     }
     isOwnerOfTraining(training, currentUser) {

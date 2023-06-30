@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.17% </span>
+                <span class="strong">39.62% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>21/51</span>
+                <span class='fraction'>21/53</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.17% </span>
+                <span class="strong">39.62% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>21/51</span>
+                <span class='fraction'>21/53</span>
             </div>
         
             
@@ -146,7 +146,9 @@
 <a name='L81'></a><a href='#L81'>81</a>
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -179,15 +181,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -195,6 +188,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -249,7 +253,7 @@ class AuthController {
     initRoutes() {
         this.router.post(`${this.path}/login`, this.handleLogin);
         this.router.post(`${this.path}/register`, (0, validationMiddleware_1.default)(user_dto_1.default), this.registerUser);
-        this.router.get(`${this.path}/refresh`, this.handleRefreshToken);
+        this.router.post(`${this.path}/refresh`, this.handleRefreshToken);
         this.router.get(`${this.path}/logout`, this.handleLogout);
     }
     handleLogin = <span class="fstat-no" title="function not covered" >as</span>ync (req, res, next) =&gt; {
@@ -262,6 +266,7 @@ class AuthController {
                 maxAge: 24 * 60 * 60 * 1000
             });
 <span class="cstat-no" title="statement not covered" >            res.status(200).json({ username, accessToken, refreshToken });</span>
+<span class="cstat-no" title="statement not covered" >            next();</span>
         }
         catch (error) {
 <span class="cstat-no" title="statement not covered" >            next(error);</span>
@@ -278,9 +283,10 @@ class AuthController {
         }
     };
     handleRefreshToken = <span class="fstat-no" title="function not covered" >as</span>ync (req, res, next) =&gt; {
-        const cookies = <span class="cstat-no" title="statement not covered" >req.cookies;</span>
+        const refreshToken = <span class="cstat-no" title="statement not covered" >req.body.refreshToken;</span>
+<span class="cstat-no" title="statement not covered" >        console.log(refreshToken);</span>
 <span class="cstat-no" title="statement not covered" >        try {</span>
-            const accessToken = <span class="cstat-no" title="statement not covered" >await this.authService.refresh(cookies);</span>
+            const accessToken = <span class="cstat-no" title="statement not covered" >await this.authService.refresh(refreshToken);</span>
 <span class="cstat-no" title="statement not covered" >            res.status(200).json({ accessToken });</span>
         }
         catch (error) {
@@ -319,7 +325,7 @@ exports.default = AuthController;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-26T15:36:08.492Z
+                at 2023-06-30T14:23:54.343Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -86,34 +86,16 @@ const bcrypt_1 = __importDefault(require("bcrypt"));
                 username: 'username',
                 password: 'password'
             };
-            const cookie = {
-                jwt: 'CoRrEcT-ToKen'
-            };
             jest.spyOn(authService, 'verifyToken').mockReturnValue(true);
             jest.spyOn(authService, 'generateTokens').mockResolvedValueOnce(['token', 'token']);
             jest.spyOn(authService, 'findUserByProperty').mockReturnValueOnce(user);
-            const result = await authService.refresh(cookie);
+            const result = await authService.refresh('CoRrEcT-ToKen');
             (0, globals_1.expect)(result).toBe('token');
         });
-        (0, globals_1.test)('Throws an error when there is no jwt in cookies', async () => {
-            const cookie = {};
-            await (0, globals_1.expect)(authService.refresh(cookie)).rejects.toThrow(new HttpException_1.default(401, 'Unauthorized'));
-        });
-        (0, globals_1.test)('Throws an error when refreshToken isnt within cookies', async () => {
-            const cookie = {
-                jwt: ''
-            };
-            jest.spyOn(authService, 'isCookiesExists').mockResolvedValueOnce(true);
-            await (0, globals_1.expect)(authService.refresh(cookie)).rejects.toThrow(new HttpException_1.default(401, 'Unauthorized'));
-        });
         (0, globals_1.test)('Throws an error when there is no user in database', async () => {
-            const cookie = {
-                jwt: 'token'
-            };
-            jest.spyOn(authService, 'isCookiesExists').mockResolvedValueOnce(true);
             jest.spyOn(authService, 'isRefreshTokenExists').mockResolvedValueOnce(true);
             jest.spyOn(authService, 'findUserByProperty').mockResolvedValueOnce(null);
-            await (0, globals_1.expect)(authService.refresh(cookie)).rejects.toThrow(new HttpException_1.default(403, 'Forbidden'));
+            await (0, globals_1.expect)(authService.refresh('CoRrEcT-ToKen')).rejects.toThrow(new HttpException_1.default(403, 'Forbidden'));
         });
     });
     (0, globals_1.describe)('isUserExists', () => {

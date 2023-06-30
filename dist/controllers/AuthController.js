@@ -18,7 +18,7 @@ class AuthController {
     initRoutes() {
         this.router.post(`${this.path}/login`, this.handleLogin);
         this.router.post(`${this.path}/register`, (0, validationMiddleware_1.default)(user_dto_1.default), this.registerUser);
-        this.router.get(`${this.path}/refresh`, this.handleRefreshToken);
+        this.router.post(`${this.path}/refresh`, this.handleRefreshToken);
         this.router.get(`${this.path}/logout`, this.handleLogout);
     }
     handleLogin = async (req, res, next) => {
@@ -31,6 +31,7 @@ class AuthController {
                 maxAge: 24 * 60 * 60 * 1000
             });
             res.status(200).json({ username, accessToken, refreshToken });
+            next();
         }
         catch (error) {
             next(error);
@@ -47,9 +48,10 @@ class AuthController {
         }
     };
     handleRefreshToken = async (req, res, next) => {
-        const cookies = req.cookies;
+        const refreshToken = req.body.refreshToken;
+        console.log(refreshToken);
         try {
-            const accessToken = await this.authService.refresh(cookies);
+            const accessToken = await this.authService.refresh(refreshToken);
             res.status(200).json({ accessToken });
         }
         catch (error) {

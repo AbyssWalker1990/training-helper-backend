@@ -93,38 +93,18 @@ describe('AuthService', () => {
         username: 'username',
         password: 'password'
       }
-      const cookie: MyCookie = {
-        jwt: 'CoRrEcT-ToKen'
-      }
 
       jest.spyOn(authService as any, 'verifyToken').mockReturnValue(true)
       jest.spyOn((authService as any), 'generateTokens').mockResolvedValueOnce(['token', 'token'])
       jest.spyOn(authService as any, 'findUserByProperty').mockReturnValueOnce(user)
-      const result = await authService.refresh(cookie)
+      const result = await authService.refresh('CoRrEcT-ToKen')
       expect(result).toBe('token')
     })
 
-    test('Throws an error when there is no jwt in cookies', async () => {
-      const cookie = {}
-      await expect(authService.refresh(cookie as MyCookie)).rejects.toThrow(new HttpException(401, 'Unauthorized'))
-    })
-
-    test('Throws an error when refreshToken isnt within cookies', async () => {
-      const cookie: MyCookie = {
-        jwt: ''
-      }
-      jest.spyOn(authService as any, 'isCookiesExists').mockResolvedValueOnce(true)
-      await expect(authService.refresh(cookie)).rejects.toThrow(new HttpException(401, 'Unauthorized'))
-    })
-
     test('Throws an error when there is no user in database', async () => {
-      const cookie: MyCookie = {
-        jwt: 'token'
-      }
-      jest.spyOn(authService as any, 'isCookiesExists').mockResolvedValueOnce(true)
       jest.spyOn(authService as any, 'isRefreshTokenExists').mockResolvedValueOnce(true)
       jest.spyOn(authService as any, 'findUserByProperty').mockResolvedValueOnce(null)
-      await expect(authService.refresh(cookie)).rejects.toThrow(new HttpException(403, 'Forbidden'))
+      await expect(authService.refresh('CoRrEcT-ToKen')).rejects.toThrow(new HttpException(403, 'Forbidden'))
     })
   })
 

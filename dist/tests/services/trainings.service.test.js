@@ -8,7 +8,6 @@ const trainings_service_1 = __importDefault(require("../../services/trainings.se
 const Training_1 = require("../../models/Training");
 const MissingDataException_1 = __importDefault(require("../../exceptions/trainingsExceptions/MissingDataException"));
 const HttpException_1 = __importDefault(require("../../exceptions/HttpException"));
-const express_1 = __importDefault(require("express"));
 (0, globals_1.describe)('TrainingService', () => {
     const trainingService = new trainings_service_1.default();
     const exercises = [
@@ -90,31 +89,25 @@ const express_1 = __importDefault(require("express"));
             username: 'username'
         };
         (0, globals_1.test)('Returns list of trainings', async () => {
-            jest.spyOn(trainingService, 'isAccessTokenString').mockReturnValueOnce(true);
             jest.spyOn(trainingService, 'decodeUserName').mockResolvedValueOnce(user);
             jest.spyOn(Training_1.Training, 'find').mockResolvedValueOnce('trainingArray');
             const result = await trainingService.getAllTrainingsByUser('token');
             (0, globals_1.expect)(result).toBe('trainingArray');
         });
-        (0, globals_1.test)('Throws an error if token arg is not string', async () => {
-            await (0, globals_1.expect)(trainingService.getAllTrainingsByUser(1)).rejects.toThrow(new HttpException_1.default(401, 'Unauthorized'));
-            await (0, globals_1.expect)(trainingService.getAllTrainingsByUser(true)).rejects.toThrow(new HttpException_1.default(401, 'Unauthorized'));
-            await (0, globals_1.expect)(trainingService.getAllTrainingsByUser([])).rejects.toThrow(new HttpException_1.default(401, 'Unauthorized'));
-        });
     });
     (0, globals_1.describe)('getSingleTrainingById', () => {
         (0, globals_1.test)('Returns training object if it exists in database', async () => {
             jest.spyOn(Training_1.Training, 'findById').mockResolvedValueOnce('trainingArray');
-            const result = await trainingService.getSingleTrainingById('trainingId', express_1.default);
+            const result = await trainingService.getSingleTrainingById('trainingId');
             (0, globals_1.expect)(result).toBe('trainingArray');
         });
         (0, globals_1.test)('Throw an error training id is not a string', async () => {
-            await (0, globals_1.expect)(trainingService.getSingleTrainingById(1, express_1.default)).rejects.toThrow(new MissingDataException_1.default('Invalid training ID'));
-            await (0, globals_1.expect)(trainingService.getSingleTrainingById(true, express_1.default)).rejects.toThrow(new MissingDataException_1.default('Invalid training ID'));
-            await (0, globals_1.expect)(trainingService.getSingleTrainingById([], express_1.default)).rejects.toThrow(new MissingDataException_1.default('Invalid training ID'));
-            await (0, globals_1.expect)(trainingService.getSingleTrainingById('', express_1.default)).rejects.toThrow(new MissingDataException_1.default('Invalid training ID'));
-            await (0, globals_1.expect)(trainingService.getSingleTrainingById(undefined, express_1.default)).rejects.toThrow(new MissingDataException_1.default('Invalid training ID'));
-            await (0, globals_1.expect)(trainingService.getSingleTrainingById(null, express_1.default)).rejects.toThrow(new MissingDataException_1.default('Invalid training ID'));
+            await (0, globals_1.expect)(trainingService.getSingleTrainingById(1)).rejects.toThrow(new MissingDataException_1.default('Invalid training ID'));
+            await (0, globals_1.expect)(trainingService.getSingleTrainingById(true)).rejects.toThrow(new MissingDataException_1.default('Invalid training ID'));
+            await (0, globals_1.expect)(trainingService.getSingleTrainingById([])).rejects.toThrow(new MissingDataException_1.default('Invalid training ID'));
+            await (0, globals_1.expect)(trainingService.getSingleTrainingById('')).rejects.toThrow(new MissingDataException_1.default('Invalid training ID'));
+            await (0, globals_1.expect)(trainingService.getSingleTrainingById(undefined)).rejects.toThrow(new MissingDataException_1.default('Invalid training ID'));
+            await (0, globals_1.expect)(trainingService.getSingleTrainingById(null)).rejects.toThrow(new MissingDataException_1.default('Invalid training ID'));
         });
     });
 });

@@ -533,3 +533,46 @@
 30-06-2023  09:09:19  2a8d03a9-ab98-4a97-a338-66d59bab9d76  Incorrect ID
 30-06-2023  09:18:43  5c39f2c9-b202-4aca-8d6b-a13ab65c1e96  Incorrect ID
 30-06-2023  09:18:53  7a2b63f1-37b3-4cdb-a0fe-1e97a5391047  Access Token Expired!
+30-06-2023  11:44:37  9b80260d-c25c-4de5-ba1a-3a0929551a7e  Access Token Expired!
+30-06-2023  11:44:49  9e7b6ca3-98ef-4f5b-96fb-16c05ba822cb  Access Token Expired!
+30-06-2023  12:14:37  ec4006de-6e10-4f39-ab0d-fdcfa7434d0a  Access Token Expired!
+30-06-2023  12:15:29  fc21194e-6df9-4eee-8bb4-3122eacfabb8  error
+30-06-2023  12:17:15  c8056215-c94c-494e-8a7c-ad2ff7987186  error
+30-06-2023  12:17:26  ac85b5dc-968f-44b4-b172-1c988f8b1eaa  error
+30-06-2023  12:18:44  c568e09c-d6de-4f42-a495-ac2fe5ce7a45  error
+30-06-2023  12:20:05  584909f2-edf8-485f-bd37-45d274dc12ea  error from getAllTrainingsByUser
+30-06-2023  12:21:54  43385342-42a0-4af9-bf61-1ec6fcff176e  error from getAllTrainingsByUser
+30-06-2023  12:23:45  e481a6a5-6275-44ed-b55e-559f41ffb123  Access Token Expired!
+30-06-2023  12:25:08  e8218614-05e5-4cda-8af7-5655ba0563b3  Access Token Expired!
+30-06-2023  12:25:42  b08564ff-acd6-457f-aa3c-63152b305d65  Access Token Expired!
+30-06-2023  12:27:55  aeece77d-0a73-49cc-9101-c0ed97a01726  JsonWebTokenError
+30-06-2023  12:33:37  77e311fd-1b00-4261-8171-22fb326b8bf2  Error
+30-06-2023  12:36:18  2b2bbe3d-63db-4bb3-87b6-607d9ff1407d  Error
+30-06-2023  12:36:44  6a581ec4-29af-4595-982e-2721d71d4352  JsonWebTokenError
+30-06-2023  12:37:24  de5a7b5b-5b27-45b0-9c3a-63f6ce1741e1  Access Token Expired!
+30-06-2023  12:41:25  59a8d0ce-33a7-4108-a7e2-fea71c5337ce  Access Token Expired!
+30-06-2023  12:49:09  38905dab-f93e-4e71-b634-515608ed1dcd  Username required to create new training instance
+30-06-2023  12:50:34  6fb298cf-c9b6-46e8-ba74-2beaba3408eb  Username required to create new training instance
+30-06-2023  12:55:13  adb00757-54f5-4eb3-9bff-a82e6c6df73e  Access Token Expired!
+30-06-2023  12:55:27  372e721b-8790-4719-839b-9e1dc70938e0  Access Token Expired!
+30-06-2023  12:55:58  44a73e79-ab9d-46c2-a2ef-5eeafa3be6de  Incorrect ID
+30-06-2023  12:56:30  51894659-dbd9-4a44-9711-448fef712cc2  There is no training with 6499c19231ab1661f3f947c2 ID
+30-06-2023  13:03:06  1438afc6-0f8f-4696-b6ac-5aaea7714f15  Incorrect ID
+30-06-2023  13:06:16  c3687883-a4d7-4ae3-9c8a-02cd1867c9bc  There is no training with 6499c18931ab1661f3f947ad ID
+30-06-2023  13:26:26  aca02a7e-b8af-478a-ab50-9558adbc5534  Username and password are required
+30-06-2023  13:27:24  41666ac6-405f-4116-8c2d-3c21619ddee3  Unexpected token o in JSON at position 1
+30-06-2023  13:28:18  a4442eb3-b57b-48da-847c-fc10d89b3bb6  Unexpected token o in JSON at position 1
+30-06-2023  13:28:28  ab5d4235-cd4a-48e2-848a-10d92ef801d8  Unexpected token o in JSON at position 1
+30-06-2023  13:55:38  a0f52c4c-7965-4394-8630-2bb1178b70e6  Access Token Expired!
+30-06-2023  13:56:20  0b5cc851-74bf-43b0-ac28-a494006a2aed  Access Token Expired!
+30-06-2023  13:59:43  ad5f3442-8678-4e9c-a867-75436aa423f9  Access Token Expired!
+30-06-2023  14:02:26  c7ad8ee8-321f-4c3d-8cc6-eae2bfa92668  Access Token Expired!
+30-06-2023  14:05:03  c7757f2d-f216-4ef5-b4a4-e7b83132ce27  Unauthorized
+30-06-2023  14:12:04  3ea5ebda-2574-4ce3-b13c-5468abf80c4f  Unauthorized
+30-06-2023  14:12:35  5f44a98c-6a17-4abf-9c99-0a4e3afb2ec5  Unauthorized
+30-06-2023  14:12:41  63f261c9-f3ca-4123-aa60-e1708175a7f8  Unauthorized
+30-06-2023  14:13:15  66b2e92b-6029-44f0-abc3-aac69cf2e686  Unauthorized
+30-06-2023  14:13:24  5a2ed323-98c7-4ac8-b43b-89f97af5065f  Unauthorized
+30-06-2023  14:13:47  c68062b6-374a-4406-bd7a-609384146a97  Unauthorized
+30-06-2023  14:14:56  c37e8ba4-5987-4789-812b-9f1213782763  Access Token Expired!
+30-06-2023  14:15:31  98ee58c3-6790-4bef-b96f-a2b26d44993d  Unauthorized
