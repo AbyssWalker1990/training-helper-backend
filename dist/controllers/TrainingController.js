@@ -16,6 +16,7 @@ class TrainingController {
         this.router.post(`${this.path}/`, this.createTraining);
         this.router.post(`${this.path}/user`, this.getTrainingsByUser);
         this.router.get(`${this.path}/:trainingId`, this.getTrainingById);
+        this.router.patch(`${this.path}/:trainingId`, this.updateTraining);
         this.router.delete(`${this.path}/:trainingId`, this.deleteTraining);
     }
     createTraining = async (req, res, next) => {
@@ -23,6 +24,17 @@ class TrainingController {
             const { username, title, exercises } = req.body;
             const newTraining = await this.trainingService.createSingleTraining(username, title, exercises);
             res.status(201).json({ success: `New Training ${newTraining.title} created!!!` });
+        }
+        catch (error) {
+            next(error);
+        }
+    };
+    updateTraining = async (req, res, next) => {
+        const trainingId = req.params.trainingId;
+        const trainingData = req.body;
+        try {
+            await this.trainingService.updateSingleTrainingById(trainingId, trainingData);
+            res.status(201).json({ success: `Training ${trainingId} updated!!!` });
         }
         catch (error) {
             next(error);

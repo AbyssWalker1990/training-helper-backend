@@ -8,6 +8,7 @@ const MissingDataException_1 = __importDefault(require("../exceptions/trainingsE
 const HttpException_1 = __importDefault(require("../exceptions/HttpException"));
 const User_1 = require("../models/User");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const mongoose_1 = __importDefault(require("mongoose"));
 class TrainingService {
     accessSecret;
     refreshSecret;
@@ -66,6 +67,19 @@ class TrainingService {
         catch (error) {
             if (error.name === 'CastError')
                 throw new HttpException_1.default(500, 'Incorrect ID');
+            throw new HttpException_1.default(error.status ?? 500, error.message);
+        }
+    }
+    async updateSingleTrainingById(trainingId, trainingData) {
+        const { title, exercises } = trainingData;
+        console.log(new mongoose_1.default.Types.ObjectId(trainingId));
+        try {
+            const currentTraining = await Training_1.Training.updateOne({ _id: new mongoose_1.default.Types.ObjectId(trainingId) }, { title, exercises });
+            console.log('currentTraining: ', currentTraining);
+            if (currentTraining.matchedCount === 0)
+                throw new MissingDataException_1.default(`There is no training with ${trainingId} ID`);
+        }
+        catch (error) {
             throw new HttpException_1.default(error.status ?? 500, error.message);
         }
     }

@@ -5,6 +5,7 @@ import HttpException from '../exceptions/HttpException'
 import { User } from '../models/User'
 import jwt from 'jsonwebtoken'
 import type { UserModel, MyCookie, DecodedToken } from '../interfaces/auth.interface'
+import mongoose from 'mongoose'
 
 class TrainingService {
   private readonly accessSecret: string
@@ -53,7 +54,7 @@ class TrainingService {
     }
   }
 
-  public async getSingleTrainingById (trainingId: string): Promise<TrainingModel | undefined> {
+  public async getSingleTrainingById (trainingId: string): Promise<TrainingModel> {
     this.isValidTrainingId(trainingId)
     try {
       const training = await Training.findById(trainingId) as TrainingModel
@@ -61,6 +62,18 @@ class TrainingService {
       return training
     } catch (error: any) {
       if (error.name === 'CastError') throw new HttpException(500, 'Incorrect ID')
+      throw new HttpException(error.status ?? 500, error.message)
+    }
+  }
+
+  public async updateSingleTrainingById (trainingId: string, trainingData: any): Promise<void> {
+    const { title, exercises } = trainingData
+    console.log(new mongoose.Types.ObjectId(trainingId))
+    try {
+      const currentTraining = await Training.updateOne({ _id: new mongoose.Types.ObjectId(trainingId) }, { title, exercises })
+      console.log('currentTraining: ', currentTraining)
+      if (currentTraining.matchedCount === 0) throw new MissingDataException(`There is no training with ${trainingId} ID`)
+    } catch (error: any) {
       throw new HttpException(error.status ?? 500, error.message)
     }
   }

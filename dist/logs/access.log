@@ -12961,3 +12961,23 @@ Sat Jul 01 2023 15:33:26 GMT+0000 (Coordinated Universal Time) POST /trainings/u
 Sat Jul 01 2023 15:33:26 GMT+0000 (Coordinated Universal Time) POST /auth/refresh/ 200 10.166 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 Sat Jul 01 2023 15:33:26 GMT+0000 (Coordinated Universal Time) POST /trainings/user 200 13.426 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 02-07-2023  07:58:04 POST /auth/login 200 327.544 ms PostmanRuntime/7.32.3
+02-07-2023  09:33:17 POST /auth/login 200 153.093 ms PostmanRuntime/7.32.3
+02-07-2023  09:33:19 POST /trainings/user 401 12.539 ms PostmanRuntime/7.32.3
+02-07-2023  09:33:41 POST /trainings/user 200 91.597 ms PostmanRuntime/7.32.3
+02-07-2023  09:37:21 GET /trainings/648ec636047ac5ef71312fef 200 33.451 ms PostmanRuntime/7.32.3
+02-07-2023  09:37:41 GET /trainings/648ec636047ac5ef71312fef 200 8.173 ms PostmanRuntime/7.32.3
+02-07-2023  09:37:44 GET /trainings/648ec636047ac5ef71312fef 200 11.048 ms PostmanRuntime/7.32.3
+02-07-2023  09:38:19 PATCH /trainings/645009a8b091a26619836a56   ms PostmanRuntime/7.32.3
+02-07-2023  09:39:42 PATCH /trainings/645009a8b091a26619836a56 201 62.566 ms PostmanRuntime/7.32.3
+02-07-2023  09:40:12 GET /trainings/645009a8b091a26619836a56 400 18.301 ms PostmanRuntime/7.32.3
+02-07-2023  09:41:42 GET /trainings/645009a8b091a26619836a56 400 24.818 ms PostmanRuntime/7.32.3
+02-07-2023  09:41:46 PATCH /trainings/645009a8b091a26619836a56 201 43.674 ms PostmanRuntime/7.32.3
+02-07-2023  09:42:30 PATCH /trainings/645009a8b091a26619836a56 201 47.380 ms PostmanRuntime/7.32.3
+02-07-2023  09:43:27 POST /auth/login 200 140.739 ms PostmanRuntime/7.32.3
+02-07-2023  09:43:33 POST /trainings/user 401 16.097 ms PostmanRuntime/7.32.3
+02-07-2023  09:43:38 POST /trainings/user 200 37.105 ms PostmanRuntime/7.32.3
+02-07-2023  09:43:48 GET /trainings/648ec636047ac5ef71312fef 200 12.163 ms PostmanRuntime/7.32.3
+02-07-2023  09:43:55 PATCH /trainings/648ec636047ac5ef71312fef 201 20.578 ms PostmanRuntime/7.32.3
+02-07-2023  09:44:23 GET /trainings/648ec636047ac5ef71312fef 200 4.750 ms PostmanRuntime/7.32.3
+02-07-2023  09:58:37 GET /trainings/648ec636047ac5ef71312fef 200 57.812 ms PostmanRuntime/7.32.3
+02-07-2023  09:58:41 PATCH /trainings/648ec636047ac5ef71312fef 201 41.825 ms PostmanRuntime/7.32.3

@@ -23,6 +23,7 @@ class TrainingController implements Controller {
     this.router.post(`${this.path}/`, this.createTraining)
     this.router.post(`${this.path}/user`, this.getTrainingsByUser)
     this.router.get(`${this.path}/:trainingId`, this.getTrainingById)
+    this.router.patch(`${this.path}/:trainingId`, this.updateTraining)
     this.router.delete(`${this.path}/:trainingId`, this.deleteTraining)
   }
 
@@ -31,6 +32,17 @@ class TrainingController implements Controller {
       const { username, title, exercises } = req.body
       const newTraining = await this.trainingService.createSingleTraining(username, title, exercises)
       res.status(201).json({ success: `New Training ${newTraining.title} created!!!` })
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  private readonly updateTraining = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    const trainingId = req.params.trainingId
+    const trainingData = req.body
+    try {
+      await this.trainingService.updateSingleTrainingById(trainingId, trainingData)
+      res.status(201).json({ success: `Training ${trainingId} updated!!!` })
     } catch (error) {
       next(error)
     }
