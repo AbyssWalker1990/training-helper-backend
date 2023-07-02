@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.logFormat = exports.logToConsoleAndFile = void 0;
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
+const date_fns_1 = require("date-fns");
 const accessLogStream = fs_1.default.createWriteStream(path_1.default.join(__dirname, '..', 'logs', 'access.log'), { flags: 'a' });
 const logToConsoleAndFile = (message) => {
     console.log(message);
@@ -15,7 +16,7 @@ exports.logToConsoleAndFile = logToConsoleAndFile;
 const logFormat = (tokens, req, res) => {
     // const timeZone = 'Europe/Kiev' // Set the timezone to Kiev
     // const timestamp = moment().tz(timeZone).format() // Get the current timestamp in Kiev timezone
-    const timestamp = new Date();
+    const timestamp = `${(0, date_fns_1.format)(new Date(), 'dd-MM-yyyy  kk:mm:ss')}`;
     return [
         timestamp,
         tokens.method(req, res),

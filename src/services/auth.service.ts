@@ -62,7 +62,6 @@ class AuthService {
     }
   }
 
-
   private isRefreshTokenExists (token: string): void {
     if (token === undefined || token === '') {
       throw new HttpException(401, 'Unauthorized')
