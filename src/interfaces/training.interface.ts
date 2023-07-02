@@ -1,5 +1,3 @@
-import { Document, Model } from "mongoose"
-
 export interface TrainingModel {
   username: string
   title: string

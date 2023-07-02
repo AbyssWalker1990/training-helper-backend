@@ -47,7 +47,7 @@ class TrainingService {
   public async getAllTrainingsByUser (token: string): Promise<TrainingModel[] | undefined> {
     try {
       const currentUser = await this.decodeUserName(token, this.accessSecret)
-      const trainingList = await Training.find({ username: currentUser.username })
+      const trainingList = await Training.find({ username: currentUser.username }).sort({ date: -1 })
       return trainingList
     } catch (error: any) {
       throw new HttpException(error.status ?? 500, error.message)

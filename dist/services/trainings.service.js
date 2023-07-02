@@ -49,7 +49,7 @@ class TrainingService {
     async getAllTrainingsByUser(token) {
         try {
             const currentUser = await this.decodeUserName(token, this.accessSecret);
-            const trainingList = await Training_1.Training.find({ username: currentUser.username });
+            const trainingList = await Training_1.Training.find({ username: currentUser.username }).sort({ date: -1 });
             return trainingList;
         }
         catch (error) {
