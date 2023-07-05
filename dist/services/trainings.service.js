@@ -31,12 +31,15 @@ class TrainingService {
         }
     }
     async deleteSingleTraining(cookies, trainingId) {
+        console.log('isAccessToken: ', cookies.jwt);
         this.isAccessToken(cookies);
         const accessToken = cookies.jwt;
         try {
             const currentUser = await this.isExistingUser(accessToken);
             const currentUserName = currentUser.username;
+            console.log('currentUserName: ', currentUserName);
             const training = await Training_1.Training.findById(trainingId);
+            console.log('training: ', training);
             if (training === null)
                 throw new MissingDataException_1.default(`There is no training with ${trainingId} ID`);
             this.isOwnerOfTraining(training, currentUserName);
@@ -49,7 +52,7 @@ class TrainingService {
     async getAllTrainingsByUser(token) {
         try {
             const currentUser = await this.decodeUserName(token, this.accessSecret);
-            const trainingList = await Training_1.Training.find({ username: currentUser.username }).sort({ date: -1 });
+            const trainingList = await Training_1.Training.find({ username: currentUser.username }, {}, { sort: { date: -1 } });
             return trainingList;
         }
         catch (error) {
@@ -92,6 +95,7 @@ class TrainingService {
             throw new HttpException_1.default(403, 'Forbidden, not owner');
     }
     async isExistingUser(token) {
+        console.log('isExistingUser TRIGGERED');
         const currentUser = await this.decodeUserName(token, this.refreshSecret);
         if (currentUser == null)
             throw new HttpException_1.default(403, 'Forbidden, user does not exist');

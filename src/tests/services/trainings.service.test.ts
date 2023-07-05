@@ -97,7 +97,6 @@ describe('TrainingService', () => {
     test('Returns list of trainings', async () => {
       jest.spyOn(trainingService as any, 'decodeUserName').mockResolvedValueOnce(user)
       jest.spyOn(Training, 'find').mockResolvedValueOnce('trainingArray' as any)
-
       const result = await trainingService.getAllTrainingsByUser('token')
       expect(result).toBe('trainingArray')
     })

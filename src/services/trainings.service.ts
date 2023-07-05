@@ -30,12 +30,15 @@ class TrainingService {
   }
 
   public async deleteSingleTraining (cookies: MyCookie, trainingId: string): Promise<TrainingModel | null> {
+    console.log('isAccessToken: ', cookies.jwt)
     this.isAccessToken(cookies)
     const accessToken = cookies.jwt
     try {
       const currentUser = await this.isExistingUser(accessToken)
       const currentUserName = currentUser.username
+      console.log('currentUserName: ', currentUserName)
       const training = await Training.findById(trainingId) as TrainingModel
+      console.log('training: ', training)
       if (training === null) throw new MissingDataException(`There is no training with ${trainingId} ID`)
       this.isOwnerOfTraining(training, currentUserName)
       return await Training.findByIdAndDelete(trainingId)
@@ -47,7 +50,7 @@ class TrainingService {
   public async getAllTrainingsByUser (token: string): Promise<TrainingModel[] | undefined> {
     try {
       const currentUser = await this.decodeUserName(token, this.accessSecret)
-      const trainingList = await Training.find({ username: currentUser.username }).sort({ date: -1 })
+      const trainingList = await Training.find({ username: currentUser.username }, {}, { sort: { date: -1 } })
       return trainingList
     } catch (error: any) {
       throw new HttpException(error.status ?? 500, error.message)
@@ -87,6 +90,7 @@ class TrainingService {
   }
 
   private async isExistingUser (token: string): Promise<UserModel> {
+    console.log('isExistingUser TRIGGERED')
     const currentUser = await this.decodeUserName(token, this.refreshSecret)
     if (currentUser == null) throw new HttpException(403, 'Forbidden, user does not exist')
     return currentUser

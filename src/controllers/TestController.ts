@@ -19,7 +19,7 @@ class TestController implements Controller {
   private readonly createRandomTraining = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       for (let i = 0; i < 30; i++) {
-        await this.testService.createRandomTraining('Vova')
+        await this.testService.createRandomTraining('Test')
       }
       res.status(201).json({ success: 'Test Trainings has been created!!!' })
     } catch (error) {

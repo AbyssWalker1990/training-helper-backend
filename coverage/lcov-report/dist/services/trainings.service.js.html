@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.58% </span>
+                <span class="strong">64.78% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>45/62</span>
+                <span class='fraction'>46/71</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.08% </span>
+                <span class="strong">62.74% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>32/47</span>
+                <span class='fraction'>32/51</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">76.92% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>10/12</span>
+                <span class='fraction'>10/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.58% </span>
+                <span class="strong">64.78% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>45/62</span>
+                <span class='fraction'>46/71</span>
             </div>
         
             
@@ -178,10 +178,25 @@
 <a name='L113'></a><a href='#L113'>113</a>
 <a name='L114'></a><a href='#L114'>114</a>
 <a name='L115'></a><a href='#L115'>115</a>
-<a name='L116'></a><a href='#L116'>116</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -246,6 +261,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -303,6 +331,7 @@ const MissingDataException_1 = __importDefault(require("../exceptions/trainingsE
 const HttpException_1 = __importDefault(require("../exceptions/HttpException"));
 const User_1 = require("../models/User");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const mongoose_1 = __importDefault(require("mongoose"));
 class TrainingService {
     accessSecret;
     refreshSecret;
@@ -343,7 +372,7 @@ class TrainingService {
     async getAllTrainingsByUser(token) {
         try {
             const currentUser = await this.decodeUserName(token, this.accessSecret);
-            const trainingList = await Training_1.Training.find({ username: currentUser.username });
+            const trainingList = await Training_1.Training.find({ username: currentUser.username }, {}, { sort: { date: -1 } });
             return trainingList;
         }
         catch (error) {
@@ -361,6 +390,19 @@ class TrainingService {
         catch (error) {
 <span class="cstat-no" title="statement not covered" >            if (error.name === 'CastError')</span>
 <span class="cstat-no" title="statement not covered" >                throw new HttpException_1.default(500, 'Incorrect ID');</span>
+<span class="cstat-no" title="statement not covered" >            throw new HttpException_1.default(error.status ?? 500, error.message);</span>
+        }
+    }
+<span class="fstat-no" title="function not covered" >    as</span>ync updateSingleTrainingById(trainingId, trainingData) {
+        const { title, exercises } = <span class="cstat-no" title="statement not covered" >trainingData;</span>
+<span class="cstat-no" title="statement not covered" >        console.log(new mongoose_1.default.Types.ObjectId(trainingId));</span>
+<span class="cstat-no" title="statement not covered" >        try {</span>
+            const currentTraining = <span class="cstat-no" title="statement not covered" >await Training_1.Training.updateOne({ _id: new mongoose_1.default.Types.ObjectId(trainingId) }, { title, exercises });</span>
+<span class="cstat-no" title="statement not covered" >            console.log('currentTraining: ', currentTraining);</span>
+<span class="cstat-no" title="statement not covered" >            if (currentTraining.matchedCount === 0)</span>
+<span class="cstat-no" title="statement not covered" >                throw new MissingDataException_1.default(`There is no training with ${trainingId} ID`);</span>
+        }
+        catch (error) {
 <span class="cstat-no" title="statement not covered" >            throw new HttpException_1.default(error.status ?? 500, error.message);</span>
         }
     }
@@ -415,7 +457,7 @@ exports.default = TrainingService;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-30T14:23:54.343Z
+                at 2023-07-03T07:38:11.153Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

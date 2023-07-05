@@ -19,7 +19,7 @@ class TestController {
     createRandomTraining = async (req, res, next) => {
         try {
             for (let i = 0; i < 30; i++) {
-                await this.testService.createRandomTraining('Vova');
+                await this.testService.createRandomTraining('Test');
             }
             res.status(201).json({ success: 'Test Trainings has been created!!!' });
         }

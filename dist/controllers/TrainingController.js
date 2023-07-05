@@ -23,7 +23,7 @@ class TrainingController {
         try {
             const { username, title, exercises } = req.body;
             const newTraining = await this.trainingService.createSingleTraining(username, title, exercises);
-            res.status(201).json({ success: `New Training ${newTraining.title} created!!!` });
+            res.status(201).json({ success: `New Training ${newTraining.title} created!!!`, newTraining });
         }
         catch (error) {
             next(error);
