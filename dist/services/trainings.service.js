@@ -33,6 +33,7 @@ class TrainingService {
     async deleteSingleTraining(cookies, trainingId) {
         this.isAccessToken(cookies);
         const accessToken = cookies.jwt;
+        console.log(accessToken);
         try {
             const currentUser = await this.isExistingUser(accessToken);
             const currentUserName = currentUser.username;

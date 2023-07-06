@@ -73,7 +73,7 @@ class AuthService {
         const payload = {
             username
         };
-        const accessToken = jsonwebtoken_1.default.sign(payload, this.accessSecret, { expiresIn: '30s' });
+        const accessToken = jsonwebtoken_1.default.sign(payload, this.accessSecret, { expiresIn: '3h' });
         const refreshToken = jsonwebtoken_1.default.sign(payload, this.refreshSecret, { expiresIn: '1d' });
         return [accessToken, refreshToken];
     }

@@ -32,6 +32,7 @@ class TrainingService {
   public async deleteSingleTraining (cookies: MyCookie, trainingId: string): Promise<TrainingModel | null> {
     this.isAccessToken(cookies)
     const accessToken = cookies.jwt
+    console.log(accessToken)
     try {
       const currentUser = await this.isExistingUser(accessToken)
       const currentUserName = currentUser.username
