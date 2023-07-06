@@ -2,14 +2,6 @@ import type Controller from '../interfaces/controller.interface'
 import express, { type NextFunction, type Request, type Response } from 'express'
 import TrainingService from '../services/trainings.service'
 
-interface MyCookie {
-  jwt: string
-}
-
-interface CustomRequest extends Request {
-  cookies: MyCookie
-}
-
 class TrainingController implements Controller {
   public path = '/trainings'
   public router = express.Router()
@@ -48,7 +40,7 @@ class TrainingController implements Controller {
     }
   }
 
-  private readonly deleteTraining = async (req: CustomRequest, res: Response, next: NextFunction): Promise<any> => {
+  private readonly deleteTraining = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
     try {
       const cookies = req.cookies
       const trainingId = req.params.trainingId
@@ -69,7 +61,7 @@ class TrainingController implements Controller {
     }
   }
 
-  private readonly getTrainingById = async (req: CustomRequest, res: Response, next: NextFunction): Promise<any> => {
+  private readonly getTrainingById = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
     const trainingId = req.params.trainingId
     try {
       const training = await this.trainingService.getSingleTrainingById(trainingId)

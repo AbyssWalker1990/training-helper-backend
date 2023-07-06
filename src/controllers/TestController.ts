@@ -23,7 +23,6 @@ class TestController implements Controller {
       }
       res.status(201).json({ success: 'Test Trainings has been created!!!' })
     } catch (error) {
-      console.log(error)
       next(error)
     }
   }
@@ -31,7 +30,6 @@ class TestController implements Controller {
   private readonly deleteTestTrainings = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       await this.testService.deleteAllTestTrainings()
-      console.log('test Trainings deleted')
       res.status(204).json({ success: 'Test Trainings successfully deleted!' })
     } catch (error) {
       next(error)

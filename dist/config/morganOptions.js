@@ -14,8 +14,6 @@ const logToConsoleAndFile = (message) => {
 };
 exports.logToConsoleAndFile = logToConsoleAndFile;
 const logFormat = (tokens, req, res) => {
-    // const timeZone = 'Europe/Kiev' // Set the timezone to Kiev
-    // const timestamp = moment().tz(timeZone).format() // Get the current timestamp in Kiev timezone
     const timestamp = `${(0, date_fns_1.format)(new Date(), 'dd-MM-yyyy  kk:mm:ss')}`;
     return [
         timestamp,

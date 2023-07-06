@@ -1,6 +1,6 @@
 import { User } from '../models/User'
 import type { UserModel, DecodedToken, PropertyFindUser } from '../interfaces/auth.interface'
-import type CreateUserDto from '../controllers/user.dto'
+import type CreateUserDto from '../models/user.dto'
 import HttpException from '../exceptions/HttpException'
 import bcrypt from 'bcrypt'
 import jwt, { type JwtPayload } from 'jsonwebtoken'

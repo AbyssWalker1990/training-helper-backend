@@ -24,14 +24,12 @@ class TestController {
             res.status(201).json({ success: 'Test Trainings has been created!!!' });
         }
         catch (error) {
-            console.log(error);
             next(error);
         }
     };
     deleteTestTrainings = async (req, res, next) => {
         try {
             await this.testService.deleteAllTestTrainings();
-            console.log('test Trainings deleted');
             res.status(204).json({ success: 'Test Trainings successfully deleted!' });
         }
         catch (error) {

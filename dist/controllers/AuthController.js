@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const User_1 = require("../models/User");
 const express_1 = __importDefault(require("express"));
 const validationMiddleware_1 = __importDefault(require("../middleware/validationMiddleware"));
-const user_dto_1 = __importDefault(require("./user.dto"));
+const user_dto_1 = __importDefault(require("../models/user.dto"));
 const auth_service_1 = __importDefault(require("../services/auth.service"));
 class AuthController {
     path = '/auth';
@@ -31,7 +31,6 @@ class AuthController {
                 maxAge: 24 * 60 * 60 * 1000
             });
             res.status(200).json({ username, accessToken, refreshToken });
-            next();
         }
         catch (error) {
             next(error);
@@ -58,22 +57,18 @@ class AuthController {
             next(error);
         }
     };
-    // Can't delete access token from there, DONT FORGET WHEN STARTING build frontend
     handleLogout = async (req, res) => {
         const cookies = req.cookies;
         if (cookies.jwt === null)
-            return res.sendStatus(204); // No content
+            return res.sendStatus(204);
         const refreshToken = cookies.jwt;
-        // Check database for refresh token
         const foundUser = await User_1.User.findOne({ refreshToken }).exec();
         if (foundUser == null) {
             res.clearCookie('jwt', { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 });
             return res.sendStatus(204); // No content
         }
-        // Delete refreshToken in db
         foundUser.refreshToken = '';
-        const result = await foundUser.save();
-        console.log(result);
+        await foundUser.save();
         res.clearCookie('jwt', {
             httpOnly: true,
             sameSite: 'none',

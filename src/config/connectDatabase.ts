@@ -1,7 +1,8 @@
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
-mongoose.set('strictQuery', false)
 dotenv.config()
+
+mongoose.set('strictQuery', false)
 
 const LOCAL_DB_URI = 'mongodb://admin:password@mongodb:27017'
 
@@ -9,8 +10,6 @@ export const connectDatabase = (): void => {
   let uri: string
   if (process.env.NODE_ENV === 'development') {
     uri = LOCAL_DB_URI
-    console.log('LOCAL DATABASE / DOCKER CONTAINER')
-    console.log(uri)
   } else {
     uri = process.env.DATABASE_URI as string
   }

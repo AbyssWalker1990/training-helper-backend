@@ -1,18 +1,11 @@
 import type { Request, Response, NextFunction } from 'express'
 import { User } from '../models/User'
+import { type MyCookie } from '../interfaces/auth.interface'
 import express from 'express'
 import type Controller from '../interfaces/controller.interface'
 import validationMiddleware from '../middleware/validationMiddleware'
-import CreateUserDto from './user.dto'
+import CreateUserDto from '../models/user.dto'
 import AuthService from '../services/auth.service'
-
-interface MyCookie {
-  jwt: string
-}
-
-interface CustomRequest extends Request {
-  cookies: MyCookie
-}
 
 class AuthController implements Controller {
   public path = '/auth'
@@ -40,7 +33,6 @@ class AuthController implements Controller {
         maxAge: 24 * 60 * 60 * 1000
       })
       res.status(200).json({ username, accessToken, refreshToken })
-      next()
     } catch (error) {
       next(error)
     }
@@ -56,7 +48,7 @@ class AuthController implements Controller {
     }
   }
 
-  private readonly handleRefreshToken = async (req: CustomRequest, res: Response, next: NextFunction): Promise<any> => {
+  private readonly handleRefreshToken = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
     const refreshToken = req.body.refreshToken
     console.log(refreshToken)
     try {
@@ -67,23 +59,19 @@ class AuthController implements Controller {
     }
   }
 
-  // Can't delete access token from there, DONT FORGET WHEN STARTING build frontend
   private readonly handleLogout = async (req: Request, res: Response): Promise<any> => {
     const cookies: MyCookie = req.cookies
-    if (cookies.jwt === null) return res.sendStatus(204) // No content
+    if (cookies.jwt === null) return res.sendStatus(204)
     const refreshToken = cookies.jwt
 
-    // Check database for refresh token
     const foundUser = await User.findOne({ refreshToken }).exec()
     if (foundUser == null) {
       res.clearCookie('jwt', { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 })
       return res.sendStatus(204) // No content
     }
 
-    // Delete refreshToken in db
     foundUser.refreshToken = ''
-    const result = await foundUser.save()
-    console.log(result)
+    await foundUser.save()
 
     res.clearCookie('jwt', {
       httpOnly: true,
@@ -95,4 +83,3 @@ class AuthController implements Controller {
 }
 
 export default AuthController
-
