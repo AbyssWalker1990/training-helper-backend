@@ -40,10 +40,8 @@ class AuthService {
   public async refresh (refreshToken: string): Promise<string> {
     this.isRefreshTokenExists(refreshToken)
     const currentUser = await this.findUserByProperty({ refreshToken })
-    console.log({ refreshToken })
     if (currentUser == null) throw new HttpException(403, 'Forbidden')
     this.verifyToken(refreshToken, currentUser.username)
-
     const [accessToken] = await this.generateTokens(currentUser.username)
     return accessToken
   }

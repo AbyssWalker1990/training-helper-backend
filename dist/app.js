@@ -3,7 +3,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-require("reflect-metadata");
 const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const cors_1 = __importDefault(require("cors"));
@@ -14,6 +13,7 @@ const morgan_1 = __importDefault(require("morgan"));
 const morganOptions_1 = require("./config/morganOptions");
 const errorMiddleware_1 = __importDefault(require("./middleware/errorMiddleware"));
 const helmet_1 = __importDefault(require("helmet"));
+const helmetOptions_1 = __importDefault(require("./config/helmetOptions"));
 class App {
     app;
     port;
@@ -25,24 +25,14 @@ class App {
         this.initErrorMiddleware();
     }
     initMiddlewares() {
-        // app.use(asyncMiddleware(logger))
         this.app.use((0, morgan_1.default)(morganOptions_1.logFormat, { stream: { write: morganOptions_1.logToConsoleAndFile } }));
-        // Extra check before CORS
         this.app.use(credentials_1.default);
-        const cspMiddleware = helmet_1.default.contentSecurityPolicy({
-            directives: {
-                defaultSrc: ["'self'"],
-                connectSrc: ["'self'"]
-            }
-        });
+        const cspMiddleware = helmet_1.default.contentSecurityPolicy(helmetOptions_1.default);
         this.app.use(cspMiddleware);
-        // CORS
         this.app.use((0, cors_1.default)(corsOptions_1.default));
-        // Built-in middleware
         this.app.use(express_1.default.urlencoded({ extended: false }));
         this.app.use(express_1.default.json());
         this.app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
-        // For refreshToken
         this.app.use((0, cookie_parser_1.default)());
     }
     initControllers(controllers) {

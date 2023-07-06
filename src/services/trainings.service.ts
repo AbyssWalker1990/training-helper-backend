@@ -30,7 +30,6 @@ class TrainingService {
   }
 
   public async deleteSingleTraining (cookies: MyCookie, trainingId: string): Promise<TrainingModel | null> {
-    console.log('isAccessToken: ', cookies.jwt)
     this.isAccessToken(cookies)
     const accessToken = cookies.jwt
     try {
@@ -74,7 +73,6 @@ class TrainingService {
     console.log(new mongoose.Types.ObjectId(trainingId))
     try {
       const currentTraining = await Training.updateOne({ _id: new mongoose.Types.ObjectId(trainingId) }, { title, exercises })
-      console.log('currentTraining: ', currentTraining)
       if (currentTraining.matchedCount === 0) throw new MissingDataException(`There is no training with ${trainingId} ID`)
     } catch (error: any) {
       throw new HttpException(error.status ?? 500, error.message)
@@ -90,7 +88,6 @@ class TrainingService {
   }
 
   private async isExistingUser (token: string): Promise<UserModel> {
-    console.log('isExistingUser TRIGGERED')
     const currentUser = await this.decodeUserName(token, this.refreshSecret)
     if (currentUser == null) throw new HttpException(403, 'Forbidden, user does not exist')
     return currentUser

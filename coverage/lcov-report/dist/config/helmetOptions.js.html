@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for dist/config/allowedHosts.js</title>
+    <title>Code coverage report for dist/config/helmetOptions.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">dist/config</a> allowedHosts.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">dist/config</a> helmetOptions.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -83,13 +83,13 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const allowedHosts = [
-    'http://localhost:3500',
-    'http://localhost:3000',
-    'https://training-helper-247e77a6b6b1.herokuapp.com',
-    'https://training-helper-frontend.vercel.app'
-];
-exports.default = allowedHosts;
+const helmetOpt = {
+    directives: {
+        defaultSrc: ["'self'"],
+        connectSrc: ["'self'"]
+    }
+};
+exports.default = helmetOpt;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

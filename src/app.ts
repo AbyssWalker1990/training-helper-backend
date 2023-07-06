@@ -1,4 +1,3 @@
-import 'reflect-metadata'
 import express from 'express'
 import path from 'path'
 import cors from 'cors'
@@ -10,6 +9,7 @@ import { logFormat, logToConsoleAndFile } from './config/morganOptions'
 import type Controller from './interfaces/controller.interface'
 import errorMiddleware from './middleware/errorMiddleware'
 import helmet from 'helmet'
+import helmetOpt from './config/helmetOptions'
 
 class App {
   public app: express.Application
@@ -25,24 +25,14 @@ class App {
   }
 
   private initMiddlewares (): void {
-    // app.use(asyncMiddleware(logger))
     this.app.use(morgan(logFormat, { stream: { write: logToConsoleAndFile } }))
-    // Extra check before CORS
     this.app.use(credentials)
-    const cspMiddleware = helmet.contentSecurityPolicy({
-      directives: {
-        defaultSrc: ["'self'"],
-        connectSrc: ["'self'"]
-      }
-    })
+    const cspMiddleware = helmet.contentSecurityPolicy(helmetOpt)
     this.app.use(cspMiddleware)
-    // CORS
     this.app.use(cors(corsOptions))
-    // Built-in middleware
     this.app.use(express.urlencoded({ extended: false }))
     this.app.use(express.json())
     this.app.use(express.static(path.join(__dirname, 'public')))
-    // For refreshToken
     this.app.use(cookieParser())
   }
 
