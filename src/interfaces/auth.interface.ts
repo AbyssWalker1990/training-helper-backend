@@ -1,3 +1,5 @@
+import { type Model } from 'mongoose'
+
 export interface DecodedToken {
   username: string
 }
@@ -18,3 +20,4 @@ export interface PropertyFindUser {
 }
 
 export interface UserDocument extends UserModel, Document { }
+export interface IUserModel extends Model<UserModel> { }
