@@ -18842,3 +18842,135 @@ Sat Jul 01 2023 15:33:26 GMT+0000 (Coordinated Universal Time) POST /trainings/u
 06-07-2023  14:08:14 OPTIONS /trainings/user 200 2.169 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 06-07-2023  14:08:14 POST /trainings/user 200 28.531 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 06-07-2023  14:08:17 GET /trainings/64a6c77be4da44c8a3374fb3 200 10.156 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+06-07-2023  18:01:05 GET / 404 7.337 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+06-07-2023  18:01:12 GET /api-docs/ 200 5.897 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+06-07-2023  18:01:12 GET /api-docs/swagger-ui-init.js 200 3.993 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+06-07-2023  18:01:12 GET /api-docs/swagger-ui.css 200 59.532 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+06-07-2023  18:01:12 GET /api-docs/swagger-ui-standalone-preset.js 200 52.290 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+06-07-2023  18:01:12 GET /api-docs/swagger-ui-bundle.js 200 56.889 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+06-07-2023  18:01:12 GET /api-docs/favicon-32x32.png 304 2.321 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+06-07-2023  21:51:38 POST /auth/login/ 400 330.032 ms 
+06-07-2023  21:51:38 POST /auth/login/ 400 5.194 ms 
+06-07-2023  21:51:38 POST /auth/login/ 200 90.113 ms 
+06-07-2023  21:51:38 POST /auth/register/ 400 8.568 ms 
+06-07-2023  21:51:38 POST /auth/register/ 409 8.426 ms 
+06-07-2023  21:51:38 POST /auth/register/ 400 4.365 ms 
+06-07-2023  21:54:41 POST /auth/login/ 400 27.793 ms 
+06-07-2023  21:54:41 POST /auth/login/ 400 4.885 ms 
+06-07-2023  21:54:41 POST /auth/login/ 200 88.331 ms 
+06-07-2023  21:54:41 POST /auth/register/ 400 8.688 ms 
+06-07-2023  21:54:41 POST /auth/register/ 409 8.951 ms 
+06-07-2023  21:54:41 POST /auth/register/ 400 5.372 ms 
+06-07-2023  21:59:29 POST /auth/login/ 400 51.814 ms 
+06-07-2023  21:59:29 POST /auth/login/ 400 5.207 ms 
+06-07-2023  21:59:29 POST /auth/login/ 200 213.021 ms 
+06-07-2023  21:59:29 POST /auth/register/ 400 18.348 ms 
+06-07-2023  21:59:29 POST /auth/register/ 409 56.723 ms 
+06-07-2023  21:59:29 POST /auth/register/ 400 10.413 ms 
+06-07-2023  19:01:11 POST /auth/login 401 157.332 ms PostmanRuntime/7.32.3
+06-07-2023  19:01:17 POST /auth/login 401 91.250 ms PostmanRuntime/7.32.3
+06-07-2023  19:03:04 GET /api-docs/ 304 9.493 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+06-07-2023  19:03:04 GET /api-docs/swagger-ui.css 304 4.753 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+06-07-2023  19:03:04 GET /api-docs/swagger-ui-bundle.js 304 9.385 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+06-07-2023  19:03:04 GET /api-docs/swagger-ui-init.js 304 4.350 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+06-07-2023  19:03:04 GET /api-docs/swagger-ui-standalone-preset.js 304 7.721 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+06-07-2023  19:03:05 GET /api-docs/favicon-32x32.png 304 1.846 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+06-07-2023  22:05:16 POST /auth/login/ 400 50.791 ms 
+06-07-2023  22:05:16 POST /auth/login/ 400 4.817 ms 
+06-07-2023  22:05:16 POST /auth/login/ 200 196.875 ms 
+06-07-2023  22:05:16 POST /auth/register/ 400 18.886 ms 
+06-07-2023  22:05:16 POST /auth/register/ 409 55.892 ms 
+06-07-2023  22:05:16 POST /auth/register/ 400 8.654 ms 
+06-07-2023  19:06:06 POST /auth/login 401 72.563 ms PostmanRuntime/7.32.3
+06-07-2023  19:07:48 POST /auth/login 400 3.188 ms PostmanRuntime/7.32.3
+06-07-2023  22:09:04 POST /auth/login/ 400 53.338 ms 
+06-07-2023  22:09:04 POST /auth/login/ 400 5.233 ms 
+06-07-2023  22:09:04 POST /auth/login/ 200 221.424 ms 
+06-07-2023  22:09:04 POST /auth/register/ 400 19.704 ms 
+06-07-2023  22:09:04 POST /auth/register/ 409 55.714 ms 
+06-07-2023  22:09:04 POST /auth/register/ 400 9.221 ms 
+06-07-2023  19:09:51 POST /auth/login 400 4.071 ms PostmanRuntime/7.32.3
+06-07-2023  19:09:56 POST /auth/login 400 3.347 ms PostmanRuntime/7.32.3
+06-07-2023  22:11:58 POST /auth/login/ 400 50.769 ms 
+06-07-2023  22:11:58 POST /auth/login/ 400 5.117 ms 
+06-07-2023  22:11:58 POST /auth/login/ 200 217.348 ms 
+06-07-2023  22:11:58 POST /auth/register/ 400 9.419 ms 
+06-07-2023  22:11:58 POST /auth/register/ 409 48.756 ms 
+06-07-2023  22:11:58 POST /auth/register/ 409 48.096 ms 
+06-07-2023  19:13:00 POST /auth/login 200 136.489 ms PostmanRuntime/7.32.3
+06-07-2023  22:13:39 POST /auth/login/ 400 50.836 ms 
+06-07-2023  22:13:39 POST /auth/login/ 400 6.087 ms 
+06-07-2023  22:13:40 POST /auth/login/ 200 164.422 ms 
+06-07-2023  22:13:40 POST /auth/register/ 400 10.488 ms 
+06-07-2023  22:13:40 POST /auth/register/ 409 51.161 ms 
+06-07-2023  22:13:40 POST /auth/login/ 200 198.637 ms 
+06-07-2023  22:14:50 POST /auth/login/ 400 42.066 ms 
+06-07-2023  22:14:50 POST /auth/login/ 400 7.512 ms 
+06-07-2023  22:14:50 POST /auth/login/ 200 179.955 ms 
+06-07-2023  22:14:50 POST /auth/register/ 400 20.414 ms 
+06-07-2023  22:14:50 POST /auth/register/ 409 58.071 ms 
+06-07-2023  22:14:50 POST /auth/login/ 200 208.999 ms 
+06-07-2023  19:16:36 POST /auth/login 401 61.622 ms PostmanRuntime/7.32.3
+06-07-2023  22:17:21 POST /auth/login/ 400 52.150 ms 
+06-07-2023  22:17:21 POST /auth/login/ 401 47.507 ms 
+06-07-2023  22:17:22 POST /auth/login/ 200 207.835 ms 
+06-07-2023  22:17:22 POST /auth/register/ 400 18.590 ms 
+06-07-2023  22:17:22 POST /auth/register/ 409 50.166 ms 
+06-07-2023  22:17:22 POST /auth/login/ 200 158.161 ms 
+06-07-2023  19:18:07 POST /auth/register 400 41.894 ms PostmanRuntime/7.32.3
+06-07-2023  22:19:00 POST /auth/login/ 400 51.094 ms 
+06-07-2023  22:19:00 POST /auth/login/ 401 48.111 ms 
+06-07-2023  22:19:00 POST /auth/login/ 200 210.169 ms 
+06-07-2023  22:19:00 POST /auth/register/ 400 10.520 ms 
+06-07-2023  22:19:00 POST /auth/register/ 409 49.213 ms 
+06-07-2023  22:19:01 POST /auth/login/ 200 204.888 ms 
+06-07-2023  22:19:43 POST /auth/login/ 400 51.202 ms 
+06-07-2023  22:19:43 POST /auth/login/ 401 50.514 ms 
+06-07-2023  22:19:43 POST /auth/login/ 200 217.087 ms 
+06-07-2023  22:19:43 POST /auth/register/ 400 18.994 ms 
+06-07-2023  22:19:44 POST /auth/register/ 409 48.420 ms 
+06-07-2023  22:19:44 POST /auth/login/ 200 205.818 ms 
+06-07-2023  22:20:13 POST /auth/login/ 400 52.136 ms 
+06-07-2023  22:20:13 POST /auth/login/ 401 50.462 ms 
+06-07-2023  22:20:13 POST /auth/login/ 200 222.331 ms 
+06-07-2023  22:20:13 POST /auth/register/ 400 19.901 ms 
+06-07-2023  22:20:13 POST /auth/register/ 409 54.946 ms 
+06-07-2023  22:20:14 POST /auth/login/ 200 207.918 ms 
+06-07-2023  19:20:35 POST /auth/register 201 175.285 ms PostmanRuntime/7.32.3
+06-07-2023  22:23:01 POST /auth/login/ 400 50.439 ms 
+06-07-2023  22:23:01 POST /auth/login/ 401 48.295 ms 
+06-07-2023  22:23:01 POST /auth/login/ 200 206.428 ms 
+06-07-2023  22:23:01 POST /auth/register/ 400 12.054 ms 
+06-07-2023  22:23:01 POST /auth/register/ 409 52.736 ms 
+06-07-2023  22:23:01 POST /auth/login/ 401 50.809 ms 
+06-07-2023  22:24:41 POST /auth/login/ 400 30.845 ms 
+06-07-2023  22:24:41 POST /auth/login/ 401 48.092 ms 
+06-07-2023  22:24:42 POST /auth/login/ 200 207.427 ms 
+06-07-2023  22:24:42 POST /auth/register/ 400 9.396 ms 
+06-07-2023  22:24:42 POST /auth/register/ 409 48.932 ms 
+06-07-2023  22:24:42 POST /auth/login/ 401 48.495 ms 
+06-07-2023  19:25:00 POST /auth/register 409 42.960 ms PostmanRuntime/7.32.3
+06-07-2023  22:27:12 POST /auth/login/ 400 23.049 ms 
+06-07-2023  22:27:12 POST /auth/login/ 401 47.029 ms 
+06-07-2023  22:27:12 POST /auth/login/ 200 182.485 ms 
+06-07-2023  22:27:12 POST /auth/register/ 400 20.396 ms 
+06-07-2023  22:27:12 POST /auth/register/ 409 54.985 ms 
+06-07-2023  22:27:12 POST /auth/register/ 201 177.104 ms 
+06-07-2023  22:28:04 POST /auth/login/ 400 43.902 ms 
+06-07-2023  22:28:04 POST /auth/login/ 401 47.506 ms 
+06-07-2023  22:28:04 POST /auth/login/ 200 212.439 ms 
+06-07-2023  22:28:04 POST /auth/register/ 400 7.308 ms 
+06-07-2023  22:28:04 POST /auth/register/ 409 50.579 ms 
+06-07-2023  22:28:05 POST /auth/register/ 201 207.366 ms 
+06-07-2023  22:28:58 POST /auth/login/ 400 45.555 ms 
+06-07-2023  22:28:58 POST /auth/login/ 401 47.417 ms 
+06-07-2023  22:28:58 POST /auth/login/ 200 222.024 ms 
+06-07-2023  22:28:58 POST /auth/register/ 400 13.981 ms 
+06-07-2023  22:28:58 POST /auth/register/ 409 49.836 ms 
+06-07-2023  22:28:59 POST /auth/register/ 201 199.759 ms 
+06-07-2023  22:29:26 POST /auth/login/ 400 44.951 ms 
+06-07-2023  22:29:26 POST /auth/login/ 401 45.459 ms 
+06-07-2023  22:29:26 POST /auth/login/ 200 208.504 ms 
+06-07-2023  22:29:26 POST /auth/register/ 400 6.780 ms 
+06-07-2023  22:29:26 POST /auth/register/ 409 47.010 ms 
+06-07-2023  22:29:27 POST /auth/register/ 201 206.283 ms 

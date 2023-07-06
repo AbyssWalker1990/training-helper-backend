@@ -39,7 +39,6 @@ class AuthService {
     async refresh(refreshToken) {
         this.isRefreshTokenExists(refreshToken);
         const currentUser = await this.findUserByProperty({ refreshToken });
-        console.log({ refreshToken });
         if (currentUser == null)
             throw new HttpException_1.default(403, 'Forbidden');
         this.verifyToken(refreshToken, currentUser.username);

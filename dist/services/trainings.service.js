@@ -31,7 +31,6 @@ class TrainingService {
         }
     }
     async deleteSingleTraining(cookies, trainingId) {
-        console.log('isAccessToken: ', cookies.jwt);
         this.isAccessToken(cookies);
         const accessToken = cookies.jwt;
         try {
@@ -78,7 +77,6 @@ class TrainingService {
         console.log(new mongoose_1.default.Types.ObjectId(trainingId));
         try {
             const currentTraining = await Training_1.Training.updateOne({ _id: new mongoose_1.default.Types.ObjectId(trainingId) }, { title, exercises });
-            console.log('currentTraining: ', currentTraining);
             if (currentTraining.matchedCount === 0)
                 throw new MissingDataException_1.default(`There is no training with ${trainingId} ID`);
         }
@@ -95,7 +93,6 @@ class TrainingService {
             throw new HttpException_1.default(403, 'Forbidden, not owner');
     }
     async isExistingUser(token) {
-        console.log('isExistingUser TRIGGERED');
         const currentUser = await this.decodeUserName(token, this.refreshSecret);
         if (currentUser == null)
             throw new HttpException_1.default(403, 'Forbidden, user does not exist');
