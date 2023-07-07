@@ -1,6 +1,6 @@
 {
     "automock": false,
-    "collectCoverage": true,
+    "collectCoverage": false,
     "modulePathIgnorePatterns": [
         "<rootDir>/src/",
         "<rootDir>/dist/config",

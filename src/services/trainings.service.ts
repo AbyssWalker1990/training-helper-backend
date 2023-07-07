@@ -30,17 +30,10 @@ class TrainingService {
   }
 
   public async deleteSingleTraining (cookies: MyCookie, trainingId: string): Promise<TrainingModel | null> {
-    this.isAccessToken(cookies)
-    const accessToken = cookies.jwt
-    console.log(accessToken)
     try {
-      const currentUser = await this.isExistingUser(accessToken)
-      const currentUserName = currentUser.username
-      console.log('currentUserName: ', currentUserName)
       const training = await Training.findById(trainingId) as TrainingModel
       console.log('training: ', training)
       if (training === null) throw new MissingDataException(`There is no training with ${trainingId} ID`)
-      this.isOwnerOfTraining(training, currentUserName)
       return await Training.findByIdAndDelete(trainingId)
     } catch (error: any) {
       throw new HttpException(error.status ?? 500, error.message)

@@ -10784,3 +10784,44 @@
 06-07-2023  20:18:01  d3abc5c3-cf7c-444c-a0ff-a664507a349f  JsonWebTokenError
 06-07-2023  20:18:30  b7c09f22-5b68-4ef6-818b-0b38a7499bab  JsonWebTokenError
 06-07-2023  20:19:38  a8c0631d-3c3a-4adf-9429-2567dc0103b1  JsonWebTokenError
+07-07-2023  07:08:03  ede09401-53a9-4b97-8f29-374b63fd8816  Access Token Expired!
+07-07-2023  07:08:07  b1a634dc-71d0-4d86-af1c-c84802297d9b  JsonWebTokenError
+07-07-2023  07:08:11  7251513a-f084-4d56-b91c-eee2e8ead7ce  Access Token Expired!
+07-07-2023  07:08:16  5b86bfa5-e202-45c8-a0e4-0c6a50882f56  JsonWebTokenError
+07-07-2023  07:08:26  c1f3f136-ea36-43c4-92b6-1345593b5be4  Access Token Expired!
+07-07-2023  07:10:00  7598f591-3c4b-41b4-97d8-e0002a357e5f  JsonWebTokenError
+07-07-2023  07:15:19  64d754af-7eb8-4ea7-bfb6-fe36822897ef  JsonWebTokenError
+07-07-2023  07:15:19  a774516f-916a-4464-832b-e81d3922e2a3  Unauthorized
+07-07-2023  07:15:19  d85e60ef-abd2-4b06-a420-695e4945986d  JsonWebTokenError
+07-07-2023  10:36:07  9503a8ba-cfa8-4859-8e34-cc42dd5f9795  Username and password are required
+07-07-2023  10:36:07  d988f03d-bc9a-4c42-a838-5faf118ff21a  Unauthorized
+07-07-2023  10:36:07  7cbb782c-b28a-4645-ab7d-f19ac5bf9d84  password must be a string,password must be longer than or equal to 4 characters
+07-07-2023  10:36:07  998bf21e-d2b2-41f9-bac3-21fc8f484e41  User already exists!
+07-07-2023  10:38:36  c920165c-c807-4841-b3c3-364f047aed41  Username and password are required
+07-07-2023  10:38:36  b3e487ab-262b-4afd-8bd0-e7834eff636f  Unauthorized
+07-07-2023  10:38:36  2962f7d1-16c0-47d8-9de8-4e820122e1cf  password must be a string,password must be longer than or equal to 4 characters
+07-07-2023  10:38:36  42ea825a-5445-4ed7-8104-9e96b87ce273  User already exists!
+07-07-2023  10:39:42  5754ef6e-be40-4ccb-a5d2-d680dc41dbc9  Username and password are required
+07-07-2023  10:39:42  09c9d4d7-1cb0-4506-863b-0050560414db  Unauthorized
+07-07-2023  10:39:42  b50640d6-7e4b-4d1b-8122-00ae3313fa96  password must be a string,password must be longer than or equal to 4 characters
+07-07-2023  10:39:42  9a8cdda4-160b-4142-afdd-243a1151be09  User already exists!
+07-07-2023  10:40:24  d0e9ff89-9b34-40bc-afc8-037d35d5f2d3  Username and password are required
+07-07-2023  10:40:24  d64bae0a-7657-4178-87dc-e279879d67b2  Unauthorized
+07-07-2023  10:40:24  3469d929-9093-4821-8c88-616d343a07bf  password must be a string,password must be longer than or equal to 4 characters
+07-07-2023  10:40:25  09f989a7-2cc8-4246-add9-0be606901a47  User already exists!
+07-07-2023  10:44:19  372ba313-ac02-4595-a326-2e50b3300f2f  Username and password are required
+07-07-2023  10:44:19  d5eb55af-20ea-493d-8383-df93514ebc05  Unauthorized
+07-07-2023  10:44:19  38d39dfa-1776-4c71-b08d-e35376734aaa  password must be a string,password must be longer than or equal to 4 characters
+07-07-2023  10:44:19  ebd4851b-df56-4fee-800b-9e9f7753e699  User already exists!
+07-07-2023  10:44:51  40fa8844-a019-41b1-a129-435a96bcebf9  Username and password are required
+07-07-2023  10:44:51  317f046e-bbb5-4e9a-a5d8-45b21e7cc252  Unauthorized
+07-07-2023  10:44:51  15cd2611-2ffa-4c9a-9bde-adafeb6647e9  password must be a string,password must be longer than or equal to 4 characters
+07-07-2023  10:44:51  9dd220eb-5258-4f96-9484-71c27f393954  User already exists!
+07-07-2023  10:51:41  a486cdae-e258-4d0f-9ad1-cec1d4ebce37  Username and password are required
+07-07-2023  10:51:42  03f030ae-13b7-4abf-a74a-e2eb8fc89d31  Unauthorized
+07-07-2023  10:51:42  c0321226-41b7-47be-9a3a-4f275a943ed6  password must be a string,password must be longer than or equal to 4 characters
+07-07-2023  10:51:42  9524441d-0a37-4a4e-8fde-c365dec1dc8e  User already exists!
+07-07-2023  10:52:21  1114123d-82ba-4cbc-aa3a-c6ccb9411c39  Username and password are required
+07-07-2023  10:52:21  610f1f06-5d96-4446-a7f1-bf8212f85bcb  Unauthorized
+07-07-2023  10:52:22  f82579f6-7a8a-4165-996c-1311af2ccd58  password must be a string,password must be longer than or equal to 4 characters
+07-07-2023  10:52:22  a3bdf152-c231-4d55-8447-510697001202  User already exists!

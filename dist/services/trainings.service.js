@@ -31,18 +31,11 @@ class TrainingService {
         }
     }
     async deleteSingleTraining(cookies, trainingId) {
-        this.isAccessToken(cookies);
-        const accessToken = cookies.jwt;
-        console.log(accessToken);
         try {
-            const currentUser = await this.isExistingUser(accessToken);
-            const currentUserName = currentUser.username;
-            console.log('currentUserName: ', currentUserName);
             const training = await Training_1.Training.findById(trainingId);
             console.log('training: ', training);
             if (training === null)
                 throw new MissingDataException_1.default(`There is no training with ${trainingId} ID`);
-            this.isOwnerOfTraining(training, currentUserName);
             return await Training_1.Training.findByIdAndDelete(trainingId);
         }
         catch (error) {
